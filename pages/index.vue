@@ -5,6 +5,8 @@
     <WhatWeDo />
     <AgileProcess />
     <Methodology />
+    <Clients />
+    <Dashboard />
     <Contact />
   </div>
 </template>
