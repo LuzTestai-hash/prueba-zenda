@@ -3,8 +3,8 @@
     <Welcome />
     <WeZenda />
     <WhatWeDo />
-    <Methodology />
     <AgileProcess />
+    <Methodology />
     <Contact />
   </div>
 </template>
