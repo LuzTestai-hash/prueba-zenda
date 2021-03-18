@@ -7,6 +7,9 @@
     <b-container fluid class="container">
       <WeZenda />
     </b-container>
+    <b-container fluid class="container">
+      <Methodology />
+    </b-container>
   </div>
 </template>
 
