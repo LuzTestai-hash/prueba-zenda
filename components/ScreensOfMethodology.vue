@@ -7,9 +7,20 @@
       </b-col>
     </b-row>
     <b-row class="containerIcon">
-      <b-col cols="9"> </b-col>
-      <b-col>
-        <p class="icon">icono</p>
+      <b-col cols="8"> </b-col>
+      <b-col class="col-icon">
+        <div v-if="icon === 'knowledge'">
+          <img src="../assets/icons/knowledge.svg" width="60" height="60" />
+        </div>
+        <div v-if="icon === 'planning'">
+          <img src="../assets/icons/planning.svg" width="60" height="60" />
+        </div>
+        <div v-if="icon === 'execution'">
+          <img src="../assets/icons/execution.svg" width="60" height="60" />
+        </div>
+        <div v-if="icon === 'challenge'">
+          <img src="../assets/icons/challenge.svg" width="60" height="60" />
+        </div>
       </b-col>
     </b-row>
     <b-row class="containerKnowledge">
@@ -34,6 +45,7 @@ export default {
     number: { type: String, default: null },
     title: { type: String, default: null },
     color: { type: String, default: null },
+    icon: { type: String, default: null },
   },
 }
 </script>
@@ -42,7 +54,6 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .container-seccion {
   min-width: 100% !important;
-  min-height: 100vh;
 
   .containerTitles {
     margin: 0.5rem;
@@ -54,6 +65,13 @@ export default {
     margin-left: 5%;
     margin-right: 5%;
   }
+  .col-icon {
+    padding: 0%;
+    text-align: center;
+    margin-left: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+  }
   .icon {
     background-color: rgb(49, 80, 173);
     height: 4rem;
@@ -64,7 +82,7 @@ export default {
     margin-bottom: 1.5rem;
   }
   .title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 900;
     margin-top: 3rem;
@@ -90,6 +108,9 @@ export default {
     }
     &.secondary {
       color: $secondary;
+    }
+    &.third {
+      color: $third;
     }
   }
   .knowledgeText {

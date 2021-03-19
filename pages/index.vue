@@ -5,7 +5,9 @@
     <WhatWeDo />
     <AgileProcess />
     <Methodology />
+    <TrustUs />
     <Contact />
+    <ToolsAndMedia />
   </div>
 </template>
 

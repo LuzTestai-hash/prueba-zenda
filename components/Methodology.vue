@@ -5,6 +5,7 @@
         :number="data.number"
         :title="data.title"
         :color="data.color"
+        :icon="data.icon"
       />
     </div>
   </VueSlickCarousel>
@@ -19,7 +20,6 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   name: 'MyComponent',
   components: { VueSlickCarousel },
-
   data() {
     return {
       methoddata: [
@@ -28,23 +28,28 @@ export default {
           number: '01',
           title: 'Conocimiento',
           color: 'knowledge primary',
+          icon: 'knowledge',
         },
         {
           id: 1,
           number: '02',
           title: 'Planificacion',
-          color: 'knowledge primary',
+          color: 'knowledge secondary',
+          icon: 'planning',
         },
         {
           id: 2,
           number: '03',
           title: 'Ejecucion',
-          color: 'knowledge secondary',
+          color: 'knowledge third',
+          icon: 'execution',
         },
         {
           id: 3,
           number: '04',
           title: 'Desafio',
+          color: 'knowledge primary',
+          icon: 'challenge',
         },
       ],
     }
@@ -54,59 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 .containerMethodology {
-  min-height: 100vh;
   padding: 1rem;
   overflow: auto;
-
-  .container-seccion {
-    min-width: 100% !important;
-    min-height: 100vh;
-  }
-  .containerTitles {
-    margin: 0.5rem;
-    min-height: 10vh;
-  }
-  .containerIcon {
-    border-bottom: 1px solid;
-    margin-top: -15%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  .icon {
-    background-color: rgb(49, 80, 173);
-    height: 4rem;
-  }
-  .subTitle {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-  .title {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 900;
-    margin-top: 3rem;
-  }
-  .containerNumber {
-    text-align: center;
-  }
-  .number {
-    font-size: 2.8rem;
-    font-weight: 900;
-  }
-  .containerKnowledge {
-    padding: 1rem;
-    min-height: 50vh;
-    margin-top: 1.5rem;
-  }
-  .knowledge {
-    color: #59d7a2;
-    font-size: 1.8rem;
-    font-weight: 900;
-    margin-top: 0.5rem;
-  }
-  .knowledgeText {
-    font-size: 1.3rem;
-  }
 }
 </style>
