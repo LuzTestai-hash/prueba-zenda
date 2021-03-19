@@ -2,8 +2,7 @@
   <div class="container-seccion">
     <b-row class="containerTitles">
       <b-col>
-        <h1 class="subTitle">Metodología</h1>
-        <h2 class="title">Nuestro método.</h2>
+        <p class="title">Nuestro método.</p>
       </b-col>
     </b-row>
     <b-row class="containerIcon">
@@ -29,9 +28,8 @@
       </b-col>
       <b-col cols="9">
         <p :class="color">{{ title }}</p>
-        <p>
-          Relevamos los activos del proyecto, los potenciales limitantes y el
-          objetivo del negocio a través de un Marketing Canvas propio.
+        <p class="detail">
+          {{ detail }}
         </p>
       </b-col>
     </b-row>
@@ -46,6 +44,7 @@ export default {
     title: { type: String, default: null },
     color: { type: String, default: null },
     icon: { type: String, default: null },
+    detail: { type: String, default: null },
   },
 }
 </script>
@@ -53,23 +52,17 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .container-seccion {
-  min-width: 100% !important;
-
   .containerTitles {
-    margin: 0.5rem;
-    min-height: 10vh;
+    margin-right: 0.5rem;
   }
   .containerIcon {
     border-bottom: 1px solid;
-    margin-top: -15%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 2rem;
   }
   .col-icon {
-    padding: 0%;
+    padding: initial;
     text-align: center;
     margin-left: 2rem;
-    margin-top: -1rem;
     margin-bottom: 1rem;
   }
   .icon {
@@ -83,26 +76,27 @@ export default {
   }
   .title {
     font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 900;
-    margin-top: 3rem;
+    line-height: 3rem;
+    margin-bottom: initial;
+    font-weight: 700;
+    transform: translateY(0.8rem);
   }
   .containerNumber {
     text-align: center;
   }
   .number {
-    font-size: 2.8rem;
-    font-weight: 900;
+    font-family: 'Recoleta Alt', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
   }
   .containerKnowledge {
     padding: 1rem;
-    min-height: 50vh;
     margin-top: 1.5rem;
   }
   .knowledge {
+    font-family: 'Recoleta Alt', serif;
     font-size: 1.8rem;
-    font-weight: 900;
-    margin-top: 0.5rem;
+    font-weight: 600;
     &.primary {
       color: $primary;
     }
@@ -115,6 +109,11 @@ export default {
   }
   .knowledgeText {
     font-size: 1.3rem;
+  }
+  .detail {
+    font-size: 1.1rem;
+    color: rgba(10, 10, 11, 0.64);
+    line-height: 1.4rem;
   }
 }
 </style>

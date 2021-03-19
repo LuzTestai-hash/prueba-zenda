@@ -1,14 +1,22 @@
 <template>
-  <b-container>
-    <h2 class="subtitle">Confia en nosotros</h2>
-    <VueSlickCarousel class="containerTrust" v-bind="settings">
-      <p class="trademarks">Walmart</p>
+  <div class="trustus-background">
+    <b-container class="trustus-container">
+      <p class="subtitle">Confia en nosotros</p>
+      <VueSlickCarousel class="containerTrust" v-bind="settings">
+        <div>
+          <p class="trademarks">Walmart</p>
+        </div>
 
-      <p class="trademarks">Workana</p>
+        <div>
+          <p class="trademarks">Workana</p>
+        </div>
 
-      <p class="trademarks">Heiniken</p>
-    </VueSlickCarousel>
-  </b-container>
+        <div>
+          <p class="trademarks">Heiniken</p>
+        </div>
+      </VueSlickCarousel>
+    </b-container>
+  </div>
 </template>
 
 <script>
@@ -20,38 +28,39 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   name: 'MyComponent',
   components: { VueSlickCarousel },
-  data: () => ({
-    settings: {
-      centerMode: true,
-      centerPadding: '20px',
-      focusOnSelect: true,
-      infinite: true,
-      slidesToShow: 3,
-      speed: 500,
-    },
-  }),
+  data() {
+    return {
+      settings: {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        slidesToShow: 2,
+        speed: 500,
+      },
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
-.subtitle {
-  color: $subtitle;
-  font-size: 1.2rem;
-  text-align: center;
-}
-.containerTrust {
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-  min-height: 10vh;
-  overflow: auto;
-  min-width: 500px;
-  .trademarks {
-    outline: none;
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-right: 1rem;
+.trustus-background {
+  background: white;
+  .trustus-container {
+    padding: 4rem 1.6rem;
+    margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    .subtitle {
+      font-size: 1.2rem;
+      color: $subtitle;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .trademarks {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
   }
 }
 </style>

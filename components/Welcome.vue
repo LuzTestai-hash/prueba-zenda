@@ -1,6 +1,6 @@
 <template>
   <div class="welcome-background">
-    <b-container fluid class="welcome-container">
+    <b-container class="welcome-container">
       <p class="title">Lideramos</p>
       <p>proyectos digitales.</p>
     </b-container>

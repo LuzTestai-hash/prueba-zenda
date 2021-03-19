@@ -7,9 +7,9 @@
     <Methodology />
     <TrustUs />
     <Clients />
+    <ToolsAndMedia />
     <Dashboard />
     <Contact />
-    <ToolsAndMedia />
   </div>
 </template>
 

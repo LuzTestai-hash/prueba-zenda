@@ -1,6 +1,10 @@
 <template>
   <div class="client-background">
     <b-container class="client-container">
+      <div class="hand-container">
+        <HandMoveIcon :color="'#fff'" />
+      </div>
+
       <VueSlickCarousel v-bind="settings">
         <div v-for="data in clientdata" :key="data.id">
           <ClientsCard
@@ -84,7 +88,12 @@ export default {
   background-color: $background-black;
   .client-container {
     min-height: 100vh;
-    padding: 4rem 1.6rem;
+    padding: 3rem 1.6rem;
+    .hand-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+    }
   }
 }
 </style>

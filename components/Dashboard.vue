@@ -1,7 +1,10 @@
 <template>
   <div class="dashboard-background">
     <b-container class="dashboard-container">
-      <p class="subtitle">PANEL DE CONTROL.</p>
+      <div class="hand-container">
+        <p class="subtitle">PANEL DE CONTROL.</p>
+        <HandMoveIcon :color="'#fff'" />
+      </div>
       <VueSlickCarousel :dots="false" :arrows="false">
         <div v-for="data in dashboarddata" :key="data.id">
           <DashboardCard :detail="data.detail" />
@@ -46,12 +49,17 @@ export default {
   .dashboard-container {
     min-height: 100vh;
     padding: 4rem 1.6rem;
-    .subtitle {
-      font-weight: 700;
-      color: white;
-      letter-spacing: 0.02rem;
-      line-height: 1.2rem;
-      margin-bottom: 5rem;
+    .hand-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .subtitle {
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.02rem;
+        line-height: 1.2rem;
+        margin-bottom: 5rem;
+      }
     }
   }
 }

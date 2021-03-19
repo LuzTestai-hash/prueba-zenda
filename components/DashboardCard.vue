@@ -3,6 +3,7 @@
     <p class="text">{{ detail }}</p>
     <b-button class="button">
       <p>Ver video</p>
+      <img src="../assets/icons/play.svg" width="30" height="30" />
     </b-button>
   </div>
 </template>
@@ -26,6 +27,9 @@ export default {
     margin-bottom: 5rem;
   }
   .button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: transparent;
     border-color: white;
     border-radius: 6rem;
@@ -33,6 +37,7 @@ export default {
     p {
       color: white;
       margin-bottom: 0;
+      margin-right: 2rem;
     }
   }
 }
