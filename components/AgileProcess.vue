@@ -89,31 +89,76 @@ export default {}
         margin-bottom: 0;
       }
       &.secondary {
-        transform: translate(-9rem, 0);
+        animation-name: secondary-circle;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        transform: translate(-4rem, 3rem);
         background-color: $secondary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.primary {
-        transform: translate(7rem, -6rem);
+        animation-name: primary-circle;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        transform: translate(0, -3.5rem);
         background-color: $primary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.third {
-        transform: translate(3.5rem, 8rem);
+        animation-name: third-circle;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        transform: translate(3rem, 3rem);
         background: rgba(149, 214, 234, 0.9);
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.white {
         .circle-text {
+          animation-name: text-white-circle;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
           font-family: 'Recoleta Alt', serif;
           font-weight: 900;
           font-size: 1.3rem;
-          transform: rotate(270deg);
+          transform: rotate(360deg);
           color: black;
+          z-index: 10;
         }
+      }
+    }
+    @keyframes secondary-circle {
+      from {
+        transform: translate(-4rem, 3rem);
+      }
+      to {
+        transform: translate(-9rem, 0);
+      }
+    }
+    @keyframes primary-circle {
+      from {
+        transform: translate(0, -3.5rem);
+      }
+      to {
+        transform: translate(7rem, -6rem);
+      }
+    }
+    @keyframes third-circle {
+      from {
+        transform: translate(3rem, 3rem);
+      }
+      to {
+        transform: translate(3.5rem, 8rem);
+      }
+    }
+    @keyframes text-white-circle {
+      from {
+        transform: rotate(360deg);
+      }
+      to {
+        transform: rotate(270deg);
       }
     }
   }
