@@ -73,10 +73,13 @@ export default {}
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15rem;
+    margin-top: 8rem;
     .circle {
-      width: 8rem;
-      height: 8rem;
+      width: 10rem;
+      height: 10rem;
       border-radius: 50%;
+      position: absolute;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -86,16 +89,29 @@ export default {}
         margin-bottom: 0;
       }
       &.secondary {
+        transform: translate(-9rem, 0);
         background-color: $secondary;
+        opacity: 0.9;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.primary {
+        transform: translate(7rem, -6rem);
         background-color: $primary;
+        opacity: 0.9;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.third {
-        background-color: $third;
+        transform: translate(3.5rem, 8rem);
+        background: rgba(149, 214, 234, 0.9);
+        opacity: 0.9;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.white {
         .circle-text {
+          font-family: 'Recoleta Alt', serif;
+          font-weight: 900;
+          font-size: 1.3rem;
+          transform: rotate(270deg);
           color: black;
         }
       }
