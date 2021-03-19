@@ -1,9 +1,9 @@
 <template>
   <div class="agile-background">
-    <b-container fluid class="agile-container">
+    <b-container class="agile-container">
       <p class="subtitle">PROCESO ÁGIL</p>
-      <h1 class="title">Filosofía.</h1>
-      <div class="cicles-container">
+      <p class="title">Filosofía.</p>
+      <div class="circles-container">
         <div class="circle secondary">
           <p class="circle-text">DATA.</p>
         </div>
@@ -68,7 +68,11 @@ export default {}
     margin-bottom: 3.3rem;
     padding-right: 5rem;
   }
-  .cicles-container {
+  .circles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     .circle {
       width: 8rem;
       height: 8rem;

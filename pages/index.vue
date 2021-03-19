@@ -6,6 +6,8 @@
     <AgileProcess />
     <Methodology />
     <TrustUs />
+    <Clients />
+    <Dashboard />
     <Contact />
     <ToolsAndMedia />
   </div>

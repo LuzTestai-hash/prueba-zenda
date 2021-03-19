@@ -1,6 +1,6 @@
 <template>
   <div class="contact-background">
-    <b-container fluid class="contact-container">
+    <b-container class="contact-container">
       <p class="subtitle">CONTACTO.</p>
       <h1 class="email">info@zenda.com.ar</h1>
       <p class="subtitle">AMBASSADORS.</p>
@@ -82,7 +82,7 @@ export default {}
     text-decoration-line: underline;
     text-decoration-color: #7cf3c1;
     background: -webkit-linear-gradient(#7cf3c1, #95d6ea);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     word-break: break-all;
   }

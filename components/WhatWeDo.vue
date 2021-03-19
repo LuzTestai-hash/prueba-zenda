@@ -1,8 +1,8 @@
 <template>
   <div class="whatWeDo-background">
-    <b-container fluid class="whatWeDo-container">
+    <b-container class="whatWeDo-container">
       <p class="subtitle">QUÉ HACEMOS</p>
-      <h1 class="title">Lo mejor para tu negocio.</h1>
+      <p class="title">Lo mejor para tu negocio.</p>
       <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
         <div class="single-chart">
           <svg viewBox="0 0 36 36" class="circular-chart primary">
@@ -93,7 +93,6 @@ export default {}
   background-color: $background-white;
 }
 .whatWeDo-container {
-  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -190,6 +189,7 @@ export default {}
   .collapse-content {
     font-weight: 100;
     color: $subtitle;
+    border: initial;
     border-top: 1px solid rgba(10, 10, 11, 0.29);
     background-color: transparent;
   }

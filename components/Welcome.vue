@@ -1,8 +1,8 @@
 <template>
   <div class="welcome-background">
     <b-container fluid class="welcome-container">
-      <h1 class="title">Lideramos</h1>
-      <h1>proyectos digitales.</h1>
+      <p class="title">Lideramos</p>
+      <p>proyectos digitales.</p>
     </b-container>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {}
   align-items: center;
   justify-content: center;
   text-align: center;
-  h1 {
+  p {
     font-weight: bold;
     font-size: 45px;
     line-height: 50.71px;
