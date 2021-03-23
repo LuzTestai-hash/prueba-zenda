@@ -45,6 +45,7 @@ export default {
     color: { type: String, default: null },
     icon: { type: String, default: null },
     detail: { type: String, default: null },
+    classdetail: { type: String, default: null },
   },
 }
 </script>
