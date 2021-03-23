@@ -2,19 +2,35 @@
   <div class="trustus-background">
     <b-container class="trustus-container">
       <p class="subtitle">Confia en nosotros</p>
-      <VueSlickCarousel class="containerTrust" v-bind="settings">
-        <div>
-          <p class="trademarks">Walmart</p>
-        </div>
+      <div class="d-block d-md-none">
+        <VueSlickCarousel v-bind="settings">
+          <div>
+            <p class="trademarks">Walmart</p>
+          </div>
 
-        <div>
-          <p class="trademarks">Workana</p>
-        </div>
+          <div>
+            <p class="trademarks">Workana</p>
+          </div>
 
-        <div>
+          <div>
+            <p class="trademarks">Heiniken</p>
+          </div>
+        </VueSlickCarousel>
+      </div>
+      <div class="d-none d-md-flex container-trademarks-desktop">
+        <div class="row">
+          <p class="trademarks">Heiniken</p>
+          <p class="trademarks">Heiniken</p>
+          <p class="trademarks">Heiniken</p>
           <p class="trademarks">Heiniken</p>
         </div>
-      </VueSlickCarousel>
+        <div class="row mt-4">
+          <p class="trademarks">Walmart</p>
+          <p class="trademarks">Walmart</p>
+          <p class="trademarks">Walmart</p>
+          <p class="trademarks">Walmart</p>
+        </div>
+      </div>
     </b-container>
   </div>
 </template>
@@ -48,9 +64,9 @@ export default {
   background: white;
   .trustus-container {
     padding: 4rem 1.6rem;
-    margin-top: 3rem;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     .subtitle {
       font-size: 1.2rem;
       color: $subtitle;
@@ -60,6 +76,27 @@ export default {
     .trademarks {
       font-size: 1.5rem;
       font-weight: 900;
+    }
+    .container-trademarks-desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5rem;
+      margin-top: 5rem;
+      .trademarks {
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .trustus-background {
+    .trustus-container {
+      height: 50vh;
     }
   }
 }

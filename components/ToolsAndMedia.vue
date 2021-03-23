@@ -1,57 +1,115 @@
 <template>
   <b-container class="toolsAndMedia-container">
     <p class="subtitle">HERRAMIENTAS Y MEDIOS</p>
-    <VueSlickCarousel v-bind="settings" class="carrusel">
-      <div class="carrusel-container">
-        <img src="../assets/icons/media.svg" width="60" height="60" />
+    <div class="d-block d-md-none">
+      <VueSlickCarousel v-bind="settings" class="carrusel-container">
+        <div class="carrusel">
+          <img src="../assets/icons/media.svg" width="60" height="60" />
+        </div>
+        <div class="carrusel">
+          <p>Medios</p>
+        </div>
+        <div class="carrusel">
+          <p>Walmart</p>
+        </div>
+        <div class="carrusel">
+          <p>Workana</p>
+        </div>
+        <div class="carrusel">
+          <p>Heiniken</p>
+        </div>
+      </VueSlickCarousel>
+      <VueSlickCarousel v-bind="settings" class="carrusel-container">
+        <div class="carrusel">
+          <img src="../assets/icons/data.svg" width="60" height="60" />
+        </div>
+        <div class="carrusel">
+          <p>Data</p>
+        </div>
+        <div class="carrusel">
+          <p>Walmart</p>
+        </div>
+        <div class="carrusel">
+          <p>Workana</p>
+        </div>
+        <div class="carrusel">
+          <p>Heiniken</p>
+        </div>
+      </VueSlickCarousel>
+      <VueSlickCarousel v-bind="settings" class="carrusel-container">
+        <div class="carrusel">
+          <img src="../assets/icons/flow.svg" width="60" height="60" />
+        </div>
+        <div class="carrusel">
+          <p>Flow</p>
+        </div>
+        <div class="carrusel">
+          <p>Walmart</p>
+        </div>
+        <div class="carrusel">
+          <p>Workana</p>
+        </div>
+        <div class="carrusel">
+          <p>Heiniken</p>
+        </div>
+      </VueSlickCarousel>
+    </div>
+
+    <div class="d-none d-md-block">
+      <div v-bind="settings" class="container-icon">
+        <div
+          class="icon"
+          :class="{ 'botton-selected': categorySelected === 'Medios' }"
+          @click.prevent="getMembers('Medios')"
+        >
+          <img src="../assets/icons/media.svg" width="60" height="60" />
+          <p>Media</p>
+        </div>
+        <div
+          class="icon"
+          :class="{ 'botton-selected': categorySelected === 'Data' }"
+          @click.prevent="getMembers('Data')"
+        >
+          <img src="../assets/icons/data.svg" width="60" height="60" />
+          <p>Data</p>
+        </div>
+        <div
+          class="icon"
+          :class="{ 'botton-selected': categorySelected === 'Flow' }"
+          @click.prevent="getMembers('Flow')"
+        >
+          <img src="../assets/icons/flow.svg" width="60" height="60" />
+          <p>Flow</p>
+        </div>
       </div>
-      <div class="carrusel-container">
-        <p>Medios</p>
+      <div
+        v-if="categorySelected === 'Medios'"
+        v-bind="settings"
+        class="container-trademarks"
+      >
+        <p v-for="item in category.Medios" :key="item">
+          {{ item }}
+        </p>
       </div>
-      <div class="carrusel-container">
-        <p>Walmart</p>
+      <div
+        v-if="categorySelected === 'Data'"
+        v-bind="settings"
+        class="container-trademarks"
+      >
+        <p v-for="item in category.Data" :key="item">
+          {{ item }}
+        </p>
       </div>
-      <div class="carrusel-container">
-        <p>Workana</p>
+      <div
+        v-if="categorySelected === 'Flow'"
+        v-bind="settings"
+        class="container-trademarks"
+      >
+        <p v-for="item in category.Flow" :key="item">
+          {{ item }}
+        </p>
       </div>
-      <div class="carrusel-container">
-        <p>Heiniken</p>
-      </div>
-    </VueSlickCarousel>
-    <VueSlickCarousel v-bind="settings" class="carrusel">
-      <div class="carrusel-container">
-        <img src="../assets/icons/data.svg" width="60" height="60" />
-      </div>
-      <div class="carrusel-container">
-        <p>Data</p>
-      </div>
-      <div class="carrusel-container">
-        <p>Walmart</p>
-      </div>
-      <div class="carrusel-container">
-        <p>Workana</p>
-      </div>
-      <div class="carrusel-container">
-        <p>Heiniken</p>
-      </div>
-    </VueSlickCarousel>
-    <VueSlickCarousel v-bind="settings" class="carrusel">
-      <div class="carrusel-container">
-        <img src="../assets/icons/flow.svg" width="60" height="60" />
-      </div>
-      <div class="carrusel-container">
-        <p>Flow</p>
-      </div>
-      <div class="carrusel-container">
-        <p>Walmart</p>
-      </div>
-      <div class="carrusel-container">
-        <p>Workana</p>
-      </div>
-      <div class="carrusel-container">
-        <p>Heiniken</p>
-      </div>
-    </VueSlickCarousel>
+    </div>
   </b-container>
 </template>
 
@@ -64,6 +122,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   name: 'MyComponent',
   components: { VueSlickCarousel },
+
   data() {
     return {
       settings: {
@@ -72,6 +131,15 @@ export default {
         infinite: true,
         slidesToShow: 4,
         speed: 500,
+      },
+      category: {
+        Medios: ['Walmart', 'Walmart', 'Walmart', 'Walmart', 'Walmart'],
+        Data: ['Workana', 'Workana', 'Workana', 'Workana', 'Workana'],
+        Flow: ['Heiniken', 'Heiniken', 'Heiniken', 'Heiniken', 'Heiniken'],
+      },
+      categorySelected: 'Medios',
+      getMembers(info) {
+        this.categorySelected = info
       },
     }
   },
@@ -90,15 +158,58 @@ export default {
     margin-bottom: 3rem;
     padding-right: 10rem;
   }
-  .carrusel {
+  .carrusel-container {
     margin-bottom: 2rem;
   }
-  .carrusel-container {
+  .carrusel {
     display: flex;
     align-items: center;
     p {
       margin-top: 1rem;
       margin-bottom: initial;
+    }
+  }
+
+  .container-trademarks {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+
+    p {
+      margin: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .container-icon {
+    display: flex;
+    justify-content: center;
+    .botton-selected {
+      background-color: $background-botton;
+      border-radius: 10px;
+      box-shadow: 0.1px 4px 20px $color-box-shadow;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      margin-right: 3rem;
+      margin-left: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+
+      &:hover {
+        background-color: $background-botton;
+        border-radius: 10px;
+        box-shadow: 0.1px 4px 20px $color-box-shadow;
+      }
+      p {
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+        margin-right: 1rem;
+      }
     }
   }
 }

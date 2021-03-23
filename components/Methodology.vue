@@ -5,7 +5,12 @@
         <p class="subtitle">METODOLOGÍA.</p>
         <HandMoveIcon :color="'#000'" />
       </div>
-      <VueSlickCarousel :dots="false" :arrows="false" v-bind="settings">
+      <VueSlickCarousel
+        class="d-block d-md-none"
+        :dots="false"
+        :arrows="false"
+        v-bind="settings"
+      >
         <div v-for="data in methoddata" :key="data.id">
           <MethodologyCard
             :number="data.number"
@@ -13,9 +18,35 @@
             :color="data.color"
             :icon="data.icon"
             :detail="data.detail"
+            :classdetail="data.classDetail"
           />
         </div>
       </VueSlickCarousel>
+
+      <div class="d-none d-md-flex flex-column">
+        <p class="title-desktop">Nuestro método.</p>
+        <div class="d-md-flex justify-content-center mt-1">
+          <div class="container-first-column">
+            <div v-for="item in firstColumn" :key="item.id">
+              <h1 class="number">{{ item.number }}</h1>
+              <p :class="item.color">{{ item.title }}</p>
+              <p :class="item.classDetail">
+                {{ item.detail }}
+              </p>
+            </div>
+          </div>
+
+          <div class="container-second-column">
+            <div v-for="item in secondColumn" :key="item.id">
+              <h1 class="number">{{ item.number }}</h1>
+              <p :class="item.color">{{ item.title }}</p>
+              <p :class="item.classDetail">
+                {{ item.detail }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </b-container>
   </div>
 </template>
@@ -40,6 +71,7 @@ export default {
           icon: 'knowledge',
           detail:
             'Relevamos los activos del proyecto, los potenciales limitantes y el objetivo del negocio a través de un Marketing Canvas propio.',
+          classDetail: 'detail',
         },
         {
           id: 1,
@@ -49,6 +81,7 @@ export default {
           icon: 'planning',
           detail:
             'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+          classDetail: 'detail',
         },
         {
           id: 2,
@@ -58,6 +91,7 @@ export default {
           icon: 'execution',
           detail:
             'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+          classDetail: 'detail',
         },
         {
           id: 3,
@@ -67,8 +101,10 @@ export default {
           icon: 'challenge',
           detail:
             'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+          classDetail: 'detail',
         },
       ],
+
       settings: {
         dots: false,
         arrows: false,
@@ -103,6 +139,14 @@ export default {
       },
     }
   },
+  computed: {
+    firstColumn() {
+      return this.methoddata.filter((item, index) => index === 0 || index === 3)
+    },
+    secondColumn() {
+      return this.methoddata.filter((item, index) => index === 1 || index === 2)
+    },
+  },
 }
 </script>
 
@@ -114,7 +158,8 @@ export default {
   background: white;
   .methodology-container {
     min-height: 100vh;
-    padding: 4rem 1rem;
+    padding: 4rem 2rem;
+
     .hand-container {
       display: flex;
       justify-content: space-between;
@@ -126,6 +171,55 @@ export default {
         line-height: 1.2rem;
         margin-bottom: 2rem;
       }
+    }
+
+    //Desktop
+    .container-first-column {
+      max-width: 40%;
+      div {
+        margin-right: 7rem;
+        margin-bottom: 5rem;
+      }
+    }
+    .container-second-column {
+      max-width: 30%;
+      margin-top: 5rem;
+      div {
+        margin-bottom: 5rem;
+      }
+    }
+    .title-desktop {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      font-weight: 700;
+      transform: translateY(0.8rem);
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+      margin-bottom: 5rem;
+    }
+    .knowledge {
+      font-family: 'Recoleta Alt', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      &.primary {
+        color: $primary;
+      }
+      &.secondary {
+        color: $secondary;
+      }
+      &.third {
+        color: $third;
+      }
+    }
+    .detail {
+      font-size: 1.1rem;
+      color: rgba(10, 10, 11, 0.64);
+      line-height: 1.4rem;
+    }
+    .number {
+      font-family: 'Recoleta Alt', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
     }
   }
 }
