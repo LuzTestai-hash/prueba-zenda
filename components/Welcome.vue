@@ -17,6 +17,7 @@ export default {}
   background-color: $background-white;
 }
 .welcome-container {
+  width: 100%;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -35,6 +36,11 @@ export default {}
   .title {
     text-decoration: underline;
     margin-bottom: 0;
+  }
+  @media (min-width: 600px) {
+    .title {
+      text-decoration: initial;
+    }
   }
 }
 </style>

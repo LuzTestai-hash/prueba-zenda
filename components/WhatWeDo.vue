@@ -1,84 +1,101 @@
 <template>
-  <div class="whatWeDo-background">
+  <div id="what-we-do" class="whatWeDo-background">
     <b-container class="whatWeDo-container">
-      <p class="subtitle">QUÉ HACEMOS</p>
-      <p class="title">Lo mejor para tu negocio.</p>
-      <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
-        <div class="single-chart">
-          <svg viewBox="0 0 36 36" class="circular-chart primary">
-            <path
-              class="circle-bg"
-              d="M18 2.0845
+      <b-row>
+        <b-col md="12">
+          <p class="subtitle">QUÉ HACEMOS</p>
+        </b-col>
+        <b-col md="6">
+          <p class="title">Lo mejor para tu negocio.</p>
+          <div class="content-container">
+            <p class="title-content">Estrategias digitales</p>
+            <p class="detail-content">
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+          </div>
+        </b-col>
+        <b-col md="6">
+          <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
+            <div class="single-chart">
+              <svg viewBox="0 0 36 36" class="circular-chart primary">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <path
-              class="circle"
-              stroke-dasharray="45, 100"
-              d="M18 2.0845
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="45, 100"
+                  d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <text x="18" y="20.35" class="percentage primary">45%</text>
-          </svg>
-        </div>
+                />
+                <text x="18" y="20.35" class="percentage primary">45%</text>
+              </svg>
+            </div>
 
-        <p class="text">Estrategias digitales</p>
-      </b-button>
-      <b-collapse id="collapse-1">
-        <b-card class="collapse-content">
-          Desarrollamos estrategias digitales para lograr objetivos orientados a
-          Branding y Performance (eCommerce, Apps, Leads)
-        </b-card>
-      </b-collapse>
-      <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
-        <div class="single-chart">
-          <svg viewBox="0 0 36 36" class="circular-chart third">
-            <path
-              class="circle-bg"
-              d="M18 2.0845
+            <p class="text">Estrategias digitales</p>
+          </b-button>
+          <b-collapse id="collapse-1">
+            <b-card class="collapse-content">
+              Desarrollamos estrategias digitales para lograr objetivos
+              orientados a Branding y Performance (eCommerce, Apps, Leads)
+            </b-card>
+          </b-collapse>
+          <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
+            <div class="single-chart">
+              <svg viewBox="0 0 36 36" class="circular-chart third">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <path
-              class="circle"
-              stroke-dasharray="35, 100"
-              d="M18 2.0845
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="35, 100"
+                  d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <text x="18" y="20.35" class="percentage third">35%</text>
-          </svg>
-        </div>
-        <p class="text">Implementación</p>
-      </b-button>
-      <b-collapse id="collapse-2">
-        <b-card class="collapse-content">I am collapsible content!</b-card>
-      </b-collapse>
-      <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
-        <div class="single-chart">
-          <svg viewBox="0 0 36 36" class="circular-chart secondary">
-            <path
-              class="circle-bg"
-              d="M18 2.0845
+                />
+                <text x="18" y="20.35" class="percentage third">35%</text>
+              </svg>
+            </div>
+            <p class="text">Implementación</p>
+          </b-button>
+          <b-collapse id="collapse-2">
+            <b-card class="collapse-content">I am collapsible content!</b-card>
+          </b-collapse>
+          <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
+            <div class="single-chart">
+              <svg viewBox="0 0 36 36" class="circular-chart secondary">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <path
-              class="circle"
-              stroke-dasharray="20, 100"
-              d="M18 2.0845
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="20, 100"
+                  d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-            />
-            <text x="18" y="20.35" class="percentage secondary">20%</text>
-          </svg>
-        </div>
-        <p class="text">Consultoría</p>
-      </b-button>
-      <b-collapse id="collapse-3">
-        <b-card class="collapse-content">I am collapsible content!</b-card>
-      </b-collapse>
+                />
+                <text x="18" y="20.35" class="percentage secondary">20%</text>
+              </svg>
+            </div>
+            <p class="text">Consultoría</p>
+          </b-button>
+          <b-collapse id="collapse-3">
+            <b-card class="collapse-content">I am collapsible content!</b-card>
+          </b-collapse>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
@@ -97,6 +114,22 @@ export default {}
   display: flex;
   flex-direction: column;
   padding: 4rem 1.6rem;
+  .content-container {
+    .title-content {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .detail-content {
+      padding-right: 5rem;
+      font-weight: 100;
+      color: rgba(10, 10, 11, 0.64);
+    }
+  }
+  @media (max-width: 600px) {
+    .content-container {
+      display: none;
+    }
+  }
   .subtitle {
     font-weight: 700;
     color: $typography;
@@ -113,7 +146,15 @@ export default {}
     margin-bottom: 3.3rem;
     padding-right: 5rem;
   }
+  @media (min-width: 600px) {
+    .title {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      padding-right: 11rem;
+    }
+  }
   .button-colapse {
+    width: 100%;
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -121,7 +162,10 @@ export default {}
     align-items: center;
     border: initial;
     margin-bottom: 1rem;
-
+    &:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 1rem;
+    }
     &:focus {
       border: initial;
       box-shadow: initial;
@@ -183,6 +227,16 @@ export default {}
           fill: $third;
         }
       }
+    }
+    @media (min-width: 600px) {
+      .single-chart {
+        width: 6rem;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    .collapse-content {
+      display: none;
     }
   }
 

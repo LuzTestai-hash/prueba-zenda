@@ -1,5 +1,5 @@
 <template>
-  <div class="methodology-background">
+  <div id="methodology" class="methodology-background">
     <b-container class="methodology-container">
       <div class="hand-container">
         <p class="subtitle">METODOLOGÍA.</p>

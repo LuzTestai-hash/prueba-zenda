@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-background">
+  <div id="contact" class="contact-background">
     <b-container class="contact-container">
       <p class="subtitle">CONTACTO.</p>
       <h1 class="email">info@zenda.com.ar</h1>
