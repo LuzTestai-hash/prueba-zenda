@@ -1,8 +1,11 @@
 <template>
-  <div class="client-background">
+  <div id="clients" class="client-background">
     <b-container class="client-container">
-      <div class="hand-container">
-        <HandMoveIcon :color="'#fff'" />
+      <div class="title-container">
+        <p class="subtitle">CASOS DE ÉXITO.</p>
+        <div class="hand-container">
+          <HandMoveIcon :color="'#fff'" />
+        </div>
       </div>
 
       <VueSlickCarousel v-bind="settings">
@@ -14,6 +17,9 @@
           />
         </div>
       </VueSlickCarousel>
+      <div class="arrow-animation">
+        <img src="../assets/icons/arrow.svg" width="100" height="100" />
+      </div>
     </b-container>
   </div>
 </template>
@@ -48,29 +54,21 @@ export default {
         arrows: false,
         infinite: false,
         initialSlide: 0,
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        centerMode: true,
+        centerPadding: '150px',
+        focusOnSelect: true,
+        slidesToShow: 1,
+        speed: 500,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              infinite: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
+              centerPadding: '0px',
               slidesToShow: 1,
               slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
+              centerMode: false,
+              focusOnSelect: false,
+              speed: 200,
             },
           },
         ],
@@ -89,10 +87,44 @@ export default {
   .client-container {
     min-height: 100vh;
     padding: 3rem 1.6rem;
-    .hand-container {
+    .title-container {
       display: flex;
-      justify-content: flex-end;
-      margin-bottom: 2rem;
+      justify-content: space-between;
+      .subtitle {
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.02rem;
+        line-height: 1.2rem;
+        margin-bottom: 5rem;
+      }
+    }
+    .arrow-animation {
+      margin-top: 2rem;
+      margin-left: 10rem;
+      display: flex;
+      justify-content: center;
+      animation: arrow-move 3s ease-out infinite;
+    }
+    @keyframes arrow-move {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(0.5em);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    @media (min-width: 1024px) {
+      .hand-container {
+        display: none;
+      }
+    }
+    @media (max-width: 1024px) {
+      .arrow-animation {
+        display: none;
+      }
     }
   }
 }

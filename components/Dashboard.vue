@@ -1,15 +1,20 @@
 <template>
-  <div class="dashboard-background">
+  <div id="dashboard" class="dashboard-background">
     <b-container class="dashboard-container">
-      <div class="hand-container">
+      <div class="title-container">
         <p class="subtitle">PANEL DE CONTROL.</p>
-        <HandMoveIcon :color="'#fff'" />
+        <div class="hand-container">
+          <HandMoveIcon :color="'#fff'" />
+        </div>
       </div>
-      <VueSlickCarousel :dots="false" :arrows="false">
+      <VueSlickCarousel :dots="false" :arrows="false" v-bind="settings">
         <div v-for="data in dashboarddata" :key="data.id">
           <DashboardCard :detail="data.detail" />
         </div>
       </VueSlickCarousel>
+      <div class="arrow-animation">
+        <img src="../assets/icons/arrow.svg" width="100" height="100" />
+      </div>
     </b-container>
   </div>
 </template>
@@ -35,6 +40,30 @@ export default {
             'Nuestro HUB compartido para mejorar la colaboración entre los equipos.',
         },
       ],
+      settings: {
+        dots: false,
+        arrows: false,
+        infinite: false,
+        initialSlide: 0,
+        centerMode: true,
+        centerPadding: '150px',
+        focusOnSelect: true,
+        slidesToShow: 1,
+        speed: 500,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              centerPadding: '0px',
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: false,
+              focusOnSelect: false,
+              speed: 200,
+            },
+          },
+        ],
+      },
     }
   },
 }
@@ -49,7 +78,7 @@ export default {
   .dashboard-container {
     min-height: 100vh;
     padding: 4rem 1.6rem;
-    .hand-container {
+    .title-container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -59,6 +88,34 @@ export default {
         letter-spacing: 0.02rem;
         line-height: 1.2rem;
         margin-bottom: 5rem;
+      }
+    }
+    .arrow-animation {
+      margin-top: 2rem;
+      margin-left: 10rem;
+      display: flex;
+      justify-content: center;
+      animation: arrow-move 3s ease-out infinite;
+    }
+    @keyframes arrow-move {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(0.5em);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    @media (min-width: 1024px) {
+      .hand-container {
+        display: none;
+      }
+    }
+    @media (max-width: 1024px) {
+      .arrow-animation {
+        display: none;
       }
     }
   }
