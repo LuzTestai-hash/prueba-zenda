@@ -1,8 +1,8 @@
 <template>
   <div class="hearder-container">
     <nav>
-      <b-container class="client-container">
-        <a href="/">
+      <b-container>
+        <a href="/" class="logo">
           <img src="../assets/icons/Zenda-Logo.svg" width="70" height="70" />
         </a>
       </b-container>
@@ -58,6 +58,9 @@
 
 <style lang="scss" scoped>
 .hearder-container {
+  .logo {
+    margin-top: 6rem;
+  }
   .section-bottom-container {
     position: fixed;
     display: flex;

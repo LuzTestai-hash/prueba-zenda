@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <Welcome />
     <WeZenda />
     <WhatWeDo />
