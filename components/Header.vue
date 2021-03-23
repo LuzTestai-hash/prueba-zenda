@@ -3,7 +3,7 @@
     <nav>
       <b-container class="client-container">
         <a href="/">
-          <img src="../assets/icons/Zenda-Logo.svg" width="70" height="70" />
+          <img src="../assets/icons/zenda-logo.svg" width="70" height="70" />
         </a>
       </b-container>
       <!-- <ul class="">
