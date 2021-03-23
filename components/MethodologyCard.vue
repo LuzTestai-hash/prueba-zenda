@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <b-row class="containerIcon">
-      <b-col cols="8"> </b-col>
+      <b-col cols="7"> </b-col>
       <b-col class="col-icon">
         <div v-if="icon === 'knowledge'">
           <img src="../assets/icons/knowledge.svg" width="60" height="60" />
@@ -26,9 +26,9 @@
       <b-col class="containerNumber">
         <p class="number">{{ number }}</p>
       </b-col>
-      <b-col cols="9">
+      <b-col cols="8">
         <p :class="color">{{ title }}</p>
-        <p class="detail">
+        <p :class="classdetail">
           {{ detail }}
         </p>
       </b-col>
@@ -57,7 +57,7 @@ export default {
   }
   .containerIcon {
     border-bottom: 1px solid;
-    margin-right: 2rem;
+    margin-right: auto;
   }
   .col-icon {
     padding: initial;
@@ -95,7 +95,7 @@ export default {
   }
   .knowledge {
     font-family: 'Recoleta Alt', serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     &.primary {
       color: $primary;
