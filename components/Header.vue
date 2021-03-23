@@ -19,32 +19,42 @@
       </ul> -->
     </nav>
     <div class="section-bottom-container">
-      <p v-scroll-to="'#we-zenda'" class="section">Somos Zenda</p>
-      <p v-scroll-to="'#what-we-do'" class="section">Qué hacemos</p>
-      <p v-scroll-to="'#clients'" class="section">Clientes</p>
-      <p v-scroll-to="'#we-zenda'" class="section">Casos de éxito</p>
-      <p v-scroll-to="'#agile-process'" class="section">Metodología</p>
-      <p v-scroll-to="'#dashboard'" class="section">Herramientas y medios</p>
-      <p v-scroll-to="'#we-zenda'" class="section">Servicio</p>
-      <p v-scroll-to="'#contact'" class="section">Contacto</p>
+      <p v-scroll-to="{ element: '#we-zenda', duration: 3000 }" class="section">
+        Somos Zenda
+      </p>
+      <p
+        v-scroll-to="{ element: '#what-we-do', duration: 3000 }"
+        class="section"
+      >
+        Qué hacemos
+      </p>
+      <p v-scroll-to="{ element: '#clients', duration: 3000 }" class="section">
+        Clientes
+      </p>
+      <p v-scroll-to="{ element: '#we-zenda', duration: 3000 }" class="section">
+        Casos de éxito
+      </p>
+      <p
+        v-scroll-to="{ element: '#agile-process', duration: 3000 }"
+        class="section"
+      >
+        Metodología
+      </p>
+      <p
+        v-scroll-to="{ element: '#dashboard', duration: 3000 }"
+        class="section"
+      >
+        Herramientas y medios
+      </p>
+      <p v-scroll-to="{ element: '#we-zenda', duration: 3000 }" class="section">
+        Servicio
+      </p>
+      <p v-scroll-to="{ element: '#contact', duration: 3000 }" class="section">
+        Contacto
+      </p>
     </div>
   </div>
 </template>
-
-<script>
-import Vue from 'vue'
-import VueScrollTo from 'vue-scrollto'
-Vue.use(VueScrollTo, {
-  container: 'body',
-  duration: 500,
-  easing: 'ease',
-})
-
-export default {
-  name: 'App',
-  components: {},
-}
-</script>
 
 <style lang="scss" scoped>
 .hearder-container {
