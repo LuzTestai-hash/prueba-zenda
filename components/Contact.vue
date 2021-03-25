@@ -57,7 +57,8 @@ export default {}
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 4rem 1.6rem;
+  justify-content: center;
+  padding: 0 1.6rem;
   .subtitle {
     font-weight: 700;
     color: white;
