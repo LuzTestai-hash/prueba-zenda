@@ -50,7 +50,7 @@ export default {}
 .weZenda-background {
   background-color: $background-black;
   .weZenda-container {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     color: white;
@@ -61,6 +61,7 @@ export default {}
     }
     .special-title {
       font-family: 'Recoleta Alt', serif;
+      text-decoration: underline;
     }
     .detail {
       font-weight: 100;
@@ -69,9 +70,18 @@ export default {}
       line-height: 1.9rem;
     }
     @media (min-width: 600px) {
+      .title {
+        font-weight: 400;
+        margin-bottom: 2rem;
+        font-size: 1.3rem;
+      }
+      .special-title {
+        font-weight: 700;
+      }
       .detail {
         text-decoration: initial;
-        padding-right: 1rem;
+        padding-right: 2rem;
+        font-size: 1.2rem;
       }
     }
     .button-colapse {
@@ -121,6 +131,10 @@ export default {}
     @media (min-width: 600px) {
       .button-colapse {
         padding-left: 2rem;
+        .text {
+          font-size: 1.6rem;
+          font-weight: 100;
+        }
       }
     }
     .collapse-content {

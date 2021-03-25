@@ -19,7 +19,13 @@
         </b-col>
         <b-col md="6">
           <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
-            <div class="single-chart">
+            <div
+              v-observe-visibility="{
+                callback: isViewableNow,
+                throttle: 300,
+              }"
+              :class="`single-chart ${showAnimation}`"
+            >
               <svg viewBox="0 0 36 36" class="circular-chart primary">
                 <path
                   class="circle-bg"
@@ -47,7 +53,13 @@
             </b-card>
           </b-collapse>
           <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
-            <div class="single-chart">
+            <div
+              v-observe-visibility="{
+                callback: isViewableNow,
+                throttle: 300,
+              }"
+              :class="`single-chart ${showAnimation}`"
+            >
               <svg viewBox="0 0 36 36" class="circular-chart third">
                 <path
                   class="circle-bg"
@@ -71,7 +83,13 @@
             <b-card class="collapse-content">I am collapsible content!</b-card>
           </b-collapse>
           <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
-            <div class="single-chart">
+            <div
+              v-observe-visibility="{
+                callback: isViewableNow,
+                throttle: 300,
+              }"
+              :class="`single-chart ${showAnimation}`"
+            >
               <svg viewBox="0 0 36 36" class="circular-chart secondary">
                 <path
                   class="circle-bg"
@@ -101,7 +119,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      showAnimation: false,
+    }
+  },
+  methods: {
+    isViewableNow(isVisible, entry) {
+      this.showAnimation = isVisible
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -113,6 +142,7 @@ export default {}
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 4rem 1.6rem;
   .content-container {
     .title-content {
@@ -190,17 +220,19 @@ export default {}
         stroke: #fff;
         stroke-width: 3.8;
       }
-
       .circle {
         fill: none;
         stroke-width: 2.8;
         stroke-linecap: round;
-        animation: progress 1s ease-out forwards;
       }
-
-      @keyframes progress {
-        0% {
-          stroke-dasharray: 0 100;
+      &.true {
+        .circle {
+          animation: progress 1s ease-out forwards;
+        }
+        @keyframes progress {
+          0% {
+            stroke-dasharray: 0 100;
+          }
         }
       }
 
@@ -229,8 +261,11 @@ export default {}
       }
     }
     @media (min-width: 600px) {
+      .text {
+        font-size: 1.4rem;
+      }
       .single-chart {
-        width: 6rem;
+        width: 6.5rem;
       }
     }
   }

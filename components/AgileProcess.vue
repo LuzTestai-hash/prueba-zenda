@@ -7,7 +7,13 @@
         </b-col>
         <b-col md="6">
           <p class="title-mobile">Filosofía.</p>
-          <div class="circles-container">
+          <div
+            v-observe-visibility="{
+              callback: isViewableNow,
+              throttle: 300,
+            }"
+            :class="`circles-container ${showAnimation}`"
+          >
             <div class="circle secondary">
               <p class="circle-text">DATA.</p>
             </div>
@@ -47,7 +53,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      showAnimation: false,
+    }
+  },
+  methods: {
+    isViewableNow(isVisible, entry) {
+      this.showAnimation = isVisible
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -103,27 +120,18 @@ export default {}
         margin-bottom: 0;
       }
       &.secondary {
-        animation-name: secondary-circle;
-        animation-duration: 4s;
-        animation-fill-mode: forwards;
         transform: translate(-4rem, 3rem);
         background-color: $secondary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.primary {
-        animation-name: primary-circle;
-        animation-duration: 4s;
-        animation-fill-mode: forwards;
         transform: translate(0, -3.5rem);
         background-color: $primary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.third {
-        animation-name: third-circle;
-        animation-duration: 4s;
-        animation-fill-mode: forwards;
         transform: translate(3rem, 3rem);
         background: rgba(149, 214, 234, 0.9);
         opacity: 0.9;
@@ -131,15 +139,38 @@ export default {}
       }
       &.white {
         .circle-text {
-          animation-name: text-white-circle;
-          animation-duration: 4s;
-          animation-fill-mode: forwards;
           font-family: 'Recoleta Alt', serif;
           font-weight: 900;
           font-size: 1.3rem;
           transform: rotate(360deg);
           color: black;
-          z-index: 10;
+          z-index: 2;
+        }
+      }
+    }
+    &.true {
+      .circle {
+        &.secondary {
+          animation-name: secondary-circle;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
+        }
+        &.primary {
+          animation-name: primary-circle;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
+        }
+        &.third {
+          animation-name: third-circle;
+          animation-duration: 4s;
+          animation-fill-mode: forwards;
+        }
+        &.white {
+          .circle-text {
+            animation-name: text-white-circle;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+          }
         }
       }
     }
