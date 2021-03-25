@@ -66,7 +66,7 @@ export default {
     padding: 4rem 1.6rem;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     .subtitle {
       font-size: 1.2rem;
       color: $subtitle;

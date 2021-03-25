@@ -87,7 +87,7 @@
         v-bind="settings"
         class="container-trademarks"
       >
-        <p v-for="item in category.Medios" :key="item">
+        <p v-for="(item, index) in category.Medios" :key="index">
           {{ item }}
         </p>
       </div>
@@ -96,7 +96,7 @@
         v-bind="settings"
         class="container-trademarks"
       >
-        <p v-for="item in category.Data" :key="item">
+        <p v-for="(item, index) in category.Data" :key="index">
           {{ item }}
         </p>
       </div>
@@ -105,7 +105,7 @@
         v-bind="settings"
         class="container-trademarks"
       >
-        <p v-for="item in category.Flow" :key="item">
+        <p v-for="(item, index) in category.Flow" :key="index">
           {{ item }}
         </p>
       </div>
