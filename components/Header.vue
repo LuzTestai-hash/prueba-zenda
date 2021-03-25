@@ -1,201 +1,275 @@
 <template>
-  <div class="header-container">
-    <nav>
-      <b-container class="client-container">
-        <a href="/">
-          <img src="../assets/icons/Zenda-Logo.svg" width="70" height="70" />
-        </a>
-      </b-container>
-      <!-- <ul class="">
-        <li>Somos Zenda</li>
-        <li>Qué hacemos</li>
-        <li>Qué hacemos</li>
-        <li>Clientes</li>
-        <li>Casos de éxito</li>
-        <li>Metodología</li>
-        <li>Herramientas y medios</li>
-        <li>Servicio</li>
-        <li>Contacto</li>
-      </ul> -->
-    </nav>
-    <div class="section-bottom-container">
-      <p
-        v-scroll-to="{
-          element: '#we-zenda',
-          duration: 3000,
-          onStart: onStart,
-        }"
-        class="section"
-        :class="{
-          active: seccionSelected === 'we-zenda',
-        }"
-      >
-        {{ isVisible }}
-        Somos Zenda
-      </p>
-      <p
-        v-scroll-to="{
-          element: '#what-we-do',
-          duration: 3000,
-          onStart: onStart,
-        }"
-        class="section"
-        :class="{
-          active: seccionSelected === 'what-we-do',
-        }"
-      >
-        Qué hacemos
-      </p>
-      <p
-        v-scroll-to="{
-          element: '#methodology',
-          duration: 3000,
-          onStart: onStart,
-        }"
-        class="section"
-        :class="{
-          active: seccionSelected === 'methodology',
-        }"
-      >
-        Metodología
-      </p>
-      <p
-        v-scroll-to="{ element: '#clients', duration: 3000, onStart: onStart }"
-        class="section"
-        :class="{
-          active: seccionSelected === 'clients',
-        }"
-      >
-        Clientes
-      </p>
-      <p
-        v-scroll-to="{
-          element: '#dashboard',
-          duration: 3000,
-          onStart: onStart,
-        }"
-        class="section"
-        :class="{
-          active: seccionSelected === 'dashboard',
-        }"
-      >
-        Panel de Control
-      </p>
-      <p
-        v-scroll-to="{ element: '#contact', duration: 3000, onStart: onStart }"
-        class="section"
-        :class="{
-          active: seccionSelected === 'contact',
-        }"
-      >
-        Contacto
-      </p>
+  <header>
+    <div class="wrap">
+      <div id="hamburger" @click="display_menu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <img src="../assets/icons/zenda-logo.svg" alt="logo" class="logo" />
+
+      <nav id="menu">
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Somos <span class="zenda-text">Zenda</span></p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Qué hacemos</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Clientes</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Casos de éxito</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Metodología</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Herramientas y medios</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Servicios</p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="arrow-container">
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+            />
+            <p>Contacto</p>
+          </div>
+        </div>
+      </nav>
     </div>
-  </div>
+  </header>
 </template>
+
 <script>
 export default {
-  data() {
-    return {
-      seccionSelected: '',
-    }
-  },
-  mounted() {
-    // we zenda
-    const weZenda = document.querySelector('#we-zenda')
-    const topWeZenda = weZenda.getBoundingClientRect().top
-    // what we do
-    const WhatWeDo = document.querySelector('#what-we-do')
-    const topWhatWeDo = WhatWeDo.getBoundingClientRect().top
-    // methodology
-    const methodology = document.querySelector('#methodology')
-    const topMethodology = methodology.getBoundingClientRect().top
-    // clients
-    const clients = document.querySelector('#clients')
-    const topClients = clients.getBoundingClientRect().top
-    // dashboard
-    const dashboard = document.querySelector('#dashboard')
-    const topDashboard = dashboard.getBoundingClientRect().top
-    // contact
-    const contact = document.querySelector('#contact')
-    const topContact = contact.getBoundingClientRect().top
-    document.addEventListener('scroll', () => {
-      if (window.scrollY === topWeZenda) {
-        this.seccionSelected = 'we-zenda'
-      }
-      if (window.scrollY === topWhatWeDo) {
-        this.seccionSelected = 'what-we-do'
-      }
-      if (window.scrollY === topMethodology) {
-        this.seccionSelected = 'methodology'
-      }
-      if (window.scrollY === topClients) {
-        this.seccionSelected = 'clients'
-      }
-      if (window.scrollY === topDashboard) {
-        this.seccionSelected = 'dashboard'
-      }
-      if (window.scrollY === topContact) {
-        this.seccionSelected = 'contact'
-      }
-      // switch (window.scrollY) {
-      //   case topWeZenda:
-      //     this.seccionSelected = 'we-zenda'
-      //     break
-      //   case topWhatWeDo:
-      //     this.seccionSelected = 'what-we-do'
-      //     break
-      //   case topMethodology:
-      //     this.seccionSelected = 'methodology'
-      //     break
-      //   case topClients:
-      //     this.seccionSelected = 'clients'
-      //     break
-      //   case topDashboard:
-      //     this.seccionSelected = 'dashboard'
-      //     break
-      //   case topContact:
-      //     this.seccionSelected = 'contact'
-      //     break
-      //   default:
-      //     return this.seccionSelected
-      // }
-      console.log(this.seccionSelected)
-    })
-  },
   methods: {
-    onStart(info) {
-      this.seccionSelected = info.id
+    display_menu() {
+      const body = document.getElementsByTagName('body')[0]
+      !body.classList.contains('display_menu')
+        ? body.classList.add('display_menu')
+        : body.classList.remove('display_menu')
     },
   },
 }
 </script>
+
 <style lang="scss" scoped>
-.header-container {
-  .section-bottom-container {
-    z-index: 1;
-    opacity: 1;
-    position: fixed;
+@import '../assets/stylesheets/components/colors';
+header {
+  display: flex;
+  z-index: 3;
+  padding: 1rem 5rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transition: 0.33s;
+  .wrap {
+    width: 100%;
     display: flex;
-    align-items: center;
-    bottom: 0;
-    left: 0;
-    margin-left: 4rem;
-    padding: 1rem;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    height: 10vh;
-    margin-bottom: 1rem;
-    .section {
-      margin-bottom: 0.5rem !important;
-      margin-top: 0.5rem !important;
-      padding: 0.6rem 1rem;
-      cursor: pointer;
+    flex-direction: row;
+    align-items: flex-start;
+    .logo {
+      width: 4rem;
     }
-    .active {
-      background: #0a0a0b;
-      border-radius: 8px;
-      color: #fff;
+    #menu {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .section {
+        .arrow-container {
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 2rem;
+          .arrow {
+            width: 2rem;
+            margin-right: 1rem;
+          }
+          p {
+            margin-bottom: initial;
+            color: #3e3a37;
+            font-size: 1.4rem;
+            transition: 0.15s;
+          }
+          .zenda-text {
+            color: $primary;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+#hamburger {
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  top: 3rem;
+  display: none;
+  transform: translateY(-50%);
+  span {
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #3e3a37;
+    display: block;
+    transition: 0.33s;
+    &:nth-child(1) {
+      width: 24px;
+    }
+    &:nth-child(2) {
+      width: 12px;
+    }
+    &:nth-child(3) {
+      width: 24px;
+    }
+  }
+}
+
+.display_menu {
+  header {
+    .logo {
+      display: none;
+    }
+    #hamburger {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 5px);
+      }
+      span:nth-child(2) {
+        width: 24px;
+        transform: rotate(-45deg);
+      }
+      span:nth-child(3) {
+        transform: rotate(45deg) translate(-4px, -5px);
+      }
+    }
+  }
+}
+@media screen and (min-width: 660px) {
+  header {
+    .wrap {
+      #menu {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  header {
+    padding: 0;
+    background-color: #fff;
+    position: fixed;
+    .wrap {
+      padding: 1rem;
+      .logo {
+        width: 4rem;
+      }
+      #menu {
+        width: 100%;
+        display: flex;
+        height: 0;
+        transform-origin: 50% 0;
+        transition: 0.33s ease;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .section {
+          display: none;
+          transition: 0.25s ease;
+          p {
+            color: #3e3a37;
+          }
+        }
+      }
+    }
+  }
+
+  header #hamburger {
+    display: block;
+  }
+
+  .display_menu header #menu {
+    height: 100vh;
+    .section {
+      transition: 0.25s ease;
+      opacity: 1;
+      display: block;
+      margin-left: 2rem;
+    }
+  }
+}
+@media screen and(max-width: 660px) and(max-height: 500px) {
+  .display_menu header {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+  header #menu .section {
+    height: 2rem;
+    p {
+      line-height: 1rem;
+    }
+  }
+  .display_menu header #menu {
+    .section {
+      height: 2rem;
     }
   }
 }
