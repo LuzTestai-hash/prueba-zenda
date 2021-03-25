@@ -90,6 +90,7 @@
           </div>
         </div>
       </nav>
+    </div>
   </header>
 </template>
 
