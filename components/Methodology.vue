@@ -1,9 +1,11 @@
 <template>
   <div id="methodology" class="methodology-background">
     <b-container class="methodology-container">
-      <div class="hand-container">
+      <div class="title-container">
         <p class="subtitle">METODOLOGÍA.</p>
-        <HandMoveIcon :color="'#000'" />
+        <div class="hand-container">
+          <HandMoveIcon :color="'#000'" />
+        </div>
       </div>
       <VueSlickCarousel
         class="d-block d-md-none"
@@ -48,6 +50,20 @@
         </div>
       </div>
     </b-container>
+    <svg
+      id="svg"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-300 0 950 270"
+      class="wave"
+    >
+      <path
+        d="M-314,267 C105,364 400,100 812,279"
+        fill="none"
+        stroke="#fafafa"
+        stroke-width="120"
+        stroke-linecap="round"
+      />
+    </svg>
   </div>
 </template>
 
@@ -155,12 +171,19 @@ export default {
 @import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 @import '../assets/stylesheets/components/colors';
 .methodology-background {
+  position: relative;
   background: white;
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
   .methodology-container {
     min-height: 100vh;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 15rem 4rem;
 
-    .hand-container {
+    .title-container {
       display: flex;
       justify-content: space-between;
       .subtitle {
@@ -170,6 +193,11 @@ export default {
         letter-spacing: 0.02rem;
         line-height: 1.2rem;
         margin-bottom: 2rem;
+      }
+    }
+    @media (min-width: 600px) {
+      .hand-container {
+        display: none;
       }
     }
 
@@ -220,6 +248,23 @@ export default {
       font-family: 'Recoleta Alt', serif;
       font-size: 2.5rem;
       font-weight: 700;
+    }
+    @media (min-width: 1440px) {
+      .title-desktop {
+        font-size: 4rem;
+        margin-bottom: 6rem;
+      }
+      .number {
+        font-size: 4rem;
+      }
+      .knowledge {
+        font-size: 2rem;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    .methodology-container {
+      padding: 4rem 0 15rem 0;
     }
   }
 }

@@ -48,14 +48,6 @@ export default {
   .title {
     color: white;
   }
-  @media (min-width: 600px) {
-    .title {
-      margin-top: 2rem;
-      font-size: 2rem;
-      margin-left: 1rem;
-      color: white;
-    }
-  }
   .card-text {
     margin-top: 2rem;
     font-weight: 100;
@@ -63,8 +55,28 @@ export default {
     min-height: 15rem;
   }
   @media (min-width: 600px) {
+    .title {
+      margin-top: 2rem;
+      font-size: 2rem;
+      margin-left: 1rem;
+      color: white;
+    }
     .card-text {
       height: 12rem;
+      padding-left: 4rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .title {
+      margin-top: 2rem;
+      font-size: 3rem;
+      margin-left: 1rem;
+      color: white;
+    }
+    .card-text {
+      font-size: 1.3rem;
+      height: 18rem;
       padding-left: 4rem;
     }
   }
@@ -106,6 +118,11 @@ export default {
       border-top: 1px solid $third;
       .detail {
         color: $third;
+      }
+    }
+    @media (min-width: 1440px) {
+      .detail {
+        font-size: 2rem;
       }
     }
   }

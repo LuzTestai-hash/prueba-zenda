@@ -1,7 +1,7 @@
 <template>
   <div class="trustus-background">
     <b-container class="trustus-container">
-      <p class="subtitle">Confia en nosotros</p>
+      <p class="subtitle">Confian en nosotros</p>
       <div class="d-block d-md-none">
         <VueSlickCarousel v-bind="settings">
           <div>
@@ -61,17 +61,22 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .trustus-background {
-  background: white;
+  background: #fafafa;
   .trustus-container {
     padding: 4rem 1.6rem;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    min-height: 40vh;
     .subtitle {
       font-size: 1.2rem;
-      color: $subtitle;
+      color: rgba(10, 10, 11, 0.45);
       text-align: center;
       margin-bottom: 3rem;
+    }
+    @media (min-width: 1440px) {
+      .subtitle {
+        font-size: 1.8rem;
+      }
     }
     .trademarks {
       font-size: 1.5rem;

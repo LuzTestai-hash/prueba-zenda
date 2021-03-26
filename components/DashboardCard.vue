@@ -40,6 +40,21 @@ export default {
       margin-right: 2rem;
     }
   }
+  @media (min-width: 1440px) {
+    .text {
+      font-weight: 100;
+      font-size: 3.5rem;
+      line-height: 5rem;
+    }
+    .button {
+      border-radius: 6rem;
+      padding: 1rem;
+      p {
+        font-size: 1.5rem;
+        margin-right: 3rem;
+      }
+    }
+  }
 }
 @media (min-width: 1024px) {
   .dashboardCard-container {
