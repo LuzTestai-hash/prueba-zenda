@@ -10,7 +10,14 @@
 
       <nav id="menu">
         <div class="section">
-          <div class="arrow-container">
+          <div
+            v-scroll-to="{
+              element: '#we-zenda',
+              duration: 3000,
+              onStart: onStart,
+            }"
+            class="arrow-container"
+          >
             <img
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
@@ -20,7 +27,14 @@
           </div>
         </div>
         <div class="section">
-          <div class="arrow-container">
+          <div
+            v-scroll-to="{
+              element: '#what-we-do',
+              duration: 3000,
+              onStart: onStart,
+            }"
+            class="arrow-container"
+          >
             <img
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
@@ -50,7 +64,14 @@
           </div>
         </div>
         <div class="section">
-          <div class="arrow-container">
+          <div
+            v-scroll-to="{
+              element: '#methodology',
+              duration: 3000,
+              onStart: onStart,
+            }"
+            class="arrow-container"
+          >
             <img
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
@@ -80,7 +101,14 @@
           </div>
         </div>
         <div class="section">
-          <div class="arrow-container">
+          <div
+            v-scroll-to="{
+              element: '#contact',
+              duration: 3000,
+              onStart: onStart,
+            }"
+            class="arrow-container"
+          >
             <img
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
@@ -102,6 +130,11 @@ export default {
       !body.classList.contains('display_menu')
         ? body.classList.add('display_menu')
         : body.classList.remove('display_menu')
+    },
+    onStart(info) {
+      this.seccionSelected = info.id
+      const body = document.getElementsByTagName('body')[0]
+      body.classList.remove('display_menu')
     },
   },
 }

@@ -88,51 +88,6 @@ export default {
       this.seccionSelected = data
     })
   },
-  mounted() {
-    // // we zenda
-    // const weZenda = document.querySelector('#we-zenda')
-    // const topWeZenda = weZenda.getBoundingClientRect().top
-    // const bottomWeZenda = weZenda.getBoundingClientRect().bottom
-    // // what we do
-    // const WhatWeDo = document.querySelector('#what-we-do')
-    // const topWhatWeDo = WhatWeDo.getBoundingClientRect().top
-    // const bottomWhatWeDo = WhatWeDo.getBoundingClientRect().bottom
-    // // methodology
-    // const methodology = document.querySelector('#methodology')
-    // const topMethodology = methodology.getBoundingClientRect().top
-    // const bottomMethodology = methodology.getBoundingClientRect().bottom
-    // // clients
-    // const clients = document.querySelector('#clients')
-    // const topClients = clients.getBoundingClientRect().top
-    // const bottomClients = clients.getBoundingClientRect().bottom
-    // // dashboard
-    // const dashboard = document.querySelector('#dashboard')
-    // const topDashboard = dashboard.getBoundingClientRect().top
-    // const bottomDashboard = dashboard.getBoundingClientRect().bottom
-    // document.addEventListener('scroll', () => {
-    //   if (window.scrollY >= topWeZenda && window.scrollY <= bottomWeZenda) {
-    //     this.seccionSelected = 'we-zenda'
-    //   }
-    //   if (window.scrollY >= topWhatWeDo && window.scrollY <= bottomWhatWeDo) {
-    //     this.seccionSelected = 'what-we-do'
-    //   }
-    //   if (
-    //     window.scrollY >= topMethodology &&
-    //     window.scrollY <= bottomMethodology
-    //   ) {
-    //     this.seccionSelected = 'methodology'
-    //   }
-    //   if (window.scrollY >= topClients && window.scrollY <= bottomClients) {
-    //     this.seccionSelected = 'clients'
-    //   }
-    //   if (window.scrollY >= topDashboard && window.scrollY <= bottomDashboard) {
-    //     this.seccionSelected = 'dashboard'
-    //   }
-    //   if (window.scrollY > bottomDashboard % 2) {
-    //     this.seccionSelected = 'contact'
-    //   }
-    // })
-  },
   methods: {
     onStart(info) {
       this.seccionSelected = info.id
