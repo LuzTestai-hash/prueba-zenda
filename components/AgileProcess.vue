@@ -74,9 +74,10 @@ export default {
 }
 .agile-container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 4rem 1.6rem;
   .subtitle {
     font-weight: 700;
@@ -97,6 +98,12 @@ export default {
   @media (min-width: 600px) {
     .title-mobile {
       display: none;
+    }
+  }
+  @media (min-width: 1440px) {
+    .subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 4rem;
     }
   }
   .circles-container {
@@ -232,6 +239,21 @@ export default {
         text-align: center;
       }
     }
+    @media (min-width: 1440px) {
+      .title {
+        font-size: 4rem;
+        line-height: 4rem;
+        font-weight: 100;
+      }
+      .text-detail {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .agile-container {
+    padding: 4rem 0;
   }
 }
 </style>

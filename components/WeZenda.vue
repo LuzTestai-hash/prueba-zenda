@@ -50,7 +50,7 @@ export default {}
 .weZenda-background {
   background-color: $background-black;
   .weZenda-container {
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     color: white;
@@ -82,6 +82,21 @@ export default {}
         text-decoration: initial;
         padding-right: 2rem;
         font-size: 1.2rem;
+      }
+    }
+    @media (min-width: 1440px) {
+      .title {
+        font-weight: 400;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+      }
+      .special-title {
+        font-weight: 700;
+      }
+      .detail {
+        text-decoration: initial;
+        padding-right: 2rem;
+        font-size: 1.3rem;
       }
     }
     .button-colapse {
@@ -135,10 +150,30 @@ export default {}
           font-size: 1.6rem;
           font-weight: 100;
         }
+        .icon {
+          width: 1rem;
+        }
+      }
+    }
+    @media (min-width: 1440px) {
+      .button-colapse {
+        padding-left: 2rem;
+        .text {
+          font-size: 2rem;
+          font-weight: 100;
+        }
+        .icon {
+          width: 1.5rem;
+        }
       }
     }
     .collapse-content {
       background-color: transparent;
+    }
+  }
+  @media (min-width: 1440px) {
+    .weZenda-container {
+      padding: 4rem 0;
     }
   }
 }

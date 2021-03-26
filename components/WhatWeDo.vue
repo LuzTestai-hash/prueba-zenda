@@ -115,6 +115,20 @@
         </b-col>
       </b-row>
     </b-container>
+    <svg
+      id="svg"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-300 0 950 270"
+      class="wave"
+    >
+      <path
+        d="M-314,267 C105,364 400,100 812,279"
+        fill="none"
+        stroke="#fafafa"
+        stroke-width="120"
+        stroke-linecap="round"
+      />
+    </svg>
   </div>
 </template>
 
@@ -136,14 +150,21 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .whatWeDo-background {
+  position: relative;
   background-color: $background-white;
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
 }
 .whatWeDo-container {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.6rem;
+  padding: 4rem 1.6rem 15rem 1.6rem;
   .content-container {
     .title-content {
       font-weight: bold;
@@ -181,6 +202,18 @@ export default {
       font-size: 3.5rem;
       line-height: 3.5rem;
       padding-right: 11rem;
+      margin-bottom: 4rem;
+    }
+  }
+  @media (min-width: 1440px) {
+    .title {
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+      padding-right: 4rem;
+    }
+    .subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 4rem;
     }
   }
   .button-colapse {
@@ -268,6 +301,14 @@ export default {
         width: 6.5rem;
       }
     }
+    @media (min-width: 1440px) {
+      .text {
+        font-size: 1.5rem;
+      }
+      .single-chart {
+        width: 7rem;
+      }
+    }
   }
   @media (min-width: 600px) {
     .collapse-content {
@@ -281,6 +322,11 @@ export default {
     border: initial;
     border-top: 1px solid rgba(10, 10, 11, 0.29);
     background-color: transparent;
+  }
+}
+@media (min-width: 1440px) {
+  .whatWeDo-container {
+    padding: 8rem 0 20rem 0;
   }
 }
 </style>

@@ -54,16 +54,21 @@ export default {}
 }
 .contact-container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1.6rem;
+  padding: 4rem 1.6rem;
   .subtitle {
     font-weight: 700;
     color: white;
     letter-spacing: 0.02rem;
     line-height: 1.2rem;
+  }
+  @media (min-width: 1440px) {
+    .subtitle {
+      font-size: 1.4rem;
+    }
   }
   .title {
     font-weight: bold;
@@ -86,6 +91,19 @@ export default {}
     background-clip: text;
     -webkit-text-fill-color: transparent;
     word-break: break-all;
+  }
+  @media (min-width: 660px) {
+    .title {
+      display: none;
+    }
+    .email {
+      text-decoration-line: initial;
+    }
+  }
+  @media (min-width: 1440px) {
+    .email {
+      font-size: 6rem;
+    }
   }
   .locations-container {
     display: flex;
@@ -123,6 +141,19 @@ export default {}
         .icon {
           margin-left: 1rem;
           color: $primary;
+        }
+      }
+    }
+  }
+  @media (min-width: 1440px) {
+    .locations-container {
+      margin-top: 3rem;
+      .location {
+        .location-title {
+          font-size: 2.5rem;
+        }
+        .name {
+          font-size: 1.2rem;
         }
       }
     }

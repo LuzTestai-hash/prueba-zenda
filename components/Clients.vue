@@ -64,11 +64,6 @@ export default {
             breakpoint: 1024,
             settings: {
               centerPadding: '0px',
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              centerMode: false,
-              focusOnSelect: false,
-              speed: 200,
             },
           },
         ],
@@ -87,6 +82,9 @@ export default {
   .client-container {
     min-height: 100vh;
     padding: 3rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .title-container {
       display: flex;
       justify-content: space-between;
@@ -96,6 +94,11 @@ export default {
         letter-spacing: 0.02rem;
         line-height: 1.2rem;
         margin-bottom: 5rem;
+      }
+      @media (min-width: 1440px) {
+        .subtitle {
+          font-size: 1.4rem;
+        }
       }
     }
     .arrow-animation {
@@ -125,6 +128,11 @@ export default {
       .arrow-animation {
         display: none;
       }
+    }
+  }
+  @media (min-width: 1024px) {
+    .client-container {
+      padding: 4rem 0;
     }
   }
 }
