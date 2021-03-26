@@ -23,7 +23,7 @@ export default {}
 .welcome-container {
   width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 101vh;
   display: flex;
   flex-direction: column;
   align-items: center;

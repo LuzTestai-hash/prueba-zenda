@@ -87,8 +87,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-bottom: 5rem;
-      margin-top: 5rem;
+
       .trademarks {
         font-size: 1.5rem;
         font-weight: 900;

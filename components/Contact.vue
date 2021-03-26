@@ -54,7 +54,7 @@ export default {}
 }
 .contact-container {
   margin: 0 auto;
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

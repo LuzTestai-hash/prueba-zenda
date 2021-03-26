@@ -57,7 +57,9 @@
         }"
         class="section"
         :class="{
-          active: seccionSelected === 'dashboard',
+          active:
+            seccionSelected === 'dashboard' ||
+            seccionSelected === 'dashboard-tools',
         }"
       >
         Panel de Control
@@ -81,44 +83,9 @@ export default {
       seccionSelected: '',
     }
   },
-  mounted() {
-    // we zenda
-    const weZenda = document.querySelector('#we-zenda')
-    const topWeZenda = weZenda.getBoundingClientRect().top
-    // what we do
-    const WhatWeDo = document.querySelector('#what-we-do')
-    const topWhatWeDo = WhatWeDo.getBoundingClientRect().top
-    // methodology
-    const methodology = document.querySelector('#methodology')
-    const topMethodology = methodology.getBoundingClientRect().top
-    // clients
-    const clients = document.querySelector('#clients')
-    const topClients = clients.getBoundingClientRect().top
-    // dashboard
-    const dashboard = document.querySelector('#dashboard')
-    const topDashboard = dashboard.getBoundingClientRect().top
-    // contact
-    const contact = document.querySelector('#contact')
-    const topContact = contact.getBoundingClientRect().top
-    document.addEventListener('scroll', () => {
-      if (window.scrollY >= topWeZenda) {
-        this.seccionSelected = 'we-zenda'
-      }
-      if (window.scrollY >= topWhatWeDo) {
-        this.seccionSelected = 'what-we-do'
-      }
-      if (window.scrollY >= topMethodology) {
-        this.seccionSelected = 'methodology'
-      }
-      if (window.scrollY >= topClients) {
-        this.seccionSelected = 'clients'
-      }
-      if (window.scrollY >= topDashboard) {
-        this.seccionSelected = 'dashboard'
-      }
-      if (window.scrollY >= topContact) {
-        this.seccionSelected = 'contact'
-      }
+  created() {
+    this.$nuxt.$on('changeNav', (data) => {
+      this.seccionSelected = data
     })
   },
   methods: {
@@ -144,15 +111,19 @@ export default {
     border-radius: 10px;
     height: 10vh;
     margin-bottom: 1rem;
+    transform: translateZ(0);
+    transition-delay: 1s;
     .section {
       margin-bottom: 0.5rem !important;
       margin-top: 0.5rem !important;
       padding: 0.6rem 1rem;
       cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s cubic-bezier(8, 0, 0, 30);
+      transition: all 0.2s linear;
     }
     .active {
       background: #0a0a0b;
-      border-radius: 8px;
       color: #fff;
     }
   }
