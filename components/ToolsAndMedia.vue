@@ -149,7 +149,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .toolsAndMedia-container {
-  padding: 2rem;
+  padding: 4rem 1.6rem;
 
   .subtitle {
     font-weight: 700;
@@ -157,6 +157,12 @@ export default {
     letter-spacing: 0.02rem;
     margin-bottom: 3rem;
     padding-right: 10rem;
+  }
+  @media (min-width: 1440px) {
+    .subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 4rem;
+    }
   }
   .carrusel-container {
     margin-bottom: 2rem;
@@ -211,6 +217,11 @@ export default {
         margin-right: 1rem;
       }
     }
+  }
+}
+@media (min-width: 660px) {
+  .toolsAndMedia-container {
+    padding: 4rem 0;
   }
 }
 </style>
