@@ -15,10 +15,6 @@ export default {}
 @import '../assets/stylesheets/components/colors';
 .welcome-background {
   background-color: $background-white;
-  background-image: url(../assets/icons/zenda-hero.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: 98%;
 }
 .welcome-container {
   width: 100%;
