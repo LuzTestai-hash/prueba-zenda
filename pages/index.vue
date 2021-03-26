@@ -3,7 +3,11 @@
     <Header />
     <NavBottom />
     <Welcome />
-    <WeZenda />
+    <WeZenda
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
     <WhatWeDo />
     <AgileProcess />
     <Methodology />
@@ -11,7 +15,11 @@
     <Clients />
     <ToolsAndMedia />
     <Dashboard />
-    <Contact />
+    <Contact
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
   </div>
 </template>
 
@@ -27,5 +35,12 @@ Vue.use(VueScrollTo, {
 export default {
   name: 'Index',
   components: {},
+  methods: {
+    visibilityChanged(isVisible, entry) {
+      if (isVisible) {
+        this.$nuxt.$emit('changeNav', entry.target.id)
+      }
+    },
+  },
 }
 </script>
