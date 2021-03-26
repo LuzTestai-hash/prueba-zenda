@@ -8,13 +8,33 @@
         callback: visibilityChanged,
       }"
     />
-    <WhatWeDo />
+    <WhatWeDo
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
     <AgileProcess />
-    <Methodology />
+    <Methodology
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
     <TrustUs />
-    <Clients />
-    <ToolsAndMedia />
-    <Dashboard />
+    <Clients
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
+    <ToolsAndMedia
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
+    <Dashboard
+      v-observe-visibility="{
+        callback: visibilityChanged,
+      }"
+    />
     <Contact
       v-observe-visibility="{
         callback: visibilityChanged,

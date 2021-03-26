@@ -66,7 +66,7 @@ export default {
     padding: 4rem 1.6rem;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 70vh;
     .subtitle {
       font-size: 1.2rem;
       color: $subtitle;
@@ -82,8 +82,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-bottom: 5rem;
-      margin-top: 5rem;
+
       .trademarks {
         font-size: 1.5rem;
         font-weight: 900;

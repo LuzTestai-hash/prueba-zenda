@@ -57,7 +57,9 @@
         }"
         class="section"
         :class="{
-          active: seccionSelected === 'dashboard',
+          active:
+            seccionSelected === 'dashboard' ||
+            seccionSelected === 'dashboard-tools',
         }"
       >
         Panel de Control
