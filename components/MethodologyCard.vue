@@ -83,7 +83,10 @@ export default {
     transform: translateY(0.8rem);
   }
   .containerNumber {
-    text-align: center;
+    text-align: start;
+  }
+  .col-8 {
+    padding: 0.1rem 0.5rem;
   }
   .number {
     font-family: 'Recoleta Alt', serif;
