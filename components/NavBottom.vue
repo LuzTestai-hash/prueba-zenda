@@ -112,15 +112,15 @@ export default {
     height: 10vh;
     margin-bottom: 1rem;
     transform: translateZ(0);
-    transition-delay: 1s;
+    transition: transform 1s cubic-bezier(0.4, 0, 0, 1),
+      opacity 1s cubic-bezier(0.4, 0, 0, 1);
     .section {
       margin-bottom: 0.5rem !important;
       margin-top: 0.5rem !important;
       padding: 0.6rem 1rem;
       cursor: pointer;
       border-radius: 8px;
-      transition: all 0.2s cubic-bezier(8, 0, 0, 30);
-      transition: all 0.2s linear;
+      transition: all 2s cubic-bezier(0.4, 0, 0, 1);
     }
     .active {
       background: #0a0a0b;

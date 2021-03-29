@@ -63,10 +63,9 @@ export default {
 .trustus-background {
   background: #fafafa;
   .trustus-container {
-    padding: 4rem 1.6rem;
+    padding: 1rem 1.6rem;
     justify-content: center;
     align-items: center;
-    min-height: 40vh;
     .subtitle {
       font-size: 1.2rem;
       color: rgba(10, 10, 11, 0.45);
@@ -87,6 +86,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-bottom: 1rem;
 
       .trademarks {
         font-size: 1.5rem;
@@ -100,7 +100,7 @@ export default {
 @media (max-width: 768px) {
   .trustus-background {
     .trustus-container {
-      height: 50vh;
+      padding: 1rem 1.6rem 2rem 1.6rem;
     }
   }
 }

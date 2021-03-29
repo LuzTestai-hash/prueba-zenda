@@ -1,8 +1,17 @@
 <template>
   <div class="welcome-background">
     <b-container class="welcome-container">
-      <p class="title">Lideramos</p>
-      <p>proyectos digitales.</p>
+      <div class="container-title">
+        <p class="title">Lideramos</p>
+        <p>proyectos digitales.</p>
+      </div>
+      <div class="d-block d-md-none mt-5">
+        <img
+          src="../assets/icons/zenda-mobile-hero.svg"
+          alt="logo"
+          class="hero"
+        />
+      </div>
     </b-container>
   </div>
 </template>
@@ -17,33 +26,40 @@ export default {}
   background-color: $background-white;
 }
 .welcome-container {
+  padding: 0.1rem !important;
   width: 100%;
   margin: 0 auto;
   min-height: 101vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  p {
-    font-weight: bold;
-    font-size: 2.8rem;
-    line-height: 3rem;
-    text-align: center;
-    letter-spacing: -0.02em;
-    color: $typography;
+  .hero {
+    width: 5rem;
   }
-  .title {
-    text-decoration: underline;
-    margin-bottom: 0;
+  .container-title {
+    p {
+      font-weight: bold;
+      font-size: 2.6rem;
+      line-height: 3rem;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: $typography;
+    }
+    .title {
+      text-decoration: underline;
+      margin-bottom: 0;
+    }
   }
 }
 @media (min-width: 600px) {
   .welcome-background {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     background-image: url(../assets/icons/zenda-hero.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-x: 98%;
+    background-position: 98%;
     .welcome-container {
       display: flex;
       flex-direction: column;

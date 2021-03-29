@@ -50,11 +50,10 @@ export default {}
 .weZenda-background {
   background-color: $background-black;
   .weZenda-container {
-    min-height: 70vh;
     display: flex;
     align-items: center;
     color: white;
-    padding: 4rem 1.6rem;
+    padding: 4rem 1.4rem;
     .title {
       font-weight: 700;
       margin-bottom: 2rem;

@@ -17,7 +17,7 @@
             </p>
           </div>
         </b-col>
-        <b-col md="6">
+        <b-col md="6" class="p-md-5">
           <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
             <div
               v-observe-visibility="{
@@ -157,18 +157,18 @@ export default {
     bottom: 0;
     width: 100%;
     height: auto;
+    z-index: -100;
   }
 }
 .whatWeDo-container {
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.6rem 15rem 1.6rem;
+  padding: 4rem 1.4rem;
   .content-container {
     .title-content {
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     .detail-content {
       padding-right: 5rem;
@@ -195,11 +195,11 @@ export default {
     color: $typography;
     margin-top: 1.2rem;
     margin-bottom: 3.3rem;
-    padding-right: 5rem;
+    padding-right: 3rem;
   }
   @media (min-width: 600px) {
     .title {
-      font-size: 3.5rem;
+      font-size: 2.8rem;
       line-height: 3.5rem;
       padding-right: 11rem;
       margin-bottom: 4rem;
@@ -224,7 +224,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     border: initial;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     &:hover {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border-radius: 1rem;
@@ -236,7 +236,7 @@ export default {
     .text {
       font-size: 1.125rem;
       color: $typography;
-      margin-left: 0.5rem;
+      margin-left: 0.1rem;
     }
     .single-chart {
       width: 33%;
@@ -293,14 +293,6 @@ export default {
         }
       }
     }
-    @media (min-width: 600px) {
-      .text {
-        font-size: 1.4rem;
-      }
-      .single-chart {
-        width: 6.5rem;
-      }
-    }
     @media (min-width: 1440px) {
       .text {
         font-size: 1.5rem;
@@ -322,6 +314,18 @@ export default {
     border: initial;
     border-top: 1px solid rgba(10, 10, 11, 0.29);
     background-color: transparent;
+  }
+}
+@media (min-width: 600px) {
+  .whatWeDo-container {
+    padding: 4rem 1.6rem 11rem 1.6rem;
+
+    .text {
+      font-size: 1.4rem;
+    }
+    .single-chart {
+      width: 6.5rem;
+    }
   }
 }
 @media (min-width: 1440px) {

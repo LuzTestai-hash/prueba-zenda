@@ -149,7 +149,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .toolsAndMedia-container {
-  padding: 4rem 1.6rem;
+  padding: 4rem 1.4rem;
 
   .subtitle {
     font-weight: 700;
@@ -221,7 +221,7 @@ export default {
 }
 @media (min-width: 660px) {
   .toolsAndMedia-container {
-    padding: 4rem 0;
+    padding: 4rem 1.6rem;
   }
 }
 </style>

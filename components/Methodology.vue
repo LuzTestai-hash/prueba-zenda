@@ -27,6 +27,7 @@
 
       <div class="d-none d-md-flex flex-column">
         <p class="title-desktop">Nuestro método.</p>
+        <div class="circle"></div>
         <div class="d-md-flex justify-content-center mt-1">
           <div class="container-first-column">
             <div v-for="item in firstColumn" :key="item.id">
@@ -173,6 +174,7 @@ export default {
 .methodology-background {
   position: relative;
   background: white;
+
   .wave {
     position: absolute;
     bottom: 0;
@@ -180,14 +182,24 @@ export default {
     height: auto;
   }
   .methodology-container {
-    min-height: 100vh;
-    padding: 4rem 2rem 15rem 4rem;
-
+    padding: 5rem 1.9rem;
+    .circle {
+      width: 38rem;
+      height: 32rem;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      top: 184px;
+      margin-left: 9rem;
+      border: solid 1px;
+      opacity: 0.05;
+    }
     .title-container {
       display: flex;
       justify-content: space-between;
       .subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 700;
         color: $typography;
         letter-spacing: 0.02rem;
@@ -203,15 +215,16 @@ export default {
 
     //Desktop
     .container-first-column {
-      max-width: 40%;
+      max-width: 35%;
       div {
-        margin-right: 7rem;
+        margin-right: 4rem;
         margin-bottom: 5rem;
       }
     }
     .container-second-column {
       max-width: 30%;
       margin-top: 5rem;
+      margin-bottom: 2rem;
       div {
         margin-bottom: 5rem;
       }
@@ -222,8 +235,7 @@ export default {
       font-weight: 700;
       transform: translateY(0.8rem);
       letter-spacing: -0.02em;
-      margin-top: 1rem;
-      margin-bottom: 5rem;
+      margin-bottom: 6rem;
     }
     .knowledge {
       font-family: 'Recoleta Alt', serif;
@@ -251,7 +263,7 @@ export default {
     }
     @media (min-width: 1440px) {
       .title-desktop {
-        font-size: 4rem;
+        font-size: 3rem;
         margin-bottom: 6rem;
       }
       .number {
@@ -264,7 +276,7 @@ export default {
   }
   @media (min-width: 600px) {
     .methodology-container {
-      padding: 4rem 0 15rem 0;
+      padding: 4rem 1.6rem;
     }
   }
 }

@@ -74,11 +74,10 @@ export default {
 }
 .agile-container {
   margin: 0 auto;
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.6rem;
+  padding: 3rem 1.4rem;
   .subtitle {
     font-weight: 700;
     color: $typography;
