@@ -4,12 +4,12 @@
       <div class="d-none d-md-flex circle one"></div>
       <div class="d-none d-md-flex circle two"></div>
       <div class="d-none d-md-flex circle three"></div>
-      <div class="title-container">
+      <b-container class="title-container">
         <p class="subtitle">CASOS DE ÉXITO.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
-      </div>
+      </b-container>
 
       <VueSlickCarousel ref="carousel" v-bind="settings">
         <div v-for="data in clientdata" :key="data.id">
@@ -117,7 +117,6 @@ export default {
     .title-container {
       display: flex;
       justify-content: space-between;
-      margin-left: 3rem;
       .subtitle {
         font-weight: 700;
         color: white;
@@ -132,8 +131,8 @@ export default {
       }
     }
     .arrow-animation {
+      width: 100%;
       margin-top: 2rem;
-      margin-left: 10rem;
       display: flex;
       justify-content: center;
       animation: arrow-move 3s ease-out infinite;
@@ -147,7 +146,7 @@ export default {
         transform: translateX(0);
       }
       50% {
-        transform: translateX(0.5em);
+        transform: translateX(0.5rem);
       }
       100% {
         transform: translateX(0);

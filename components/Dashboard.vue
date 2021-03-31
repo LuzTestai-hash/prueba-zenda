@@ -1,12 +1,12 @@
 <template>
   <div id="dashboard" class="dashboard-background">
     <div class="dashboard-container">
-      <div class="title-container">
+      <b-container class="title-container">
         <p class="subtitle">PANEL DE CONTROL.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
-      </div>
+      </b-container>
       <VueSlickCarousel
         ref="carousel"
         :dots="false"
@@ -123,25 +123,13 @@ export default {
     }
     .arrow-animation {
       margin-top: 2rem;
-      margin-left: 10rem;
       display: flex;
       justify-content: center;
-      animation: arrow-move 3s ease-out infinite;
       img:first-child {
         margin-right: 7rem;
       }
     }
-    @keyframes arrow-move {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(0.5em);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
+
     @media (min-width: 1024px) {
       .hand-container {
         display: none;
