@@ -1,5 +1,5 @@
 <template>
-  <div class="clientcard-container">
+  <div :class="`clientcard-container ${title}`">
     <b-row>
       <b-col md="4">
         <p class="title">{{ title }}</p>
@@ -45,6 +45,7 @@ export default {
   padding: 2rem 3rem;
   display: flex;
   align-items: center;
+
   .title {
     color: white;
   }
@@ -162,11 +163,28 @@ export default {
   }
 }
 @media (min-width: 600px) {
+  .slick-slider {
+    padding: 0 -150px;
+  }
+  .slick-list {
+    padding: 0 150px;
+  }
   .clientcard-container {
-    margin-right: 3rem;
     border-radius: 2rem;
-    background-color: rgba(229, 229, 229, 0.07);
+    background-color: rgb(49, 48, 48);
     padding: 2rem 3rem;
+    width: 75%;
+    position: relative;
+    z-index: 1;
+    &.WynDam {
+      margin-left: -2rem;
+    }
+    &.Clue {
+      margin-left: 3rem;
+    }
+    &.Pepe {
+      margin-left: -8rem;
+    }
   }
 }
 </style>

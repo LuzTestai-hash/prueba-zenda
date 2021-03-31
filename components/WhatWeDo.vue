@@ -8,8 +8,28 @@
         <b-col md="6">
           <p class="title">Lo mejor para tu negocio.</p>
           <div class="content-container">
-            <p class="title-content">Estrategias digitales</p>
-            <p class="detail-content">
+            <p v-if="bottomActive === 'first'" class="title-content">
+              Estrategias digitales
+            </p>
+            <p v-if="bottomActive === 'first'" class="detail-content">
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+            <p v-if="bottomActive === 'second'" class="title-content">
+              Segundo botón
+            </p>
+            <p v-if="bottomActive === 'second'" class="detail-content">
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+            <p v-if="bottomActive === 'third'" class="title-content">
+              tercer botón
+            </p>
+            <p v-if="bottomActive === 'third'" class="detail-content">
               Lideramos proyectos digitales implementando eficazmente
               estrategias y procesos de transformación para lograr objetivos
               medibles, alcanzables y relevantes (SMART) para los negocios de
@@ -18,7 +38,13 @@
           </div>
         </b-col>
         <b-col md="6" class="p-md-5">
-          <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
+          <b-button
+            v-b-toggle="'collapse-1'"
+            :class="`button-colapse primary ${
+              bottomActive === 'first' ? 'active' : null
+            }`"
+            @click="textSelected('first')"
+          >
             <div
               v-observe-visibility="{
                 callback: isViewableNow,
@@ -52,7 +78,13 @@
               orientados a Branding y Performance (eCommerce, Apps, Leads)
             </b-card>
           </b-collapse>
-          <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
+          <b-button
+            v-b-toggle="'collapse-2'"
+            :class="`button-colapse third ${
+              bottomActive === 'second' ? 'active' : null
+            }`"
+            @click="textSelected('second')"
+          >
             <div
               v-observe-visibility="{
                 callback: isViewableNow,
@@ -82,7 +114,13 @@
           <b-collapse id="collapse-2">
             <b-card class="collapse-content">I am collapsible content!</b-card>
           </b-collapse>
-          <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
+          <b-button
+            v-b-toggle="'collapse-3'"
+            :class="`button-colapse secondary ${
+              bottomActive === 'third' ? 'active' : null
+            }`"
+            @click="textSelected('third')"
+          >
             <div
               v-observe-visibility="{
                 callback: isViewableNow,
@@ -137,11 +175,15 @@ export default {
   data() {
     return {
       showAnimation: false,
+      bottomActive: 'first',
     }
   },
   methods: {
     isViewableNow(isVisible, entry) {
       this.showAnimation = isVisible
+    },
+    textSelected(selected) {
+      this.bottomActive = selected
     },
   },
 }
@@ -216,6 +258,15 @@ export default {
       margin-bottom: 4rem;
     }
   }
+  .active {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff !important;
+    border-radius: 1rem;
+    border-color: transparent !important;
+  }
+  .btn-secondary:not(:disabled):not(.disabled).active:focus {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
   .button-colapse {
     width: 100%;
     background-color: transparent;
@@ -223,16 +274,13 @@ export default {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    border: initial;
+    border-color: transparent !important;
     margin-bottom: 2rem;
     &:hover {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border-radius: 1rem;
     }
-    &:focus {
-      border: initial;
-      box-shadow: initial;
-    }
+
     .text {
       font-size: 1.125rem;
       color: $typography;

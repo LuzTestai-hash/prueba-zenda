@@ -93,7 +93,7 @@ export default {
         {
           id: 1,
           number: '02',
-          title: 'Planificacion',
+          title: 'Planificación',
           color: 'knowledge secondary',
           icon: 'planning',
           detail:
@@ -103,7 +103,7 @@ export default {
         {
           id: 2,
           number: '03',
-          title: 'Ejecucion',
+          title: 'Ejecución',
           color: 'knowledge third',
           icon: 'execution',
           detail:
@@ -113,7 +113,7 @@ export default {
         {
           id: 3,
           number: '04',
-          title: 'Desafio',
+          title: 'Desafío',
           color: 'knowledge primary',
           icon: 'challenge',
           detail:
@@ -185,14 +185,14 @@ export default {
     padding: 5rem 1.9rem;
     .circle {
       width: 38rem;
-      height: 32rem;
+      height: 33rem;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
       border-radius: 50%;
       position: absolute;
       top: 184px;
-      margin-left: 9rem;
-      border: solid 1px;
+      margin-left: 7rem;
+      border: solid 2px;
       opacity: 0.05;
     }
     .title-container {
@@ -215,16 +215,16 @@ export default {
 
     //Desktop
     .container-first-column {
-      max-width: 35%;
+      max-width: 40%;
       div {
-        margin-right: 4rem;
+        margin-right: 5rem;
         margin-bottom: 5rem;
       }
     }
     .container-second-column {
       max-width: 30%;
       margin-top: 5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 7rem;
       div {
         margin-bottom: 5rem;
       }

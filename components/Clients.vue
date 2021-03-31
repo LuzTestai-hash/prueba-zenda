@@ -1,14 +1,17 @@
 <template>
   <div id="clients" class="client-background">
-    <b-container class="client-container">
-      <div class="title-container">
+    <div class="client-container">
+      <div class="d-none d-md-flex circle one"></div>
+      <div class="d-none d-md-flex circle two"></div>
+      <div class="d-none d-md-flex circle three"></div>
+      <b-container class="title-container">
         <p class="subtitle">CASOS DE ÉXITO.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
-      </div>
+      </b-container>
 
-      <VueSlickCarousel v-bind="settings">
+      <VueSlickCarousel ref="carousel" v-bind="settings">
         <div v-for="data in clientdata" :key="data.id">
           <ClientsCard
             :title="data.title"
@@ -17,10 +20,22 @@
           />
         </div>
       </VueSlickCarousel>
+
       <div class="arrow-animation">
-        <img src="../assets/icons/arrow.svg" width="100" height="100" />
+        <img
+          src="../assets/icons/arrow-prev.svg"
+          width="100"
+          height="100"
+          @click="showPrev"
+        />
+        <img
+          src="../assets/icons/arrow.svg"
+          width="100"
+          height="100"
+          @click="showNext"
+        />
       </div>
-    </b-container>
+    </div>
   </div>
 </template>
 
@@ -48,6 +63,13 @@ export default {
           detail:
             'Grupo de Cadenas Hoteleras: Gestionamos los proyectos digitales de todas las cadenas del grupo (Dazzler,La Quinta, Wyndham, etc.) en todo Latinoamérica.',
         },
+        {
+          id: 2,
+          title: 'Pepe',
+          color: 'primary',
+          detail:
+            'App de Salud Femenina: Desarrollamos una estrategia de medición basada en la retención a 6 meses de los usuarios, midiendo el Costo por retención del usuario por canal y campaña en todo el mundo y clasificando según Tier de calidad ponderada.',
+        },
       ],
       settings: {
         dots: false,
@@ -70,6 +92,14 @@ export default {
       },
     }
   },
+  methods: {
+    showNext() {
+      this.$refs.carousel.next()
+    },
+    showPrev() {
+      this.$refs.carousel.prev()
+    },
+  },
 }
 </script>
 
@@ -80,11 +110,10 @@ export default {
 .client-background {
   background-color: $background-black;
   .client-container {
-    min-height: 100vh;
     padding: 3rem 1.6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     .title-container {
       display: flex;
       justify-content: space-between;
@@ -102,18 +131,22 @@ export default {
       }
     }
     .arrow-animation {
+      width: 100%;
       margin-top: 2rem;
-      margin-left: 10rem;
       display: flex;
       justify-content: center;
       animation: arrow-move 3s ease-out infinite;
+      img:first-child {
+        margin-right: 7rem;
+      }
     }
+
     @keyframes arrow-move {
       0% {
         transform: translateX(0);
       }
       50% {
-        transform: translateX(0.5em);
+        transform: translateX(0.5rem);
       }
       100% {
         transform: translateX(0);
@@ -133,6 +166,31 @@ export default {
   @media (min-width: 1024px) {
     .client-container {
       padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        &.one {
+          bottom: -3rem;
+          min-height: 22rem;
+          width: 29%;
+          border: 1px solid rgba(231, 28, 162, 0.4);
+        }
+        &.two {
+          min-height: 20rem;
+          width: 24%;
+          left: 46rem;
+          border: 1px solid rgba(89, 215, 162, 0.2);
+        }
+        &.three {
+          min-height: 30rem;
+          width: 44%;
+          left: 57rem;
+          border: 1px solid rgba(149, 214, 234, 0.36);
+          top: -3rem;
+        }
+      }
     }
   }
 }

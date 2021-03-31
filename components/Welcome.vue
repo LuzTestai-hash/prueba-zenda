@@ -34,6 +34,7 @@ export default {}
   align-items: center;
   justify-content: center;
   text-align: center;
+
   .hero {
     width: 5rem;
   }
@@ -42,7 +43,7 @@ export default {}
       font-weight: bold;
       font-size: 2.6rem;
       line-height: 3rem;
-      text-align: center;
+      text-align: flex-start;
       letter-spacing: -0.02em;
       color: $typography;
     }

@@ -126,13 +126,13 @@ export default {
         margin-bottom: 0;
       }
       &.secondary {
-        transform: translate(-4rem, 3rem);
+        transform: translate (3rem, -4rem);
         background-color: $secondary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.primary {
-        transform: translate(0, -3.5rem);
+        transform: translate(-3.5rem, 0);
         background-color: $primary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -182,34 +182,34 @@ export default {
     }
     @keyframes secondary-circle {
       from {
-        transform: translate(-4rem, 3rem);
+        transform: translate(-9rem, 0);
       }
       to {
-        transform: translate(-9rem, 0);
+        transform: translate(-4rem, 3rem);
       }
     }
     @keyframes primary-circle {
       from {
-        transform: translate(0, -3.5rem);
+        transform: translate(6rem, -6rem);
       }
       to {
-        transform: translate(6rem, -6rem);
+        transform: translate(0, -3.5rem);
       }
     }
     @keyframes third-circle {
       from {
-        transform: translate(3rem, 3rem);
+        transform: translate(3.5rem, 8rem);
       }
       to {
-        transform: translate(3.5rem, 8rem);
+        transform: translate(3rem, 3rem);
       }
     }
     @keyframes text-white-circle {
       from {
-        transform: rotate(360deg);
+        transform: rotate(270deg);
       }
       to {
-        transform: rotate(270deg);
+        transform: rotate(360deg);
       }
     }
   }
