@@ -1,15 +1,16 @@
 <template>
   <div id="clients" class="client-background">
     <div class="client-container">
-      <!-- <div class="d-none d-md-flex circle one"></div>
+      <div class="d-none d-md-flex circle one"></div>
       <div class="d-none d-md-flex circle two"></div>
-      <div class="d-none d-md-flex circle three"></div> -->
+      <div class="d-none d-md-flex circle three"></div>
       <div class="title-container">
         <p class="subtitle">CASOS DE ÉXITO.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
       </div>
+
       <VueSlickCarousel ref="carousel" v-bind="settings">
         <div v-for="data in clientdata" :key="data.id">
           <ClientsCard
@@ -167,25 +168,28 @@ export default {
     .client-container {
       padding: 4rem 0;
       position: relative;
+      overflow: hidden;
       .circle {
         position: absolute;
-        border: 1px solid rgba(89, 215, 162, 0.2);
         border-radius: 50%;
         &.one {
-          bottom: 1px;
-          min-height: 19rem;
-          width: 24%;
+          bottom: -3rem;
+          min-height: 22rem;
+          width: 29%;
           border: 1px solid rgba(231, 28, 162, 0.4);
         }
         &.two {
-          min-height: 5rem;
-          background-color: red;
-          width: 6%;
+          min-height: 20rem;
+          width: 24%;
+          left: 46rem;
+          border: 1px solid rgba(89, 215, 162, 0.2);
         }
         &.three {
-          min-height: 5rem;
-          background-color: red;
-          width: 6%;
+          min-height: 30rem;
+          width: 44%;
+          left: 57rem;
+          border: 1px solid rgba(149, 214, 234, 0.36);
+          top: -3rem;
         }
       }
     }

@@ -142,7 +142,7 @@ export default {
   }
   .section-bottom-container {
     width: 65%;
-    z-index: 1;
+    z-index: 10;
     opacity: 1;
     position: fixed;
     display: flex;
