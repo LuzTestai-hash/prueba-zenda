@@ -58,7 +58,7 @@ export default {
   methods: {
     visibilityChanged(isVisible, entry) {
       if (isVisible) {
-        this.$nuxt.$emit('changeNav', entry.target.id)
+        this.$nuxt.$emit('changeNav', entry.target)
       }
     },
   },

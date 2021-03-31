@@ -1,21 +1,38 @@
 <template>
   <div id="dashboard" class="dashboard-background">
-    <b-container class="dashboard-container">
+    <div class="dashboard-container">
       <div class="title-container">
         <p class="subtitle">PANEL DE CONTROL.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
       </div>
-      <VueSlickCarousel :dots="false" :arrows="false" v-bind="settings">
+      <VueSlickCarousel
+        ref="carousel"
+        :dots="false"
+        :arrows="false"
+        v-bind="settings"
+      >
         <div v-for="data in dashboarddata" :key="data.id">
           <DashboardCard :detail="data.detail" />
         </div>
       </VueSlickCarousel>
       <div class="arrow-animation">
-        <img src="../assets/icons/arrow.svg" width="100" height="100" />
+        <img
+          v-if="arrowPrev"
+          src="../assets/icons/arrow-prev.svg"
+          width="100"
+          height="100"
+          @click="showPrev"
+        />
+        <img
+          src="../assets/icons/arrow.svg"
+          width="100"
+          height="100"
+          @click="showNext"
+        />
       </div>
-    </b-container>
+    </div>
   </div>
 </template>
 
@@ -28,6 +45,7 @@ export default {
 
   data() {
     return {
+      arrowPrev: false,
       dashboarddata: [
         {
           id: 0,
@@ -60,6 +78,16 @@ export default {
         ],
       },
     }
+  },
+  methods: {
+    showNext() {
+      this.$refs.carousel.next()
+      this.arrowPrev = true
+    },
+    showPrev() {
+      this.$refs.carousel.prev()
+      this.arrowPrev = false
+    },
   },
 }
 </script>
@@ -99,6 +127,9 @@ export default {
       display: flex;
       justify-content: center;
       animation: arrow-move 3s ease-out infinite;
+      img:first-child {
+        margin-right: 7rem;
+      }
     }
     @keyframes arrow-move {
       0% {
