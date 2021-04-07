@@ -168,6 +168,7 @@ export default {}
     }
     .collapse-content {
       background-color: transparent;
+      padding-left: 2rem;
     }
   }
   @media (min-width: 1440px) {

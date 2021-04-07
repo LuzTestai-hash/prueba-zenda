@@ -1,5 +1,6 @@
 <template>
   <div class="welcome-background">
+    <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">
         <p class="title">Lideramos</p>
@@ -22,9 +23,12 @@ export default {}
 
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
+
 .welcome-background {
   background-color: $background-white;
+  position: relative;
 }
+
 .welcome-container {
   padding: 0.1rem !important;
   width: 100%;

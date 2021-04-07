@@ -12,26 +12,18 @@
         :dots="false"
         :arrows="false"
         v-bind="settings"
+        class="carusel-vue-slick"
       >
         <div v-for="data in dashboarddata" :key="data.id">
           <DashboardCard :detail="data.detail" />
         </div>
       </VueSlickCarousel>
-      <div class="arrow-animation">
-        <img
-          v-if="arrowPrev"
-          src="../assets/icons/arrow-prev.svg"
-          width="100"
-          height="100"
-          @click="showPrev"
-        />
-        <img
-          src="../assets/icons/arrow.svg"
-          width="100"
-          height="100"
-          @click="showNext"
-        />
-      </div>
+      <b-container>
+        <b-button class="button">
+          <p>Ver video</p>
+          <img src="../assets/icons/play.svg" width="30" height="30" />
+        </b-button>
+      </b-container>
     </div>
   </div>
 </template>
@@ -79,6 +71,14 @@ export default {
       },
     }
   },
+  mounted() {
+    this.$refs.carousel.$el.addEventListener('mouseenter', () => {
+      this.$nuxt.$emit('mouse', 'carousel')
+    })
+    this.$refs.carousel.$el.addEventListener('mouseleave', () => {
+      this.$nuxt.$emit('mouse', 'pointer')
+    })
+  },
   methods: {
     showNext() {
       this.$refs.carousel.next()
@@ -121,12 +121,39 @@ export default {
         }
       }
     }
+    .button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: transparent;
+      justify-content: space-between;
+      border-color: white;
+      border-radius: 6rem;
+      padding: 1rem;
+      width: 11rem;
+      p {
+        color: white;
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+    }
     .arrow-animation {
       margin-top: 2rem;
       display: flex;
       justify-content: center;
       img:first-child {
         margin-right: 7rem;
+      }
+    }
+    @media (min-width: 1440px) {
+      .button {
+        border-radius: 6rem;
+        padding: 1rem;
+        width: 14rem;
+        p {
+          font-size: 1.5rem;
+          margin-right: 3rem;
+        }
       }
     }
 
@@ -139,6 +166,9 @@ export default {
       .arrow-animation {
         display: none;
       }
+    }
+    .carusel-vue-slick {
+      cursor: grab;
     }
   }
   @media (min-width: 1440px) {

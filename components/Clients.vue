@@ -11,7 +11,12 @@
         </div>
       </b-container>
 
-      <VueSlickCarousel ref="carousel" v-bind="settings">
+      <VueSlickCarousel
+        id="client-carousel"
+        ref="carousel"
+        v-bind="settings"
+        class="carusel-vue-slick"
+      >
         <div v-for="data in clientdata" :key="data.id">
           <ClientsCard
             :title="data.title"
@@ -21,7 +26,7 @@
         </div>
       </VueSlickCarousel>
 
-      <div class="arrow-animation">
+      <!-- <div class="arrow-animation">
         <img
           src="../assets/icons/arrow-prev.svg"
           width="100"
@@ -34,7 +39,7 @@
           height="100"
           @click="showNext"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -91,6 +96,14 @@ export default {
         ],
       },
     }
+  },
+  mounted() {
+    this.$refs.carousel.$el.addEventListener('mouseenter', () => {
+      this.$nuxt.$emit('mouse', 'carousel')
+    })
+    this.$refs.carousel.$el.addEventListener('mouseleave', () => {
+      this.$nuxt.$emit('mouse', 'pointer')
+    })
   },
   methods: {
     showNext() {
@@ -162,6 +175,9 @@ export default {
         display: none;
       }
     }
+    .carusel-vue-slick {
+      cursor: grab;
+    }
   }
   @media (min-width: 1024px) {
     .client-container {
@@ -170,7 +186,7 @@ export default {
       overflow: hidden;
       .circle {
         position: absolute;
-        border-radius: 50%;
+        border-radius: 100%;
         &.one {
           bottom: -3rem;
           min-height: 22rem;
