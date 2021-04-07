@@ -1,10 +1,6 @@
 <template>
   <div class="dashboardCard-container">
     <p class="text">{{ detail }}</p>
-    <b-button class="button">
-      <p>Ver video</p>
-      <img src="../assets/icons/play.svg" width="30" height="30" />
-    </b-button>
   </div>
 </template>
 
@@ -25,41 +21,21 @@ export default {
     font-size: 2.3rem;
     line-height: 3.5rem;
     margin-bottom: 5rem;
+    padding: 2rem 2rem;
   }
-  .button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: transparent;
-    border-color: white;
-    border-radius: 6rem;
-    padding: 1rem;
-    p {
-      color: white;
-      margin-bottom: 0;
-      margin-right: 2rem;
-    }
-  }
+
   @media (min-width: 1440px) {
     .text {
       font-weight: 100;
       font-size: 3.5rem;
       line-height: 5rem;
     }
-    .button {
-      border-radius: 6rem;
-      padding: 1rem;
-      p {
-        font-size: 1.5rem;
-        margin-right: 3rem;
-      }
-    }
   }
 }
 @media (min-width: 1024px) {
   .dashboardCard-container {
     padding-left: 2rem;
-    padding-right: 15rem;
+    padding-right: 40%;
   }
 }
 </style>

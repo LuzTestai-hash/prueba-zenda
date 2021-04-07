@@ -76,9 +76,9 @@ export default {
       color: white;
     }
     .card-text {
-      font-size: 1.3rem;
-      height: 18rem;
-      padding-left: 4rem;
+      font-size: 1.2rem;
+      height: 14rem;
+      padding-left: 3rem;
     }
   }
   .detail-container {
