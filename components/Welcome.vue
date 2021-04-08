@@ -33,7 +33,7 @@ export default {}
   padding: 0.1rem !important;
   width: 100%;
   margin: 0 auto;
-  min-height: 101vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,8 +59,8 @@ export default {}
 }
 @media (min-width: 600px) {
   .welcome-background {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
     background-image: url(../assets/icons/zenda-hero.svg);
     background-repeat: no-repeat;
     background-size: contain;
