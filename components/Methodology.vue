@@ -184,15 +184,15 @@ export default {
   .methodology-container {
     padding: 5rem 1.9rem;
     .circle {
-      width: 38rem;
-      height: 33rem;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      border-radius: 50%;
+      width: 35rem;
+      height: 35rem;
+      -moz-border-radius: 100%;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
       position: absolute;
       top: 184px;
       margin-left: 7rem;
-      border: solid 2px;
+      border: 2px solid;
       opacity: 0.05;
     }
     .title-container {

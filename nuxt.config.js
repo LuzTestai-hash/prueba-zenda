@@ -17,7 +17,10 @@ export default {
   css: ['~/assets/stylesheets/Stylesheets.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-observe-visibility.client.js'],
+  plugins: [
+    '~/plugins/vue-observe-visibility.client.js',
+    { src: '~/plugins/vue-kinesis.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

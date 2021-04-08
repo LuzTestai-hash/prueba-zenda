@@ -72,7 +72,7 @@ export default {}
       .title {
         font-weight: 400;
         margin-bottom: 2rem;
-        font-size: 1.3rem;
+        font-size: 1rem;
       }
       .special-title {
         font-weight: 700;
@@ -87,7 +87,7 @@ export default {}
       .title {
         font-weight: 400;
         margin-bottom: 2rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
       .special-title {
         font-weight: 700;

@@ -39,7 +39,7 @@
         </b-col>
         <b-col md="6" class="p-md-5">
           <b-button
-            v-b-toggle="'collapse-1'"
+            v-b-toggle="isMobile ? 'collapse-1' : ''"
             :class="`button-colapse primary ${
               bottomActive === 'first' ? 'active' : null
             }`"
@@ -79,7 +79,7 @@
             </b-card>
           </b-collapse>
           <b-button
-            v-b-toggle="'collapse-2'"
+            v-b-toggle="isMobile ? 'collapse-2' : ''"
             :class="`button-colapse third ${
               bottomActive === 'second' ? 'active' : null
             }`"
@@ -115,7 +115,7 @@
             <b-card class="collapse-content">I am collapsible content!</b-card>
           </b-collapse>
           <b-button
-            v-b-toggle="'collapse-3'"
+            v-b-toggle="isMobile ? 'collapse-3' : ''"
             :class="`button-colapse secondary ${
               bottomActive === 'third' ? 'active' : null
             }`"
@@ -176,7 +176,18 @@ export default {
     return {
       showAnimation: false,
       bottomActive: 'first',
+      isMobile: false,
     }
+  },
+  mounted() {
+    window.addEventListener('resize', () => {
+      const w = window.innerWidth
+      if (w < 600) {
+        this.isMobile = true
+      } else {
+        this.isMobile = false
+      }
+    })
   },
   methods: {
     isViewableNow(isVisible, entry) {

@@ -1,5 +1,5 @@
 <template>
-  <div id="agile-process" class="agile-background">
+  <div id="agile-process" ref="agileProcess" class="agile-background">
     <b-container class="agile-container">
       <b-row>
         <b-col md="12">
@@ -14,16 +14,16 @@
             }"
             :class="`circles-container ${showAnimation}`"
           >
-            <div class="circle secondary">
+            <div id="circleSecondary" class="circle secondary">
               <p class="circle-text">DATA.</p>
             </div>
-            <div class="circle white">
+            <div id="circleWhite" class="circle white">
               <p class="circle-text">ZENDA</p>
             </div>
-            <div class="circle primary">
+            <div id="circlePrimary" class="circle primary">
               <p class="circle-text">INNOVACIÓN.</p>
             </div>
-            <div class="circle third">
+            <div id="circleThird" class="circle third">
               <p class="circle-text">
                 PERFOR <br />
                 MANCE.
@@ -57,6 +57,47 @@ export default {
   data() {
     return {
       showAnimation: false,
+    }
+  },
+  mounted() {
+    const circleSecondary = document.getElementById('circleSecondary')
+    // const circleWhite = document.getElementById('circleWhite')
+    const circlePrimary = document.getElementById('circlePrimary')
+    const circleThird = document.getElementById('circleThird')
+    let position = window.scrollY
+    // let direction = ''
+    let cont = 0
+    /* const move = (from, to) => {
+      if (from < to) {
+        return from + cont
+      } else {
+        return to + cont
+      }
+    } */
+    window.onscroll = () => {
+      // console.log('cont', cont)
+      const scroll = window.scrollY
+      if (scroll > position) {
+        // direction = 'up'
+        ++cont
+      } else {
+        // direction = 'down'
+        --cont
+      }
+      position = scroll
+      if (this.showAnimation) {
+        circleSecondary.style.transform = `translate(
+          ${-4 - cont / 4}rem,
+          ${3 - cont / 4}rem)`
+        circlePrimary.style.transform = `translate(
+          ${0 + cont / 4}rem,
+          ${-3.5 - cont / 4}rem)`
+        circleThird.style.transform = `translate(
+          ${3 + cont / 8}rem,
+          ${3 + cont / 4}rem)`
+      } else {
+        cont = 0
+      }
     }
   },
   methods: {
@@ -101,7 +142,7 @@ export default {
   }
   @media (min-width: 1440px) {
     .subtitle {
-      font-size: 1.4rem;
+      font-size: 1rem;
       margin-bottom: 4rem;
     }
   }
@@ -126,13 +167,13 @@ export default {
         margin-bottom: 0;
       }
       &.secondary {
-        transform: translate (3rem, -4rem);
+        transform: translate(-4rem, 3rem);
         background-color: $secondary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       }
       &.primary {
-        transform: translate(-3.5rem, 0);
+        transform: translate(0, -3.5rem);
         background-color: $primary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -157,23 +198,23 @@ export default {
     &.true {
       .circle {
         &.secondary {
-          animation-name: secondary-circle;
+          // animation-name: secondary-circle;
           animation-duration: 4s;
           animation-fill-mode: forwards;
         }
         &.primary {
-          animation-name: primary-circle;
+          // animation-name: primary-circle;
           animation-duration: 4s;
           animation-fill-mode: forwards;
         }
         &.third {
-          animation-name: third-circle;
+          // animation-name: third-circle;
           animation-duration: 4s;
           animation-fill-mode: forwards;
         }
         &.white {
           .circle-text {
-            animation-name: text-white-circle;
+            // animation-name: text-white-circle;
             animation-duration: 4s;
             animation-fill-mode: forwards;
           }
