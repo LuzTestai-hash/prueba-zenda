@@ -5,40 +5,48 @@
       <h1 class="email">info@zenda.com.ar</h1>
       <p class="subtitle">AMBASSADORS.</p>
       <p class="title">Zenda en el mundo.</p>
-      <div class="locations-container">
-        <div class="location">
-          <p class="location-title">Paraguay</p>
-          <p class="name">Gustavo iglesias</p>
-          <b-button class="contact-button">
-            <p class="contact-text">Contactar</p>
-            <b-icon icon="arrow-right" class="icon"></b-icon>
-          </b-button>
-        </div>
-        <div class="location">
-          <p class="location-title">Chile</p>
-          <p class="name">Gustavo iglesias</p>
-          <b-button class="contact-button">
-            <p class="contact-text">Contactar</p>
-            <b-icon icon="arrow-right" class="icon"></b-icon>
-          </b-button>
-        </div>
-        <div class="location">
-          <p class="location-title">Uruguay</p>
-          <p class="name">Gustavo iglesias</p>
-          <b-button class="contact-button">
-            <p class="contact-text">Contactar</p>
-            <b-icon icon="arrow-right" class="icon"></b-icon>
-          </b-button>
-        </div>
-        <div class="location">
-          <p class="location-title">Brasil</p>
-          <p class="name">Gustavo iglesias</p>
-          <b-button class="contact-button">
-            <p class="contact-text">Contactar</p>
-            <b-icon icon="arrow-right" class="icon"></b-icon>
-          </b-button>
-        </div>
-      </div>
+      <b-row class="locations-container">
+        <b-col cols="6" md="3">
+          <div class="location">
+            <p class="location-title">Paraguay</p>
+            <p class="name">First Name</p>
+            <b-button class="contact-button">
+              <p class="contact-text">Contactar</p>
+              <b-icon icon="arrow-right" class="icon"></b-icon>
+            </b-button>
+          </div>
+        </b-col>
+        <b-col cols="6" md="3">
+          <div class="location">
+            <p class="location-title">Chile</p>
+            <p class="name">First Name</p>
+            <b-button class="contact-button">
+              <p class="contact-text">Contactar</p>
+              <b-icon icon="arrow-right" class="icon"></b-icon>
+            </b-button>
+          </div>
+        </b-col>
+        <b-col cols="6" md="3">
+          <div class="location">
+            <p class="location-title">Uruguay</p>
+            <p class="name">First Name</p>
+            <b-button class="contact-button">
+              <p class="contact-text">Contactar</p>
+              <b-icon icon="arrow-right" class="icon"></b-icon>
+            </b-button>
+          </div>
+        </b-col>
+        <b-col cols="6" md="3">
+          <div class="location">
+            <p class="location-title">Brasil</p>
+            <p class="name">First Name</p>
+            <b-button class="contact-button">
+              <p class="contact-text">Contactar</p>
+              <b-icon icon="arrow-right" class="icon"></b-icon>
+            </b-button>
+          </div>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
@@ -58,7 +66,7 @@ export default {}
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.6rem;
+  padding: 4rem 1.6rem 6rem 1.6rem;
   .subtitle {
     font-weight: 700;
     color: white;
@@ -106,9 +114,6 @@ export default {}
     }
   }
   .locations-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     .location {
       flex-direction: column;
       .location-title {

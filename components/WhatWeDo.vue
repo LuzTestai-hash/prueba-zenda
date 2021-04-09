@@ -1,158 +1,172 @@
 <template>
   <div id="what-we-do" class="whatWeDo-background">
-    <b-container class="whatWeDo-container">
-      <b-row>
-        <b-col md="12">
-          <p class="subtitle">QUÉ HACEMOS</p>
-        </b-col>
-        <b-col md="6">
-          <p class="title">Lo mejor para tu negocio.</p>
-          <div class="content-container">
-            <p v-if="bottomActive === 'first'" class="title-content">
-              Estrategias digitales
-            </p>
-            <p v-if="bottomActive === 'first'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
-            </p>
-            <p v-if="bottomActive === 'second'" class="title-content">
-              Segundo botón
-            </p>
-            <p v-if="bottomActive === 'second'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
-            </p>
-            <p v-if="bottomActive === 'third'" class="title-content">
-              tercer botón
-            </p>
-            <p v-if="bottomActive === 'third'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
-            </p>
-          </div>
-        </b-col>
-        <b-col md="6" class="p-md-5">
-          <b-button
-            v-b-toggle="isMobile ? 'collapse-1' : ''"
-            :class="`button-colapse primary ${
-              bottomActive === 'first' ? 'active' : null
-            }`"
-            @click="textSelected('first')"
-          >
-            <div
-              v-observe-visibility="{
-                callback: isViewableNow,
-                throttle: 300,
-              }"
-              :class="`single-chart ${showAnimation}`"
-            >
-              <svg viewBox="0 0 36 36" class="circular-chart primary">
-                <path
-                  class="circle-bg"
-                  d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <path
-                  class="circle"
-                  stroke-dasharray="45, 100"
-                  d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <text x="18" y="20.35" class="percentage primary">45%</text>
-              </svg>
+    <div
+      v-rellax="{
+        speed: -2,
+        center: false,
+        wrapper: null,
+        vertical: true,
+        horizontal: false,
+      }"
+    >
+      <b-container class="whatWeDo-container">
+        <b-row>
+          <b-col md="12">
+            <p class="subtitle">QUÉ HACEMOS</p>
+          </b-col>
+          <b-col md="6">
+            <p class="title">Lo mejor para tu negocio.</p>
+            <div class="content-container">
+              <p v-if="bottomActive === 'first'" class="title-content">
+                Estrategias digitales
+              </p>
+              <p v-if="bottomActive === 'first'" class="detail-content">
+                Lideramos proyectos digitales implementando eficazmente
+                estrategias y procesos de transformación para lograr objetivos
+                medibles, alcanzables y relevantes (SMART) para los negocios de
+                nuestros clientes.
+              </p>
+              <p v-if="bottomActive === 'second'" class="title-content">
+                Segundo botón
+              </p>
+              <p v-if="bottomActive === 'second'" class="detail-content">
+                Lideramos proyectos digitales implementando eficazmente
+                estrategias y procesos de transformación para lograr objetivos
+                medibles, alcanzables y relevantes (SMART) para los negocios de
+                nuestros clientes.
+              </p>
+              <p v-if="bottomActive === 'third'" class="title-content">
+                tercer botón
+              </p>
+              <p v-if="bottomActive === 'third'" class="detail-content">
+                Lideramos proyectos digitales implementando eficazmente
+                estrategias y procesos de transformación para lograr objetivos
+                medibles, alcanzables y relevantes (SMART) para los negocios de
+                nuestros clientes.
+              </p>
             </div>
+          </b-col>
+          <b-col md="6" class="p-md-5">
+            <b-button
+              v-b-toggle="isMobile ? 'collapse-1' : ''"
+              :class="`button-colapse primary ${
+                bottomActive === 'first' ? 'active' : null
+              }`"
+              @click="textSelected('first')"
+            >
+              <div
+                v-observe-visibility="{
+                  callback: isViewableNow,
+                  throttle: 300,
+                }"
+                :class="`single-chart ${showAnimation}`"
+              >
+                <svg viewBox="0 0 36 36" class="circular-chart primary">
+                  <path
+                    class="circle-bg"
+                    d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <path
+                    class="circle"
+                    stroke-dasharray="45, 100"
+                    d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <text x="18" y="20.35" class="percentage primary">45%</text>
+                </svg>
+              </div>
 
-            <p class="text">Estrategias digitales</p>
-          </b-button>
-          <b-collapse id="collapse-1">
-            <b-card class="collapse-content">
-              Desarrollamos estrategias digitales para lograr objetivos
-              orientados a Branding y Performance (eCommerce, Apps, Leads)
-            </b-card>
-          </b-collapse>
-          <b-button
-            v-b-toggle="isMobile ? 'collapse-2' : ''"
-            :class="`button-colapse third ${
-              bottomActive === 'second' ? 'active' : null
-            }`"
-            @click="textSelected('second')"
-          >
-            <div
-              v-observe-visibility="{
-                callback: isViewableNow,
-                throttle: 300,
-              }"
-              :class="`single-chart ${showAnimation}`"
+              <p class="text">Estrategias digitales</p>
+            </b-button>
+            <b-collapse id="collapse-1">
+              <b-card class="collapse-content">
+                Desarrollamos estrategias digitales para lograr objetivos
+                orientados a Branding y Performance (eCommerce, Apps, Leads)
+              </b-card>
+            </b-collapse>
+            <b-button
+              v-b-toggle="isMobile ? 'collapse-2' : ''"
+              :class="`button-colapse third ${
+                bottomActive === 'second' ? 'active' : null
+              }`"
+              @click="textSelected('second')"
             >
-              <svg viewBox="0 0 36 36" class="circular-chart third">
-                <path
-                  class="circle-bg"
-                  d="M18 2.0845
+              <div
+                v-observe-visibility="{
+                  callback: isViewableNow,
+                  throttle: 300,
+                }"
+                :class="`single-chart ${showAnimation}`"
+              >
+                <svg viewBox="0 0 36 36" class="circular-chart third">
+                  <path
+                    class="circle-bg"
+                    d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <path
-                  class="circle"
-                  stroke-dasharray="35, 100"
-                  d="M18 2.0845
+                  />
+                  <path
+                    class="circle"
+                    stroke-dasharray="35, 100"
+                    d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <text x="18" y="20.35" class="percentage third">35%</text>
-              </svg>
-            </div>
-            <p class="text">Implementación</p>
-          </b-button>
-          <b-collapse id="collapse-2">
-            <b-card class="collapse-content">I am collapsible content!</b-card>
-          </b-collapse>
-          <b-button
-            v-b-toggle="isMobile ? 'collapse-3' : ''"
-            :class="`button-colapse secondary ${
-              bottomActive === 'third' ? 'active' : null
-            }`"
-            @click="textSelected('third')"
-          >
-            <div
-              v-observe-visibility="{
-                callback: isViewableNow,
-                throttle: 300,
-              }"
-              :class="`single-chart ${showAnimation}`"
+                  />
+                  <text x="18" y="20.35" class="percentage third">35%</text>
+                </svg>
+              </div>
+              <p class="text">Implementación</p>
+            </b-button>
+            <b-collapse id="collapse-2">
+              <b-card class="collapse-content"
+                >I am collapsible content!</b-card
+              >
+            </b-collapse>
+            <b-button
+              v-b-toggle="isMobile ? 'collapse-3' : ''"
+              :class="`button-colapse secondary ${
+                bottomActive === 'third' ? 'active' : null
+              }`"
+              @click="textSelected('third')"
             >
-              <svg viewBox="0 0 36 36" class="circular-chart secondary">
-                <path
-                  class="circle-bg"
-                  d="M18 2.0845
+              <div
+                v-observe-visibility="{
+                  callback: isViewableNow,
+                  throttle: 300,
+                }"
+                :class="`single-chart ${showAnimation}`"
+              >
+                <svg viewBox="0 0 36 36" class="circular-chart secondary">
+                  <path
+                    class="circle-bg"
+                    d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <path
-                  class="circle"
-                  stroke-dasharray="20, 100"
-                  d="M18 2.0845
+                  />
+                  <path
+                    class="circle"
+                    stroke-dasharray="20, 100"
+                    d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <text x="18" y="20.35" class="percentage secondary">20%</text>
-              </svg>
-            </div>
-            <p class="text">Consultoría</p>
-          </b-button>
-          <b-collapse id="collapse-3">
-            <b-card class="collapse-content">I am collapsible content!</b-card>
-          </b-collapse>
-        </b-col>
-      </b-row>
-    </b-container>
+                  />
+                  <text x="18" y="20.35" class="percentage secondary">20%</text>
+                </svg>
+              </div>
+              <p class="text">Consultoría</p>
+            </b-button>
+            <b-collapse id="collapse-3">
+              <b-card class="collapse-content"
+                >I am collapsible content!</b-card
+              >
+            </b-collapse>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
     <svg
       id="svg"
       xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +231,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 1.4rem;
+  padding: 0 1.4rem 60% 1.4rem;
   .content-container {
     .title-content {
       font-weight: bold;
@@ -265,7 +279,7 @@ export default {
       padding-right: 4rem;
     }
     .subtitle {
-      font-size: 1.4rem;
+      font-size: 1rem;
       margin-bottom: 4rem;
     }
   }
@@ -377,7 +391,7 @@ export default {
 }
 @media (min-width: 600px) {
   .whatWeDo-container {
-    padding: 4rem 1.6rem 11rem 1.6rem;
+    padding: 4rem 1.6rem 15% 1.6rem;
 
     .text {
       font-size: 1.4rem;
@@ -389,7 +403,7 @@ export default {
 }
 @media (min-width: 1440px) {
   .whatWeDo-container {
-    padding: 8rem 0 20rem 0;
+    padding: 0 0 15% 0;
   }
 }
 </style>

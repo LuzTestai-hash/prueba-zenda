@@ -30,6 +30,7 @@
     "nuxt": "^2.14.12",
     "vue-kinesis": "^1.2.3",
     "vue-observe-visibility": "^1.0.0",
+    "vue-rellax": "^0.2.0",
     "vue-scrollto": "^2.20.0",
     "vue-slick-carousel": "^1.0.6"
   },

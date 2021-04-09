@@ -57,11 +57,11 @@
         callback: visibilityChanged,
       }"
     />
-    <Dashboard
+    <!-- <Dashboard
       v-observe-visibility="{
         callback: visibilityChanged,
       }"
-    />
+    /> -->
     <Contact
       v-observe-visibility="{
         callback: visibilityChanged,
@@ -194,6 +194,14 @@ export default {
       100% {
         transform: translateX(0);
       }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .g-cursor {
+    display: none;
+    &__pointer {
+      display: none;
     }
   }
 }

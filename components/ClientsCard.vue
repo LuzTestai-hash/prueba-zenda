@@ -2,7 +2,24 @@
   <div :class="`clientcard-container ${title}`">
     <b-row>
       <b-col md="4">
-        <p class="title">{{ title }}</p>
+        <div v-if="title === 'Clue'">
+          <img
+            src="../assets/icons/clue-logo-white.png"
+            alt="clue"
+            class="trademarks"
+            width="188px"
+            height="54px"
+          />
+        </div>
+        <div v-if="title === 'WynDam'">
+          <img
+            src="../assets/icons/whyndham-logo-white.png"
+            alt="whyndham"
+            class="trademarks"
+            width="187px"
+            height="61px"
+          />
+        </div>
       </b-col>
       <b-col md="8">
         <p class="card-text">
@@ -46,7 +63,7 @@ export default {
   display: flex;
   align-items: center;
 
-  .title {
+  .trademarks {
     color: white;
   }
   .card-text {
@@ -56,9 +73,8 @@ export default {
     min-height: 15rem;
   }
   @media (min-width: 600px) {
-    .title {
+    .trademarks {
       margin-top: 2rem;
-      font-size: 2rem;
       margin-left: 1rem;
       color: white;
     }
@@ -69,9 +85,8 @@ export default {
   }
 
   @media (min-width: 1440px) {
-    .title {
+    .trademarks {
       margin-top: 2rem;
-      font-size: 3rem;
       margin-left: 1rem;
       color: white;
     }
