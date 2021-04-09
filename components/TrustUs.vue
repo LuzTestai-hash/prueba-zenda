@@ -5,31 +5,97 @@
       <div class="d-block d-md-none">
         <VueSlickCarousel v-bind="settings">
           <div>
-            <p class="trademarks">Walmart</p>
+            <img
+              src="../assets/icons/walmart-logo.png"
+              alt="walmart"
+              class="trademarks"
+              width="151px"
+              height="36px"
+            />
           </div>
 
           <div>
-            <p class="trademarks">Workana</p>
+            <img
+              src="../assets/icons/workana-logo.png"
+              alt="workana"
+              class="trademarks"
+              width="150px"
+              height="45px"
+            />
           </div>
 
           <div>
-            <p class="trademarks">Heiniken</p>
+            <img
+              src="../assets/icons/heiniken-logo.png"
+              alt="Heiniken"
+              class="trademarks"
+              width="175px"
+              height="25px"
+            />
           </div>
         </VueSlickCarousel>
       </div>
       <div class="d-none d-md-flex container-trademarks-desktop">
-        <div class="row">
-          <p class="trademarks">Heiniken</p>
-          <p class="trademarks">Heiniken</p>
-          <p class="trademarks">Heiniken</p>
-          <p class="trademarks">Heiniken</p>
-        </div>
-        <div class="row mt-4">
-          <p class="trademarks">Walmart</p>
-          <p class="trademarks">Walmart</p>
-          <p class="trademarks">Walmart</p>
-          <p class="trademarks">Walmart</p>
-        </div>
+        <b-row class="row">
+          <img
+            src="../assets/icons/walmart-logo.png"
+            alt="walmart"
+            class="trademarks"
+            width="151px"
+            height="36px"
+          />
+          <img
+            src="../assets/icons/workana-logo.png"
+            alt="workana"
+            class="trademarks"
+            width="150px"
+            height="45px"
+          />
+          <img
+            src="../assets/icons/heiniken-logo.png"
+            alt="Heiniken"
+            class="trademarks"
+            width="175px"
+            height="25px"
+          />
+          <img
+            src="../assets/icons/Supervielle-logo.png"
+            alt="Supervielle"
+            class="trademarks"
+            width="130px"
+            height="52px"
+          />
+        </b-row>
+        <b-row class="row">
+          <img
+            src="../assets/icons/clue-logo.png"
+            alt="clue"
+            class="trademarks"
+            width="114,97px"
+            height="36px"
+          />
+          <img
+            src="../assets/icons/whyndham-logo.png"
+            alt="whyndham"
+            class="trademarks"
+            width="139,5px"
+            height="36px"
+          />
+          <img
+            src="../assets/icons/depilife-logo.png"
+            alt="depilife"
+            class="trademarks"
+            width="138,46px"
+            height="36px"
+          />
+          <img
+            src="../assets/icons/acamica-logo.png"
+            alt="acamica"
+            class="trademarks"
+            width="140,57px"
+            height="25px"
+          />
+        </b-row>
       </div>
     </b-container>
   </div>
@@ -63,7 +129,7 @@ export default {
 .trustus-background {
   background: #fafafa;
   .trustus-container {
-    padding: 1rem 1.6rem;
+    padding: 1rem 1.6rem 5rem 1.6rem;
     justify-content: center;
     align-items: center;
     .subtitle {
@@ -87,12 +153,14 @@ export default {
       justify-content: center;
       align-items: center;
       margin-bottom: 1rem;
-
+      .row {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+      }
       .trademarks {
-        font-size: 1.5rem;
-        font-weight: 900;
-        margin-left: 4rem;
-        margin-right: 4rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
       }
     }
   }

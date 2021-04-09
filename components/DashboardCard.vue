@@ -28,14 +28,14 @@ export default {
     .text {
       font-weight: 100;
       font-size: 3.5rem;
-      line-height: 5rem;
+      line-height: 4.5rem;
     }
   }
 }
 @media (min-width: 1024px) {
   .dashboardCard-container {
     padding-left: 2rem;
-    padding-right: 40%;
+    padding-right: 25%;
   }
 }
 </style>

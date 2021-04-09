@@ -19,21 +19,33 @@
             <b-icon icon="chevron-down" class="icon"></b-icon>
           </b-button>
           <b-collapse id="collapse-1">
-            <b-card class="collapse-content">Proactividad</b-card>
+            <b-card class="collapse-content">
+              Nos hacemos cargo de la responsabilidad de liderar las campañas
+              digitales basándonos en la innovación y en las mejoras permanentes
+              que se presentan en el ecosistema.
+            </b-card>
           </b-collapse>
           <b-button v-b-toggle="'collapse-2'" class="button-colapse secondary">
             <p class="text">Atención personalizada</p>
             <b-icon icon="chevron-down" class="icon"></b-icon>
           </b-button>
           <b-collapse id="collapse-2">
-            <b-card class="collapse-content">I am collapsible content!</b-card>
+            <b-card class="collapse-content">
+              Cada equipo de trabajo estará siempre disponibles para cualquier
+              consulta o inquietud. Ante cualquier cambio en el equipo, se le
+              informará inmediatamente al cliente.
+            </b-card>
           </b-collapse>
           <b-button v-b-toggle="'collapse-3'" class="button-colapse third">
             <p class="text">Transparencia y respeto :)</p>
             <b-icon icon="chevron-down" class="icon"></b-icon>
           </b-button>
           <b-collapse id="collapse-3">
-            <b-card class="collapse-content">I am collapsible content!</b-card>
+            <b-card class="collapse-content">
+              Es algo que nos gustaría que un cliente destaque de nosotros en el
+              largo plazo. Creemos que es el mejor camino para poder tener
+              relaciones duraderas en el tiempo
+            </b-card>
           </b-collapse>
         </b-col>
       </b-row>
@@ -158,7 +170,7 @@ export default {}
       .button-colapse {
         padding-left: 2rem;
         .text {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: 100;
         }
         .icon {
@@ -169,6 +181,10 @@ export default {}
     .collapse-content {
       background-color: transparent;
       padding-left: 2rem;
+      .card-body {
+        padding-top: initial;
+        font-weight: 100;
+      }
     }
   }
   @media (min-width: 1440px) {

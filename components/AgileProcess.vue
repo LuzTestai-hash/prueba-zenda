@@ -61,40 +61,57 @@ export default {
   },
   mounted() {
     const circleSecondary = document.getElementById('circleSecondary')
-    // const circleWhite = document.getElementById('circleWhite')
     const circlePrimary = document.getElementById('circlePrimary')
     const circleThird = document.getElementById('circleThird')
+
+    let direction = ''
     let position = window.scrollY
-    // let direction = ''
     let cont = 0
-    /* const move = (from, to) => {
-      if (from < to) {
-        return from + cont
+
+    const moveMinusMin = (from, to, div) => {
+      let n = 0
+      if (direction === 'up') {
+        n = from + cont / div
       } else {
-        return to + cont
+        n = from - cont / div
       }
-    } */
-    window.onscroll = () => {
-      // console.log('cont', cont)
-      const scroll = window.scrollY
-      if (scroll > position) {
-        // direction = 'up'
-        ++cont
+      if (n <= to) {
+        return n
+      }
+    }
+    const movePlusMay = (from, to, div) => {
+      let n = 0
+      if (direction === 'up') {
+        n = from - cont / div
       } else {
-        // direction = 'down'
+        n = from + cont / div
+      }
+      if (n >= to) {
+        return n
+      }
+    }
+    window.onscroll = () => {
+      const scroll = window.scrollY
+
+      if (scroll > position) {
+        direction = 'down'
         --cont
+      } else {
+        direction = 'up'
+        ++cont
       }
       position = scroll
+
       if (this.showAnimation) {
         circleSecondary.style.transform = `translate(
-          ${-4 - cont / 4}rem,
-          ${3 - cont / 4}rem)`
+          ${moveMinusMin(-12, -5, 1.8)}rem,
+          ${moveMinusMin(-2, 3, 2)}rem)`
         circlePrimary.style.transform = `translate(
-          ${0 + cont / 4}rem,
-          ${-3.5 - cont / 4}rem)`
+          ${movePlusMay(8, 0, 2)}rem,
+          ${moveMinusMin(-8, -3.6, 4)}rem)`
         circleThird.style.transform = `translate(
-          ${3 + cont / 8}rem,
-          ${3 + cont / 4}rem)`
+           ${movePlusMay(5, 3.5, 11)}rem,
+           ${movePlusMay(10, 3.5, 2)}rem)`
       } else {
         cont = 0
       }
@@ -112,6 +129,7 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .agile-background {
   background-color: #fafafa;
+  position: relative;
 }
 .agile-container {
   margin: 0 auto;
@@ -167,22 +185,25 @@ export default {
         margin-bottom: 0;
       }
       &.secondary {
-        transform: translate(-4rem, 3rem);
+        transform: translate(-12rem, -2rem);
         background-color: $secondary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        transition: all 0.5s ease-out;
       }
       &.primary {
-        transform: translate(0, -3.5rem);
+        transform: translate(8rem, -8rem);
         background-color: $primary;
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        transition: all 0.5s ease-out;
       }
       &.third {
-        transform: translate(3rem, 3rem);
+        transform: translate(5rem, 10rem);
         background: rgba(149, 214, 234, 0.9);
         opacity: 0.9;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        transition: all 0.5s ease-out;
       }
       &.white {
         .circle-text {
@@ -263,7 +284,7 @@ export default {
       letter-spacing: -0.02em;
       color: $typography;
       margin-top: 1.2rem;
-      margin-bottom: 3.3rem;
+      margin-bottom: 1rem;
       padding-right: 5rem;
     }
     .text-detail {

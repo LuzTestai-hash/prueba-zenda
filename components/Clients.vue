@@ -26,20 +26,22 @@
         </div>
       </VueSlickCarousel>
 
-      <!-- <div class="arrow-animation">
-        <img
-          src="../assets/icons/arrow-prev.svg"
-          width="100"
-          height="100"
-          @click="showPrev"
-        />
-        <img
-          src="../assets/icons/arrow.svg"
-          width="100"
-          height="100"
-          @click="showNext"
-        />
-      </div> -->
+      <b-container class="arrows-container">
+        <kinesis-container>
+          <kinesis-element :strength="10">
+            <div class="arrow-button" @click="showPrev">
+              <b-icon icon="arrow-left" style="color: #fff" />
+            </div>
+          </kinesis-element>
+        </kinesis-container>
+        <kinesis-container>
+          <kinesis-element :strength="10">
+            <div class="arrow-button" @click="showNext">
+              <b-icon icon="arrow-right" style="color: #fff" />
+            </div>
+          </kinesis-element>
+        </kinesis-container>
+      </b-container>
     </div>
   </div>
 </template>
@@ -68,13 +70,6 @@ export default {
           detail:
             'Grupo de Cadenas Hoteleras: Gestionamos los proyectos digitales de todas las cadenas del grupo (Dazzler,La Quinta, Wyndham, etc.) en todo Latinoamérica.',
         },
-        {
-          id: 2,
-          title: 'Pepe',
-          color: 'primary',
-          detail:
-            'App de Salud Femenina: Desarrollamos una estrategia de medición basada en la retención a 6 meses de los usuarios, midiendo el Costo por retención del usuario por canal y campaña en todo el mundo y clasificando según Tier de calidad ponderada.',
-        },
       ],
       settings: {
         dots: false,
@@ -84,6 +79,7 @@ export default {
         centerMode: true,
         centerPadding: '150px',
         focusOnSelect: true,
+        edgeFriction: 0.1,
         slidesToShow: 1,
         speed: 500,
         responsive: [
@@ -153,30 +149,30 @@ export default {
         margin-right: 7rem;
       }
     }
-
-    @keyframes arrow-move {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(0.5rem);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
     @media (min-width: 1024px) {
       .hand-container {
         display: none;
       }
     }
-    @media (max-width: 1024px) {
-      .arrow-animation {
-        display: none;
-      }
-    }
     .carusel-vue-slick {
       cursor: grab;
+    }
+    .arrows-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 2rem;
+      .arrow-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 1rem;
+        margin: 1rem;
+      }
     }
   }
   @media (min-width: 1024px) {
@@ -189,19 +185,19 @@ export default {
         border-radius: 100%;
         &.one {
           bottom: -3rem;
-          min-height: 22rem;
-          width: 29%;
+          height: 22rem;
+          width: 22rem;
           border: 1px solid rgba(231, 28, 162, 0.4);
         }
         &.two {
-          min-height: 20rem;
-          width: 24%;
+          height: 20rem;
+          width: 20rem;
           left: 46rem;
           border: 1px solid rgba(89, 215, 162, 0.2);
         }
         &.three {
-          min-height: 30rem;
-          width: 44%;
+          height: 30rem;
+          width: 30rem;
           left: 57rem;
           border: 1px solid rgba(149, 214, 234, 0.36);
           top: -3rem;

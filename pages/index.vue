@@ -197,4 +197,12 @@ export default {
     }
   }
 }
+@media (max-width: 600px) {
+  .g-cursor {
+    display: none;
+    &__pointer {
+      display: none;
+    }
+  }
+}
 </style>

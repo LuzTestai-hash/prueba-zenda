@@ -20,6 +20,7 @@ export default {
   plugins: [
     '~/plugins/vue-observe-visibility.client.js',
     { src: '~/plugins/vue-kinesis.js', mode: 'client' },
+    { src: '~~/node_modules/vue-rellax/lib/nuxt-plugin', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
