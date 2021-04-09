@@ -57,11 +57,11 @@
         callback: visibilityChanged,
       }"
     />
-    <!-- <Dashboard
+    <Dashboard
       v-observe-visibility="{
         callback: visibilityChanged,
       }"
-    /> -->
+    />
     <Contact
       v-observe-visibility="{
         callback: visibilityChanged,
