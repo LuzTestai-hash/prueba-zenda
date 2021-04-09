@@ -4,7 +4,7 @@
       <b-col md="4">
         <div v-if="title === 'Clue'">
           <img
-            src="../assets/icons/clue-logo.png"
+            src="../assets/icons/clue-logo-white.png"
             alt="clue"
             class="trademarks"
             width="188px"
@@ -13,7 +13,7 @@
         </div>
         <div v-if="title === 'WynDam'">
           <img
-            src="../assets/icons/whyndham-logo.png"
+            src="../assets/icons/whyndham-logo-white.png"
             alt="whyndham"
             class="trademarks"
             width="187px"

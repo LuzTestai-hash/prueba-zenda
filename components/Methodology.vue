@@ -27,7 +27,6 @@
 
       <div class="d-none d-md-flex flex-column">
         <p class="title-desktop">Nuestro método.</p>
-        <div class="circle"></div>
         <div class="d-md-flex justify-content-center mt-1">
           <div class="container-first-column">
             <div v-for="item in firstColumn" :key="item.id">
@@ -173,7 +172,18 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .methodology-background {
   position: relative;
-  background: white;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -57%;
+    left: -58%;
+    z-index: -1;
+    background: url(../assets/icons/zenda-circle.svg) no-repeat center;
+    background-size: 35rem 35rem;
+    animation: spin 5s linear infinite;
+  }
 
   .wave {
     position: absolute;
@@ -183,18 +193,6 @@ export default {
   }
   .methodology-container {
     padding: 5rem 1.9rem;
-    .circle {
-      width: 35rem;
-      height: 35rem;
-      -moz-border-radius: 100%;
-      -webkit-border-radius: 100%;
-      border-radius: 100%;
-      position: absolute;
-      top: 184px;
-      margin-left: 7rem;
-      border: 2px solid;
-      opacity: 0.05;
-    }
     .title-container {
       display: flex;
       justify-content: space-between;
@@ -278,6 +276,14 @@ export default {
     .methodology-container {
       padding: 4rem 1.6rem;
     }
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
