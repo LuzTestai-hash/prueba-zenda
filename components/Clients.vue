@@ -174,6 +174,14 @@ export default {
         margin: 1rem;
       }
     }
+    @media (max-width: 600px) {
+      .arrows-container {
+        display: none;
+        .arrow-button {
+          display: none;
+        }
+      }
+    }
   }
   @media (min-width: 1024px) {
     .client-container {

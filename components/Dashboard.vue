@@ -224,6 +224,14 @@ export default {
           margin: 1rem;
         }
       }
+      @media (max-width: 600px) {
+        .arrows-container {
+          display: none;
+          .arrow-button {
+            display: none;
+          }
+        }
+      }
     }
     @media (min-width: 1440px) {
       .button {
@@ -239,14 +247,6 @@ export default {
     @media (min-width: 1024px) {
       .hand-container {
         display: none;
-      }
-    }
-    @media (max-width: 1024px) {
-      .arrows-container {
-        display: none;
-        .arrow-button {
-          display: none;
-        }
       }
     }
     .carusel-vue-slick {
