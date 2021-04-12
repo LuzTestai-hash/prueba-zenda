@@ -172,19 +172,6 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .methodology-background {
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -57%;
-    left: -58%;
-    z-index: -1;
-    background: url(../assets/icons/zenda-circle.svg) no-repeat center;
-    background-size: 35rem 35rem;
-    animation: spin 5s linear infinite;
-  }
-
   .wave {
     position: absolute;
     bottom: 0;
@@ -275,6 +262,23 @@ export default {
   @media (min-width: 600px) {
     .methodology-container {
       padding: 4rem 1.6rem;
+    }
+  }
+}
+@media (min-width: 600px) {
+  .methodology-background {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -57%;
+      left: -58%;
+      z-index: -1;
+      background: url(../assets/icons/zenda-circle.svg) no-repeat center;
+      background-size: 35rem 35rem;
+      animation: spin 5s linear infinite;
     }
   }
 }
