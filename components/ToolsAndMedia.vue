@@ -1,6 +1,6 @@
 <template>
   <b-container id="dashboard-tools" class="toolsAndMedia-container">
-    <p class="subtitle">HERRAMIENTAS Y MEDIOS</p>
+    <p class="subtitle">CÓMO LO LOGRAMOS.</p>
     <div class="d-block d-md-none">
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">
