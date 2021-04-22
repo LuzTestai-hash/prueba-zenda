@@ -130,191 +130,192 @@ export default {
 .agile-background {
   background-color: #fafafa;
   position: relative;
-}
-.agile-container {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem 1.4rem;
-  .subtitle {
-    font-weight: 700;
-    color: $typography;
-    letter-spacing: 0.02rem;
-    line-height: 1.2rem;
-  }
-  .title-mobile {
-    font-weight: bold;
-    font-size: 2.3rem;
-    line-height: 2.3rem;
-    letter-spacing: -0.02em;
-    color: $typography;
-    margin-top: 1.2rem;
-    margin-bottom: 3.3rem;
-    padding-right: 5rem;
-  }
-  @media (min-width: 600px) {
-    .title-mobile {
-      display: none;
-    }
-  }
-  @media (min-width: 1440px) {
-    .subtitle {
-      font-size: 1rem;
-      margin-bottom: 4rem;
-    }
-  }
-  .circles-container {
+
+  .agile-container {
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 15rem;
-    margin-top: 12rem;
-    .circle {
-      width: 10rem;
-      height: 10rem;
-      border-radius: 50%;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .circle-text {
-        text-align: center;
-        color: white;
-        margin-bottom: 0;
-      }
-      &.secondary {
-        transform: translate(-12rem, -2rem);
-        background-color: $secondary;
-        opacity: 0.9;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-        transition: all 0.5s ease-out;
-      }
-      &.primary {
-        transform: translate(8rem, -8rem);
-        background-color: $primary;
-        opacity: 0.9;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-        transition: all 0.5s ease-out;
-      }
-      &.third {
-        transform: translate(5rem, 10rem);
-        background: rgba(149, 214, 234, 0.9);
-        opacity: 0.9;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-        transition: all 0.5s ease-out;
-      }
-      &.white {
-        .circle-text {
-          font-family: 'Recoleta Alt', serif;
-          font-weight: 900;
-          font-size: 1.3rem;
-          transform: rotate(360deg);
-          color: black;
-          z-index: 2;
-        }
-      }
+    padding: 3rem 1.4rem;
+    .subtitle {
+      font-weight: 700;
+      color: $typography;
+      letter-spacing: 0.02rem;
+      line-height: 1.2rem;
     }
-    &.true {
-      .circle {
-        &.secondary {
-          // animation-name: secondary-circle;
-          animation-duration: 4s;
-          animation-fill-mode: forwards;
-        }
-        &.primary {
-          // animation-name: primary-circle;
-          animation-duration: 4s;
-          animation-fill-mode: forwards;
-        }
-        &.third {
-          // animation-name: third-circle;
-          animation-duration: 4s;
-          animation-fill-mode: forwards;
-        }
-        &.white {
-          .circle-text {
-            // animation-name: text-white-circle;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-          }
-        }
-      }
-    }
-    @keyframes secondary-circle {
-      from {
-        transform: translate(-9rem, 0);
-      }
-      to {
-        transform: translate(-4rem, 3rem);
-      }
-    }
-    @keyframes primary-circle {
-      from {
-        transform: translate(6rem, -6rem);
-      }
-      to {
-        transform: translate(0, -3.5rem);
-      }
-    }
-    @keyframes third-circle {
-      from {
-        transform: translate(3.5rem, 8rem);
-      }
-      to {
-        transform: translate(3rem, 3rem);
-      }
-    }
-    @keyframes text-white-circle {
-      from {
-        transform: rotate(270deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-  }
-  .text-container {
-    padding: 1rem 2rem;
-    .title {
+    .title-mobile {
       font-weight: bold;
       font-size: 2.3rem;
       line-height: 2.3rem;
       letter-spacing: -0.02em;
       color: $typography;
       margin-top: 1.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 3.3rem;
       padding-right: 5rem;
     }
-    .text-detail {
-      text-align: left;
-      color: $subtitle;
-      font-weight: 100;
-    }
-    @media (max-width: 600px) {
-      .title {
+    @media (min-width: 600px) {
+      .title-mobile {
         display: none;
-      }
-      .text-detail {
-        text-align: center;
       }
     }
     @media (min-width: 1440px) {
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 4rem;
+      }
+    }
+    .circles-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15rem;
+      margin-top: 12rem;
+      .circle {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .circle-text {
+          text-align: center;
+          color: white;
+          margin-bottom: 0;
+        }
+        &.secondary {
+          transform: translate(-12rem, -2rem);
+          background-color: $secondary;
+          opacity: 0.9;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+          transition: all 0.5s ease-out;
+        }
+        &.primary {
+          transform: translate(8rem, -8rem);
+          background-color: $primary;
+          opacity: 0.9;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+          transition: all 0.5s ease-out;
+        }
+        &.third {
+          transform: translate(5rem, 10rem);
+          background: rgba(149, 214, 234, 0.9);
+          opacity: 0.9;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+          transition: all 0.5s ease-out;
+        }
+        &.white {
+          .circle-text {
+            font-family: 'Recoleta Alt', serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            transform: rotate(360deg);
+            color: black;
+            z-index: 2;
+          }
+        }
+      }
+      &.true {
+        .circle {
+          &.secondary {
+            // animation-name: secondary-circle;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+          }
+          &.primary {
+            // animation-name: primary-circle;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+          }
+          &.third {
+            // animation-name: third-circle;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+          }
+          &.white {
+            .circle-text {
+              // animation-name: text-white-circle;
+              animation-duration: 4s;
+              animation-fill-mode: forwards;
+            }
+          }
+        }
+      }
+      @keyframes secondary-circle {
+        from {
+          transform: translate(-9rem, 0);
+        }
+        to {
+          transform: translate(-4rem, 3rem);
+        }
+      }
+      @keyframes primary-circle {
+        from {
+          transform: translate(6rem, -6rem);
+        }
+        to {
+          transform: translate(0, -3.5rem);
+        }
+      }
+      @keyframes third-circle {
+        from {
+          transform: translate(3.5rem, 8rem);
+        }
+        to {
+          transform: translate(3rem, 3rem);
+        }
+      }
+      @keyframes text-white-circle {
+        from {
+          transform: rotate(270deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .text-container {
+      padding: 1rem 2rem;
       .title {
-        font-size: 4rem;
-        line-height: 4rem;
-        font-weight: 100;
+        font-weight: bold;
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+        letter-spacing: -0.02em;
+        color: $typography;
+        margin-top: 1.2rem;
+        margin-bottom: 1rem;
+        padding-right: 5rem;
       }
       .text-detail {
-        font-size: 1.2rem;
+        text-align: left;
+        color: $subtitle;
+        font-weight: 100;
+      }
+      @media (max-width: 600px) {
+        .title {
+          display: none;
+        }
+        .text-detail {
+          text-align: center;
+        }
+      }
+      @media (min-width: 1440px) {
+        .title {
+          font-size: 4rem;
+          line-height: 4rem;
+          font-weight: 100;
+        }
+        .text-detail {
+          font-size: 1.2rem;
+        }
       }
     }
   }
-}
-@media (min-width: 1440px) {
-  .agile-container {
-    padding: 4rem 0;
+  @media (min-width: 1440px) {
+    .agile-container {
+      padding: 4rem 0;
+    }
   }
 }
 </style>

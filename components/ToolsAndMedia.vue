@@ -6,51 +6,52 @@
         <div class="carrusel">
           <img src="../assets/icons/media.svg" width="60" height="60" />
         </div>
-        <div class="carrusel">
-          <p>Medios</p>
-        </div>
-        <div class="carrusel">
-          <p>Walmart</p>
-        </div>
-        <div class="carrusel">
-          <p>Workana</p>
-        </div>
-        <div class="carrusel">
-          <p>Heiniken</p>
+        <div
+          v-for="(item, index) in category.Medios"
+          :key="index"
+          class="image-carrusel"
+        >
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            :height="item.height"
+            class="image-carrusel"
+          />
         </div>
       </VueSlickCarousel>
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">
           <img src="../assets/icons/data.svg" width="60" height="60" />
         </div>
-        <div class="carrusel">
-          <p>Data</p>
-        </div>
-        <div class="carrusel">
-          <p>Walmart</p>
-        </div>
-        <div class="carrusel">
-          <p>Workana</p>
-        </div>
-        <div class="carrusel">
-          <p>Heiniken</p>
+        <div
+          v-for="(item, index) in category.Data"
+          :key="index"
+          class="image-carrusel"
+        >
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            :height="item.height"
+          />
         </div>
       </VueSlickCarousel>
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">
           <img src="../assets/icons/flow.svg" width="60" height="60" />
         </div>
-        <div class="carrusel">
-          <p>Flow</p>
-        </div>
-        <div class="carrusel">
-          <p>Walmart</p>
-        </div>
-        <div class="carrusel">
-          <p>Workana</p>
-        </div>
-        <div class="carrusel">
-          <p>Heiniken</p>
+        <div
+          v-for="(item, index) in category.Flow"
+          :key="index"
+          class="image-carrusel"
+        >
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            :height="item.height"
+          />
         </div>
       </VueSlickCarousel>
     </div>
@@ -87,27 +88,42 @@
         v-bind="settings"
         class="container-trademarks"
       >
-        <p v-for="(item, index) in category.Medios" :key="index">
-          {{ item }}
-        </p>
+        <div v-for="(item, index) in category.Medios" :key="index">
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            :height="item.height"
+          />
+        </div>
       </div>
       <div
         v-if="categorySelected === 'Data'"
         v-bind="settings"
         class="container-trademarks"
       >
-        <p v-for="(item, index) in category.Data" :key="index">
-          {{ item }}
-        </p>
+        <div v-for="(item, index) in category.Data" :key="index">
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            :height="item.height"
+          />
+        </div>
       </div>
       <div
         v-if="categorySelected === 'Flow'"
         v-bind="settings"
         class="container-trademarks"
       >
-        <p v-for="(item, index) in category.Flow" :key="index">
-          {{ item }}
-        </p>
+        <div v-for="(item, index) in category.Flow" :key="index">
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            :height="item.height"
+          />
+        </div>
       </div>
     </div>
   </b-container>
@@ -128,14 +144,34 @@ export default {
       settings: {
         dots: false,
         arrows: false,
-        infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
         speed: 500,
       },
       category: {
-        Medios: ['Walmart', 'Walmart', 'Walmart', 'Walmart', 'Walmart'],
-        Data: ['Workana', 'Workana', 'Workana', 'Workana', 'Workana'],
-        Flow: ['Heiniken', 'Heiniken', 'Heiniken', 'Heiniken', 'Heiniken'],
+        Medios: [
+          // { title: 'googleAds-logo', width: '60px', height: '60px' },
+          { title: 'facebook-logo', width: '140px', height: '40px' },
+          { title: 'searchads-logo', width: '140px', height: '40px' },
+          { title: 'linkedin-logo', width: '140px', height: '40px' },
+          { title: 'amazon-logo', width: '60px', height: '60px' },
+          { title: 'pinterest-logo', width: '100px', height: '40px' },
+        ],
+        Data: [
+          { title: 'google-suite-logo', width: '120px', height: '40px' },
+          { title: 'slack-logo', width: '100px', height: '40px' },
+          { title: 'notion-logo', width: '80px', height: '40px' },
+          { title: 'Trello-logo', width: '100px', height: '40px' },
+        ],
+        Flow: [
+          { title: 'datastudio-logo', width: '100px', height: '40px' },
+          { title: 'supermetrics-logo', width: '100px', height: '40px' },
+          { title: 'google-analytics-logo', width: '90px', height: '40px' },
+          { title: 'appsflyer-logo', width: '85px', height: '40px' },
+          { title: 'amplitude-logo', width: '90px', height: '40px' },
+          { title: 'segment-logo', width: '90px', height: '40px' },
+        ],
       },
       categorySelected: 'Medios',
       getMembers(info) {
@@ -167,9 +203,13 @@ export default {
   .carrusel-container {
     margin-bottom: 2rem;
   }
+  .image-carrusel {
+    margin-right: 1rem;
+  }
   .carrusel {
     display: flex;
     align-items: center;
+    margin-right: 1rem;
     p {
       margin-top: 1rem;
       margin-bottom: initial;
@@ -180,7 +220,8 @@ export default {
     display: flex;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 
     p {
       margin: 2rem;
