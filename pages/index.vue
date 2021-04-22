@@ -35,12 +35,12 @@
         callback: visibilityChanged,
       }"
     />
+    <div class="grafic-zenda" />
     <WhatWeDo
       v-observe-visibility="{
         callback: visibilityChanged,
       }"
     />
-    <AgileProcess />
     <Methodology
       v-observe-visibility="{
         callback: visibilityChanged,
@@ -195,6 +195,21 @@ export default {
         transform: translateX(0);
       }
     }
+  }
+}
+.grafic-zenda {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  width: 28rem;
+  height: 40rem;
+  transform: translateY(-10rem);
+  background-image: url(../assets/icons/zenda-grafico.svg);
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .grafic-zenda {
+    display: none;
   }
 }
 @media (max-width: 600px) {

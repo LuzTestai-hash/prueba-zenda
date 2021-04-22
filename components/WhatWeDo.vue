@@ -1,186 +1,89 @@
 <template>
   <div id="what-we-do" class="whatWeDo-background">
-    <div
-      v-rellax="{
-        speed: -2,
-        center: false,
-        wrapper: null,
-        vertical: true,
-        horizontal: false,
-      }"
-    >
-      <b-container class="whatWeDo-container">
-        <b-row>
-          <b-col md="12">
-            <p class="subtitle">QUÉ HACEMOS</p>
-          </b-col>
-          <b-col md="6">
-            <p class="title">Lo mejor para tu negocio.</p>
-            <div class="content-container">
-              <p v-if="bottomActive === 'first'" class="title-content">
+    <b-container class="whatWeDo-container">
+      <b-row>
+        <b-col md="12">
+          <p class="subtitle">QUÉ HACEMOS</p>
+        </b-col>
+        <b-col md="8">
+          <p class="title">Lo mejor para tu negocio.</p>
+          <div class="mobile-graphic" />
+          <div class="content-container">
+            <div class="button-container">
+              <b-button
+                :class="
+                  bottomActive === 'first'
+                    ? 'button primary selected'
+                    : 'button primary'
+                "
+                @click="textSelected('first')"
+              >
                 Estrategias digitales
-              </p>
-              <p v-if="bottomActive === 'first'" class="detail-content">
-                Lideramos proyectos digitales implementando eficazmente
-                estrategias y procesos de transformación para lograr objetivos
-                medibles, alcanzables y relevantes (SMART) para los negocios de
-                nuestros clientes.
-              </p>
-              <p v-if="bottomActive === 'second'" class="title-content">
-                Segundo botón
-              </p>
-              <p v-if="bottomActive === 'second'" class="detail-content">
-                Lideramos proyectos digitales implementando eficazmente
-                estrategias y procesos de transformación para lograr objetivos
-                medibles, alcanzables y relevantes (SMART) para los negocios de
-                nuestros clientes.
-              </p>
-              <p v-if="bottomActive === 'third'" class="title-content">
-                tercer botón
-              </p>
-              <p v-if="bottomActive === 'third'" class="detail-content">
-                Lideramos proyectos digitales implementando eficazmente
-                estrategias y procesos de transformación para lograr objetivos
-                medibles, alcanzables y relevantes (SMART) para los negocios de
-                nuestros clientes.
-              </p>
+              </b-button>
+              <b-button
+                :class="
+                  bottomActive === 'second'
+                    ? 'button third selected'
+                    : 'button third'
+                "
+                @click="textSelected('second')"
+                >Implementación</b-button
+              >
+              <b-button
+                :class="
+                  bottomActive === 'third'
+                    ? 'button secondary selected'
+                    : 'button secondary'
+                "
+                @click="textSelected('third')"
+                >Consultoría</b-button
+              >
             </div>
-          </b-col>
-          <b-col md="6" class="p-md-5">
-            <b-button
-              v-b-toggle="isMobile ? 'collapse-1' : ''"
-              :class="`button-colapse primary ${
-                bottomActive === 'first' ? 'active' : null
-              }`"
-              @click="textSelected('first')"
-            >
-              <div
-                v-observe-visibility="{
-                  callback: isViewableNow,
-                  throttle: 300,
-                }"
-                :class="`single-chart ${showAnimation}`"
-              >
-                <svg viewBox="0 0 36 36" class="circular-chart primary">
-                  <path
-                    class="circle-bg"
-                    d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <path
-                    class="circle"
-                    stroke-dasharray="45, 100"
-                    d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <text x="18" y="20.35" class="percentage primary">45%</text>
-                </svg>
-              </div>
-
-              <p class="text">Estrategias digitales</p>
-            </b-button>
-            <b-collapse id="collapse-1">
-              <b-card class="collapse-content">
-                Desarrollamos estrategias digitales para lograr objetivos
-                orientados a Branding y Performance (eCommerce, Apps, Leads)
-              </b-card>
-            </b-collapse>
-            <b-button
-              v-b-toggle="isMobile ? 'collapse-2' : ''"
-              :class="`button-colapse third ${
-                bottomActive === 'second' ? 'active' : null
-              }`"
-              @click="textSelected('second')"
-            >
-              <div
-                v-observe-visibility="{
-                  callback: isViewableNow,
-                  throttle: 300,
-                }"
-                :class="`single-chart ${showAnimation}`"
-              >
-                <svg viewBox="0 0 36 36" class="circular-chart third">
-                  <path
-                    class="circle-bg"
-                    d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <path
-                    class="circle"
-                    stroke-dasharray="35, 100"
-                    d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <text x="18" y="20.35" class="percentage third">35%</text>
-                </svg>
-              </div>
-              <p class="text">Implementación</p>
-            </b-button>
-            <b-collapse id="collapse-2">
-              <b-card class="collapse-content"
-                >I am collapsible content!</b-card
-              >
-            </b-collapse>
-            <b-button
-              v-b-toggle="isMobile ? 'collapse-3' : ''"
-              :class="`button-colapse secondary ${
-                bottomActive === 'third' ? 'active' : null
-              }`"
-              @click="textSelected('third')"
-            >
-              <div
-                v-observe-visibility="{
-                  callback: isViewableNow,
-                  throttle: 300,
-                }"
-                :class="`single-chart ${showAnimation}`"
-              >
-                <svg viewBox="0 0 36 36" class="circular-chart secondary">
-                  <path
-                    class="circle-bg"
-                    d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <path
-                    class="circle"
-                    stroke-dasharray="20, 100"
-                    d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                  />
-                  <text x="18" y="20.35" class="percentage secondary">20%</text>
-                </svg>
-              </div>
-              <p class="text">Consultoría</p>
-            </b-button>
-            <b-collapse id="collapse-3">
-              <b-card class="collapse-content"
-                >I am collapsible content!</b-card
-              >
-            </b-collapse>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-    <svg
-      id="svg"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="-300 0 950 270"
-      class="wave"
-    >
-      <path
-        d="M-314,267 C105,364 400,100 812,279"
-        fill="none"
-        stroke="#fafafa"
-        stroke-width="120"
-        stroke-linecap="round"
-      />
-    </svg>
+            <p v-if="bottomActive === 'first'" class="detail-content">
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+            <p v-if="bottomActive === 'second'" class="detail-content">
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+            <p v-if="bottomActive === 'third'" class="detail-content">
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+          </div>
+        </b-col>
+        <b-col md="4" class="p-md-5">
+          <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
+            <p class="text">Estrategias digitales</p>
+          </b-button>
+          <b-collapse id="collapse-1">
+            <b-card class="collapse-content">
+              Desarrollamos estrategias digitales para lograr objetivos
+              orientados a Branding y Performance (eCommerce, Apps, Leads)
+            </b-card>
+          </b-collapse>
+          <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
+            <p class="text">Implementación</p>
+          </b-button>
+          <b-collapse id="collapse-2">
+            <b-card class="collapse-content">I am collapsible content!</b-card>
+          </b-collapse>
+          <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
+            <p class="text">Consultoría</p>
+          </b-button>
+          <b-collapse id="collapse-3">
+            <b-card class="collapse-content">I am collapsible content!</b-card>
+          </b-collapse>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -217,37 +120,13 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .whatWeDo-background {
-  position: relative;
   background-color: $background-white;
-  .wave {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    z-index: -100;
-  }
 }
 .whatWeDo-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1.4rem 60% 1.4rem;
-  .content-container {
-    .title-content {
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
-    .detail-content {
-      padding-right: 5rem;
-      font-weight: 100;
-      color: rgba(10, 10, 11, 0.64);
-    }
-  }
-  @media (max-width: 600px) {
-    .content-container {
-      display: none;
-    }
-  }
+  padding: 4rem 1.4rem 4rem 1.4rem;
   .subtitle {
     font-weight: 700;
     color: $typography;
@@ -264,25 +143,75 @@ export default {
     margin-bottom: 3.3rem;
     padding-right: 3rem;
   }
-  @media (min-width: 600px) {
-    .title {
-      font-size: 2.8rem;
-      line-height: 3.5rem;
-      padding-right: 11rem;
-      margin-bottom: 4rem;
+  .mobile-graphic {
+    background-image: url(../assets/icons/zenda-grafico-mobile.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    width: 100%;
+    height: 15rem;
+  }
+  .content-container {
+    .button-container {
+      margin-bottom: 3rem;
+      .button {
+        background-color: transparent;
+        border-radius: 0.5rem;
+        width: 11rem;
+        height: 2.8rem;
+        transition: all 0.4s ease;
+        &:focus {
+          box-shadow: initial;
+        }
+        &.primary {
+          border-color: $primary;
+          color: $primary;
+          &.selected {
+            color: white;
+            background-color: $primary;
+          }
+          &:hover {
+            color: white;
+            background-color: $primary;
+          }
+        }
+        &.secondary {
+          border-color: $secondary;
+          color: $secondary;
+          &.selected {
+            color: white;
+            background-color: $secondary;
+          }
+          &:hover {
+            color: white;
+            background-color: $secondary;
+          }
+        }
+        &.third {
+          border-color: $third;
+          color: $third;
+          &.selected {
+            color: white;
+            background-color: $third;
+          }
+          &:hover {
+            color: white;
+            background-color: $third;
+          }
+        }
+      }
+    }
+    .detail-content {
+      padding-right: 20%;
+      font-weight: 100;
+      color: rgba(10, 10, 11, 0.64);
     }
   }
-  @media (min-width: 1440px) {
-    .title {
-      font-size: 4.5rem;
-      line-height: 4.5rem;
-      padding-right: 4rem;
-    }
-    .subtitle {
-      font-size: 1rem;
-      margin-bottom: 4rem;
+  @media (max-width: 767px) {
+    .content-container {
+      display: none;
     }
   }
+
   .active {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background-color: #fff !important;
@@ -305,82 +234,27 @@ export default {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border-radius: 1rem;
     }
-
     .text {
       font-size: 1.125rem;
       color: $typography;
       margin-left: 0.1rem;
     }
-    .single-chart {
-      width: 33%;
-      justify-content: space-around;
-      .circular-chart {
-        display: block;
-        margin: 10px auto;
-        max-width: 70%;
-        max-height: 200px;
-      }
-
-      .circle-bg {
-        fill: none;
-        stroke: #fff;
-        stroke-width: 3.8;
-      }
-      .circle {
-        fill: none;
-        stroke-width: 2.8;
-        stroke-linecap: round;
-      }
-      &.true {
-        .circle {
-          animation: progress 1s ease-out forwards;
-        }
-        @keyframes progress {
-          0% {
-            stroke-dasharray: 0 100;
-          }
-        }
-      }
-
-      .circular-chart.primary .circle {
-        stroke: $primary;
-      }
-      .circular-chart.secondary .circle {
-        stroke: $secondary;
-      }
-      .circular-chart.third .circle {
-        stroke: $third;
-      }
-
-      .percentage {
-        font-size: 0.5em;
-        text-anchor: middle;
-        &.primary {
-          fill: $primary;
-        }
-        &.secondary {
-          fill: $secondary;
-        }
-        &.third {
-          fill: $third;
-        }
-      }
-    }
-    @media (min-width: 1440px) {
+    &.primary {
       .text {
-        font-size: 1.5rem;
+        color: $primary;
       }
-      .single-chart {
-        width: 7rem;
+    }
+    &.secondary {
+      .text {
+        color: $secondary;
+      }
+    }
+    &.third {
+      .text {
+        color: $third;
       }
     }
   }
-  @media (min-width: 600px) {
-    .collapse-content {
-      display: none;
-    }
-  }
-
   .collapse-content {
     font-weight: 100;
     color: $subtitle;
@@ -389,21 +263,44 @@ export default {
     background-color: transparent;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 767px) {
   .whatWeDo-container {
-    padding: 4rem 1.6rem 15% 1.6rem;
-
+    padding: 4rem 1.4rem 4rem 1.4rem;
+    .title {
+      font-size: 2.8rem;
+      line-height: 3.5rem;
+      padding-right: 11rem;
+      margin-bottom: 4rem;
+    }
+    .mobile-graphic {
+      display: none;
+    }
+    .collapse-content {
+      display: none;
+    }
+    .button-colapse {
+      display: none;
+    }
     .text {
       font-size: 1.4rem;
-    }
-    .single-chart {
-      width: 6.5rem;
     }
   }
 }
 @media (min-width: 1440px) {
   .whatWeDo-container {
-    padding: 0 0 15% 0;
+    padding: 4rem 1.4rem 10% 1.4rem;
+    .title {
+      font-size: 4rem;
+      line-height: 4.5rem;
+      padding-right: 4rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 4rem;
+    }
+    .text {
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

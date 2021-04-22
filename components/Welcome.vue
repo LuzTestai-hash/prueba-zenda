@@ -3,15 +3,26 @@
     <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">
-        <p class="title">Lideramos</p>
-        <p>proyectos digitales.</p>
+        <p class="title">Hacemos marketing</p>
+        <p class="title">analítico enserio.</p>
+        <p class="subtitle">
+          Somos un equipo de creativos, especialistas en comunicación y
+          marketing, con una simple creencia: conectar a las marcas con sus
+          clientes en los momentos que importan.
+        </p>
       </div>
-      <div class="d-block d-md-none mt-5">
-        <img
-          src="../assets/icons/zenda-mobile-hero.svg"
-          alt="logo"
-          class="hero"
-        />
+      <div class="container-cards">
+        <div class="tariffCards">
+          <div class="inovation">
+            <h3>Inovación</h3>
+          </div>
+          <div class="data">
+            <h3>Data</h3>
+          </div>
+          <div class="performance">
+            <h3>Performance</h3>
+          </div>
+        </div>
       </div>
     </b-container>
   </div>
@@ -26,69 +37,182 @@ export default {}
 
 .welcome-background {
   background-color: $background-white;
-  position: relative;
-}
-
-.welcome-container {
-  padding: 0.1rem !important;
-  width: 100%;
-  margin: 0 auto;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  .hero {
-    width: 5rem;
-  }
-  .container-title {
-    p {
-      font-weight: bold;
-      font-size: 2.6rem;
-      line-height: 3rem;
-      text-align: flex-start;
-      letter-spacing: -0.02em;
-      color: $typography;
+  background-image: url(../assets/icons/zenda-fondo-hero-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: 0 5rem;
+  .welcome-container {
+    padding: 0.1rem !important;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    .container-title {
+      padding: 0 1rem;
+      .title {
+        font-weight: bold;
+        font-size: 2.2rem;
+        line-height: 1.5rem;
+        text-align: flex-start;
+        letter-spacing: -0.02em;
+        color: $typography;
+        margin-bottom: 1rem;
+      }
+      .subtitle {
+        margin-top: 1.5rem;
+      }
     }
-    .title {
-      text-decoration: underline;
-      margin-bottom: 0;
+    .container-cards {
+      position: relative;
+      .tariffCards {
+        margin-top: 2.5rem;
+        user-select: none;
+        transform: translate3d(0, 0, 0);
+        transform-style: preserve-3d;
+        &::after {
+          position: absolute;
+          bottom: -27px;
+          left: 5%;
+          content: '';
+          width: 65%;
+          height: 10px;
+          border-radius: 100%;
+          background-image: radial-gradient(
+            rgba(#223254, 0.04),
+            rgba(#223254, 0)
+          );
+        }
+        div {
+          position: relative;
+          width: 280px;
+          height: 140px;
+          border-radius: 12px;
+          color: white;
+          transform: rotateX(45deg) rotateY(-15deg) rotate(45deg);
+          transition: all 0.4s ease;
+          overflow: hidden;
+          cursor: pointer;
+          &::after {
+            position: absolute;
+            top: -70px;
+            left: 0;
+            content: '';
+            width: 200%;
+            height: 200%;
+            background-image: linear-gradient(
+              60deg,
+              rgba(white, 0) 20%,
+              rgba(white, 0.1),
+              rgba(white, 0) 80%
+            );
+            transform: translateX(-100%);
+          }
+          h3 {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            font-size: 18px;
+            font-weight: 800;
+          }
+          &.inovation {
+            margin-top: 0;
+            z-index: 3;
+            background-color: #f957c2;
+            background-image: linear-gradient(
+              269.09deg,
+              #f957c2 -3.14%,
+              #f532b3 128.58%
+            );
+            box-shadow: 20px 20px 60px rgba(#542243, 0.5), 1px 1px 0 1px #f532b3;
+          }
+          &.data {
+            margin-top: -70px;
+            z-index: 2;
+            background-color: #3f58e3;
+            background-image: linear-gradient(
+              269.09deg,
+              #95d6ea -3.14%,
+              #b1ecff 128.58%
+            );
+            box-shadow: 20px 20px 60px rgba(#284755, 0.5), 1px 1px 0 1px #b1ecff;
+          }
+          &.performance {
+            margin-top: -70px;
+            z-index: 1;
+            background-color: #2c6fd1;
+            background-image: linear-gradient(
+              269.09deg,
+              #59d7a2 -3.14%,
+              #60dea9 59.97%,
+              #76f7c1 128.58%
+            );
+            box-shadow: 20px 20px 60px rgba(#1e4943, 0.5), 1px 1px 0 1px #60dea9;
+          }
+          &:hover {
+            transform: rotateX(30deg) rotateY(-15deg) rotate(30deg)
+              translate(-25px, 50px);
+            &::after {
+              transform: translateX(100%);
+              transition: all 1.2s ease-in-out;
+            }
+          }
+        }
+      }
     }
   }
 }
 @media (min-width: 600px) {
   .welcome-background {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-image: url(../assets/icons/zenda-hero.svg);
+    background-image: url(../assets/icons/zenda-fondo-hero.svg);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 98%;
+    background-position: 100% 0;
     .welcome-container {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
       text-align: left;
-      p {
-        font-size: 3.1rem;
-        line-height: 3.4rem;
+      .container-title {
+        .title {
+          font-size: 3.5rem;
+          line-height: 3.2rem;
+        }
+        .subtitle {
+          padding-right: 30%;
+        }
       }
-      .title {
-        text-decoration: initial;
+      .container-cards {
+        .tariffCards {
+          div {
+            width: 330px;
+            height: 190px;
+            &.inovation {
+              margin-top: 0;
+            }
+            &.data {
+              margin-top: -90px;
+            }
+            &.performance {
+              margin-top: -90px;
+            }
+          }
+        }
       }
     }
   }
 }
-@media (min-width: 1440px) {
-  .welcome-background {
-    .welcome-container {
-      p {
-        font-size: 4rem;
-        line-height: 4rem;
-      }
-    }
-  }
-}
+// @media (min-width: 1440px) {
+//   .welcome-background {
+//     .welcome-container {
+//       .container-title {
+//         .title {
+//           font-size: 4rem;
+//           line-height: 4rem;
+//         }
+//       }
+//     }
+//   }
+// }
 </style>

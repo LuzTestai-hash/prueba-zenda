@@ -2,7 +2,7 @@
   <div id="methodology" class="methodology-background">
     <b-container class="methodology-container">
       <div class="title-container">
-        <p class="subtitle">METODOLOGÍA.</p>
+        <p class="subtitle">CÓMO LO HACEMOS.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#000'" />
         </div>
@@ -27,9 +27,9 @@
 
       <div class="d-none d-md-flex flex-column">
         <p class="title-desktop">Nuestro método.</p>
-        <div class="d-md-flex justify-content-center mt-1">
+        <div class="cards-container">
           <div class="container-first-column">
-            <div v-for="item in firstColumn" :key="item.id">
+            <div v-for="item in firstColumn" :key="item.id" class="card-method">
               <h1 class="number">{{ item.number }}</h1>
               <p :class="item.color">{{ item.title }}</p>
               <p :class="item.classDetail">
@@ -39,7 +39,11 @@
           </div>
 
           <div class="container-second-column">
-            <div v-for="item in secondColumn" :key="item.id">
+            <div
+              v-for="item in secondColumn"
+              :key="item.id"
+              class="card-method"
+            >
               <h1 class="number">{{ item.number }}</h1>
               <p :class="item.color">{{ item.title }}</p>
               <p :class="item.classDetail">
@@ -173,6 +177,7 @@ export default {
 .methodology-background {
   position: relative;
   .wave {
+    z-index: -1;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -199,20 +204,18 @@ export default {
     }
 
     //Desktop
+    .cards-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      background-image: url(../assets/icons/zenda-infinite.svg);
+      background-repeat: no-repeat;
+    }
     .container-first-column {
-      max-width: 40%;
-      div {
-        margin-right: 5rem;
-        margin-bottom: 5rem;
-      }
+      max-width: 30%;
     }
     .container-second-column {
       max-width: 30%;
-      margin-top: 5rem;
-      margin-bottom: 7rem;
-      div {
-        margin-bottom: 5rem;
-      }
     }
     .title-desktop {
       font-size: 2.5rem;
@@ -222,19 +225,18 @@ export default {
       letter-spacing: -0.02em;
       margin-bottom: 6rem;
     }
+    .card-method {
+      background-color: white;
+      box-shadow: 0 4px 100px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
     .knowledge {
       font-family: 'Recoleta Alt', serif;
       font-size: 1.5rem;
       font-weight: 600;
-      &.primary {
-        color: $primary;
-      }
-      &.secondary {
-        color: $secondary;
-      }
-      &.third {
-        color: $third;
-      }
+      color: black;
     }
     .detail {
       font-size: 1.1rem;
@@ -245,17 +247,12 @@ export default {
       font-family: 'Recoleta Alt', serif;
       font-size: 2.5rem;
       font-weight: 700;
+      color: $primary;
     }
     @media (min-width: 1440px) {
       .title-desktop {
         font-size: 3rem;
         margin-bottom: 6rem;
-      }
-      .number {
-        font-size: 4rem;
-      }
-      .knowledge {
-        font-size: 2rem;
       }
     }
   }
@@ -268,26 +265,6 @@ export default {
 @media (min-width: 600px) {
   .methodology-background {
     position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -57%;
-      left: -58%;
-      z-index: -1;
-      background: url(../assets/icons/zenda-circle.svg) no-repeat center;
-      background-size: 35rem 35rem;
-      animation: spin 5s linear infinite;
-    }
-  }
-}
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 </style>

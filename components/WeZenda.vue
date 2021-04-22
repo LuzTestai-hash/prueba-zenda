@@ -93,6 +93,7 @@ export default {}
         text-decoration: initial;
         padding-right: 2rem;
         font-size: 1.2rem;
+        font-weight: 100;
       }
     }
     @media (min-width: 1440px) {
@@ -105,9 +106,11 @@ export default {}
         font-weight: 700;
       }
       .detail {
+        margin-top: 1rem;
+        font-weight: 100;
         text-decoration: initial;
         padding-right: 2rem;
-        font-size: 1.3rem;
+        font-size: 1rem;
       }
     }
     .button-colapse {
@@ -189,7 +192,7 @@ export default {}
   }
   @media (min-width: 1440px) {
     .weZenda-container {
-      padding: 4rem 0;
+      padding: 4rem 0 10rem 0;
     }
   }
 }

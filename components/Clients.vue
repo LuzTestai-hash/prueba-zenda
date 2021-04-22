@@ -5,7 +5,7 @@
       <div class="d-none d-md-flex circle two"></div>
       <div class="d-none d-md-flex circle three"></div>
       <b-container class="title-container">
-        <p class="subtitle">CASOS DE ÉXITO.</p>
+        <p class="subtitle">QUÉ LOGRAMOS.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
