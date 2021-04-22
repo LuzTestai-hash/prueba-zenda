@@ -2,7 +2,7 @@
   <div id="dashboard" class="dashboard-background">
     <div class="dashboard-container">
       <b-container class="title-container">
-        <p class="subtitle">PANEL DE CONTROL.</p>
+        <p class="subtitle">COMO ANALIZAMOS.</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
