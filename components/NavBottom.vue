@@ -4,7 +4,7 @@
       <div
         v-scroll-to="{
           element: '#we-zenda',
-          duration: 3000,
+          duration: 2000,
         }"
         class="section"
         :class="{
@@ -16,7 +16,7 @@
       <div
         v-scroll-to="{
           element: '#what-we-do',
-          duration: 3000,
+          duration: 2000,
         }"
         class="section"
         :class="{
@@ -28,46 +28,46 @@
       <div
         v-scroll-to="{
           element: '#methodology',
-          duration: 3000,
+          duration: 2000,
         }"
         class="section"
         :class="{
           active: seccionSelected === 'methodology',
         }"
       >
-        Metodología
+        Cómo lo hacemos
       </div>
       <div
-        v-scroll-to="{ element: '#clients', duration: 3000 }"
+        v-scroll-to="{ element: '#clients', duration: 2000 }"
         class="section"
         :class="{
           active: seccionSelected === 'clients',
         }"
       >
-        Clientes
+        Qué logramos
       </div>
       <div
         v-scroll-to="{
-          element: '#dashboard',
-          duration: 3000,
+          element: '#dashboard-tools',
+          duration: 2000,
         }"
         class="section"
         :class="{
           active:
-            seccionSelected === 'dashboard' ||
-            seccionSelected === 'dashboard-tools',
+            seccionSelected === 'dashboard-tools' ||
+            seccionSelected === 'dashboard',
         }"
       >
-        Panel de Control
+        Cómo lo logramos
       </div>
       <div
-        v-scroll-to="{ element: '#contact', duration: 3000 }"
+        v-scroll-to="{ element: '#contact', duration: 2000 }"
         class="section"
         :class="{
           active: seccionSelected === 'contact',
         }"
       >
-        Contacto
+        Comencemos
       </div>
       <div class="menu__border"></div>
     </div>

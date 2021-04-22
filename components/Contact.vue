@@ -1,7 +1,7 @@
 <template>
   <div id="contact" class="contact-background">
     <b-container class="contact-container">
-      <p class="subtitle">CONTACTO.</p>
+      <p class="subtitle">COMENZAMOS.</p>
       <h1 class="email">info@zenda.com.ar</h1>
       <p class="subtitle">AMBASSADORS.</p>
       <p class="title">Zenda en el mundo.</p>
