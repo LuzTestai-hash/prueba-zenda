@@ -54,7 +54,7 @@
           :strength="10"
           class="buttonContact"
         >
-          <p>Comenzá</p>
+          <p>comenzá</p>
           <span id="spanContacto" />
         </kinesis-element>
       </kinesis-container>
