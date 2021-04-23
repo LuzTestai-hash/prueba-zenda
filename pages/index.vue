@@ -76,10 +76,11 @@ export default {
   },
   methods: {
     viewHandler(e) {
+      console.log(e.target.element.id, e.percentCenter, e.type)
       if (
         this.activeViewHandler &&
-        e.percentCenter >= 0.4 &&
-        e.percentCenter <= 0.6
+        e.percentCenter >= 0.45 &&
+        e.percentCenter <= 0.7
       ) {
         this.$nuxt.$emit('changeNav', e.target.element)
       }
