@@ -7,7 +7,7 @@
         </b-col>
         <b-col md="8">
           <p class="title">Lo mejor para tu negocio.</p>
-          <div class="mobile-graphic" />
+          <div :class="`mobile-graphic ${bottomActive}`" />
           <div class="content-container">
             <div class="button-container">
               <b-button
@@ -40,22 +40,17 @@
               >
             </div>
             <p v-if="bottomActive === 'first'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
+              Desarrollamos estrategias digitales para lograr objetivos
+              orientados a Branding y Performance (eCommerce, Apps, Leads)
             </p>
             <p v-if="bottomActive === 'second'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
+              Nos encargamos del día a día de tus campañas, llevando a cabo
+              planeamiento, implementación, optimización y reporting.
             </p>
             <p v-if="bottomActive === 'third'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
+              Trabajamos sobre el desarrollo de distintos procesos digitales
+              internos o externos de tu compañía para lograr una mejora a largo
+              plazo de los mismos.
             </p>
           </div>
         </b-col>
@@ -73,13 +68,20 @@
             <p class="text">Implementación</p>
           </b-button>
           <b-collapse id="collapse-2">
-            <b-card class="collapse-content">I am collapsible content!</b-card>
+            <b-card class="collapse-content">
+              Nos encargamos del día a día de tus campañas, llevando a cabo
+              planeamiento, implementación, optimización y reporting.
+            </b-card>
           </b-collapse>
           <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
             <p class="text">Consultoría</p>
           </b-button>
           <b-collapse id="collapse-3">
-            <b-card class="collapse-content">I am collapsible content!</b-card>
+            <b-card class="collapse-content">
+              Trabajamos sobre el desarrollo de distintos procesos digitales
+              internos o externos de tu compañía para lograr una mejora a largo
+              plazo de los mismos.
+            </b-card>
           </b-collapse>
         </b-col>
       </b-row>
@@ -112,6 +114,7 @@ export default {
     },
     textSelected(selected) {
       this.bottomActive = selected
+      this.$nuxt.$emit('graphic', selected)
     },
   },
 }

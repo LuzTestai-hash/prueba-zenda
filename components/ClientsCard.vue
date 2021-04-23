@@ -28,9 +28,18 @@
       </b-col>
       <b-col md="12">
         <div :class="`detail-container ${color}`">
-          <p class="detail first">+120 paises</p>
-          <p class="detail center">3x</p>
-          <p class="detail">4 millones</p>
+          <div>
+            <p class="number">{{ first.number }}</p>
+            <p class="detail">{{ first.detail }}</p>
+          </div>
+          <div>
+            <p class="number">{{ second.number }}</p>
+            <p class="detail">{{ second.detail }}</p>
+          </div>
+          <div>
+            <p class="number">{{ third.number }}</p>
+            <p class="detail">{{ third.detail }}</p>
+          </div>
         </div>
         <b-button v-b-toggle="'collapse-1'" :class="`button-colapse ${color}`">
           <b-icon icon="chevron-down" class="icon"></b-icon>
@@ -50,6 +59,9 @@ export default {
     title: { type: String, default: null },
     color: { type: String, default: null },
     detail: { type: String, default: null },
+    first: { type: Object, default: null },
+    second: { type: Object, default: null },
+    third: { type: Object, default: null },
   },
 }
 </script>
@@ -102,42 +114,47 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
-    .detail {
+    .number {
       color: $primary;
       font-family: 'Recoleta Alt', serif;
       font-weight: 600;
       font-size: 1.6rem;
       word-break: break-all;
-      text-align: right;
-      &.first {
-        padding-right: 1rem;
-      }
-      &.center {
-        margin-left: 0.8rem;
-        margin-right: 1rem;
-        width: 4rem;
-      }
+      text-align: left;
+    }
+    .detail {
+      font-size: 1rem;
+      padding-right: 4rem;
     }
     &.primary {
       border-top: 1px solid $primary;
+      .number {
+        color: $primary;
+      }
       .detail {
         color: $primary;
       }
     }
     &.secondary {
       border-top: 1px solid $secondary;
+      .number {
+        color: $secondary;
+      }
       .detail {
         color: $secondary;
       }
     }
     &.third {
       border-top: 1px solid $third;
+      .number {
+        color: $third;
+      }
       .detail {
         color: $third;
       }
     }
     @media (min-width: 1440px) {
-      .detail {
+      .number {
         font-size: 2rem;
       }
     }

@@ -22,6 +22,9 @@
             :title="data.title"
             :color="data.color"
             :detail="data.detail"
+            :first="data.first"
+            :second="data.second"
+            :third="data.third"
           />
         </div>
       </VueSlickCarousel>
@@ -62,6 +65,18 @@ export default {
           color: 'primary',
           detail:
             'App de Salud Femenina: Desarrollamos una estrategia de medición basada en la retención a 6 meses de los usuarios, midiendo el Costo por retención del usuario por canal y campaña en todo el mundo y clasificando según Tier de calidad ponderada.',
+          first: {
+            number: '3X',
+            detail: 'Usuarios Nuevos Retenidos después de 6 meses.',
+          },
+          second: {
+            number: '4 millones',
+            detail: 'Extra de usuarios activos mensuales (MAU)',
+          },
+          third: {
+            number: '3X',
+            detail: 'Alcanzados por las campañas de adquisición',
+          },
         },
         {
           id: 1,
@@ -69,6 +84,20 @@ export default {
           color: 'third',
           detail:
             'Grupo de Cadenas Hoteleras: Gestionamos los proyectos digitales de todas las cadenas del grupo (Dazzler,La Quinta, Wyndham, etc.) en todo Latinoamérica.',
+          first: {
+            number: '80%',
+            detail:
+              'de reducción de tiempos dedicados a reporting a través de la automatización',
+          },
+          second: {
+            number: '+400%',
+            detail:
+              'de aumento de ROI en campañas de facebook reemplazando campañas de branding por campañas de performance',
+          },
+          third: {
+            number: '+15 cadenas',
+            detail: 'hoteleras promocionadas en todo LATAM en 3 idiomas',
+          },
         },
       ],
       settings: {

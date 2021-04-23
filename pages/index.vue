@@ -35,7 +35,7 @@
         callback: visibilityChanged,
       }"
     />
-    <div class="grafic-zenda" />
+    <div :class="`grafic-zenda ${graphic}`" />
     <WhatWeDo
       v-observe-visibility="{
         callback: visibilityChanged,
@@ -87,6 +87,7 @@ export default {
       xParent: 0,
       yParent: 0,
       cursor: 'pointer',
+      graphic: 'first',
     }
   },
 
@@ -98,6 +99,9 @@ export default {
   created() {
     this.$nuxt.$on('mouse', (data) => {
       this.cursor = data
+    })
+    this.$nuxt.$on('graphic', (data) => {
+      this.graphic = data
     })
   },
   mounted() {
@@ -203,9 +207,21 @@ export default {
   right: 0;
   width: 28rem;
   height: 40rem;
-  transform: translateY(-10rem);
-  background-image: url(../assets/icons/zenda-grafico.svg);
+  //transform: translateY(-10rem);
   background-repeat: no-repeat;
+  //transition: all 0.1s ease-out;
+  &.first {
+    background-image: url(../assets/icons/zenda-grafico1.svg);
+    transform: translate(0, -10rem);
+  }
+  &.second {
+    background-image: url(../assets/icons/zenda-grafico2.svg);
+    transform: translate(0, -10rem);
+  }
+  &.third {
+    background-image: url(../assets/icons/zenda-grafico3.svg);
+    transform: translate(5.2rem, -5rem);
+  }
 }
 @media (max-width: 767px) {
   .grafic-zenda {

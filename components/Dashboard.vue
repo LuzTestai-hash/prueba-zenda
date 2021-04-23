@@ -68,8 +68,7 @@ export default {
       dashboarddata: [
         {
           id: 0,
-          detail:
-            'Desarrollado en Google Data Studio,  100% Online y customizable. ',
+          detail: 'Desarrollado en Notion, 100% Online y customizable. ',
         },
         // {
         //   id: 1,

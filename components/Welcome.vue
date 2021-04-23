@@ -177,7 +177,7 @@ export default {}
       .container-title {
         .title {
           font-size: 3.5rem;
-          line-height: 3.2rem;
+          line-height: 2.8rem;
         }
         .subtitle {
           padding-right: 30%;

@@ -35,7 +35,7 @@ export default {
 @media (min-width: 1024px) {
   .dashboardCard-container {
     padding-left: 2rem;
-    padding-right: 25%;
+    padding-right: 50%;
   }
 }
 </style>

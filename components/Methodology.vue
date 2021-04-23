@@ -37,7 +37,11 @@
               </p>
             </div>
           </div>
-
+          <img
+            src="../assets/icons/zenda-icon-play.svg"
+            alt="iconPlay1"
+            class="icon-play"
+          />
           <div class="container-second-column">
             <div
               v-for="item in secondColumn"
@@ -205,12 +209,70 @@ export default {
 
     //Desktop
     .cards-container {
+      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       background-image: url(../assets/icons/zenda-infinite.svg);
       background-repeat: no-repeat;
     }
+    .icon-play {
+      position: absolute;
+      width: 3rem;
+      height: auto;
+      z-index: 1;
+      top: 10rem;
+      left: 25rem;
+      animation: icon-play-1 15s ease-out infinite;
+    }
+    @media (max-width: 1200px) {
+      .icon-play {
+        display: none;
+      }
+    }
+    @keyframes icon-play-1 {
+      0% {
+        transform: translate(0);
+      }
+      10% {
+        transform: translate(15rem, 12rem);
+      }
+      20% {
+        transform: translate(32rem, 12rem);
+      }
+      30% {
+        transform: translate(35rem, 1rem);
+      }
+      40% {
+        transform: translate(26rem, -5rem);
+      }
+      50% {
+        transform: translate(15rem, -1rem);
+      }
+      60% {
+        transform: translate(-1rem, 12rem);
+      }
+      70% {
+        transform: translate(-10rem, 15rem);
+      }
+      80% {
+        transform: translate(-20rem, 5rem);
+      }
+      90% {
+        transform: translate(-10rem, -6rem);
+      }
+      100% {
+        transform: translate(0);
+      }
+    }
+    // @keyframes icon-play-2 {
+    //   to {
+    //     transform: translate(0);
+    //   }
+    //   from {
+    //     transform: translate(-15rem, 12rem);
+    //   }
+    // }
     .container-first-column {
       max-width: 30%;
     }
@@ -226,11 +288,13 @@ export default {
       margin-bottom: 6rem;
     }
     .card-method {
+      position: relative;
       background-color: white;
       box-shadow: 0 4px 100px rgba(0, 0, 0, 0.05);
       border-radius: 20px;
       padding: 2rem;
       margin-bottom: 2rem;
+      z-index: 5;
     }
     .knowledge {
       font-family: 'Recoleta Alt', serif;
