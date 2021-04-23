@@ -41,6 +41,7 @@
             src="../assets/icons/zenda-icon-play.svg"
             alt="iconPlay1"
             class="icon-play"
+            loading="lazy"
           />
           <div class="container-second-column">
             <div

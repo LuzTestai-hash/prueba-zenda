@@ -12,7 +12,7 @@
             <p class="name">First Name</p>
             <b-button class="contact-button">
               <p class="contact-text">Contactar</p>
-              <b-icon icon="arrow-right" class="icon"></b-icon>
+              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>
@@ -22,7 +22,7 @@
             <p class="name">First Name</p>
             <b-button class="contact-button">
               <p class="contact-text">Contactar</p>
-              <b-icon icon="arrow-right" class="icon"></b-icon>
+              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>
@@ -32,7 +32,7 @@
             <p class="name">First Name</p>
             <b-button class="contact-button">
               <p class="contact-text">Contactar</p>
-              <b-icon icon="arrow-right" class="icon"></b-icon>
+              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>
@@ -42,7 +42,7 @@
             <p class="name">First Name</p>
             <b-button class="contact-button">
               <p class="contact-text">Contactar</p>
-              <b-icon icon="arrow-right" class="icon"></b-icon>
+              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>

@@ -4,7 +4,12 @@
     <div class="d-block d-md-none">
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">
-          <img src="../assets/icons/media.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/media.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
         <div
           v-for="(item, index) in category.Medios"
@@ -15,14 +20,20 @@
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
-            :height="item.height"
+            height="auto"
             class="image-carrusel"
+            loading="lazy"
           />
         </div>
       </VueSlickCarousel>
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">
-          <img src="../assets/icons/data.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/data.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
         <div
           v-for="(item, index) in category.Data"
@@ -34,12 +45,18 @@
             :alt="item.title"
             :width="item.width"
             height="auto"
+            loading="lazy"
           />
         </div>
       </VueSlickCarousel>
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">
-          <img src="../assets/icons/flow.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/flow.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
         <div
           v-for="(item, index) in category.Flow"
@@ -51,6 +68,7 @@
             :alt="item.title"
             :width="item.width"
             height="auto"
+            loading="lazy"
           />
         </div>
       </VueSlickCarousel>
@@ -63,7 +81,12 @@
           :class="{ 'botton-selected': categorySelected === 'Medios' }"
           @click.prevent="getMembers('Medios')"
         >
-          <img src="../assets/icons/media.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/media.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
           <p>Media</p>
         </div>
         <div
@@ -71,7 +94,12 @@
           :class="{ 'botton-selected': categorySelected === 'Data' }"
           @click.prevent="getMembers('Data')"
         >
-          <img src="../assets/icons/data.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/data.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
           <p>Data</p>
         </div>
         <div
@@ -79,7 +107,12 @@
           :class="{ 'botton-selected': categorySelected === 'Flow' }"
           @click.prevent="getMembers('Flow')"
         >
-          <img src="../assets/icons/flow.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/flow.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
           <p>Flow</p>
         </div>
       </div>
@@ -94,6 +127,7 @@
             :alt="item.title"
             :width="item.width"
             height="auto"
+            loading="lazy"
           />
         </div>
       </div>
@@ -108,6 +142,7 @@
             :alt="item.title"
             :width="item.width"
             height="auto"
+            loading="lazy"
           />
         </div>
       </div>
@@ -122,6 +157,7 @@
             :alt="item.title"
             :width="item.width"
             height="auto"
+            loading="lazy"
           />
         </div>
       </div>
@@ -152,25 +188,25 @@ export default {
       category: {
         Medios: [
           // { title: 'googleAds-logo', width: '60px', height: '60px' },
-          { title: 'facebook-logo', width: '140px', height: '40px' },
-          { title: 'searchads-logo', width: '140px', height: '40px' },
-          { title: 'linkedin-logo', width: '140px', height: '40px' },
+          { title: 'facebook-logo', width: '140px' },
+          { title: 'searchads-logo', width: '140px' },
+          { title: 'linkedin-logo', width: '140px' },
           { title: 'amazon-logo', width: '60px', height: '60px' },
-          { title: 'pinterest-logo', width: '100px', height: '40px' },
+          { title: 'pinterest-logo', width: '100px' },
         ],
         Data: [
-          { title: 'google-suite-logo', width: '120px', height: '40px' },
-          { title: 'slack-logo', width: '100px', height: '40px' },
-          { title: 'notion-logo', width: '80px', height: '40px' },
-          { title: 'Trello-logo', width: '100px', height: '40px' },
+          { title: 'google-suite-logo', width: '120px' },
+          { title: 'slack-logo', width: '100px' },
+          { title: 'notion-logo', width: '80px' },
+          { title: 'Trello-logo', width: '100px' },
         ],
         Flow: [
-          { title: 'datastudio-logo', width: '100px', height: '40px' },
-          { title: 'supermetrics-logo', width: '100px', height: '40px' },
-          { title: 'google-analytics-logo', width: '90px', height: '40px' },
-          { title: 'appsflyer-logo', width: '85px', height: '40px' },
-          { title: 'amplitude-logo', width: '90px', height: '40px' },
-          { title: 'segment-logo', width: '90px', height: '40px' },
+          { title: 'datastudio-logo', width: '100px' },
+          { title: 'supermetrics-logo', width: '100px' },
+          { title: 'google-analytics-logo', width: '90px' },
+          { title: 'appsflyer-logo', width: '85px' },
+          { title: 'amplitude-logo', width: '90px' },
+          { title: 'segment-logo', width: '90px' },
         ],
       },
       categorySelected: 'Medios',

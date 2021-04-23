@@ -13,27 +13,30 @@
       <div class="container-cards">
         <div class="tariffCards">
           <div class="inovation">
-            <h3>Inovación</h3>
+            <p>Inovación</p>
             <img
               src="../assets/icons/zenda-icon-pink.svg"
               alt="iconPink"
               class="icon"
+              loading="lazy"
             />
           </div>
           <div class="data">
-            <h3>Data</h3>
+            <p>Data</p>
             <img
               src="../assets/icons/zenda-icon-analysis.svg"
               alt="iconanalysis"
               class="icon"
+              loading="lazy"
             />
           </div>
           <div class="performance">
-            <h3>Performance</h3>
+            <p>Performance</p>
             <img
               src="../assets/icons/zenda-icon-green.svg"
               alt="icongreen"
               class="icon"
+              loading="lazy"
             />
           </div>
         </div>
@@ -123,7 +126,7 @@ export default {}
             );
             transform: translateX(-100%);
           }
-          h3 {
+          p {
             position: absolute;
             bottom: 15px;
             left: 15px;

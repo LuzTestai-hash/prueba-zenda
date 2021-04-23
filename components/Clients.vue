@@ -33,14 +33,14 @@
         <kinesis-container>
           <kinesis-element :strength="10">
             <div class="arrow-button" @click="showPrev">
-              <b-icon icon="arrow-left" style="color: #fff" />
+              <b-icon icon="arrow-left" style="color: #fff" alt="icon" />
             </div>
           </kinesis-element>
         </kinesis-container>
         <kinesis-container>
           <kinesis-element :strength="10">
             <div class="arrow-button" @click="showNext">
-              <b-icon icon="arrow-right" style="color: #fff" />
+              <b-icon icon="arrow-right" style="color: #fff" alt="icon" />
             </div>
           </kinesis-element>
         </kinesis-container>

@@ -43,11 +43,10 @@
       v-scroll-to="{
         element: '#contact',
         duration: 3000,
-        onStart: onStart,
       }"
       class="float-button"
     >
-      <kinesis-container>
+      <kinesis-container tag="div">
         <kinesis-element
           id="contactButton"
           ref="contactButton"

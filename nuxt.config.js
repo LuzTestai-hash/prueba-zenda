@@ -8,7 +8,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       {
         hid: 'description',
         name: 'description',
@@ -16,7 +15,9 @@ export default {
           'Somos un equipo de especialistas en performance y crecimiento con una simple creencia: Conectar a las marcas con sus clientes en los momentos que importan.',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', alt: 'icon' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

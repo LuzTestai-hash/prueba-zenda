@@ -7,7 +7,12 @@
         <span></span>
       </div>
       <b-container>
-        <img src="../assets/icons/zenda-logo.svg" alt="logo" class="logo" />
+        <img
+          src="../assets/icons/zenda-logo.svg"
+          alt="logo"
+          class="logo"
+          loading="lazy"
+        />
       </b-container>
 
       <nav id="menu">
@@ -24,6 +29,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Somos <span class="zenda-text">Zenda</span></p>
           </div>
@@ -41,6 +47,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Qué hacemos</p>
           </div>
@@ -51,6 +58,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Clientes</p>
           </div>
@@ -61,6 +69,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Casos de éxito</p>
           </div>
@@ -78,6 +87,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Metodología</p>
           </div>
@@ -88,6 +98,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Herramientas y medios</p>
           </div>
@@ -98,6 +109,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Servicios</p>
           </div>
@@ -115,6 +127,7 @@
               src="../assets/icons/arrow-green.svg"
               alt="arrow"
               class="arrow"
+              loading="lazy"
             />
             <p>Contacto</p>
           </div>

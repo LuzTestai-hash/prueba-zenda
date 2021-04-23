@@ -9,16 +9,36 @@
       <b-col cols="7"> </b-col>
       <b-col class="col-icon">
         <div v-if="icon === 'knowledge'">
-          <img src="../assets/icons/knowledge.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/knowledge.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
         <div v-if="icon === 'planning'">
-          <img src="../assets/icons/planning.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/planning.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
         <div v-if="icon === 'execution'">
-          <img src="../assets/icons/execution.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/execution.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
         <div v-if="icon === 'challenge'">
-          <img src="../assets/icons/challenge.svg" width="60" height="60" />
+          <img
+            src="../assets/icons/challenge.svg"
+            width="60px"
+            height="60px"
+            loading="lazy"
+          />
         </div>
       </b-col>
     </b-row>

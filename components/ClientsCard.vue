@@ -9,6 +9,7 @@
             class="trademarks"
             width="188px"
             height="54px"
+            loading="lazy"
           />
         </div>
         <div v-if="title === 'WynDam'">
@@ -18,6 +19,7 @@
             class="trademarks"
             width="187px"
             height="61px"
+            loading="lazy"
           />
         </div>
       </b-col>

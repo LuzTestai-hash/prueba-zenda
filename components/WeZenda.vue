@@ -21,7 +21,7 @@
         <b-col md="6">
           <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
             <p class="text">Proactividad</p>
-            <b-icon icon="chevron-down" class="icon"></b-icon>
+            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
           <b-collapse id="collapse-1">
             <b-card class="collapse-content">
@@ -32,7 +32,7 @@
           </b-collapse>
           <b-button v-b-toggle="'collapse-2'" class="button-colapse secondary">
             <p class="text">Atención personalizada</p>
-            <b-icon icon="chevron-down" class="icon"></b-icon>
+            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
           <b-collapse id="collapse-2">
             <b-card class="collapse-content">
@@ -43,7 +43,7 @@
           </b-collapse>
           <b-button v-b-toggle="'collapse-3'" class="button-colapse third">
             <p class="text">Transparencia y respeto :)</p>
-            <b-icon icon="chevron-down" class="icon"></b-icon>
+            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
           <b-collapse id="collapse-3">
             <b-card class="collapse-content">
