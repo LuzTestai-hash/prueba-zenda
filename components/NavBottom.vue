@@ -2,6 +2,16 @@
   <div class="header-container">
     <div id="nav-menu-container" class="section-bottom-container">
       <div
+        id="nav-item-welcome"
+        class="section"
+        :class="{
+          active: seccionSelected === 'welcome',
+        }"
+        @click="handleItem('welcome')"
+      >
+        <b-icon icon="house" />
+      </div>
+      <div
         id="nav-item-we-zenda"
         class="section"
         :class="{
@@ -53,16 +63,6 @@
       >
         Cómo lo logramos
       </div>
-      <div
-        id="nav-item-contact"
-        class="section"
-        :class="{
-          active: seccionSelected === 'contact',
-        }"
-        @click="handleItem('contact')"
-      >
-        Comencemos
-      </div>
       <div id="nav-menu-border" class="menu__border"></div>
     </div>
   </div>
@@ -71,7 +71,7 @@
 export default {
   data() {
     return {
-      seccionSelected: 'we-zenda',
+      seccionSelected: 'welcome',
     }
   },
   mounted() {
@@ -148,7 +148,7 @@ export default {
     align-items: center;
     bottom: 0;
     left: 0;
-    margin-left: 4rem;
+    margin-left: 10rem;
     padding: 1rem;
     background-color: #f0f0f0;
     border-radius: 10px;

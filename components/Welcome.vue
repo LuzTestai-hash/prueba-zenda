@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome-background">
+  <div id="welcome" class="welcome-background">
     <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">

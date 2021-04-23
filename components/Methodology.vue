@@ -30,7 +30,7 @@
         <div class="cards-container">
           <div class="container-first-column">
             <div v-for="item in firstColumn" :key="item.id" class="card-method">
-              <h1 class="number">{{ item.number }}</h1>
+              <p class="number">{{ item.number }}</p>
               <p :class="item.color">{{ item.title }}</p>
               <p :class="item.classDetail">
                 {{ item.detail }}
@@ -49,7 +49,7 @@
               :key="item.id"
               class="card-method"
             >
-              <h1 class="number">{{ item.number }}</h1>
+              <p class="number">{{ item.number }}</p>
               <p :class="item.color">{{ item.title }}</p>
               <p :class="item.classDetail">
                 {{ item.detail }}

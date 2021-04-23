@@ -29,7 +29,7 @@
     </div>
     <Header />
     <NavBottom />
-    <Welcome />
+    <Welcome v-view="viewHandler" />
     <WeZenda v-view="viewHandler" />
     <div :class="`grafic-zenda ${graphic}`" />
     <WhatWeDo v-view="viewHandler" />

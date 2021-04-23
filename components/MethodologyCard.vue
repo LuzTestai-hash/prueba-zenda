@@ -14,6 +14,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="knowledge"
           />
         </div>
         <div v-if="icon === 'planning'">
@@ -22,6 +23,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="planning"
           />
         </div>
         <div v-if="icon === 'execution'">
@@ -30,6 +32,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="execution"
           />
         </div>
         <div v-if="icon === 'challenge'">
@@ -38,6 +41,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="challenge"
           />
         </div>
       </b-col>

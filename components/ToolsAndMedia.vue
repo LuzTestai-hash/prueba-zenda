@@ -9,6 +9,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="media"
           />
         </div>
         <div
@@ -33,6 +34,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="data"
           />
         </div>
         <div
@@ -56,6 +58,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="flow"
           />
         </div>
         <div
@@ -86,6 +89,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="media"
           />
           <p>Media</p>
         </div>
@@ -99,6 +103,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="data"
           />
           <p>Data</p>
         </div>
@@ -112,6 +117,7 @@
             width="60px"
             height="60px"
             loading="lazy"
+            alt="flow"
           />
           <p>Flow</p>
         </div>
