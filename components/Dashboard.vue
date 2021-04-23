@@ -34,7 +34,7 @@
           </kinesis-element>
         </kinesis-container>
 
-        <div class="arrows-container">
+        <!-- <div class="arrows-container">
           <kinesis-container>
             <kinesis-element :strength="10">
               <div class="arrow-button" @click="showPrev">
@@ -49,7 +49,7 @@
               </div>
             </kinesis-element>
           </kinesis-container>
-        </div>
+        </div> -->
       </b-container>
     </div>
   </div>
@@ -71,11 +71,11 @@ export default {
           detail:
             'Desarrollado en Google Data Studio,  100% Online y customizable. ',
         },
-        {
-          id: 1,
-          detail:
-            'Nuestro HUB compartido para mejorar la colaboración entre los equipos.',
-        },
+        // {
+        //   id: 1,
+        //   detail:
+        //     'Nuestro HUB compartido para mejorar la colaboración entre los equipos.',
+        // },
       ],
       settings: {
         dots: false,

@@ -33,7 +33,7 @@
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
-            :height="item.height"
+            height="auto"
           />
         </div>
       </VueSlickCarousel>
@@ -50,7 +50,7 @@
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
-            :height="item.height"
+            height="auto"
           />
         </div>
       </VueSlickCarousel>
@@ -93,7 +93,7 @@
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
-            :height="item.height"
+            height="auto"
           />
         </div>
       </div>
@@ -107,7 +107,7 @@
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
-            :height="item.height"
+            height="auto"
           />
         </div>
       </div>
@@ -121,7 +121,7 @@
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
-            :height="item.height"
+            height="auto"
           />
         </div>
       </div>

@@ -10,7 +10,7 @@
               alt="walmart"
               class="trademarks"
               width="151px"
-              height="36px"
+              height="auto"
             />
           </div>
 
@@ -20,7 +20,7 @@
               alt="workana"
               class="trademarks"
               width="150px"
-              height="45px"
+              height="auto"
             />
           </div>
 
@@ -30,7 +30,7 @@
               alt="Heiniken"
               class="trademarks"
               width="175px"
-              height="25px"
+              height="auto"
             />
           </div>
         </VueSlickCarousel>
@@ -42,28 +42,28 @@
             alt="walmart"
             class="trademarks"
             width="151px"
-            height="36px"
+            height="auto"
           />
           <img
             src="../assets/icons/workana-logo.png"
             alt="workana"
             class="trademarks"
             width="150px"
-            height="45px"
+            height="auto"
           />
           <img
             src="../assets/icons/heiniken-logo.png"
             alt="Heiniken"
             class="trademarks"
             width="175px"
-            height="25px"
+            height="auto"
           />
           <img
             src="../assets/icons/Supervielle-logo.png"
             alt="Supervielle"
             class="trademarks"
             width="130px"
-            height="52px"
+            height="auto"
           />
         </b-row>
         <b-row class="row">
@@ -72,28 +72,28 @@
             alt="clue"
             class="trademarks"
             width="114,97px"
-            height="36px"
+            height="auto"
           />
           <img
             src="../assets/icons/whyndham-logo.png"
             alt="whyndham"
             class="trademarks"
             width="139,5px"
-            height="36px"
+            height="auto"
           />
           <img
             src="../assets/icons/depilife-logo.png"
             alt="depilife"
             class="trademarks"
             width="138,46px"
-            height="36px"
+            height="auto"
           />
           <img
             src="../assets/icons/acamica-logo.png"
             alt="acamica"
             class="trademarks"
             width="140,57px"
-            height="25px"
+            height="auto"
           />
         </b-row>
       </div>

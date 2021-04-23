@@ -6,7 +6,9 @@
         <span></span>
         <span></span>
       </div>
-      <img src="../assets/icons/zenda-logo.svg" alt="logo" class="logo" />
+      <b-container>
+        <img src="../assets/icons/zenda-logo.svg" alt="logo" class="logo" />
+      </b-container>
 
       <nav id="menu">
         <div class="section">
