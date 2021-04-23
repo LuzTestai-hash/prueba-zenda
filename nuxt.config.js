@@ -18,7 +18,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/vue-observe-visibility.client.js',
+    '~/plugins/vue-check-view.js',
     { src: '~/plugins/vue-kinesis.js', mode: 'client' },
     { src: '~~/node_modules/vue-rellax/lib/nuxt-plugin', ssr: false },
   ],

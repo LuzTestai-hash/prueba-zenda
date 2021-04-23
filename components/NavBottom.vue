@@ -1,75 +1,69 @@
 <template>
   <div class="header-container">
-    <div class="section-bottom-container">
+    <div id="nav-menu-container" class="section-bottom-container">
       <div
-        v-scroll-to="{
-          element: '#we-zenda',
-          duration: 2000,
-        }"
+        id="nav-item-we-zenda"
         class="section"
         :class="{
           active: seccionSelected === 'we-zenda',
         }"
+        @click="handleItem('we-zenda')"
       >
         Somos Zenda
       </div>
       <div
-        v-scroll-to="{
-          element: '#what-we-do',
-          duration: 2000,
-        }"
+        id="nav-item-what-we-do"
         class="section"
         :class="{
           active: seccionSelected === 'what-we-do',
         }"
+        @click="handleItem('what-we-do')"
       >
         Qué hacemos
       </div>
       <div
-        v-scroll-to="{
-          element: '#methodology',
-          duration: 2000,
-        }"
+        id="nav-item-methodology"
         class="section"
         :class="{
           active: seccionSelected === 'methodology',
         }"
+        @click="handleItem('methodology')"
       >
         Cómo lo hacemos
       </div>
       <div
-        v-scroll-to="{ element: '#clients', duration: 2000 }"
+        id="nav-item-clients"
         class="section"
         :class="{
           active: seccionSelected === 'clients',
         }"
+        @click="handleItem('clients')"
       >
         Qué logramos
       </div>
       <div
-        v-scroll-to="{
-          element: '#dashboard-tools',
-          duration: 2000,
-        }"
+        id="nav-item-dashboard-tools"
         class="section"
         :class="{
           active:
             seccionSelected === 'dashboard-tools' ||
             seccionSelected === 'dashboard',
         }"
+        @click="handleItem('dashboard-tools')"
       >
         Cómo lo logramos
       </div>
       <div
-        v-scroll-to="{ element: '#contact', duration: 2000 }"
+        id="nav-item-contact"
         class="section"
         :class="{
           active: seccionSelected === 'contact',
         }"
+        @click="handleItem('contact')"
       >
         Comencemos
       </div>
-      <div class="menu__border"></div>
+      <div id="nav-menu-border" class="menu__border"></div>
     </div>
   </div>
 </template>
@@ -81,47 +75,52 @@ export default {
     }
   },
   mounted() {
-    const body = document.body
-    const menu = body.querySelector('.section-bottom-container')
-    const menuItems = menu.querySelectorAll('.section')
-    const menuBorder = menu.querySelector('.menu__border')
-    let activeItem = menu.querySelector('.active')
-
-    function clickItem(item) {
-      menu.style.removeProperty('--timeOut')
-
-      if (activeItem === item) return
-
-      if (activeItem) {
-        activeItem.classList.remove('active')
-      }
-
-      item.classList.add('active')
-      activeItem = item
-      offsetMenuBorder(activeItem, menuBorder)
-    }
-
-    function offsetMenuBorder(element, menuBorder) {
-      menuBorder.style.width = '0px'
-      const offsetActiveItem = element.getBoundingClientRect()
-      const left = Math.floor(offsetActiveItem.left - menu.offsetLeft) + 'px'
-      menuBorder.style.transform = `translate3d(${left}, 0 , 0)`
-      menuBorder.style.width = offsetActiveItem.width + 'px'
-    }
-
-    offsetMenuBorder(activeItem, menuBorder)
-
-    menuItems.forEach((item, index) => {
-      item.addEventListener('click', () => clickItem(item))
-    })
+    this.offsetMenuBorder()
 
     this.$nuxt.$on('changeNav', (data) => {
       this.seccionSelected = data.id
-      setTimeout(function () {
-        const activeItem = menu.querySelector('.active')
-        offsetMenuBorder(activeItem, menuBorder)
-      }, 500)
+      this.offsetMenuBorder()
     })
+  },
+  methods: {
+    offsetMenuBorder() {
+      const menu = document.getElementById('nav-menu-container')
+      const menuBorder = document.getElementById('nav-menu-border')
+      const activeItem = document.getElementById(
+        `nav-item-${
+          this.seccionSelected === 'dashboard'
+            ? 'dashboard-tools'
+            : this.seccionSelected
+        }`
+      )
+      const offsetActiveItem = activeItem.getBoundingClientRect()
+      const left = Math.floor(offsetActiveItem.left - menu.offsetLeft) + 'px'
+      menuBorder.style.width = '0px'
+      menuBorder.style.transform = `translate3d(${left}, 0 , 0)`
+      menuBorder.style.width = offsetActiveItem.width + 'px'
+    },
+
+    handleItem(name) {
+      if (name === this.seccionSelected) return
+      this.$nuxt.$emit('viewHandler', false)
+      this.seccionSelected = name
+      this.$scrollTo(`#${name}`, 2000, {
+        container: 'body',
+        easing: 'ease',
+        force: true,
+        cancelable: true,
+        onStart(element) {},
+        onDone: (element) => {
+          this.$nuxt.$emit('viewHandler', true)
+        },
+        onCancel: () => {
+          this.$nuxt.$emit('viewHandler', true)
+        },
+        x: false,
+        y: true,
+      })
+      this.offsetMenuBorder()
+    },
   },
 }
 </script>
