@@ -30,55 +30,19 @@
     <Header />
     <NavBottom />
     <Welcome />
-    <WeZenda
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
+    <WeZenda v-view="viewHandler" />
     <div class="grafic-zenda" />
-    <WhatWeDo
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
-    <Methodology
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
+    <WhatWeDo v-view="viewHandler" />
+    <Methodology v-view="viewHandler" />
     <TrustUs />
-    <Clients
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
-    <ToolsAndMedia
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
-    <Dashboard
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
-    <Contact
-      v-observe-visibility="{
-        callback: visibilityChanged,
-      }"
-    />
+    <Clients v-view="viewHandler" />
+    <ToolsAndMedia v-view="viewHandler" />
+    <Dashboard v-view="viewHandler" />
+    <Contact v-view="viewHandler" />
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import VueScrollTo from 'vue-scrollto'
-Vue.use(VueScrollTo, {
-  container: 'body',
-  duration: 1000,
-  easing: 'ease',
-})
-
 export default {
   name: 'Index',
   components: {},
@@ -87,6 +51,7 @@ export default {
       xParent: 0,
       yParent: 0,
       cursor: 'pointer',
+      activeViewHandler: true,
     }
   },
 
@@ -99,16 +64,25 @@ export default {
     this.$nuxt.$on('mouse', (data) => {
       this.cursor = data
     })
+
+    this.$nuxt.$on('viewHandler', (data) => {
+      this.activeViewHandler = data
+    })
   },
   mounted() {
     document.addEventListener('mousemove', this.moveCursor)
   },
   methods: {
-    visibilityChanged(isVisible, entry) {
-      if (isVisible) {
-        this.$nuxt.$emit('changeNav', entry.target)
+    viewHandler(e) {
+      if (
+        this.activeViewHandler &&
+        e.percentCenter >= 0.4 &&
+        e.percentCenter <= 0.6
+      ) {
+        this.$nuxt.$emit('changeNav', e.target.element)
       }
     },
+
     moveCursor(e) {
       if (this.cursor === 'pointer') {
         this.xParent = e.clientX - 12
