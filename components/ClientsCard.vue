@@ -84,7 +84,7 @@ export default {
     margin-top: 2rem;
     font-weight: 100;
     color: white;
-    min-height: 15rem;
+    min-height: 10rem;
   }
   @media (min-width: 600px) {
     .trademarks {
@@ -93,7 +93,7 @@ export default {
       color: white;
     }
     .card-text {
-      height: 12rem;
+      min-height: 10rem;
       padding-left: 4rem;
     }
   }
@@ -106,7 +106,7 @@ export default {
     }
     .card-text {
       font-size: 1.2rem;
-      height: 14rem;
+      min-height: 10rem;
       padding-left: 3rem;
     }
   }
