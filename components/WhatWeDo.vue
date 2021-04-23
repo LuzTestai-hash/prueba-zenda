@@ -286,10 +286,10 @@ export default {
   .whatWeDo-container {
     padding: 4rem 1.4rem 4rem 1.4rem;
     .title {
-      font-size: 2.8rem;
-      line-height: 3.5rem;
-      padding-right: 11rem;
-      margin-bottom: 4rem;
+      font-size: 3.5rem;
+      line-height: 3.3rem;
+      padding-right: 2rem;
+      letter-spacing: -0.1rem;
     }
     .mobile-graphic {
       display: none;
@@ -310,8 +310,9 @@ export default {
     padding: 4rem 1.4rem 10% 1.4rem;
     .title {
       font-size: 3.5rem;
-      line-height: 4.5rem;
+      line-height: 3.3rem;
       padding-right: 2rem;
+      letter-spacing: -0.1rem;
     }
     .subtitle {
       font-size: 1rem;

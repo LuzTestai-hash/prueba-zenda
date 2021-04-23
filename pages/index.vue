@@ -113,9 +113,10 @@ export default {
     viewHandler(e) {
       if (this.activeViewHandler) {
         if (
-          e.target.element.id === 'methodology' &&
-          e.percentCenter >= 0.3 &&
-          e.percentCenter <= 0.7
+          (e.target.element.id === 'methodology' ||
+            e.target.element.id === 'clients') &&
+          e.percentCenter >= 0.2 &&
+          e.percentCenter <= 0.8
         ) {
           this.$nuxt.$emit('changeNav', e.target.element)
         }

@@ -3,11 +3,11 @@
     <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">
-        <h1 class="title">Zenda Agencia de Performance & Growth.</h1>
+        <h1 class="title">Hacemos Performance & Growth en serio.</h1>
         <p class="subtitle">
-          Somos un equipo de creativos, especialistas en comunicación y
-          marketing, con una simple creencia: conectar a las marcas con sus
-          clientes en los momentos que importan.
+          Somos un equipo de especialistas en performance y crecimiento con una
+          simple creencia: Conectar a las marcas con sus clientes en los
+          momentos que importan.
         </p>
       </div>
       <div class="container-cards">
@@ -73,12 +73,15 @@ export default {}
         font-size: 2.2rem;
         line-height: 1.5rem;
         text-align: flex-start;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.1rem;
         color: $typography;
         margin-bottom: 1rem;
       }
       .subtitle {
         margin-top: 1.5rem;
+        font-size: 1.3rem;
+        letter-spacing: -0.08rem;
+        font-weight: 300;
       }
     }
     .container-cards {
@@ -203,6 +206,7 @@ export default {}
         .title {
           font-size: 3.5rem;
           line-height: 3.5rem;
+          letter-spacing: -0.1rem;
         }
         .subtitle {
           padding-right: 30%;

@@ -10,7 +10,7 @@
             <h2 style="font-size: 1.2rem; display: contents">
               Implementamos eficazmente estrategias y procesos de transformación
             </h2>
-            <span>
+            <span style="font-size: 1.2rem">
               para encontrar y conectar con tu audiencia en aquellos lugares
               donde se toman decisiones de compra. Logramos objetivos medibles,
               alcanzables para influir significativamente en decisiones para que
@@ -19,33 +19,33 @@
           </div>
         </b-col>
         <b-col md="6">
-          <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
+          <b-button v-b-toggle.accordion-1 class="button-colapse primary">
             <p class="text">Proactividad</p>
             <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
-          <b-collapse id="collapse-1">
+          <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
             <b-card class="collapse-content">
               Nos hacemos cargo de la responsabilidad de liderar las campañas
               digitales basándonos en la innovación y en las mejoras permanentes
               que se presentan en el ecosistema.
             </b-card>
           </b-collapse>
-          <b-button v-b-toggle="'collapse-2'" class="button-colapse secondary">
+          <b-button v-b-toggle.accordion-2 class="button-colapse secondary">
             <p class="text">Atención personalizada</p>
             <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
-          <b-collapse id="collapse-2">
+          <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
             <b-card class="collapse-content">
               Cada equipo de trabajo estará siempre disponibles para cualquier
               consulta o inquietud. Ante cualquier cambio en el equipo, se le
               informará inmediatamente al cliente.
             </b-card>
           </b-collapse>
-          <b-button v-b-toggle="'collapse-3'" class="button-colapse third">
+          <b-button v-b-toggle.accordion-3 class="button-colapse third">
             <p class="text">Transparencia y respeto :)</p>
             <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
-          <b-collapse id="collapse-3">
+          <b-collapse id="accordion-3" accordion="my-accordion">
             <b-card class="collapse-content">
               Es algo que nos gustaría que un cliente destaque de nosotros en el
               largo plazo. Creemos que es el mejor camino para poder tener

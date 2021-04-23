@@ -224,7 +224,7 @@ export default {
       z-index: 1;
       top: 10rem;
       left: 25rem;
-      animation: icon-play-1 15s ease-out infinite;
+      animation: icon-play-1 12s ease-out infinite;
     }
     @media (max-width: 1200px) {
       .icon-play {
@@ -278,15 +278,18 @@ export default {
       max-width: 30%;
     }
     .container-second-column {
+      display: flex;
+      flex-direction: column-reverse;
       max-width: 30%;
     }
     .title-desktop {
-      font-size: 2.5rem;
-      line-height: 3rem;
       font-weight: 700;
       transform: translateY(0.8rem);
-      letter-spacing: -0.02em;
       margin-bottom: 6rem;
+      font-size: 3.5rem;
+      line-height: 3.3rem;
+      padding-right: 2rem;
+      letter-spacing: -0.1rem;
     }
     .card-method {
       position: relative;
