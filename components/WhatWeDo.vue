@@ -6,7 +6,7 @@
           <p class="subtitle">QUÉ HACEMOS</p>
         </b-col>
         <b-col md="8">
-          <p class="title">Lo mejor para tu negocio.</p>
+          <p class="title">Escuchamos, analizamos, ejecutamos y crecemos.</p>
           <div :class="`mobile-graphic ${bottomActive}`" />
           <div class="content-container">
             <div class="button-container">
@@ -39,13 +39,24 @@
                 >Consultoría</b-button
               >
             </div>
+            <p v-if="bottomActive === 'first'" class="detail-title">
+              Estrategias digitales
+            </p>
             <p v-if="bottomActive === 'first'" class="detail-content">
-              Desarrollamos estrategias digitales para lograr objetivos
-              orientados a Branding y Performance (eCommerce, Apps, Leads)
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
+            </p>
+            <p v-if="bottomActive === 'second'" class="detail-title">
+              Implementación
             </p>
             <p v-if="bottomActive === 'second'" class="detail-content">
               Nos encargamos del día a día de tus campañas, llevando a cabo
               planeamiento, implementación, optimización y reporting.
+            </p>
+            <p v-if="bottomActive === 'third'" class="detail-title">
+              Consultoría
             </p>
             <p v-if="bottomActive === 'third'" class="detail-content">
               Trabajamos sobre el desarrollo de distintos procesos digitales
@@ -60,8 +71,10 @@
           </b-button>
           <b-collapse id="collapse-1">
             <b-card class="collapse-content">
-              Desarrollamos estrategias digitales para lograr objetivos
-              orientados a Branding y Performance (eCommerce, Apps, Leads)
+              Lideramos proyectos digitales implementando eficazmente
+              estrategias y procesos de transformación para lograr objetivos
+              medibles, alcanzables y relevantes (SMART) para los negocios de
+              nuestros clientes.
             </b-card>
           </b-collapse>
           <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
@@ -208,6 +221,9 @@ export default {
       font-weight: 100;
       color: rgba(10, 10, 11, 0.64);
     }
+    .detail-title {
+      font-weight: 600;
+    }
   }
   @media (max-width: 767px) {
     .content-container {
@@ -293,9 +309,9 @@ export default {
   .whatWeDo-container {
     padding: 4rem 1.4rem 10% 1.4rem;
     .title {
-      font-size: 4rem;
+      font-size: 3.5rem;
       line-height: 4.5rem;
-      padding-right: 4rem;
+      padding-right: 2rem;
     }
     .subtitle {
       font-size: 1rem;

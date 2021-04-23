@@ -26,7 +26,7 @@
       </VueSlickCarousel>
 
       <div class="d-none d-md-flex flex-column">
-        <p class="title-desktop">Nuestro método.</p>
+        <p class="title-desktop">Metodología ágil.</p>
         <div class="cards-container">
           <div class="container-first-column">
             <div v-for="item in firstColumn" :key="item.id" class="card-method">

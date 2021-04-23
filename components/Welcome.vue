@@ -3,8 +3,7 @@
     <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">
-        <p class="title">Hacemos marketing</p>
-        <p class="title">analítico enserio.</p>
+        <h1 class="title">Zenda Agencia de Performance & Growth.</h1>
         <p class="subtitle">
           Somos un equipo de creativos, especialistas en comunicación y
           marketing, con una simple creencia: conectar a las marcas con sus
@@ -15,12 +14,27 @@
         <div class="tariffCards">
           <div class="inovation">
             <h3>Inovación</h3>
+            <img
+              src="../assets/icons/zenda-icon-pink.svg"
+              alt="iconPink"
+              class="icon"
+            />
           </div>
           <div class="data">
             <h3>Data</h3>
+            <img
+              src="../assets/icons/zenda-icon-analysis.svg"
+              alt="iconanalysis"
+              class="icon"
+            />
           </div>
           <div class="performance">
             <h3>Performance</h3>
+            <img
+              src="../assets/icons/zenda-icon-green.svg"
+              alt="icongreen"
+              class="icon"
+            />
           </div>
         </div>
       </div>
@@ -116,6 +130,14 @@ export default {}
             font-size: 18px;
             font-weight: 800;
           }
+          .icon {
+            position: absolute;
+            width: 3rem;
+            height: auto;
+            top: 15px;
+            right: 15px;
+            transform: rotate(-35deg);
+          }
           &.inovation {
             margin-top: 0;
             z-index: 3;
@@ -177,7 +199,7 @@ export default {}
       .container-title {
         .title {
           font-size: 3.5rem;
-          line-height: 2.8rem;
+          line-height: 3.5rem;
         }
         .subtitle {
           padding-right: 30%;

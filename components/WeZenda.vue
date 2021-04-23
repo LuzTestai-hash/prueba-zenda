@@ -6,12 +6,17 @@
           <p class="title">SOMOS <span class="special-title">ZENDA.</span></p>
         </b-col>
         <b-col md="6">
-          <p class="detail">
-            Lideramos proyectos digitales implementando eficazmente estrategias
-            y procesos de transformación para lograr objetivos medibles,
-            alcanzables y relevantes (SMART) para los negocios de nuestros
-            clientes.
-          </p>
+          <div data-v-fc305ef6="" class="detail">
+            <h2 style="font-size: 1.2rem; display: contents">
+              Implementamos eficazmente estrategias y procesos de transformación
+            </h2>
+            <span>
+              para encontrar y conectar con tu audiencia en aquellos lugares
+              donde se toman decisiones de compra. Logramos objetivos medibles,
+              alcanzables para influir significativamente en decisiones para que
+              tu marca gane.
+            </span>
+          </div>
         </b-col>
         <b-col md="6">
           <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
