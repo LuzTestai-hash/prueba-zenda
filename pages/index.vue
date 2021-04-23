@@ -38,7 +38,7 @@
     <Clients v-view="viewHandler" />
     <ToolsAndMedia v-view="viewHandler" />
     <Dashboard v-view="viewHandler" />
-    <Contact v-view="viewHandler" />
+    <Contact />
     <div
       v-scroll-to="{
         element: '#contact',
