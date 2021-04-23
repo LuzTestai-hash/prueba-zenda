@@ -169,6 +169,9 @@ export default {
     p {
       color: $primary;
       margin-bottom: 0;
+      font-weight: 700;
+      font-size: 1.12rem;
+      letter-spacing: -0.04rem;
     }
     span {
       display: block;
