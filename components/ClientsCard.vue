@@ -43,12 +43,6 @@
             <p class="detail">{{ third.detail }}</p>
           </div>
         </div>
-        <b-button v-b-toggle="'collapse-1'" :class="`button-colapse ${color}`">
-          <b-icon icon="chevron-down" class="icon"></b-icon>
-        </b-button>
-        <b-collapse id="collapse-1">
-          <b-card class="collapse-content">Contenido</b-card>
-        </b-collapse>
       </b-col>
     </b-row>
   </div>
@@ -73,10 +67,10 @@ export default {
 .clientcard-container {
   border-radius: 2rem;
   background-color: rgba(229, 229, 229, 0.07);
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   display: flex;
   align-items: center;
-
+  margin-right: 0.2rem;
   .trademarks {
     color: white;
   }
@@ -113,6 +107,7 @@ export default {
   .detail-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
@@ -126,7 +121,7 @@ export default {
     }
     .detail {
       font-size: 1rem;
-      padding-right: 4rem;
+      //padding-right: 4rem;
     }
     &.primary {
       border-top: 1px solid $primary;
@@ -164,6 +159,12 @@ export default {
   @media (min-width: 600px) {
     .card-text {
       min-height: 10rem;
+    }
+    .detail {
+      padding-right: 4rem;
+    }
+    .detail-container {
+      flex-wrap: initial;
     }
   }
   .button-colapse {

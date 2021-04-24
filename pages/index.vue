@@ -297,6 +297,9 @@ export default {
   }
 }
 @media (max-width: 600px) {
+  .float-button {
+    display: none;
+  }
   .g-cursor {
     display: none;
     &__pointer {

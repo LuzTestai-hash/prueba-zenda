@@ -6,7 +6,7 @@
         <span></span>
         <span></span>
       </div>
-      <b-container>
+      <b-container class="logo-container">
         <img
           src="../assets/icons/zenda-logo.svg"
           alt="logo"
@@ -267,6 +267,13 @@ header {
     position: fixed;
     .wrap {
       padding: 1rem;
+      .logo-container {
+        width: initial;
+        padding-right: initial;
+        padding-left: initial;
+        margin-right: initial;
+        margin-left: initial;
+      }
       .logo {
         width: 4rem;
       }
