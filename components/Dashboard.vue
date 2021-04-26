@@ -7,17 +7,23 @@
           <HandMoveIcon :color="'#fff'" />
         </div>
       </b-container>
-      <VueSlickCarousel
-        ref="carousel"
-        :dots="false"
-        :arrows="false"
-        v-bind="settings"
-        class="carusel-vue-slick"
-      >
-        <div v-for="data in dashboarddata" :key="data.id">
-          <DashboardCard :detail="data.detail" />
-        </div>
-      </VueSlickCarousel>
+      <b-container>
+        <p class="text-dashboard">
+          Desarrollamos KPIs en Data Studio 100% online, customizables y
+          actualizados en tiempo real.
+        </p>
+        <!-- <VueSlickCarousel
+          ref="carousel"
+          :dots="false"
+          :arrows="false"
+          v-bind="settings"
+          class="carusel-vue-slick"
+        >
+          <div v-for="data in dashboarddata" :key="data.id">
+            <DashboardCard :detail="data.detail" />
+          </div>
+        </VueSlickCarousel> -->
+      </b-container>
       <b-container class="buttons-container">
         <kinesis-container>
           <kinesis-element
@@ -56,11 +62,11 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
+// import VueSlickCarousel from 'vue-slick-carousel'
 
 export default {
   name: 'MyComponent',
-  components: { VueSlickCarousel },
+  // components: { VueSlickCarousel },
 
   data() {
     return {
@@ -82,29 +88,29 @@ export default {
         arrows: false,
         infinite: false,
         initialSlide: 0,
-        centerMode: true,
-        centerPadding: '15px',
-        focusOnSelect: true,
+        // centerMode: true,
+        // centerPadding: '15px',
+        // focusOnSelect: true,
         slidesToShow: 1,
         speed: 500,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              centerPadding: '0px',
-            },
-          },
-        ],
+        // responsive: [
+        //   {
+        //     breakpoint: 1024,
+        //     settings: {
+        //       centerPadding: '0px',
+        //     },
+        //   },
+        // ],
       },
     }
   },
   mounted() {
-    this.$refs.carousel.$el.addEventListener('mouseenter', () => {
-      this.$nuxt.$emit('mouse', 'carousel')
-    })
-    this.$refs.carousel.$el.addEventListener('mouseleave', () => {
-      this.$nuxt.$emit('mouse', 'pointer')
-    })
+    // this.$refs.carousel.$el.addEventListener('mouseenter', () => {
+    //   this.$nuxt.$emit('mouse', 'carousel')
+    // })
+    // this.$refs.carousel.$el.addEventListener('mouseleave', () => {
+    //   this.$nuxt.$emit('mouse', 'pointer')
+    // })
     const button = document.getElementById('buttonVideo')
     const span = document.getElementById('spanVideo')
 
@@ -120,16 +126,16 @@ export default {
       span.style = { top: relY, left: relX }
     })
   },
-  methods: {
-    showNext() {
-      this.$refs.carousel.next()
-      this.arrowPrev = true
-    },
-    showPrev() {
-      this.$refs.carousel.prev()
-      this.arrowPrev = false
-    },
-  },
+  // methods: {
+  //   showNext() {
+  //     this.$refs.carousel.next()
+  //     this.arrowPrev = true
+  //   },
+  //   showPrev() {
+  //     this.$refs.carousel.prev()
+  //     this.arrowPrev = false
+  //   },
+  // },
 }
 </script>
 
@@ -160,6 +166,26 @@ export default {
         .subtitle {
           font-size: 1rem;
         }
+      }
+    }
+    .text-dashboard {
+      color: white;
+      font-size: 2.3rem;
+      line-height: 3.5rem;
+      margin-bottom: 5rem;
+      padding: 2rem 0;
+    }
+    @media (min-width: 660px) {
+      .text-dashboard {
+        width: 50%;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .text-dashboard {
+        font-weight: 100;
+        font-size: 3.5rem;
+        line-height: 4.5rem;
       }
     }
     .buttons-container {

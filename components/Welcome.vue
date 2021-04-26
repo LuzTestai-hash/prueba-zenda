@@ -80,7 +80,7 @@ export default {}
       .subtitle {
         margin-top: 1.5rem;
         font-size: 1.3rem;
-        letter-spacing: -0.08rem;
+        letter-spacing: -0.07rem;
         font-weight: 300;
       }
     }

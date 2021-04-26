@@ -19,6 +19,7 @@
             class="input"
           />
           <b-icon
+            v-if="form.name"
             icon="arrow-right"
             aria-hidden="true"
             class="icon-input"
@@ -41,6 +42,7 @@
             class="input"
           />
           <b-icon
+            v-if="form.email"
             icon="arrow-right"
             aria-hidden="true"
             class="icon-input"
@@ -63,13 +65,15 @@
             class="input"
           />
           <b-icon
+            v-if="form.mesage"
             icon="arrow-right"
             aria-hidden="true"
             class="icon-input"
             @click="showNext"
           />
         </div>
-        <p v-if="show === 4" class="email-success">Mensaje Enviado!!</p>
+        <p v-if="show !== 4" class="number">{{ `${show}/3` }}</p>
+        <p v-if="show === 4" class="email-success">Gracias por contactarnos.</p>
       </b-form>
 
       <p class="subtitle">EMBAJADORES.</p>
@@ -182,7 +186,8 @@ export default {
     padding-right: 5rem;
   }
   .form-contact {
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
     .label-contact {
       font-size: 2.1rem;
       color: white;
@@ -247,12 +252,26 @@ export default {
         width: 2rem;
         height: 2rem;
         color: black;
+        animation: slide-icon 0.5s ease-in-out forwards;
+        transition: transform 0.4s;
+      }
+      @keyframes slide-icon {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
       }
     }
     .email-success {
       font-size: 2.1rem;
       color: white;
       font-weight: 700;
+    }
+    .number {
+      text-align: right;
+      color: white;
     }
   }
 

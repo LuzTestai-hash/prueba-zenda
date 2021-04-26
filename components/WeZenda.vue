@@ -86,9 +86,11 @@ export default {}
         font-weight: 100;
         font-size: 1.1rem;
         display: contents;
+        letter-spacing: -0.03rem;
       }
       span {
         font-size: 1.1rem;
+        letter-spacing: -0.03rem;
       }
     }
     @media (min-width: 600px) {
@@ -190,6 +192,7 @@ export default {}
     .collapse-content {
       background-color: transparent;
       padding-left: 2rem;
+      letter-spacing: -0.03rem;
       .card-body {
         padding-top: initial;
         font-weight: 100;
