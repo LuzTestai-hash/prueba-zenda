@@ -72,6 +72,13 @@
             @click="showNext"
           />
         </div>
+        <div v-if="show !== 4" class="load-container">
+          <div
+            :class="`load-bar ${
+              show === 1 ? 'one' : show === 2 ? 'two' : 'three'
+            }`"
+          />
+        </div>
         <p v-if="show !== 4" class="number">{{ `${show}/3` }}</p>
         <p v-if="show === 4" class="email-success">Gracias por contactarnos.</p>
       </b-form>
@@ -242,6 +249,7 @@ export default {
         background-color: transparent;
         border: initial;
         color: white;
+        font-size: 1.2rem;
         &:focus {
           border: initial;
           box-shadow: initial;
@@ -251,7 +259,7 @@ export default {
         cursor: pointer;
         width: 2rem;
         height: 2rem;
-        color: black;
+        color: $third;
         animation: slide-icon 0.5s ease-in-out forwards;
         transition: transform 0.4s;
       }
@@ -272,6 +280,29 @@ export default {
     .number {
       text-align: right;
       color: white;
+    }
+    .load-container {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0.4rem;
+      width: 98%;
+      height: 0.3rem;
+      background-color: #2e2e2f;
+      .load-bar {
+        background-color: $third;
+        height: 100%;
+        &.one {
+          width: 0%;
+        }
+        &.two {
+          width: 50%;
+          transition: width 1s;
+        }
+        &.three {
+          width: 75%;
+          transition: width 1s;
+        }
+      }
     }
   }
 
