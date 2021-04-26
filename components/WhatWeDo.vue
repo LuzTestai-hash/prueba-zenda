@@ -252,7 +252,7 @@ export default {
   .card-colapse {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 1rem;
     .button-colapse {
       width: 100%;

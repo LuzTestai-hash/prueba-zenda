@@ -1,5 +1,11 @@
 <template>
   <header>
+    <img
+      src="../assets/icons/zenda-logo.svg"
+      alt="logo"
+      class="logo-mobile"
+      loading="lazy"
+    />
     <div class="wrap">
       <div id="hamburger" @click="display_menu()">
         <span></span>
@@ -165,6 +171,9 @@ header {
   width: 100%;
   top: 0;
   transition: 0.33s;
+  .logo-mobile {
+    display: none;
+  }
   .wrap {
     width: 100%;
     display: flex;
@@ -263,10 +272,15 @@ header {
 @media screen and (max-width: 660px) {
   header {
     padding: 0;
-    background-color: #fff;
-    position: fixed;
+    background-color: transparent;
+    .logo-mobile {
+      display: initial;
+      width: 4rem;
+      transform: translate(1rem, 1.5rem);
+    }
     .wrap {
-      padding: 1rem;
+      position: fixed;
+      padding: initial;
       .logo-container {
         width: initial;
         padding-right: initial;
@@ -275,9 +289,11 @@ header {
         margin-left: initial;
       }
       .logo {
+        display: none;
         width: 4rem;
       }
       #menu {
+        background-color: #fff;
         width: 100%;
         display: flex;
         height: 0;
@@ -298,6 +314,7 @@ header {
   }
 
   header #hamburger {
+    position: fixed;
     display: block;
   }
 

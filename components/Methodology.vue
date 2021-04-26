@@ -92,6 +92,16 @@ export default {
         {
           id: 0,
           number: '01',
+          title: 'Desafío',
+          color: 'knowledge primary',
+          icon: 'challenge',
+          detail:
+            'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+          classDetail: 'detail',
+        },
+        {
+          id: 1,
+          number: '02',
           title: 'Conocimiento',
           color: 'knowledge primary',
           icon: 'knowledge',
@@ -100,8 +110,8 @@ export default {
           classDetail: 'detail',
         },
         {
-          id: 1,
-          number: '02',
+          id: 2,
+          number: '03',
           title: 'Planificación',
           color: 'knowledge secondary',
           icon: 'planning',
@@ -110,21 +120,11 @@ export default {
           classDetail: 'detail',
         },
         {
-          id: 2,
-          number: '03',
+          id: 3,
+          number: '04',
           title: 'Ejecución',
           color: 'knowledge third',
           icon: 'execution',
-          detail:
-            'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
-          classDetail: 'detail',
-        },
-        {
-          id: 3,
-          number: '04',
-          title: 'Desafío',
-          color: 'knowledge primary',
-          icon: 'challenge',
           detail:
             'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
           classDetail: 'detail',

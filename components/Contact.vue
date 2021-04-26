@@ -8,7 +8,7 @@
           for="input-1"
           :class="`label-contact ${show === 1 ? 'one' : ''}`"
         >
-          Nombre
+          Contanos cómo te llamas.
         </label>
         <div v-if="show === 1" class="input-container">
           <b-form-input
@@ -54,7 +54,7 @@
           for="input-3"
           :class="`label-contact ${show === 3 ? 'three' : ''}`"
         >
-          Mensaje
+          En qué te podemos ayudar?
         </label>
         <div v-if="show === 3" class="input-container">
           <b-form-input
