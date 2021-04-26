@@ -71,7 +71,7 @@ export default {}
       .title {
         font-weight: bold;
         font-size: 2.2rem;
-        line-height: 1.5rem;
+        line-height: 1.8rem;
         text-align: flex-start;
         letter-spacing: -0.1rem;
         color: $typography;

@@ -66,36 +66,45 @@
           </div>
         </b-col>
         <b-col md="4" class="p-md-5">
-          <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
-            <p class="text">Estrategias digitales</p>
-          </b-button>
-          <b-collapse id="collapse-1">
-            <b-card class="collapse-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
-            </b-card>
-          </b-collapse>
-          <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
-            <p class="text">Implementación</p>
-          </b-button>
-          <b-collapse id="collapse-2">
-            <b-card class="collapse-content">
-              Nos encargamos del día a día de tus campañas, llevando a cabo
-              planeamiento, implementación, optimización y reporting.
-            </b-card>
-          </b-collapse>
-          <b-button v-b-toggle="'collapse-3'" class="button-colapse secondary">
-            <p class="text">Consultoría</p>
-          </b-button>
-          <b-collapse id="collapse-3">
-            <b-card class="collapse-content">
-              Trabajamos sobre el desarrollo de distintos procesos digitales
-              internos o externos de tu compañía para lograr una mejora a largo
-              plazo de los mismos.
-            </b-card>
-          </b-collapse>
+          <div class="card-colapse">
+            <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
+              <p class="text">Estrategias digitales</p>
+            </b-button>
+            <b-collapse id="collapse-1">
+              <b-card class="collapse-content">
+                Lideramos proyectos digitales implementando eficazmente
+                estrategias y procesos de transformación para lograr objetivos
+                medibles, alcanzables y relevantes (SMART) para los negocios de
+                nuestros clientes.
+              </b-card>
+            </b-collapse>
+          </div>
+          <div class="card-colapse">
+            <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
+              <p class="text">Implementación</p>
+            </b-button>
+            <b-collapse id="collapse-2">
+              <b-card class="collapse-content">
+                Nos encargamos del día a día de tus campañas, llevando a cabo
+                planeamiento, implementación, optimización y reporting.
+              </b-card>
+            </b-collapse>
+          </div>
+          <div class="card-colapse">
+            <b-button
+              v-b-toggle="'collapse-3'"
+              class="button-colapse secondary"
+            >
+              <p class="text">Consultoría</p>
+            </b-button>
+            <b-collapse id="collapse-3">
+              <b-card class="collapse-content">
+                Trabajamos sobre el desarrollo de distintos procesos digitales
+                internos o externos de tu compañía para lograr una mejora a
+                largo plazo de los mismos.
+              </b-card>
+            </b-collapse>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -240,46 +249,51 @@ export default {
   .btn-secondary:not(:disabled):not(.disabled).active:focus {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
-  .button-colapse {
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    border-color: transparent !important;
+  .card-colapse {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
     margin-bottom: 2rem;
-    &:hover {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      border-radius: 1rem;
-    }
-    .text {
-      font-size: 1.125rem;
-      color: $typography;
-      margin-left: 0.1rem;
-    }
-    &.primary {
+    padding: 1rem;
+    .button-colapse {
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      border-color: transparent !important;
+      &:focus {
+        box-shadow: initial;
+      }
       .text {
-        color: $primary;
+        font-size: 1.125rem;
+        color: $typography;
+        margin-left: 0.1rem;
+        margin-bottom: initial;
+      }
+      &.primary {
+        .text {
+          color: $primary;
+        }
+      }
+      &.secondary {
+        .text {
+          color: $secondary;
+        }
+      }
+      &.third {
+        .text {
+          color: $third;
+        }
       }
     }
-    &.secondary {
-      .text {
-        color: $secondary;
-      }
+    .collapse-content {
+      font-weight: 100;
+      color: $subtitle;
+      border: initial;
+      border-top: 1px solid rgba(10, 10, 11, 0.29);
+      background-color: transparent;
     }
-    &.third {
-      .text {
-        color: $third;
-      }
-    }
-  }
-  .collapse-content {
-    font-weight: 100;
-    color: $subtitle;
-    border: initial;
-    border-top: 1px solid rgba(10, 10, 11, 0.29);
-    background-color: transparent;
   }
 }
 @media (min-width: 767px) {
@@ -294,10 +308,7 @@ export default {
     .mobile-graphic {
       display: none;
     }
-    .collapse-content {
-      display: none;
-    }
-    .button-colapse {
+    .card-colapse {
       display: none;
     }
     .text {

@@ -68,7 +68,8 @@ export default {
       dashboarddata: [
         {
           id: 0,
-          detail: 'Desarrollado en Notion, 100% Online y customizable. ',
+          detail:
+            'Desarrollamos KPIs en Data Studio 100% online, customizables y actualizados en tiempo real.',
         },
         // {
         //   id: 1,
@@ -82,7 +83,7 @@ export default {
         infinite: false,
         initialSlide: 0,
         centerMode: true,
-        centerPadding: '150px',
+        centerPadding: '15px',
         focusOnSelect: true,
         slidesToShow: 1,
         speed: 500,

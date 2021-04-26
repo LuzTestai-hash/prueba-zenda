@@ -156,9 +156,9 @@ export default {
     border-color: $primary;
     background-color: transparent;
     border-radius: 100%;
-    padding: 1rem;
-    width: 7rem;
-    height: 7rem;
+    //padding: 1rem;
+    width: 6rem;
+    height: 6rem;
     overflow: hidden;
     .order-button {
       display: flex;

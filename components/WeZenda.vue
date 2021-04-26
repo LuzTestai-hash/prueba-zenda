@@ -7,10 +7,10 @@
         </b-col>
         <b-col md="6">
           <div data-v-fc305ef6="" class="detail">
-            <h2 style="font-size: 1.2rem; display: contents">
+            <h2>
               Implementamos eficazmente estrategias y procesos de transformación
             </h2>
-            <span style="font-size: 1.2rem">
+            <span>
               para encontrar y conectar con tu audiencia en aquellos lugares
               donde se toman decisiones de compra. Logramos objetivos medibles,
               alcanzables para influir significativamente en decisiones para que
@@ -82,8 +82,14 @@ export default {}
     .detail {
       font-weight: 100;
       margin-bottom: 3rem;
-      font-size: 1.03rem;
-      line-height: 1.9rem;
+      h2 {
+        font-weight: 100;
+        font-size: 1.1rem;
+        display: contents;
+      }
+      span {
+        font-size: 1.1rem;
+      }
     }
     @media (min-width: 600px) {
       .title {
@@ -97,8 +103,6 @@ export default {}
       .detail {
         text-decoration: initial;
         padding-right: 2rem;
-        font-size: 1.2rem;
-        font-weight: 100;
       }
     }
     @media (min-width: 1440px) {
@@ -112,10 +116,7 @@ export default {}
       }
       .detail {
         margin-top: 1rem;
-        font-weight: 100;
         text-decoration: initial;
-        padding-right: 2rem;
-        font-size: 1rem;
       }
     }
     .button-colapse {

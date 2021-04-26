@@ -7,6 +7,7 @@
           <HandMoveIcon :color="'#000'" />
         </div>
       </div>
+      <p class="title-card">Nuestro método.</p>
       <VueSlickCarousel
         class="d-block d-md-none"
         :dots="false"
@@ -202,12 +203,22 @@ export default {
         margin-bottom: 2rem;
       }
     }
+
+    .title-card {
+      font-size: 3rem;
+      line-height: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      transform: translateY(0.8rem);
+    }
     @media (min-width: 600px) {
       .hand-container {
         display: none;
       }
+      .title-card {
+        display: none;
+      }
     }
-
     //Desktop
     .cards-container {
       position: relative;

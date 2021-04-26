@@ -1,10 +1,5 @@
 <template>
   <div class="container-seccion">
-    <b-row class="containerTitles">
-      <b-col>
-        <p class="title">Nuestro método.</p>
-      </b-col>
-    </b-row>
     <b-row class="containerIcon">
       <b-col cols="7"> </b-col>
       <b-col class="col-icon">
@@ -98,13 +93,6 @@ export default {
     font-size: 0.9rem;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-  }
-  .title {
-    font-size: 3rem;
-    line-height: 3rem;
-    margin-bottom: initial;
-    font-weight: 700;
-    transform: translateY(0.8rem);
   }
   .containerNumber {
     text-align: start;
