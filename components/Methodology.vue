@@ -318,7 +318,6 @@ export default {
       color: black;
     }
     .detail {
-      font-size: 1.1rem;
       color: rgba(10, 10, 11, 0.64);
       line-height: 1.4rem;
     }

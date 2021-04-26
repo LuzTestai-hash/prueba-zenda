@@ -2,8 +2,77 @@
   <div id="contact" class="contact-background">
     <b-container class="contact-container">
       <p class="subtitle">COMENZAMOS.</p>
-      <h1 class="email">info@zenda.com.ar</h1>
-      <p class="subtitle">AMBASSADORS.</p>
+      <b-form class="form-contact" @submit="onSubmit">
+        <label
+          v-if="show === 1"
+          for="input-1"
+          :class="`label-contact ${show === 1 ? 'one' : ''}`"
+        >
+          Nombre
+        </label>
+        <div v-if="show === 1" class="input-container">
+          <b-form-input
+            id="input-1"
+            v-model="form.name"
+            type="text"
+            required
+            class="input"
+          />
+          <b-icon
+            icon="arrow-right"
+            aria-hidden="true"
+            class="icon-input"
+            @click="showNext"
+          />
+        </div>
+        <label
+          v-if="show === 2"
+          for="input-2"
+          :class="`label-contact ${show === 2 ? 'two' : ''}`"
+        >
+          Email
+        </label>
+        <div v-if="show === 2" class="input-container">
+          <b-form-input
+            id="input-2"
+            v-model="form.email"
+            type="email"
+            required
+            class="input"
+          />
+          <b-icon
+            icon="arrow-right"
+            aria-hidden="true"
+            class="icon-input"
+            @click="showNext"
+          />
+        </div>
+        <label
+          v-if="show === 3"
+          for="input-3"
+          :class="`label-contact ${show === 3 ? 'three' : ''}`"
+        >
+          Mensaje
+        </label>
+        <div v-if="show === 3" class="input-container">
+          <b-form-input
+            id="input-3"
+            v-model="form.mesage"
+            type="text"
+            required
+            class="input"
+          />
+          <b-icon
+            icon="arrow-right"
+            aria-hidden="true"
+            class="icon-input"
+            @click="showNext"
+          />
+        </div>
+        <p v-if="show === 4" class="email-success">Mensaje Enviado!!</p>
+      </b-form>
+
+      <p class="subtitle">EMBAJADORES.</p>
       <p class="title">Zenda en el mundo.</p>
       <b-row class="locations-container">
         <b-col cols="6" md="3">
@@ -52,7 +121,31 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      form: {
+        email: '',
+        name: '',
+      },
+      show: 1,
+    }
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault()
+      alert(JSON.stringify(this.form))
+    },
+    showNext() {
+      if (this.show < 4) {
+        ++this.show
+      }
+      if (this.show === 4) {
+        // alert(JSON.stringify(this.form))
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -88,18 +181,81 @@ export default {}
     margin-bottom: 3.3rem;
     padding-right: 5rem;
   }
-  .email {
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-decoration-line: underline;
-    text-decoration-color: #7cf3c1;
-    background: -webkit-linear-gradient(#7cf3c1, #95d6ea);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    word-break: break-all;
+  .form-contact {
+    margin-bottom: 4rem;
+    .label-contact {
+      font-size: 2.1rem;
+      color: white;
+      font-weight: 700;
+      transition: transform 0.4s;
+      &.one {
+        animation: slide-top 0.5s ease-in-out forwards;
+      }
+      &.two {
+        animation: slide-top2 0.5s ease-in-out forwards;
+      }
+      &.three {
+        animation: slide-top3 0.5s ease-in-out forwards;
+      }
+    }
+    @keyframes slide-top {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    @keyframes slide-top2 {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    @keyframes slide-top3 {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    .input-container {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 4.5rem;
+      background-color: #2e2e2f;
+      border-radius: 1rem;
+      padding: 1rem;
+      .input {
+        background-color: transparent;
+        border: initial;
+        color: white;
+        &:focus {
+          border: initial;
+          box-shadow: initial;
+        }
+      }
+      .icon-input {
+        cursor: pointer;
+        width: 2rem;
+        height: 2rem;
+        color: black;
+      }
+    }
+    .email-success {
+      font-size: 2.1rem;
+      color: white;
+      font-weight: 700;
+    }
   }
+
   @media (min-width: 660px) {
     .title {
       display: none;
