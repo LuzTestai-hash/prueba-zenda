@@ -140,7 +140,7 @@ export default {
     }
     @media (min-width: 1440px) {
       .subtitle {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
     }
     .trademarks {

@@ -31,7 +31,8 @@
     <NavBottom />
     <Welcome v-view="viewHandler" />
     <WeZenda v-view="viewHandler" />
-    <div :class="`grafic-zenda ${graphic}`" />
+    <Graphic :graphic="graphic" />
+    <!-- <div :class="`grafic-zenda ${graphic}`" /> -->
     <WhatWeDo v-view="viewHandler" />
     <Methodology v-view="viewHandler" />
     <TrustUs />

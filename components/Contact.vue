@@ -195,6 +195,7 @@ export default {
   .form-contact {
     margin-top: 2rem;
     margin-bottom: 3.5rem;
+    height: 10rem;
     .label-contact {
       font-size: 2.1rem;
       color: white;
@@ -249,7 +250,7 @@ export default {
         background-color: transparent;
         border: initial;
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         &:focus {
           border: initial;
           box-shadow: initial;

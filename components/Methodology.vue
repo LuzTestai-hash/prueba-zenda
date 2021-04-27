@@ -96,7 +96,7 @@ export default {
           color: 'knowledge primary',
           icon: 'challenge',
           detail:
-            'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+            'Relevamos los activos del proyecto, los potenciales limitantes y el objetivo del negocio a través de un Marketing Canvas propio.',
           classDetail: 'detail',
         },
         {
@@ -106,7 +106,7 @@ export default {
           color: 'knowledge primary',
           icon: 'knowledge',
           detail:
-            'Relevamos los activos del proyecto, los potenciales limitantes y el objetivo del negocio a través de un Marketing Canvas propio.',
+            'Generamos un plan de crecimiento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
           classDetail: 'detail',
         },
         {
@@ -116,7 +116,7 @@ export default {
           color: 'knowledge secondary',
           icon: 'planning',
           detail:
-            'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+            'Seteamos y ejecutamos el plan en los mejores medios disponibles, con constante adaptación y ajustes para lograr los mejores resultados posible.',
           classDetail: 'detail',
         },
         {
@@ -126,7 +126,7 @@ export default {
           color: 'knowledge third',
           icon: 'execution',
           detail:
-            'Generamos un plan de crecimento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
+            'Desarrollamos los reportes y métricas necesarios para entender de manera dinámica la performance de negocio en conjunto.',
           classDetail: 'detail',
         },
       ],

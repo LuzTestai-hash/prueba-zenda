@@ -228,7 +228,6 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .toolsAndMedia-container {
   padding: 4rem 1.4rem;
-
   .subtitle {
     font-weight: 700;
     color: $typography;
@@ -264,7 +263,7 @@ export default {
     margin-bottom: 3rem;
     align-items: center;
     justify-content: space-between;
-
+    height: 5rem;
     p {
       margin: 2rem;
       font-size: 1.2rem;
