@@ -229,8 +229,10 @@ export default {
       padding-right: 20%;
       font-weight: 100;
       color: rgba(10, 10, 11, 0.64);
+      font-size: 1.1rem;
     }
     .detail-title {
+      font-size: 1.1rem;
       font-weight: 600;
     }
   }

@@ -152,8 +152,8 @@ export default {
     padding: 1rem;
     background-color: #f0f0f0;
     border-radius: 10px;
-    margin-bottom: 1rem;
-    min-height: 4.5rem;
+    margin-bottom: 1.6rem;
+    min-height: 4rem;
     .section {
       margin: 3rem;
       padding: 0.6rem 1rem;

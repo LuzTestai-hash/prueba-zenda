@@ -12,6 +12,12 @@
           Desarrollamos KPIs en Data Studio 100% online, customizables y
           actualizados en tiempo real.
         </p>
+        <p class="dashboard-description">
+          Establecemos Tableros de Control adaptables a cada área tomando como
+          prioridad el control de Métricas Claves, evitando perder tiempo en
+          datos irrelevantes. Sabemos perfecto que "Si no es accionable, no
+          debería ser monitoreada.
+        </p>
         <!-- <VueSlickCarousel
           ref="carousel"
           :dots="false"
@@ -169,15 +175,29 @@ export default {
       }
     }
     .text-dashboard {
-      color: white;
-      font-size: 2.3rem;
-      line-height: 3.5rem;
-      margin-bottom: 5rem;
-      padding: 2rem 0;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      margin-bottom: 0;
+      padding: 0 0 2rem 0;
+    }
+    .dashboard-description {
+      color: #fff;
+      font-size: 1.22rem;
+      line-height: 1.3;
+      letter-spacing: -0.04rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
     }
     @media (min-width: 660px) {
       .text-dashboard {
-        width: 50%;
+        font-weight: 600;
+        width: 60%;
+        font-size: 2.6rem;
+        line-height: 3rem;
+      }
+      .dashboard-description {
+        width: 60%;
       }
     }
 

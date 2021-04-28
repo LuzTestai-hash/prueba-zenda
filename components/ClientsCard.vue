@@ -66,7 +66,7 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .clientcard-container {
   border-radius: 2rem;
-  background-color: rgba(229, 229, 229, 0.07);
+  background-color: #161617;
   padding: 2rem 2rem;
   display: flex;
   align-items: center;
@@ -79,6 +79,7 @@ export default {
     font-weight: 100;
     color: white;
     min-height: 10rem;
+    font-size: 1.1rem;
   }
   @media (min-width: 600px) {
     .trademarks {
@@ -99,9 +100,8 @@ export default {
       color: white;
     }
     .card-text {
-      font-size: 1.2rem;
       min-height: 10rem;
-      padding-left: 3rem;
+      padding-left: 0;
     }
   }
   .detail-container {
@@ -118,9 +118,11 @@ export default {
       font-size: 1.6rem;
       word-break: break-all;
       text-align: left;
+      margin-bottom: initial;
     }
     .detail {
       font-size: 1rem;
+      margin-bottom: 0.2rem;
       //padding-right: 4rem;
     }
     &.primary {
@@ -206,8 +208,7 @@ export default {
   }
   .clientcard-container {
     border-radius: 2rem;
-    background-color: rgb(49, 48, 48);
-    padding: 2rem 3rem;
+    padding: 0.6rem 3rem 3rem 3rem;
     width: 75%;
     position: relative;
     z-index: 1;

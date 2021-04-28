@@ -55,7 +55,7 @@
           :strength="10"
           class="buttonContact"
         >
-          <p>comenzá</p>
+          <p>contacto</p>
           <span id="spanContacto" />
         </kinesis-element>
       </kinesis-container>
@@ -148,7 +148,7 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .float-button {
   position: fixed;
-  bottom: 1rem;
+  bottom: 0.8rem;
   right: 1rem;
   z-index: 50;
   .buttonContact {
