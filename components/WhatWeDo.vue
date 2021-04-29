@@ -66,42 +66,20 @@
           </div>
         </b-col>
         <b-col md="4" class="p-md-5">
-          <div class="card-colapse">
-            <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
-              <p class="text">Estrategias digitales</p>
-            </b-button>
-            <b-collapse id="collapse-1">
-              <b-card class="collapse-content">
-                Lideramos proyectos digitales implementando eficazmente
-                estrategias y procesos de transformación para lograr objetivos
-                medibles, alcanzables y relevantes (SMART) para los negocios de
-                nuestros clientes.
-              </b-card>
-            </b-collapse>
-          </div>
-          <div class="card-colapse">
-            <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
-              <p class="text">Implementación</p>
-            </b-button>
-            <b-collapse id="collapse-2">
-              <b-card class="collapse-content">
-                Nos encargamos del día a día de tus campañas, llevando a cabo
-                planeamiento, implementación, optimización y reporting.
-              </b-card>
-            </b-collapse>
-          </div>
-          <div class="card-colapse">
+          <div
+            v-for="(item, index) in content"
+            :key="index"
+            class="card-colapse"
+          >
             <b-button
-              v-b-toggle="'collapse-3'"
-              class="button-colapse secondary"
+              v-b-toggle="`collapse-${item.id}`"
+              :class="`button-colapse ${item.color}`"
             >
-              <p class="text">Consultoría</p>
+              <p class="text">{{ item.title }}</p>
             </b-button>
-            <b-collapse id="collapse-3">
+            <b-collapse :id="`collapse-${item.id}`">
               <b-card class="collapse-content">
-                Trabajamos sobre el desarrollo de distintos procesos digitales
-                internos o externos de tu compañía para lograr una mejora a
-                largo plazo de los mismos.
+                {{ item.description }}
               </b-card>
             </b-collapse>
           </div>
@@ -118,6 +96,29 @@ export default {
       showAnimation: false,
       bottomActive: 'first',
       isMobile: false,
+      content: [
+        {
+          id: 1,
+          title: 'Estrategias digitales',
+          description:
+            'Lideramos proyectos digitales implementando eficazmente estrategias y procesos de transformación para lograr objetivos medibles, alcanzables y relevantes (SMART) para los negocios de nuestros clientes.',
+          color: 'primary',
+        },
+        {
+          id: 2,
+          title: 'Implementación',
+          description:
+            'Nos encargamos del día a día de tus campañas, llevando a cabo planeamiento, implementación, optimización y reporting.',
+          color: 'third',
+        },
+        {
+          id: 3,
+          title: 'Consultoría',
+          description:
+            'Trabajamos sobre el desarrollo de distintos procesos digitales internos o externos de tu compañía para lograr una mejora a largo plazo de los mismos.',
+          color: 'secondary',
+        },
+      ],
     }
   },
   mounted() {

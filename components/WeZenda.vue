@@ -6,52 +6,30 @@
           <p class="title">SOMOS <span class="special-title">ZENDA.</span></p>
         </b-col>
         <b-col md="6">
-          <div data-v-fc305ef6="" class="detail">
-            <h2>
-              Implementamos eficazmente estrategias y procesos de transformación
-            </h2>
-            <span>
-              para encontrar y conectar con tu audiencia en aquellos lugares
-              donde se toman decisiones de compra. Logramos objetivos medibles,
-              alcanzables para influir significativamente en decisiones para que
-              tu marca gane.
-            </span>
+          <div class="detail">
+            <h2>{{ h2 }}</h2>
+            <span>{{ detail }}</span>
           </div>
         </b-col>
         <b-col md="6">
-          <b-button v-b-toggle.accordion-1 class="button-colapse primary">
-            <p class="text">Proactividad</p>
-            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-          </b-button>
-          <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
-            <b-card class="collapse-content">
-              Nos hacemos cargo de la responsabilidad de liderar las campañas
-              digitales basándonos en la innovación y en las mejoras permanentes
-              que se presentan en el ecosistema.
-            </b-card>
-          </b-collapse>
-          <b-button v-b-toggle.accordion-2 class="button-colapse secondary">
-            <p class="text">Atención personalizada</p>
-            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-          </b-button>
-          <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
-            <b-card class="collapse-content">
-              Cada equipo de trabajo estará siempre disponibles para cualquier
-              consulta o inquietud. Ante cualquier cambio en el equipo, se le
-              informará inmediatamente al cliente.
-            </b-card>
-          </b-collapse>
-          <b-button v-b-toggle.accordion-3 class="button-colapse third">
-            <p class="text">Transparencia y respeto :)</p>
-            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-          </b-button>
-          <b-collapse id="accordion-3" accordion="my-accordion">
-            <b-card class="collapse-content">
-              Es algo que nos gustaría que un cliente destaque de nosotros en el
-              largo plazo. Creemos que es el mejor camino para poder tener
-              relaciones duraderas en el tiempo
-            </b-card>
-          </b-collapse>
+          <div v-for="(item, index) in content" :key="index">
+            <b-button
+              v-b-toggle="`accordion-${item.id}`"
+              :class="`button-colapse ${item.color}`"
+            >
+              <p class="text">{{ item.title }}</p>
+              <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
+            </b-button>
+            <b-collapse
+              :id="`accordion-${item.id}`"
+              accordion="my-accordion"
+              role="tabpanel"
+            >
+              <b-card class="collapse-content">
+                {{ item.description }}
+              </b-card>
+            </b-collapse>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -59,7 +37,38 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      h2: 'Implementamos eficazmente estrategias y procesos de transformación',
+      detail:
+        'para encontrar y conectar con tu audiencia en aquellos lugares donde se toman decisiones de compra. Logramos objetivos medibles, alcanzables para influir significativamente en decisiones para que tu marca gane.',
+      content: [
+        {
+          id: 1,
+          title: 'Proactividad',
+          description:
+            ' Nos hacemos cargo de la responsabilidad de liderar las campañas digitales basándonos en la innovación y en las mejoras permanentes que se presentan en el ecosistema.',
+          color: 'primary',
+        },
+        {
+          id: 2,
+          title: 'Atención personalizada',
+          description:
+            'Cada equipo de trabajo estará siempre disponibles para cualquier consulta o inquietud. Ante cualquier cambio en el equipo, se le informará inmediatamente al cliente.',
+          color: 'secondary',
+        },
+        {
+          id: 3,
+          title: 'Transparencia y respeto :)',
+          description:
+            'Es algo que nos gustaría que un cliente destaque de nosotros en el largo plazo. Creemos que es el mejor camino para poder tener relaciones duraderas en el tiempo',
+          color: 'third',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

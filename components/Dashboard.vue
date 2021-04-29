@@ -9,14 +9,10 @@
       </b-container>
       <b-container>
         <p class="text-dashboard">
-          Desarrollamos KPIs en Data Studio 100% online, customizables y
-          actualizados en tiempo real.
+          {{ dashboardData.detail }}
         </p>
         <p class="dashboard-description">
-          Establecemos Tableros de Control adaptables a cada área tomando como
-          prioridad el control de Métricas Claves, evitando perder tiempo en
-          datos irrelevantes. Sabemos perfecto que "Si no es accionable, no
-          debería ser monitoreada.
+          {{ dashboardData.description }}
         </p>
         <!-- <VueSlickCarousel
           ref="carousel"
@@ -77,18 +73,24 @@ export default {
   data() {
     return {
       arrowPrev: false,
-      dashboarddata: [
-        {
-          id: 0,
-          detail:
-            'Desarrollamos KPIs en Data Studio 100% online, customizables y actualizados en tiempo real.',
-        },
-        // {
-        //   id: 1,
-        //   detail:
-        //     'Nuestro HUB compartido para mejorar la colaboración entre los equipos.',
-        // },
-      ],
+      dashboardData: {
+        detail:
+          ' Desarrollamos KPIs en Data Studio 100% online, customizables y actualizados en tiempo real.',
+        description:
+          'Establecemos Tableros de Control adaptables a cada área tomando como prioridad el control de Métricas Claves, evitando perder tiempo en datos irrelevantes. Sabemos perfecto que "Si no es accionable, no debería ser monitoreada.',
+      },
+      // dashboarddata: [
+      //   {
+      //     id: 0,
+      //     detail:
+      //       'Desarrollamos KPIs en Data Studio 100% online, customizables y actualizados en tiempo real.',
+      //   },
+      //   // {
+      //   //   id: 1,
+      //   //   detail:
+      //   //     'Nuestro HUB compartido para mejorar la colaboración entre los equipos.',
+      //   // },
+      // ],
       settings: {
         dots: false,
         arrows: false,
