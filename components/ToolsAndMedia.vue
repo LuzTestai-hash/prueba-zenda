@@ -1,6 +1,6 @@
 <template>
   <b-container id="dashboard-tools" class="toolsAndMedia-container">
-    <p class="subtitle">CÓMO LO LOGRAMOS.</p>
+    <p class="subtitle">{{ $t('howDidWeDoIt.name') }}</p>
     <div class="d-block d-md-none">
       <VueSlickCarousel v-bind="settings" class="carrusel-container">
         <div class="carrusel">

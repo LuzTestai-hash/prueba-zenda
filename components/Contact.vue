@@ -1,14 +1,14 @@
 <template>
   <div id="contact" class="contact-background">
     <b-container class="contact-container">
-      <p class="subtitle">COMENZAMOS.</p>
+      <p class="subtitle">{{ $t('contact.name') }}</p>
       <b-form class="form-contact" @submit="onSubmit">
         <label
           v-if="show === 1"
           for="input-1"
           :class="`label-contact ${show === 1 ? 'one' : ''}`"
         >
-          Contanos cómo te llamas.
+          {{ $t('contact.form[0]') }}
         </label>
         <div v-if="show === 1" class="input-container">
           <b-form-input
@@ -31,7 +31,7 @@
           for="input-2"
           :class="`label-contact ${show === 2 ? 'two' : ''}`"
         >
-          Escibinos tu email
+          {{ $t('contact.form[1]') }}
         </label>
         <div v-if="show === 2" class="input-container">
           <b-form-input
@@ -62,7 +62,7 @@
           for="input-3"
           :class="`label-contact ${show === 3 ? 'three' : ''}`"
         >
-          En qué te podemos ayudar?
+          {{ $t('contact.form[2]') }}
         </label>
         <div v-if="show === 3" class="input-container">
           <b-form-input
@@ -96,14 +96,16 @@
           />
         </div>
         <p v-if="show !== 4" class="number">{{ `${show}/3` }}</p>
-        <p v-if="show === 4" class="email-success">Gracias por contactarnos.</p>
+        <p v-if="show === 4" class="email-success">
+          {{ $t('contact.form[3]') }}
+        </p>
         <div v-if="show === 4" class="contact-back" @click="reset">
           <p class="contact">Volver a contactar</p>
           <b-icon icon="arrow-right" aria-hidden="true" class="icon-input" />
         </div>
       </b-form>
 
-      <p class="subtitle">EMBAJADORES.</p>
+      <p class="subtitle">{{ $t('ambassadors.name') }}</p>
       <p class="title">Zenda en el mundo.</p>
       <b-row class="locations-container">
         <b-col cols="6" md="3">

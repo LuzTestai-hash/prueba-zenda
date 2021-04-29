@@ -2,39 +2,45 @@
   <div id="methodology" class="methodology-background">
     <b-container class="methodology-container">
       <div class="title-container">
-        <p class="subtitle">CÓMO LO HACEMOS.</p>
+        <p class="subtitle">{{ $t('how.name') }}</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#000'" />
         </div>
       </div>
-      <p class="title-card">Nuestro método.</p>
+      <p class="title-card">{{ $t('how.title') }}</p>
       <VueSlickCarousel
         class="d-block d-md-none"
         :dots="false"
         :arrows="false"
         v-bind="settings"
       >
-        <div v-for="data in methoddata" :key="data.id">
+        <div v-for="(item, index) in $t('how.items')" :key="item._id">
           <MethodologyCard
-            :number="data.number"
-            :title="data.title"
-            :color="data.color"
-            :icon="data.icon"
-            :detail="data.detail"
-            :classdetail="data.classDetail"
+            :number="`0${index + 1}`"
+            :title="item.title"
+            color="knowledge"
+            :icon="getIcon(index)"
+            :detail="item.description"
+            classdetail="detail"
           />
         </div>
       </VueSlickCarousel>
 
       <div class="d-none d-md-flex flex-column">
-        <p class="title-desktop">Metodología ágil.</p>
+        <p class="title-desktop">{{ $t('how.title') }}</p>
         <div class="cards-container">
           <div class="container-first-column">
-            <div v-for="item in firstColumn" :key="item.id" class="card-method">
-              <p class="number">{{ item.number }}</p>
-              <p :class="item.color">{{ item.title }}</p>
-              <p :class="item.classDetail">
-                {{ item.detail }}
+            <div
+              v-for="item in firstColumn"
+              :key="item._id"
+              class="card-method"
+            >
+              <p class="number">
+                {{ `0${$t('how.items').indexOf(item) + 1}` }}
+              </p>
+              <p class="knowledge primary">{{ item.title }}</p>
+              <p class="detail">
+                {{ item.description }}
               </p>
             </div>
           </div>
@@ -47,13 +53,15 @@
           <div class="container-second-column">
             <div
               v-for="item in secondColumn"
-              :key="item.id"
+              :key="item._id"
               class="card-method"
             >
-              <p class="number">{{ item.number }}</p>
-              <p :class="item.color">{{ item.title }}</p>
-              <p :class="item.classDetail">
-                {{ item.detail }}
+              <p class="number">
+                {{ `0${$t('how.items').indexOf(item) + 1}` }}
+              </p>
+              <p class="knowledge">{{ item.title }}</p>
+              <p class="detail">
+                {{ item.description }}
               </p>
             </div>
           </div>
@@ -88,49 +96,6 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
-      methoddata: [
-        {
-          id: 0,
-          number: '01',
-          title: 'Desafío',
-          color: 'knowledge primary',
-          icon: 'challenge',
-          detail:
-            'Relevamos los activos del proyecto, los potenciales limitantes y el objetivo del negocio a través de un Marketing Canvas propio.',
-          classDetail: 'detail',
-        },
-        {
-          id: 1,
-          number: '02',
-          title: 'Conocimiento',
-          color: 'knowledge primary',
-          icon: 'knowledge',
-          detail:
-            'Generamos un plan de crecimiento que tiene tanto objetivos de performance de pauta como metas a cumplir de desarrollo del canal.',
-          classDetail: 'detail',
-        },
-        {
-          id: 2,
-          number: '03',
-          title: 'Planificación',
-          color: 'knowledge secondary',
-          icon: 'planning',
-          detail:
-            'Seteamos y ejecutamos el plan en los mejores medios disponibles, con constante adaptación y ajustes para lograr los mejores resultados posible.',
-          classDetail: 'detail',
-        },
-        {
-          id: 3,
-          number: '04',
-          title: 'Ejecución',
-          color: 'knowledge third',
-          icon: 'execution',
-          detail:
-            'Desarrollamos los reportes y métricas necesarios para entender de manera dinámica la performance de negocio en conjunto.',
-          classDetail: 'detail',
-        },
-      ],
-
       settings: {
         dots: false,
         arrows: false,
@@ -167,10 +132,30 @@ export default {
   },
   computed: {
     firstColumn() {
-      return this.methoddata.filter((item, index) => index === 0 || index === 3)
+      return this.$t('how.items').filter(
+        (item, index) => index === 0 || index === 3
+      )
     },
     secondColumn() {
-      return this.methoddata.filter((item, index) => index === 1 || index === 2)
+      return this.$t('how.items').filter(
+        (item, index) => index === 1 || index === 2
+      )
+    },
+  },
+  methods: {
+    getIcon(index) {
+      switch (index) {
+        case 0:
+          return 'challenge'
+        case 1:
+          return 'knowledge'
+        case 2:
+          return 'planning'
+        case 3:
+          return 'execution'
+        default:
+          break
+      }
     },
   },
 }

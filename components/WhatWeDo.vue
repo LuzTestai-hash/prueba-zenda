@@ -3,10 +3,10 @@
     <b-container class="whatWeDo-container">
       <b-row>
         <b-col md="12">
-          <p class="subtitle">QUÉ HACEMOS</p>
+          <p class="subtitle">{{ $t('what.name') }}</p>
         </b-col>
         <b-col md="8">
-          <p class="title">Escuchamos, analizamos, ejecutamos y crecemos.</p>
+          <p class="title">{{ $t('what.title') }}</p>
           <div :class="`mobile-graphic ${bottomActive}`" />
           <div class="content-container">
             <div class="button-container">
@@ -18,8 +18,9 @@
                 "
                 @click="textSelected('first')"
               >
-                Estrategias digitales
+                {{ $t('what.items[0].title') }}
               </b-button>
+
               <b-button
                 :class="
                   bottomActive === 'second'
@@ -27,8 +28,10 @@
                     : 'button third'
                 "
                 @click="textSelected('second')"
-                >Implementación</b-button
               >
+                {{ $t('what.items[1].title') }}
+              </b-button>
+
               <b-button
                 :class="
                   bottomActive === 'third'
@@ -36,44 +39,39 @@
                     : 'button secondary'
                 "
                 @click="textSelected('third')"
-                >Consultoría</b-button
               >
+                {{ $t('what.items[2].title') }}
+              </b-button>
             </div>
             <p v-if="bottomActive === 'first'" class="detail-title">
-              Estrategias digitales
+              {{ $t('what.items[0].title') }}
             </p>
             <p v-if="bottomActive === 'first'" class="detail-content">
-              Lideramos proyectos digitales implementando eficazmente
-              estrategias y procesos de transformación para lograr objetivos
-              medibles, alcanzables y relevantes (SMART) para los negocios de
-              nuestros clientes.
+              {{ $t('what.items[0].description') }}
             </p>
             <p v-if="bottomActive === 'second'" class="detail-title">
-              Implementación
+              {{ $t('what.items[1].title') }}
             </p>
             <p v-if="bottomActive === 'second'" class="detail-content">
-              Nos encargamos del día a día de tus campañas, llevando a cabo
-              planeamiento, implementación, optimización y reporting.
+              {{ $t('what.items[1].description') }}
             </p>
             <p v-if="bottomActive === 'third'" class="detail-title">
-              Consultoría
+              {{ $t('what.items[2].title') }}
             </p>
             <p v-if="bottomActive === 'third'" class="detail-content">
-              Trabajamos sobre el desarrollo de distintos procesos digitales
-              internos o externos de tu compañía para lograr una mejora a largo
-              plazo de los mismos.
+              {{ $t('what.items[2].description') }}
             </p>
           </div>
         </b-col>
         <b-col md="4" class="p-md-5">
           <div
-            v-for="(item, index) in content"
+            v-for="(item, index) in $t('what.items')"
             :key="index"
             class="card-colapse"
           >
             <b-button
-              v-b-toggle="`collapse-${item.id}`"
-              :class="`button-colapse ${item.color}`"
+              v-b-toggle="`collapse-${item._id}`"
+              :class="`button-colapse ${getColor(index)}`"
             >
               <p class="text">{{ item.title }}</p>
             </b-button>
@@ -96,29 +94,6 @@ export default {
       showAnimation: false,
       bottomActive: 'first',
       isMobile: false,
-      content: [
-        {
-          id: 1,
-          title: 'Estrategias digitales',
-          description:
-            'Lideramos proyectos digitales implementando eficazmente estrategias y procesos de transformación para lograr objetivos medibles, alcanzables y relevantes (SMART) para los negocios de nuestros clientes.',
-          color: 'primary',
-        },
-        {
-          id: 2,
-          title: 'Implementación',
-          description:
-            'Nos encargamos del día a día de tus campañas, llevando a cabo planeamiento, implementación, optimización y reporting.',
-          color: 'third',
-        },
-        {
-          id: 3,
-          title: 'Consultoría',
-          description:
-            'Trabajamos sobre el desarrollo de distintos procesos digitales internos o externos de tu compañía para lograr una mejora a largo plazo de los mismos.',
-          color: 'secondary',
-        },
-      ],
     }
   },
   mounted() {
@@ -138,6 +113,18 @@ export default {
     textSelected(selected) {
       this.bottomActive = selected
       this.$nuxt.$emit('graphic', selected)
+    },
+    getColor(index) {
+      switch ((index + 1) % 3) {
+        case 1:
+          return 'primary'
+        case 2:
+          return 'secondary'
+        case 0:
+          return 'third'
+        default:
+          break
+      }
     },
   },
 }

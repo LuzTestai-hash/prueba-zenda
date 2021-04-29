@@ -1,5 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  server: {
+    port: 3002,
+  },
   head: {
     title: 'Zenda | Performance & Growth',
     htmlAttrs: {
@@ -47,10 +50,26 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
     '@nuxtjs/svg',
     'vue-scrollto/nuxt',
+    'nuxt-i18n',
+    '@nuxtjs/axios',
   ],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.js',
+      },
+      {
+        code: 'es',
+        file: 'es.js',
+      },
+    ],
+    lazy: true,
+    langDir: 'lang/',
+    defaultLocale: 'es',
+  },
 
   bootstrapVue: {
     icons: true,

@@ -3,25 +3,33 @@
     <b-container class="weZenda-container">
       <b-row>
         <b-col md="12">
-          <p class="title">SOMOS <span class="special-title">ZENDA.</span></p>
+          <p class="title">
+            {{ $t('about.name') }} <span class="special-title">ZENDA.</span>
+          </p>
         </b-col>
+
         <b-col md="6">
-          <div class="detail">
-            <h2>{{ h2 }}</h2>
-            <span>{{ detail }}</span>
+          <div data-v-fc305ef6="" class="detail">
+            <h2>
+              {{ $t('about.description') }}
+            </h2>
+            <!-- <span>
+              {{ $t('hero.description') }}
+            </span> -->
           </div>
         </b-col>
+
         <b-col md="6">
-          <div v-for="(item, index) in content" :key="index">
+          <div v-for="(item, index) in $t('about.items')" :key="index">
             <b-button
-              v-b-toggle="`accordion-${item.id}`"
-              :class="`button-colapse ${item.color}`"
+              v-b-toggle="`accordion-${item._id}`"
+              :class="`button-colapse ${getColor(index)}`"
             >
               <p class="text">{{ item.title }}</p>
               <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
             </b-button>
             <b-collapse
-              :id="`accordion-${item.id}`"
+              :id="`accordion-${item._id}`"
               accordion="my-accordion"
               role="tabpanel"
             >
@@ -67,6 +75,20 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    getColor(index) {
+      switch ((index + 1) % 3) {
+        case 1:
+          return 'primary'
+        case 2:
+          return 'secondary'
+        case 0:
+          return 'third'
+        default:
+          break
+      }
+    },
   },
 }
 </script>
