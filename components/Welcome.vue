@@ -3,11 +3,9 @@
     <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">
-        <h1 class="title">Hacemos Performance & Growth en serio.</h1>
+        <h1 class="title">{{ $t('hero.title') }}</h1>
         <p class="subtitle">
-          Somos un equipo de especialistas en performance y crecimiento con una
-          simple creencia: Conectar a las marcas con sus clientes en los
-          momentos que importan.
+          {{ $t('hero.description') }}
         </p>
       </div>
       <div class="container-cards">

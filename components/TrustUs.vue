@@ -1,7 +1,7 @@
 <template>
   <div class="trustus-background">
     <b-container class="trustus-container">
-      <p class="subtitle">Confian en nosotros</p>
+      <p class="subtitle">{{ $t('clients.title') }}</p>
       <div class="d-block d-md-none">
         <VueSlickCarousel v-bind="settings">
           <div>

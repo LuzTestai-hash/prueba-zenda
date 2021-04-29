@@ -3,53 +3,46 @@
     <b-container class="weZenda-container">
       <b-row>
         <b-col md="12">
-          <p class="title">SOMOS <span class="special-title">ZENDA.</span></p>
+          <p class="title">
+            {{ $t('about.name') }} <span class="special-title">ZENDA.</span>
+          </p>
         </b-col>
         <b-col md="6">
           <div data-v-fc305ef6="" class="detail">
             <h2>
-              Implementamos eficazmente estrategias y procesos de transformación
+              {{ $t('hero.title') }}
             </h2>
             <span>
-              para encontrar y conectar con tu audiencia en aquellos lugares
-              donde se toman decisiones de compra. Logramos objetivos medibles,
-              alcanzables para influir significativamente en decisiones para que
-              tu marca gane.
+              {{ $t('hero.description') }}
             </span>
           </div>
         </b-col>
         <b-col md="6">
           <b-button v-b-toggle.accordion-1 class="button-colapse primary">
-            <p class="text">Proactividad</p>
+            <p class="text">{{ $t('about.items[0].title') }}</p>
             <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
           <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
             <b-card class="collapse-content">
-              Nos hacemos cargo de la responsabilidad de liderar las campañas
-              digitales basándonos en la innovación y en las mejoras permanentes
-              que se presentan en el ecosistema.
+              {{ $t('about.items[0].description') }}
             </b-card>
           </b-collapse>
           <b-button v-b-toggle.accordion-2 class="button-colapse secondary">
-            <p class="text">Atención personalizada</p>
+            <p class="text">{{ $t('about.items[1].title') }}</p>
             <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
           <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
             <b-card class="collapse-content">
-              Cada equipo de trabajo estará siempre disponibles para cualquier
-              consulta o inquietud. Ante cualquier cambio en el equipo, se le
-              informará inmediatamente al cliente.
+              {{ $t('about.items[1].description') }}
             </b-card>
           </b-collapse>
           <b-button v-b-toggle.accordion-3 class="button-colapse third">
-            <p class="text">Transparencia y respeto :)</p>
+            <p class="text">{{ $t('about.items[2].title') }}</p>
             <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
           </b-button>
           <b-collapse id="accordion-3" accordion="my-accordion">
             <b-card class="collapse-content">
-              Es algo que nos gustaría que un cliente destaque de nosotros en el
-              largo plazo. Creemos que es el mejor camino para poder tener
-              relaciones duraderas en el tiempo
+              {{ $t('about.items[2].description') }}
             </b-card>
           </b-collapse>
         </b-col>

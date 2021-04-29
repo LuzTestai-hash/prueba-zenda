@@ -19,7 +19,7 @@
         }"
         @click="handleItem('we-zenda')"
       >
-        Somos Zenda
+        {{ $t('nav.about') }}
       </div>
       <div
         id="nav-item-what-we-do"
@@ -29,7 +29,7 @@
         }"
         @click="handleItem('what-we-do')"
       >
-        Qué hacemos
+        {{ $t('nav.what') }}
       </div>
       <div
         id="nav-item-methodology"
@@ -39,7 +39,7 @@
         }"
         @click="handleItem('methodology')"
       >
-        Cómo lo hacemos
+        {{ $t('nav.how') }}
       </div>
       <div
         id="nav-item-clients"
@@ -49,7 +49,7 @@
         }"
         @click="handleItem('clients')"
       >
-        Qué logramos
+        {{ $t('nav.portfolio') }}
       </div>
       <div
         id="nav-item-dashboard-tools"
@@ -61,7 +61,7 @@
         }"
         @click="handleItem('dashboard-tools')"
       >
-        Cómo lo logramos
+        {{ $t('nav.howDid') }}
       </div>
       <div id="nav-menu-border" class="menu__border"></div>
     </div>

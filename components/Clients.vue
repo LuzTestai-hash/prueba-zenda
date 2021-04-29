@@ -5,7 +5,7 @@
       <div class="d-none d-md-flex circle two"></div>
       <div class="d-none d-md-flex circle three"></div>
       <b-container class="title-container">
-        <p class="subtitle">QUÉ LOGRAMOS.</p>
+        <p class="subtitle">{{ $t('portfolio.name') }}</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
@@ -17,15 +17,8 @@
         v-bind="settings"
         class="carusel-vue-slick"
       >
-        <div v-for="data in clientdata" :key="data.id">
-          <ClientsCard
-            :title="data.title"
-            :color="data.color"
-            :detail="data.detail"
-            :first="data.first"
-            :second="data.second"
-            :third="data.third"
-          />
+        <div v-for="(client, index) in $t('portfolio.items')" :key="client._id">
+          <ClientsCard :client="client" :color="getCardColor(index)" />
         </div>
       </VueSlickCarousel>
 
@@ -136,6 +129,18 @@ export default {
     },
     showPrev() {
       this.$refs.carousel.prev()
+    },
+    getCardColor(index) {
+      switch ((index + 1) % 3) {
+        case 1:
+          return 'primary'
+        case 2:
+          return 'secondary'
+        case 0:
+          return 'third'
+        default:
+          break
+      }
     },
   },
 }

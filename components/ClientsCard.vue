@@ -2,45 +2,27 @@
   <div :class="`clientcard-container ${title}`">
     <b-row>
       <b-col md="4">
-        <div v-if="title === 'Clue'">
-          <img
-            src="../assets/icons/clue-logo-white.png"
-            alt="clue"
-            class="trademarks"
-            width="188px"
-            height="54px"
-            loading="lazy"
-          />
-        </div>
-        <div v-if="title === 'WynDam'">
-          <img
-            src="../assets/icons/whyndham-logo-white.png"
-            alt="whyndham"
-            class="trademarks"
-            width="187px"
-            height="61px"
-            loading="lazy"
-          />
-        </div>
+        <img
+          :src="client.image.url"
+          alt="clue"
+          class="trademarks"
+          height="54px"
+          loading="lazy"
+        />
       </b-col>
       <b-col md="8">
         <p class="card-text">
-          {{ detail }}
+          {{ client.description }}
         </p>
       </b-col>
       <b-col md="12">
         <div :class="`detail-container ${color}`">
-          <div>
-            <p class="number">{{ first.number }}</p>
-            <p class="detail">{{ first.detail }}</p>
-          </div>
-          <div>
-            <p class="number">{{ second.number }}</p>
-            <p class="detail">{{ second.detail }}</p>
-          </div>
-          <div>
-            <p class="number">{{ third.number }}</p>
-            <p class="detail">{{ third.detail }}</p>
+          <div
+            v-for="achiviement in client.achiviements"
+            :key="achiviement._id"
+          >
+            <p class="number">{{ achiviement.title }}</p>
+            <p class="detail">{{ achiviement.description }}</p>
           </div>
         </div>
       </b-col>
@@ -52,12 +34,8 @@
 export default {
   name: 'ScreensOfMethodology',
   props: {
-    title: { type: String, default: null },
-    color: { type: String, default: null },
-    detail: { type: String, default: null },
-    first: { type: Object, default: null },
-    second: { type: Object, default: null },
-    third: { type: Object, default: null },
+    client: { type: Object, default: null },
+    color: { type: String, default: 'first' },
   },
 }
 </script>
