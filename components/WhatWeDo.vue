@@ -64,36 +64,20 @@
           </div>
         </b-col>
         <b-col md="4" class="p-md-5">
-          <div class="card-colapse">
-            <b-button v-b-toggle="'collapse-1'" class="button-colapse primary">
-              <p class="text">{{ $t('what.items[0].title') }}</p>
-            </b-button>
-            <b-collapse id="collapse-1">
-              <b-card class="collapse-content">
-                {{ $t('what.items[0].description') }}
-              </b-card>
-            </b-collapse>
-          </div>
-          <div class="card-colapse">
-            <b-button v-b-toggle="'collapse-2'" class="button-colapse third">
-              <p class="text">{{ $t('what.items[1].title') }}</p>
-            </b-button>
-            <b-collapse id="collapse-2">
-              <b-card class="collapse-content">
-                {{ $t('what.items[1].description') }}
-              </b-card>
-            </b-collapse>
-          </div>
-          <div class="card-colapse">
+          <div
+            v-for="(item, index) in $t('what.items')"
+            :key="index"
+            class="card-colapse"
+          >
             <b-button
-              v-b-toggle="'collapse-3'"
-              class="button-colapse secondary"
+              v-b-toggle="`collapse-${item._id}`"
+              :class="`button-colapse ${getColor(index)}`"
             >
-              <p class="text">{{ $t('what.items[2].title') }}</p>
+              <p class="text">{{ item.title }}</p>
             </b-button>
-            <b-collapse id="collapse-3">
+            <b-collapse :id="`collapse-${item.id}`">
               <b-card class="collapse-content">
-                {{ $t('what.items[2].description') }}
+                {{ item.description }}
               </b-card>
             </b-collapse>
           </div>
@@ -129,6 +113,18 @@ export default {
     textSelected(selected) {
       this.bottomActive = selected
       this.$nuxt.$emit('graphic', selected)
+    },
+    getColor(index) {
+      switch ((index + 1) % 3) {
+        case 1:
+          return 'primary'
+        case 2:
+          return 'secondary'
+        case 0:
+          return 'third'
+        default:
+          break
+      }
     },
   },
 }
@@ -221,8 +217,10 @@ export default {
       padding-right: 20%;
       font-weight: 100;
       color: rgba(10, 10, 11, 0.64);
+      font-size: 1.1rem;
     }
     .detail-title {
+      font-size: 1.1rem;
       font-weight: 600;
     }
   }

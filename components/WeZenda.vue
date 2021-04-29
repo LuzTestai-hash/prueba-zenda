@@ -7,44 +7,37 @@
             {{ $t('about.name') }} <span class="special-title">ZENDA.</span>
           </p>
         </b-col>
+
         <b-col md="6">
           <div data-v-fc305ef6="" class="detail">
             <h2>
-              {{ $t('hero.title') }}
+              {{ $t('about.description') }}
             </h2>
-            <span>
+            <!-- <span>
               {{ $t('hero.description') }}
-            </span>
+            </span> -->
           </div>
         </b-col>
+
         <b-col md="6">
-          <b-button v-b-toggle.accordion-1 class="button-colapse primary">
-            <p class="text">{{ $t('about.items[0].title') }}</p>
-            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-          </b-button>
-          <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
-            <b-card class="collapse-content">
-              {{ $t('about.items[0].description') }}
-            </b-card>
-          </b-collapse>
-          <b-button v-b-toggle.accordion-2 class="button-colapse secondary">
-            <p class="text">{{ $t('about.items[1].title') }}</p>
-            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-          </b-button>
-          <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
-            <b-card class="collapse-content">
-              {{ $t('about.items[1].description') }}
-            </b-card>
-          </b-collapse>
-          <b-button v-b-toggle.accordion-3 class="button-colapse third">
-            <p class="text">{{ $t('about.items[2].title') }}</p>
-            <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-          </b-button>
-          <b-collapse id="accordion-3" accordion="my-accordion">
-            <b-card class="collapse-content">
-              {{ $t('about.items[2].description') }}
-            </b-card>
-          </b-collapse>
+          <div v-for="(item, index) in $t('about.items')" :key="index">
+            <b-button
+              v-b-toggle="`accordion-${item._id}`"
+              :class="`button-colapse ${getColor(index)}`"
+            >
+              <p class="text">{{ item.title }}</p>
+              <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
+            </b-button>
+            <b-collapse
+              :id="`accordion-${item._id}`"
+              accordion="my-accordion"
+              role="tabpanel"
+            >
+              <b-card class="collapse-content">
+                {{ item.description }}
+              </b-card>
+            </b-collapse>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -52,7 +45,52 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      h2: 'Implementamos eficazmente estrategias y procesos de transformación',
+      detail:
+        'para encontrar y conectar con tu audiencia en aquellos lugares donde se toman decisiones de compra. Logramos objetivos medibles, alcanzables para influir significativamente en decisiones para que tu marca gane.',
+      content: [
+        {
+          id: 1,
+          title: 'Proactividad',
+          description:
+            ' Nos hacemos cargo de la responsabilidad de liderar las campañas digitales basándonos en la innovación y en las mejoras permanentes que se presentan en el ecosistema.',
+          color: 'primary',
+        },
+        {
+          id: 2,
+          title: 'Atención personalizada',
+          description:
+            'Cada equipo de trabajo estará siempre disponibles para cualquier consulta o inquietud. Ante cualquier cambio en el equipo, se le informará inmediatamente al cliente.',
+          color: 'secondary',
+        },
+        {
+          id: 3,
+          title: 'Transparencia y respeto :)',
+          description:
+            'Es algo que nos gustaría que un cliente destaque de nosotros en el largo plazo. Creemos que es el mejor camino para poder tener relaciones duraderas en el tiempo',
+          color: 'third',
+        },
+      ],
+    }
+  },
+  methods: {
+    getColor(index) {
+      switch ((index + 1) % 3) {
+        case 1:
+          return 'primary'
+        case 2:
+          return 'secondary'
+        case 0:
+          return 'third'
+        default:
+          break
+      }
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

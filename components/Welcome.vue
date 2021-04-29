@@ -44,7 +44,15 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      title: 'Hacemos Performance & Growth en serio.',
+      subtitle:
+        'Somos un equipo de especialistas en performance y crecimiento con una simple creencia: Conectar a las marcas con sus clientes en los momentos que importan.',
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -230,16 +238,4 @@ export default {}
     }
   }
 }
-// @media (min-width: 1440px) {
-//   .welcome-background {
-//     .welcome-container {
-//       .container-title {
-//         .title {
-//           font-size: 4rem;
-//           line-height: 4rem;
-//         }
-//       }
-//     }
-//   }
-// }
 </style>

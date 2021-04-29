@@ -4,33 +4,22 @@
       <p class="subtitle">{{ $t('clients.title') }}</p>
       <div class="d-block d-md-none">
         <VueSlickCarousel v-bind="settings">
-          <div>
+          <div v-for="(item, index) in images.one" :key="index">
             <img
-              src="../assets/icons/walmart-logo.png"
-              alt="walmart"
-              class="trademarks"
-              width="151px"
+              :src="require(`../assets/icons/${item.title}.png`)"
+              :alt="item.title"
+              :width="item.width"
               height="auto"
+              class="trademarks"
             />
           </div>
-
-          <div>
+          <div v-for="(item, index) in images.two" :key="index">
             <img
-              src="../assets/icons/workana-logo.png"
-              alt="workana"
-              class="trademarks"
-              width="150px"
+              :src="require(`../assets/icons/${item.title}.png`)"
+              :alt="item.title"
+              :width="item.width"
               height="auto"
-            />
-          </div>
-
-          <div>
-            <img
-              src="../assets/icons/heiniken-logo.png"
-              alt="Heiniken"
               class="trademarks"
-              width="175px"
-              height="auto"
             />
           </div>
         </VueSlickCarousel>
@@ -38,62 +27,24 @@
       <div class="d-none d-md-flex container-trademarks-desktop">
         <b-row class="row">
           <img
-            src="../assets/icons/walmart-logo.png"
-            alt="walmart"
-            class="trademarks"
-            width="151px"
+            v-for="(item, index) in images.one"
+            :key="index"
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
             height="auto"
-          />
-          <img
-            src="../assets/icons/workana-logo.png"
-            alt="workana"
             class="trademarks"
-            width="150px"
-            height="auto"
-          />
-          <img
-            src="../assets/icons/heiniken-logo.png"
-            alt="Heiniken"
-            class="trademarks"
-            width="175px"
-            height="auto"
-          />
-          <img
-            src="../assets/icons/Supervielle-logo.png"
-            alt="Supervielle"
-            class="trademarks"
-            width="130px"
-            height="auto"
           />
         </b-row>
         <b-row class="row">
           <img
-            src="../assets/icons/clue-logo.png"
-            alt="clue"
-            class="trademarks"
-            width="114,97px"
+            v-for="(item, index) in images.two"
+            :key="index"
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
             height="auto"
-          />
-          <img
-            src="../assets/icons/whyndham-logo.png"
-            alt="whyndham"
             class="trademarks"
-            width="139,5px"
-            height="auto"
-          />
-          <img
-            src="../assets/icons/depilife-logo.png"
-            alt="depilife"
-            class="trademarks"
-            width="138,46px"
-            height="auto"
-          />
-          <img
-            src="../assets/icons/acamica-logo.png"
-            alt="acamica"
-            class="trademarks"
-            width="140,57px"
-            height="auto"
           />
         </b-row>
       </div>
@@ -119,6 +70,20 @@ export default {
         slidesToShow: 2,
         speed: 500,
       },
+      images: {
+        one: [
+          { title: 'walmart-logo', width: '151px' },
+          { title: 'workana-logo', width: '150px' },
+          { title: 'heiniken-logo', width: '175px' },
+          { title: 'Supervielle-logo', width: '130px' },
+        ],
+        two: [
+          { title: 'clue-logo', width: '114,97px' },
+          { title: 'whyndham-logo', width: '139,5px' },
+          { title: 'depilife-logo', width: '138,46px' },
+          { title: 'acamica-logo', width: '140,57px' },
+        ],
+      },
     }
   },
 }
@@ -140,7 +105,7 @@ export default {
     }
     @media (min-width: 1440px) {
       .subtitle {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
     }
     .trademarks {

@@ -41,13 +41,21 @@
             required
             class="input"
           />
-          <b-icon
-            v-if="form.email"
-            icon="arrow-right"
-            aria-hidden="true"
-            class="icon-input"
-            @click="showNext"
-          />
+          <div class="icon-container">
+            <b-icon
+              icon="arrow-left"
+              aria-hidden="true"
+              class="icon-input"
+              @click="showPrev"
+            />
+            <b-icon
+              v-if="form.email"
+              icon="arrow-right"
+              aria-hidden="true"
+              class="icon-input"
+              @click="showNext"
+            />
+          </div>
         </div>
         <label
           v-if="show === 3"
@@ -59,18 +67,26 @@
         <div v-if="show === 3" class="input-container">
           <b-form-input
             id="input-3"
-            v-model="form.mesage"
+            v-model="form.message"
             type="text"
             required
             class="input"
           />
-          <b-icon
-            v-if="form.mesage"
-            icon="arrow-right"
-            aria-hidden="true"
-            class="icon-input"
-            @click="showNext"
-          />
+          <div class="icon-container">
+            <b-icon
+              icon="arrow-left"
+              aria-hidden="true"
+              class="icon-input"
+              @click="showPrev"
+            />
+            <b-icon
+              v-if="form.message"
+              icon="arrow-right"
+              aria-hidden="true"
+              class="icon-input"
+              @click="showNext"
+            />
+          </div>
         </div>
         <div v-if="show !== 4" class="load-container">
           <div
@@ -83,6 +99,10 @@
         <p v-if="show === 4" class="email-success">
           {{ $t('contact.form[3]') }}
         </p>
+        <div v-if="show === 4" class="contact-back" @click="reset">
+          <p class="contact">Volver a contactar</p>
+          <b-icon icon="arrow-right" aria-hidden="true" class="icon-input" />
+        </div>
       </b-form>
 
       <p class="subtitle">{{ $t('ambassadors.name') }}</p>
@@ -140,6 +160,7 @@ export default {
       form: {
         email: '',
         name: '',
+        message: '',
       },
       show: 1,
     }
@@ -156,6 +177,19 @@ export default {
       if (this.show === 4) {
         // alert(JSON.stringify(this.form))
       }
+    },
+    showPrev() {
+      if (this.show > 1) {
+        --this.show
+      }
+    },
+    reset() {
+      this.form = {
+        email: '',
+        name: '',
+        message: '',
+      }
+      this.show = 1
     },
   },
 }
@@ -197,8 +231,9 @@ export default {
   .form-contact {
     margin-top: 2rem;
     margin-bottom: 3.5rem;
+    height: 10rem;
     .label-contact {
-      font-size: 2.1rem;
+      font-size: 1.5rem;
       color: white;
       font-weight: 700;
       transition: transform 0.4s;
@@ -251,33 +286,53 @@ export default {
         background-color: transparent;
         border: initial;
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         &:focus {
           border: initial;
           box-shadow: initial;
         }
       }
-      .icon-input {
-        cursor: pointer;
-        width: 2rem;
-        height: 2rem;
-        color: $third;
-        animation: slide-icon 0.5s ease-in-out forwards;
-        transition: transform 0.4s;
+      .icon-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
       }
-      @keyframes slide-icon {
-        from {
-          transform: translateX(-100%);
-        }
-        to {
-          transform: translateX(0);
-        }
+    }
+    .icon-input {
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      color: $third;
+      animation: slide-icon 0.5s ease-in-out forwards;
+      transition: transform 0.4s;
+      margin: 0 0.2rem;
+    }
+    @keyframes slide-icon {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
       }
     }
     .email-success {
-      font-size: 2.1rem;
+      font-size: 1.6rem;
       color: white;
       font-weight: 700;
+    }
+    .contact-back {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+      padding-top: 2.5rem;
+      .contact {
+        font-size: 1.4rem;
+        color: white;
+        font-weight: 100;
+        margin-bottom: 0;
+      }
     }
     .number {
       text-align: right;
@@ -314,6 +369,24 @@ export default {
     }
     .email {
       text-decoration-line: initial;
+    }
+    .form-contact {
+      .label-contact {
+        font-size: 2.1rem;
+      }
+      .input-container {
+        .input {
+          font-size: 1.8rem;
+        }
+      }
+      .email-success {
+        font-size: 2.1rem;
+      }
+      .contact-back {
+        .contact {
+          font-size: 2rem;
+        }
+      }
     }
   }
   @media (min-width: 1440px) {
