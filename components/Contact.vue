@@ -231,7 +231,7 @@ export default {
     margin-bottom: 3.5rem;
     height: 10rem;
     .label-contact {
-      font-size: 2.1rem;
+      font-size: 1.5rem;
       color: white;
       font-weight: 700;
       transition: transform 0.4s;
@@ -284,7 +284,7 @@ export default {
         background-color: transparent;
         border: initial;
         color: white;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         &:focus {
           border: initial;
           box-shadow: initial;
@@ -314,7 +314,7 @@ export default {
       }
     }
     .email-success {
-      font-size: 2.1rem;
+      font-size: 1.6rem;
       color: white;
       font-weight: 700;
     }
@@ -326,7 +326,7 @@ export default {
       cursor: pointer;
       padding-top: 2.5rem;
       .contact {
-        font-size: 2rem;
+        font-size: 1.4rem;
         color: white;
         font-weight: 100;
         margin-bottom: 0;
@@ -367,6 +367,24 @@ export default {
     }
     .email {
       text-decoration-line: initial;
+    }
+    .form-contact {
+      .label-contact {
+        font-size: 2.1rem;
+      }
+      .input-container {
+        .input {
+          font-size: 1.8rem;
+        }
+      }
+      .email-success {
+        font-size: 2.1rem;
+      }
+      .contact-back {
+        .contact {
+          font-size: 2rem;
+        }
+      }
     }
   }
   @media (min-width: 1440px) {
