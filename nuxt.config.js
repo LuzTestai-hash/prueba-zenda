@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
-    port: 3002,
+    port: process.env.PORT || 3002,
   },
   head: {
     title: 'Zenda | Performance & Growth',
@@ -56,6 +56,12 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/axios',
   ],
+  axios: {
+    baseURL:
+      process.env.NODE_ENV === 'production'
+        ? 'https://zenda-api.herokuapp.com'
+        : 'http://localhost:3000',
+  },
   i18n: {
     locales: [
       {
@@ -75,9 +81,6 @@ export default {
   bootstrapVue: {
     icons: true,
   },
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

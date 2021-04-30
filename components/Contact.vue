@@ -2,7 +2,7 @@
   <div id="contact" class="contact-background">
     <b-container class="contact-container">
       <p class="subtitle">{{ $t('contact.name') }}</p>
-      <b-form class="form-contact" @submit="onSubmit">
+      <b-form class="form-contact">
         <label
           v-if="show === 1"
           for="input-1"
@@ -67,7 +67,7 @@
         <div v-if="show === 3" class="input-container">
           <b-form-input
             id="input-3"
-            v-model="form.message"
+            v-model="form.description"
             type="text"
             required
             class="input"
@@ -80,7 +80,7 @@
               @click="showPrev"
             />
             <b-icon
-              v-if="form.message"
+              v-if="form.description"
               icon="arrow-right"
               aria-hidden="true"
               class="icon-input"
@@ -110,25 +110,29 @@
       <b-row class="locations-container">
         <b-col cols="6" md="3">
           <div class="location">
-            <p class="location-title">Paraguay</p>
-            <p class="name">First Name</p>
+            <p class="location-title">Buenos Aires</p>
+            <p class="name">Matías De Caro</p>
             <b-button class="contact-button">
-              <p class="contact-text">Contactar</p>
+              <a href="mailto:matias@zenda.com.ar" class="contact-text"
+                >Contactar</a
+              >
               <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>
         <b-col cols="6" md="3">
           <div class="location">
-            <p class="location-title">Chile</p>
-            <p class="name">First Name</p>
+            <p class="location-title">Barcelona</p>
+            <p class="name">Germán Aranda</p>
             <b-button class="contact-button">
-              <p class="contact-text">Contactar</p>
+              <a href="mailto:german@zenda.com.ar" class="contact-text"
+                >Contactar</a
+              >
               <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>
-        <b-col cols="6" md="3">
+        <!-- <b-col cols="6" md="3">
           <div class="location">
             <p class="location-title">Uruguay</p>
             <p class="name">First Name</p>
@@ -147,7 +151,7 @@
               <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
-        </b-col>
+        </b-col> -->
       </b-row>
     </b-container>
   </div>
@@ -160,7 +164,7 @@ export default {
       form: {
         email: '',
         name: '',
-        message: '',
+        description: '',
       },
       show: 1,
     }
@@ -175,7 +179,7 @@ export default {
         ++this.show
       }
       if (this.show === 4) {
-        // alert(JSON.stringify(this.form))
+        this.$axios.$post('/email/contact', this.form)
       }
     },
     showPrev() {
@@ -187,7 +191,7 @@ export default {
       this.form = {
         email: '',
         name: '',
-        message: '',
+        description: '',
       }
       this.show = 1
     },
