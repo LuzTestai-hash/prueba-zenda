@@ -222,10 +222,11 @@ export default {
       top: 10rem;
       left: 25rem;
       animation: icon-play-1 10s linear infinite;
-      //transform: translate(32rem, 12rem) rotate(-100deg);
+      transform: translate(-10rem, 15rem) rotate(180deg);
       .icon {
         width: 3rem;
         height: auto;
+        animation: rotate 10s linear infinite;
       }
       @keyframes icon-play-1 {
         0% {
@@ -244,7 +245,7 @@ export default {
           transform: translate(26rem, -5rem);
         }
         50% {
-          transform: translate(15rem, -1rem);
+          transform: translate(16rem, -1rem);
         }
         60% {
           transform: translate(-1rem, 12rem);
@@ -260,6 +261,41 @@ export default {
         }
         100% {
           transform: translate(0);
+        }
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(0deg);
+        }
+        20% {
+          transform: rotate(-100deg);
+        }
+        30% {
+          transform: rotate(-100deg);
+        }
+        40% {
+          transform: rotate(85deg);
+        }
+        50% {
+          transform: rotate(85deg);
+        }
+        60% {
+          transform: rotate(85deg);
+        }
+        70% {
+          transform: rotate(180deg);
+        }
+        80% {
+          transform: rotate(180deg);
+        }
+        90% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(0deg);
         }
       }
     }
