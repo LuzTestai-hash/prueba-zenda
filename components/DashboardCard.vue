@@ -8,25 +8,21 @@
         </p>
       </b-col>
       <b-col md="5">
-        <videoPlayer
-          ref="videoPlayer"
-          :options="playerOptions"
+        <div
+          v-video-player:myVideoPlayer="playerOptions"
           class="video-player-box"
-        ></videoPlayer>
+        ></div>
       </b-col>
     </b-row>
   </div>
 </template>
 
 <script>
-// add any plugin first and then
-import { videoPlayer } from 'vue-video-player'
+import 'video.js/dist/video-js.css'
+import 'vue-video-player/src/custom-theme.css'
 require('videojs-youtube')
 export default {
   name: 'DashboardCard',
-  components: {
-    videoPlayer,
-  },
   props: {
     title: { type: String, default: null },
     description: { type: String, default: null },

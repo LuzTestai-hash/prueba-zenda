@@ -19,6 +19,7 @@
           class="logo"
           loading="lazy"
         />
+        <SwitchTranslate />
       </b-container>
 
       <nav id="menu">
@@ -179,6 +180,11 @@ header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    .logo-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
     .logo {
       width: 4rem;
     }
