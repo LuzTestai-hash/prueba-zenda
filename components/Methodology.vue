@@ -44,12 +44,14 @@
               </p>
             </div>
           </div>
-          <img
-            src="../assets/icons/zenda-icon-play.svg"
-            alt="iconPlay1"
-            class="icon-play"
-            loading="lazy"
-          />
+          <div class="icon-play">
+            <img
+              src="../assets/icons/zenda-arrow.svg"
+              alt="iconPlay1"
+              class="icon"
+              loading="lazy"
+            />
+          </div>
           <div class="container-second-column">
             <div
               v-for="item in secondColumn"
@@ -215,51 +217,55 @@ export default {
     }
     .icon-play {
       position: absolute;
-      width: 3rem;
-      height: auto;
+      //background: red;
       z-index: 1;
       top: 10rem;
       left: 25rem;
-      animation: icon-play-1 12s ease-out infinite;
+      animation: icon-play-1 10s linear infinite;
+      //transform: translate(32rem, 12rem) rotate(-100deg);
+      .icon {
+        width: 3rem;
+        height: auto;
+      }
+      @keyframes icon-play-1 {
+        0% {
+          transform: translate(0);
+        }
+        10% {
+          transform: translate(15rem, 12rem);
+        }
+        20% {
+          transform: translate(32rem, 12rem);
+        }
+        30% {
+          transform: translate(35rem, 1rem);
+        }
+        40% {
+          transform: translate(26rem, -5rem);
+        }
+        50% {
+          transform: translate(15rem, -1rem);
+        }
+        60% {
+          transform: translate(-1rem, 12rem);
+        }
+        70% {
+          transform: translate(-10rem, 15rem);
+        }
+        80% {
+          transform: translate(-20rem, 5rem);
+        }
+        90% {
+          transform: translate(-10rem, -6rem);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
     }
     @media (max-width: 1200px) {
       .icon-play {
         display: none;
-      }
-    }
-    @keyframes icon-play-1 {
-      0% {
-        transform: translate(0);
-      }
-      10% {
-        transform: translate(15rem, 12rem);
-      }
-      20% {
-        transform: translate(32rem, 12rem);
-      }
-      30% {
-        transform: translate(35rem, 1rem);
-      }
-      40% {
-        transform: translate(26rem, -5rem);
-      }
-      50% {
-        transform: translate(15rem, -1rem);
-      }
-      60% {
-        transform: translate(-1rem, 12rem);
-      }
-      70% {
-        transform: translate(-10rem, 15rem);
-      }
-      80% {
-        transform: translate(-20rem, 5rem);
-      }
-      90% {
-        transform: translate(-10rem, -6rem);
-      }
-      100% {
-        transform: translate(0);
       }
     }
     // @keyframes icon-play-2 {

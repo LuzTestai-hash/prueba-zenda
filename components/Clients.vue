@@ -135,9 +135,9 @@ export default {
         case 1:
           return 'primary'
         case 2:
-          return 'secondary'
-        case 0:
           return 'third'
+        case 0:
+          return 'secondary'
         default:
           break
       }

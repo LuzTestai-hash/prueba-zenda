@@ -100,7 +100,7 @@
           {{ $t('contact.form[3]') }}
         </p>
         <div v-if="show === 4" class="contact-back" @click="reset">
-          <p class="contact">Volver a contactar</p>
+          <p class="contact">ok</p>
           <b-icon icon="arrow-right" aria-hidden="true" class="icon-input" />
         </div>
       </b-form>
@@ -324,9 +324,9 @@ export default {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
       cursor: pointer;
-      padding-top: 2.5rem;
+      padding-top: 0.8rem;
       .contact {
         font-size: 1.4rem;
         color: white;

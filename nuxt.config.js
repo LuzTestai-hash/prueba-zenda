@@ -24,13 +24,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/stylesheets/Stylesheets.scss'],
+  css: ['~/assets/stylesheets/Stylesheets.scss', 'video.js/dist/video-js.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/vue-check-view.js',
     { src: '~/plugins/vue-kinesis.js', mode: 'client' },
     { src: '~~/node_modules/vue-rellax/lib/nuxt-plugin', ssr: false },
+    { src: '~plugins/video-player.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

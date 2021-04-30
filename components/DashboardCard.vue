@@ -1,14 +1,52 @@
 <template>
   <div class="dashboardCard-container">
-    <p class="text">{{ detail }}</p>
+    <b-row class="dashboard-row">
+      <b-col md="6">
+        <p class="text">{{ detail }}</p>
+        <p class="description">
+          {{ description }}
+        </p>
+      </b-col>
+      <b-col md="5">
+        <videoPlayer
+          ref="videoPlayer"
+          :options="playerOptions"
+          class="video-player-box"
+        ></videoPlayer>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
+// add any plugin first and then
+import { videoPlayer } from 'vue-video-player'
+require('videojs-youtube')
 export default {
   name: 'DashboardCard',
+  components: {
+    videoPlayer,
+  },
   props: {
     detail: { type: String, default: null },
+    description: { type: String, default: null },
+    video: { type: String, default: null },
+  },
+  data() {
+    return {
+      playsinline: true,
+      playerOptions: {
+        fluid: true,
+        techOrder: ['youtube'],
+        playsinline: true,
+        sources: [
+          {
+            type: 'video/youtube',
+            src: this.video,
+          },
+        ],
+      },
+    }
   },
 }
 </script>
@@ -16,26 +54,36 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .dashboardCard-container {
+  .dashboard-row {
+    align-items: center;
+    justify-content: space-between;
+  }
   .text {
-    color: white;
-    font-size: 2.3rem;
-    line-height: 3.5rem;
-    margin-bottom: 5rem;
-    padding: 2rem 2rem;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    margin-bottom: 0;
+    padding: 0 0 2rem 0;
+    letter-spacing: -0.01rem;
   }
-
-  @media (min-width: 1440px) {
+  .description {
+    color: #fff;
+    font-size: 1.22rem;
+    line-height: 1.3;
+    letter-spacing: -0.04rem;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+  @media (min-width: 660px) {
     .text {
-      font-weight: 100;
-      font-size: 3.5rem;
-      line-height: 4.5rem;
+      font-weight: 600;
+      //width: 60%;
+      font-size: 2.6rem;
+      line-height: 3rem;
     }
-  }
-}
-@media (min-width: 1024px) {
-  .dashboardCard-container {
-    padding-left: 2rem;
-    padding-right: 40%;
+    //.description {
+    //width: 60%;
+    //}
   }
 }
 </style>
