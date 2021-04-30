@@ -1,5 +1,5 @@
 <template>
-  <div :class="`clientcard-container ${title}`">
+  <div class="clientcard-container">
     <b-row>
       <b-col md="4">
         <img
@@ -190,15 +190,6 @@ export default {
     width: 75%;
     position: relative;
     z-index: 1;
-    &.WynDam {
-      margin-left: -2rem;
-    }
-    &.Clue {
-      margin-left: 3rem;
-    }
-    &.Pepe {
-      margin-left: -8rem;
-    }
   }
 }
 </style>

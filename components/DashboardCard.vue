@@ -2,7 +2,7 @@
   <div class="dashboardCard-container">
     <b-row class="dashboard-row">
       <b-col md="6">
-        <p class="text">{{ detail }}</p>
+        <p class="text">{{ title }}</p>
         <p class="description">
           {{ description }}
         </p>
@@ -28,7 +28,7 @@ export default {
     videoPlayer,
   },
   props: {
-    detail: { type: String, default: null },
+    title: { type: String, default: null },
     description: { type: String, default: null },
     video: { type: String, default: null },
   },

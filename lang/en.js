@@ -1,14 +1,18 @@
 export default async (context, locale) => {
   const api = context.$axios
 
-  const { hero, about, what, how, analysis, ...rest } = await api.$get(
-    'http://localhost:3000/all/en'
+  const { hero, about, what, how, ...rest } = await api.$get(
+    'https://zenda-api.herokuapp.com/all/en'
   )
 
   about.name = 'WE ARE'
   what.name = 'WHAT DO WE DO.'
   how.name = 'HOW DO WE DO IT.'
-  analysis.name = 'HOW WE ANALYZE'
+
+  const analyses = {
+    name: 'HOW WE ANALYZE',
+    analyses: rest.analyses,
+  }
 
   const clients = {
     title: 'They trust us',
@@ -50,7 +54,7 @@ export default async (context, locale) => {
     about,
     what,
     how,
-    analysis,
+    analyses,
     clients,
     portfolio,
     howDidWeDoIt,
