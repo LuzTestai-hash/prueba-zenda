@@ -1,10 +1,15 @@
 <template>
   <div class="switch-button">
     <span class="active"></span>
-    <NuxtLink to="/" class="switch-button-case left active-case">
-      Español
+    <NuxtLink
+      :to="switchLocalePath('es')"
+      class="switch-button-case left active-case"
+    >
+      ES
     </NuxtLink>
-    <NuxtLink to="/" class="switch-button-case right"> Inglés </NuxtLink>
+    <NuxtLink :to="switchLocalePath('en')" class="switch-button-case right">
+      EN
+    </NuxtLink>
   </div>
 </template>
 
@@ -26,6 +31,14 @@ export default {
       switchBtnRight.classList.add('active-case')
       switchBtnLeft.classList.remove('active-case')
       activeSwitch.style.left = '50%'
+    }
+
+    const locale = this.$i18n.getLocaleCookie()
+
+    if (locale === 'es') {
+      switchLeft()
+    } else {
+      switchRight()
     }
 
     switchBtnLeft.addEventListener(
