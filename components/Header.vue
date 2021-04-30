@@ -184,6 +184,7 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: baseline;
     }
     .logo {
       width: 4rem;
