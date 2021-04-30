@@ -2,7 +2,7 @@
   <div id="dashboard" class="dashboard-background">
     <div class="dashboard-container">
       <b-container class="title-container">
-        <p class="subtitle">COMO ANALIZAMOS.</p>
+        <p class="subtitle">{{ $t('analyses.name') }}</p>
         <div class="hand-container">
           <HandMoveIcon :color="'#fff'" />
         </div>
@@ -15,11 +15,11 @@
           v-bind="settings"
           class="carusel-vue-slick"
         >
-          <div v-for="data in dashboarddata" :key="data.id">
+          <div v-for="analysis in $t('analyses.analyses')" :key="analysis._id">
             <DashboardCard
-              :detail="data.detail"
-              :description="data.description"
-              :video="data.video"
+              :title="analysis.title"
+              :description="analysis.description"
+              :video="analysis.videoUrl"
             />
           </div>
         </VueSlickCarousel>
@@ -56,25 +56,6 @@ export default {
   data() {
     return {
       arrowPrev: false,
-      dashboarddata: [
-        {
-          id: 0,
-          detail:
-            'Desarrollamos KPIs en Data Studio 100% online, customizables y actualizados en tiempo real.',
-          description:
-            'Establecemos Tableros de Control adaptables a cada área tomando como prioridad el control de Métricas Claves, evitando perder tiempo en datos irrelevantes. Sabemos perfecto que "Si no es accionable, no debería ser monitoreada.',
-          video:
-            'https://www.youtube.com/watch?v=OrxmtDw4pVI&t=1s&ab_channel=Honeypot',
-        },
-        {
-          id: 1,
-          detail: 'Nuestro propio HUB en Notion totalmente customizable.',
-          description:
-            'Facilitamos la colaboración entre los equipos con fácil acceso al trabajo realizado, objetivos, planes, reportes, A/B test y más.',
-          video:
-            'https://www.youtube.com/watch?v=OrxmtDw4pVI&t=1s&ab_channel=Honeypot',
-        },
-      ],
       settings: {
         dots: false,
         arrows: false,
