@@ -1,8 +1,10 @@
 <template>
   <div class="switch-button">
     <span class="active"></span>
-    <button class="switch-button-case left active-case">Español</button>
-    <button class="switch-button-case right">Inglés</button>
+    <NuxtLink to="/" class="switch-button-case left active-case">
+      Español
+    </NuxtLink>
+    <NuxtLink to="/" class="switch-button-case right"> Inglés </NuxtLink>
   </div>
 </template>
 
@@ -71,15 +73,19 @@ export default {
     position: relative;
     border: none;
     transition: 0.3s ease all;
-    padding-bottom: 1px;
+    text-align: center;
+    padding-top: 0.7rem;
     border-radius: 5rem;
     font-size: 12px;
+    text-decoration: initial;
     &:hover {
       color: #59d7a2a2;
       cursor: pointer;
+      text-decoration: initial;
     }
     &:focus {
       outline: none;
+      text-decoration: initial;
     }
   }
   .active {
