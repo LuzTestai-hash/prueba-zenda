@@ -48,9 +48,11 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .switch-button {
-  width: 400px;
-  height: 40px;
-  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 3rem;
+  width: 175px;
+  height: 42px;
   transform: translate3d(-50%, -50%, 0);
   will-change: transform;
   z-index: 197 !important;
@@ -58,6 +60,8 @@ export default {
   transition: 0.3s ease all;
   border: 1px solid $primary;
   border-radius: 5rem;
+  display: flex;
+  flex-direction: row;
   &-case {
     display: inline-block;
     background: none;
@@ -67,10 +71,9 @@ export default {
     position: relative;
     border: none;
     transition: 0.3s ease all;
-    text-transform: uppercase;
-    letter-spacing: 5px;
     padding-bottom: 1px;
     border-radius: 5rem;
+    font-size: 12px;
     &:hover {
       color: #59d7a2a2;
       cursor: pointer;
@@ -93,6 +96,11 @@ export default {
     &-case {
       color: white;
     }
+  }
+}
+@media (max-width: 660px) {
+  .switch-button {
+    display: none;
   }
 }
 </style>
