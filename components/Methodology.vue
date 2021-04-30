@@ -44,14 +44,12 @@
               </p>
             </div>
           </div>
-          <div class="icon-play">
-            <img
-              src="../assets/icons/zenda-arrow.svg"
-              alt="iconPlay1"
-              class="icon"
-              loading="lazy"
-            />
-          </div>
+          <img
+            src="../assets/icons/zenda-arrow.svg"
+            alt="iconPlay1"
+            class="icon-play"
+            loading="lazy"
+          />
           <div class="container-second-column">
             <div
               v-for="item in secondColumn"
@@ -217,85 +215,45 @@ export default {
     }
     .icon-play {
       position: absolute;
-      //background: red;
+      width: 3rem;
+      height: auto;
       z-index: 1;
       top: 10rem;
       left: 25rem;
       animation: icon-play-1 10s linear infinite;
-      transform: translate(-10rem, 15rem) rotate(180deg);
-      .icon {
-        width: 3rem;
-        height: auto;
-        animation: rotate 10s linear infinite;
-      }
       @keyframes icon-play-1 {
         0% {
-          transform: translate(0);
+          transform: translate(0) rotate(0deg);
         }
         10% {
-          transform: translate(15rem, 12rem);
+          transform: translate(15rem, 12rem) rotate(0deg);
         }
         20% {
-          transform: translate(32rem, 12rem);
+          transform: translate(32rem, 12rem) rotate(-100deg);
         }
         30% {
-          transform: translate(35rem, 1rem);
+          transform: translate(35rem, 1rem) rotate(-100deg);
         }
         40% {
-          transform: translate(26rem, -5rem);
+          transform: translate(26rem, -5rem) rotate(85deg);
         }
         50% {
-          transform: translate(16rem, -1rem);
+          transform: translate(16rem, -1rem) rotate(85deg);
         }
         60% {
-          transform: translate(-1rem, 12rem);
+          transform: translate(-1rem, 12rem) rotate(85deg);
         }
         70% {
-          transform: translate(-10rem, 15rem);
+          transform: translate(-10rem, 15rem) rotate(180deg);
         }
         80% {
-          transform: translate(-20rem, 5rem);
+          transform: translate(-20rem, 5rem) rotate(180deg);
         }
         90% {
-          transform: translate(-10rem, -6rem);
+          transform: translate(-10rem, -6rem) rotate(180deg);
         }
         100% {
-          transform: translate(0);
-        }
-      }
-      @keyframes rotate {
-        0% {
-          transform: rotate(0deg);
-        }
-        10% {
-          transform: rotate(0deg);
-        }
-        20% {
-          transform: rotate(-100deg);
-        }
-        30% {
-          transform: rotate(-100deg);
-        }
-        40% {
-          transform: rotate(85deg);
-        }
-        50% {
-          transform: rotate(85deg);
-        }
-        60% {
-          transform: rotate(85deg);
-        }
-        70% {
-          transform: rotate(180deg);
-        }
-        80% {
-          transform: rotate(180deg);
-        }
-        90% {
-          transform: rotate(180deg);
-        }
-        100% {
-          transform: rotate(0deg);
+          transform: translate(0) rotate(0deg);
         }
       }
     }
@@ -304,14 +262,6 @@ export default {
         display: none;
       }
     }
-    // @keyframes icon-play-2 {
-    //   to {
-    //     transform: translate(0);
-    //   }
-    //   from {
-    //     transform: translate(-15rem, 12rem);
-    //   }
-    // }
     .container-first-column {
       max-width: 30%;
     }
