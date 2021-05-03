@@ -40,6 +40,7 @@ export default async (context, locale) => {
   }
 
   const nav = {
+    aboutMobile: 'Somos',
     about: 'Somos Zenda',
     what: 'Qué hacemos',
     how: 'Cómo lo hacemos',

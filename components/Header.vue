@@ -7,7 +7,7 @@
       loading="lazy"
     />
     <div class="wrap">
-      <div id="hamburger" @click="display_menu()">
+      <div id="hamburger" @click="showMenu">
         <span></span>
         <span></span>
         <span></span>
@@ -26,6 +26,25 @@
         <div class="section">
           <div
             v-scroll-to="{
+              element: '#welcome',
+              duration: 3000,
+              onStart: onStart,
+            }"
+            class="arrow-container"
+          >
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+              loading="lazy"
+            />
+            <b-icon icon="house" style="width: 1.5rem; height: 1.5rem" />
+          </div>
+        </div>
+
+        <div class="section">
+          <div
+            v-scroll-to="{
               element: '#we-zenda',
               duration: 3000,
               onStart: onStart,
@@ -38,7 +57,9 @@
               class="arrow"
               loading="lazy"
             />
-            <p>Somos <span class="zenda-text">Zenda</span></p>
+            <p>
+              {{ $t('nav.aboutMobile') }} <span class="zenda-text">Zenda</span>
+            </p>
           </div>
         </div>
         <div class="section">
@@ -56,29 +77,7 @@
               class="arrow"
               loading="lazy"
             />
-            <p>Qué hacemos</p>
-          </div>
-        </div>
-        <div class="section">
-          <div class="arrow-container">
-            <img
-              src="../assets/icons/arrow-green.svg"
-              alt="arrow"
-              class="arrow"
-              loading="lazy"
-            />
-            <p>Clientes</p>
-          </div>
-        </div>
-        <div class="section">
-          <div class="arrow-container">
-            <img
-              src="../assets/icons/arrow-green.svg"
-              alt="arrow"
-              class="arrow"
-              loading="lazy"
-            />
-            <p>Casos de éxito</p>
+            <p>{{ $t('nav.what') }}</p>
           </div>
         </div>
         <div class="section">
@@ -96,35 +95,13 @@
               class="arrow"
               loading="lazy"
             />
-            <p>Metodología</p>
-          </div>
-        </div>
-        <div class="section">
-          <div class="arrow-container">
-            <img
-              src="../assets/icons/arrow-green.svg"
-              alt="arrow"
-              class="arrow"
-              loading="lazy"
-            />
-            <p>Herramientas y medios</p>
-          </div>
-        </div>
-        <div class="section">
-          <div class="arrow-container">
-            <img
-              src="../assets/icons/arrow-green.svg"
-              alt="arrow"
-              class="arrow"
-              loading="lazy"
-            />
-            <p>Servicios</p>
+            <p>{{ $t('nav.how') }}</p>
           </div>
         </div>
         <div class="section">
           <div
             v-scroll-to="{
-              element: '#contact',
+              element: '#clients',
               duration: 3000,
               onStart: onStart,
             }"
@@ -136,7 +113,26 @@
               class="arrow"
               loading="lazy"
             />
-            <p>Contacto</p>
+            <p>{{ $t('nav.portfolio') }}</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div
+            v-scroll-to="{
+              element: '#dashboard-tools',
+              duration: 3000,
+              onStart: onStart,
+            }"
+            class="arrow-container"
+          >
+            <img
+              src="../assets/icons/arrow-green.svg"
+              alt="arrow"
+              class="arrow"
+              loading="lazy"
+            />
+            <p>{{ $t('nav.howDid') }}</p>
           </div>
         </div>
       </nav>
@@ -147,7 +143,7 @@
 <script>
 export default {
   methods: {
-    display_menu() {
+    showMenu() {
       const body = document.getElementsByTagName('body')[0]
       !body.classList.contains('display_menu')
         ? body.classList.add('display_menu')
