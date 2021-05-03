@@ -2,28 +2,35 @@
   <div class="trustus-background">
     <b-container class="trustus-container">
       <p class="subtitle">{{ $t('clients.title') }}</p>
-      <div class="d-block d-md-none">
-        <VueSlickCarousel v-bind="settings">
-          <div v-for="(item, index) in images.one" :key="index">
-            <img
-              :src="require(`../assets/icons/${item.title}.png`)"
-              :alt="item.title"
-              :width="item.width"
-              height="auto"
-              class="trademarks"
-            />
-          </div>
-          <div v-for="(item, index) in images.two" :key="index">
-            <img
-              :src="require(`../assets/icons/${item.title}.png`)"
-              :alt="item.title"
-              :width="item.width"
-              height="auto"
-              class="trademarks"
-            />
-          </div>
-        </VueSlickCarousel>
+      <div class="d-flex d-md-none horizontal-scroll">
+        <div
+          v-for="(item, index) in images.one"
+          :key="index"
+          style="margin-right: 1rem"
+        >
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            height="auto"
+            class="trademarks"
+          />
+        </div>
+        <div
+          v-for="(item, index) in images.two"
+          :key="index"
+          style="margin-right: 1rem"
+        >
+          <img
+            :src="require(`../assets/icons/${item.title}.png`)"
+            :alt="item.title"
+            :width="item.width"
+            height="auto"
+            class="trademarks"
+          />
+        </div>
       </div>
+
       <div class="d-none d-md-flex container-trademarks-desktop">
         <b-row class="row">
           <img
@@ -53,14 +60,14 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
-  name: 'MyComponent',
-  components: { VueSlickCarousel },
+  name: 'TrustUs',
+  // components: { VueSlickCarousel },
   data() {
     return {
       settings: {
@@ -102,6 +109,14 @@ export default {
       color: rgba(10, 10, 11, 0.45);
       text-align: center;
       margin-bottom: 3rem;
+    }
+    .horizontal-scroll {
+      overflow: auto;
+    }
+    .horizontal-scroll::-webkit-scrollbar {
+      display: none;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
     }
     @media (min-width: 1440px) {
       .subtitle {
