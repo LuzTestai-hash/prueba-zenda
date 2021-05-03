@@ -26,7 +26,7 @@ export default async (context, locale) => {
   }
 
   const contact = {
-    name: 'COMENZAMOS.',
+    name: 'COMENCEMOS.',
     form: [
       'Contános como te llamas.',
       'Escribinos tu Email.',
