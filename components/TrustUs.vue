@@ -66,9 +66,9 @@ export default {
       settings: {
         dots: false,
         arrows: false,
-        infinite: true,
+        infinite: false,
         slidesToShow: 2,
-        speed: 500,
+        speed: 400,
       },
       images: {
         one: [

@@ -30,6 +30,7 @@ export default async (context, locale) => {
     form: [
       'Tell us your name.',
       'Write us your Email.',
+      'Company.',
       'How can we help?',
       'Thank you for contacting us.',
     ],

@@ -75,7 +75,7 @@
             >
               <p class="text">{{ item.title }}</p>
             </b-button>
-            <b-collapse :id="`collapse-${item.id}`">
+            <b-collapse :id="`collapse-${item._id}`">
               <b-card class="collapse-content">
                 {{ item.description }}
               </b-card>
