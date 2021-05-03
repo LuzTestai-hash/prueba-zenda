@@ -2,7 +2,7 @@
   <b-container id="dashboard-tools" class="toolsAndMedia-container">
     <p class="subtitle">{{ $t('howDidWeDoIt.name') }}</p>
     <div class="d-block d-md-none">
-      <VueSlickCarousel v-bind="settings" class="carrusel-container">
+      <div class="carrusel-container">
         <div class="carrusel">
           <img
             src="../assets/icons/media.svg"
@@ -26,8 +26,8 @@
             loading="lazy"
           />
         </div>
-      </VueSlickCarousel>
-      <VueSlickCarousel v-bind="settings" class="carrusel-container">
+      </div>
+      <div v-bind="settings" class="carrusel-container">
         <div class="carrusel">
           <img
             src="../assets/icons/data.svg"
@@ -50,8 +50,8 @@
             loading="lazy"
           />
         </div>
-      </VueSlickCarousel>
-      <VueSlickCarousel v-bind="settings" class="carrusel-container">
+      </div>
+      <div v-bind="settings" class="carrusel-container">
         <div class="carrusel">
           <img
             src="../assets/icons/flow.svg"
@@ -74,7 +74,7 @@
             loading="lazy"
           />
         </div>
-      </VueSlickCarousel>
+      </div>
     </div>
 
     <div class="d-none d-md-block">
@@ -172,14 +172,8 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
   name: 'MyComponent',
-  components: { VueSlickCarousel },
 
   data() {
     return {
@@ -242,7 +236,15 @@ export default {
     }
   }
   .carrusel-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
     margin-bottom: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .image-carrusel {
     margin-right: 1rem;

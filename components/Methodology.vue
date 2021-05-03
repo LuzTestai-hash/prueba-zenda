@@ -185,14 +185,15 @@ export default {
         color: $typography;
         letter-spacing: 0.02rem;
         line-height: 1.2rem;
-        margin-bottom: 2rem;
+        //margin-bottom: 2rem;
       }
     }
 
     .title-card {
-      font-size: 3rem;
+      font-size: 2.2rem;
       line-height: 3rem;
       margin-bottom: 1rem;
+      letter-spacing: -0.1rem;
       font-weight: 700;
       transform: translateY(0.8rem);
     }

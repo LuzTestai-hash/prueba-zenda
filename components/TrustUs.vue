@@ -3,7 +3,7 @@
     <b-container class="trustus-container">
       <p class="subtitle">{{ $t('clients.title') }}</p>
       <div class="d-block d-md-none">
-        <VueSlickCarousel v-bind="settings">
+        <div class="carousel">
           <div v-for="(item, index) in images.one" :key="index">
             <img
               :src="require(`../assets/icons/${item.title}.png`)"
@@ -22,7 +22,7 @@
               class="trademarks"
             />
           </div>
-        </VueSlickCarousel>
+        </div>
       </div>
       <div class="d-none d-md-flex container-trademarks-desktop">
         <b-row class="row">
@@ -53,14 +53,8 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
   name: 'MyComponent',
-  components: { VueSlickCarousel },
   data() {
     return {
       settings: {
@@ -101,7 +95,7 @@ export default {
       font-size: 1.2rem;
       color: rgba(10, 10, 11, 0.45);
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     @media (min-width: 1440px) {
       .subtitle {
@@ -111,6 +105,26 @@ export default {
     .trademarks {
       font-size: 1.5rem;
       font-weight: 900;
+    }
+    .carousel {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .trademarks {
+        margin: 0 1rem;
+      }
+    }
+    @media (min-width: 600px) {
+      .carousel {
+        display: none;
+      }
     }
     .container-trademarks-desktop {
       display: flex;

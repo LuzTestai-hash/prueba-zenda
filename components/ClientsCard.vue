@@ -58,6 +58,7 @@ export default {
     color: white;
     min-height: 10rem;
     font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
   @media (min-width: 600px) {
     .trademarks {
