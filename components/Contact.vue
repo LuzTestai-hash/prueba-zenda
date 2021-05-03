@@ -2,7 +2,7 @@
   <div id="contact" class="contact-background">
     <b-container class="contact-container">
       <p class="subtitle">{{ $t('contact.name') }}</p>
-      <b-form class="form-contact">
+      <div class="form-contact">
         <label
           v-if="show === 1"
           for="input-1"
@@ -136,11 +136,12 @@
         <p v-if="show === 5" class="email-success">
           {{ $t('contact.form[4]') }}
         </p>
-        <div v-if="show === 5" class="contact-back" @click="reset">
+
+        <!-- <div v-if="show === 5" class="contact-back" @click="reset">
           <p class="contact">ok</p>
           <b-icon icon="arrow-right" aria-hidden="true" class="icon-input" />
-        </div>
-      </b-form>
+        </div> -->
+      </div>
 
       <p class="subtitle">{{ $t('ambassadors.name') }}</p>
       <p class="title">Zenda en el mundo.</p>
@@ -204,7 +205,7 @@ export default {
         description: '',
         company: '',
       },
-      show: 1,
+      show: 5,
     }
   },
   methods: {
@@ -218,6 +219,9 @@ export default {
       }
       if (this.show === 5) {
         // this.$axios.$post('/email/contact', this.form)
+        setTimeout(() => {
+          this.reset()
+        }, 2000)
       }
     },
     showPrev() {

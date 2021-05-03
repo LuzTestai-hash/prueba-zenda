@@ -220,6 +220,11 @@ export default {
         }
       }
     }
+    @media (max-width: 660px) {
+      .collapse-content {
+        padding-left: 0 !important;
+      }
+    }
     .collapse-content {
       background-color: transparent;
       padding-left: 2rem;

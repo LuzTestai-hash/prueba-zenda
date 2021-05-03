@@ -93,7 +93,7 @@
             loading="lazy"
             alt="media"
           />
-          <p>Media</p>
+          <p>Medios</p>
         </div>
         <div
           class="icon"
@@ -177,18 +177,18 @@ export default {
           { title: 'pinterest-logo', width: '100px' },
         ],
         Data: [
-          { title: 'google-suite-logo', width: '120px' },
-          { title: 'slack-logo', width: '100px' },
-          { title: 'notion-logo', width: '80px' },
-          { title: 'Trello-logo', width: '100px' },
-        ],
-        Flow: [
           { title: 'datastudio-logo', width: '100px' },
           { title: 'supermetrics-logo', width: '100px' },
           { title: 'google-analytics-logo', width: '90px' },
           { title: 'appsflyer-logo', width: '85px' },
           { title: 'amplitude-logo', width: '90px' },
           { title: 'segment-logo', width: '90px' },
+        ],
+        Flow: [
+          { title: 'google-suite-logo', width: '120px' },
+          { title: 'slack-logo', width: '100px' },
+          { title: 'notion-logo', width: '80px' },
+          { title: 'Trello-logo', width: '100px' },
         ],
       },
       categorySelected: 'Medios',
