@@ -62,12 +62,12 @@
           for="input-3"
           :class="`label-contact ${show === 3 ? 'three' : ''}`"
         >
-          <!-- {{ $t('contact.form[1]') }} -->Empresa
+          {{ $t('contact.form[2]') }}
         </label>
         <div v-if="show === 3" class="input-container">
           <b-form-input
             id="input-3"
-            v-model="form.business"
+            v-model="form.company"
             type="text"
             required
             class="input"
@@ -80,7 +80,7 @@
               @click="showPrev"
             />
             <b-icon
-              v-if="form.business"
+              v-if="form.company"
               icon="arrow-right"
               aria-hidden="true"
               class="icon-input"
@@ -93,7 +93,7 @@
           for="input-4"
           :class="`label-contact ${show === 4 ? 'four' : ''}`"
         >
-          {{ $t('contact.form[2]') }}
+          {{ $t('contact.form[3]') }}
         </label>
         <div v-if="show === 4" class="input-container">
           <b-form-input
@@ -134,7 +134,7 @@
         </div>
         <p v-if="show !== 5" class="number">{{ `${show}/4` }}</p>
         <p v-if="show === 5" class="email-success">
-          {{ $t('contact.form[3]') }}
+          {{ $t('contact.form[4]') }}
         </p>
         <div v-if="show === 5" class="contact-back" @click="reset">
           <p class="contact">ok</p>
@@ -202,6 +202,7 @@ export default {
         email: '',
         name: '',
         description: '',
+        company: '',
       },
       show: 1,
     }
@@ -229,7 +230,7 @@ export default {
         email: '',
         name: '',
         description: '',
-        business: '',
+        company: '',
       }
       this.show = 1
     },
