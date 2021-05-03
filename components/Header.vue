@@ -19,11 +19,11 @@
           class="logo"
           loading="lazy"
         />
-        <SwitchTranslate />
       </b-container>
 
       <nav id="menu">
         <div class="section">
+          <SwitchTranslate />
           <div
             v-scroll-to="{
               element: '#welcome',
@@ -162,7 +162,7 @@ export default {
 @import '../assets/stylesheets/components/colors';
 header {
   display: flex;
-  z-index: 3;
+  z-index: 100;
   padding: 1rem 5rem;
   position: absolute;
   width: 100%;
