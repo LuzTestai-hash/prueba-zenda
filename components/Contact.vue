@@ -62,11 +62,42 @@
           for="input-3"
           :class="`label-contact ${show === 3 ? 'three' : ''}`"
         >
-          {{ $t('contact.form[2]') }}
+          <!-- {{ $t('contact.form[1]') }} -->Empresa
         </label>
         <div v-if="show === 3" class="input-container">
           <b-form-input
             id="input-3"
+            v-model="form.business"
+            type="text"
+            required
+            class="input"
+          />
+          <div class="icon-container">
+            <b-icon
+              icon="arrow-left"
+              aria-hidden="true"
+              class="icon-input"
+              @click="showPrev"
+            />
+            <b-icon
+              v-if="form.business"
+              icon="arrow-right"
+              aria-hidden="true"
+              class="icon-input"
+              @click="showNext"
+            />
+          </div>
+        </div>
+        <label
+          v-if="show === 4"
+          for="input-4"
+          :class="`label-contact ${show === 4 ? 'four' : ''}`"
+        >
+          {{ $t('contact.form[2]') }}
+        </label>
+        <div v-if="show === 4" class="input-container">
+          <b-form-input
+            id="input-4"
             v-model="form.description"
             type="text"
             required
@@ -88,18 +119,24 @@
             />
           </div>
         </div>
-        <div v-if="show !== 4" class="load-container">
+        <div v-if="show !== 5" class="load-container">
           <div
             :class="`load-bar ${
-              show === 1 ? 'one' : show === 2 ? 'two' : 'three'
+              show === 1
+                ? 'one'
+                : show === 2
+                ? 'two'
+                : show === 3
+                ? 'three'
+                : 'four'
             }`"
           />
         </div>
-        <p v-if="show !== 4" class="number">{{ `${show}/3` }}</p>
-        <p v-if="show === 4" class="email-success">
+        <p v-if="show !== 5" class="number">{{ `${show}/4` }}</p>
+        <p v-if="show === 5" class="email-success">
           {{ $t('contact.form[3]') }}
         </p>
-        <div v-if="show === 4" class="contact-back" @click="reset">
+        <div v-if="show === 5" class="contact-back" @click="reset">
           <p class="contact">ok</p>
           <b-icon icon="arrow-right" aria-hidden="true" class="icon-input" />
         </div>
@@ -175,11 +212,11 @@ export default {
       alert(JSON.stringify(this.form))
     },
     showNext() {
-      if (this.show < 4) {
+      if (this.show < 5) {
         ++this.show
       }
-      if (this.show === 4) {
-        this.$axios.$post('/email/contact', this.form)
+      if (this.show === 5) {
+        // this.$axios.$post('/email/contact', this.form)
       }
     },
     showPrev() {
@@ -192,6 +229,7 @@ export default {
         email: '',
         name: '',
         description: '',
+        business: '',
       }
       this.show = 1
     },
@@ -250,6 +288,9 @@ export default {
       &.three {
         animation: slide-top3 0.5s ease-in-out forwards;
       }
+      &.four {
+        animation: slide-top4 0.5s ease-in-out forwards;
+      }
     }
     @keyframes slide-top {
       from {
@@ -268,6 +309,14 @@ export default {
       }
     }
     @keyframes slide-top3 {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    @keyframes slide-top4 {
       from {
         transform: translateY(100%);
       }
@@ -356,10 +405,14 @@ export default {
           width: 0%;
         }
         &.two {
-          width: 50%;
+          width: 25%;
           transition: width 1s;
         }
         &.three {
+          width: 50%;
+          transition: width 1s;
+        }
+        &.four {
           width: 75%;
           transition: width 1s;
         }

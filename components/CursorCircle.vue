@@ -2,7 +2,11 @@
   <div
     :style="cursorCircle"
     :class="
-      cursor === 'pointer' ? 'g-cursor__pointer' : 'g-cursor__carouselCursor'
+      cursor === 'pointer'
+        ? 'g-cursor__pointer'
+        : cursor === 'carousel'
+        ? 'g-cursor__carouselCursor'
+        : 'g-cursor__none'
     "
   >
     <svg class="arrow-left">
@@ -64,6 +68,9 @@ export default {
 @import '../assets/stylesheets/components/colors';
 
 .g-cursor {
+  &__none {
+    display: none;
+  }
   &__pointer {
     pointer-events: none;
     user-select: none;
@@ -141,6 +148,9 @@ export default {
   .g-cursor {
     display: none;
     &__pointer {
+      display: none;
+    }
+    &__carouselCursor {
       display: none;
     }
   }

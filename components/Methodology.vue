@@ -232,7 +232,7 @@ export default {
           transform: translate(32rem, 12rem) rotate(-100deg);
         }
         30% {
-          transform: translate(35rem, 1rem) rotate(-100deg);
+          transform: translate(34rem, 1rem) rotate(-100deg);
         }
         40% {
           transform: translate(26rem, -5rem) rotate(85deg);
@@ -247,7 +247,7 @@ export default {
           transform: translate(-10rem, 15rem) rotate(180deg);
         }
         80% {
-          transform: translate(-20rem, 5rem) rotate(180deg);
+          transform: translate(-18.5rem, 5rem) rotate(180deg);
         }
         90% {
           transform: translate(-10rem, -6rem) rotate(180deg);
