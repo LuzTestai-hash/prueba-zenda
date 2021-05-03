@@ -80,7 +80,7 @@
     </div>
 
     <div class="d-none d-md-block">
-      <div v-bind="settings" class="container-icon">
+      <div class="container-icon">
         <div
           class="icon"
           :class="{ 'botton-selected': categorySelected === 'Medios' }"
@@ -124,11 +124,7 @@
           <p>Flow</p>
         </div>
       </div>
-      <div
-        v-if="categorySelected === 'Medios'"
-        v-bind="settings"
-        class="container-trademarks"
-      >
+      <div v-if="categorySelected === 'Medios'" class="container-trademarks">
         <div v-for="(item, index) in category.Medios" :key="index">
           <img
             :src="require(`../assets/icons/${item.title}.png`)"
@@ -139,11 +135,7 @@
           />
         </div>
       </div>
-      <div
-        v-if="categorySelected === 'Data'"
-        v-bind="settings"
-        class="container-trademarks"
-      >
+      <div v-if="categorySelected === 'Data'" class="container-trademarks">
         <div v-for="(item, index) in category.Data" :key="index">
           <img
             :src="require(`../assets/icons/${item.title}.png`)"
@@ -154,11 +146,7 @@
           />
         </div>
       </div>
-      <div
-        v-if="categorySelected === 'Flow'"
-        v-bind="settings"
-        class="container-trademarks"
-      >
+      <div v-if="categorySelected === 'Flow'" class="container-trademarks">
         <div v-for="(item, index) in category.Flow" :key="index">
           <img
             :src="require(`../assets/icons/${item.title}.png`)"
@@ -179,14 +167,6 @@ export default {
 
   data() {
     return {
-      settings: {
-        dots: false,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true,
-        speed: 500,
-      },
       category: {
         Medios: [
           // { title: 'googleAds-logo', width: '60px', height: '60px' },
@@ -238,7 +218,15 @@ export default {
     }
   }
   .carrusel-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
     margin-bottom: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .image-carrusel {
     margin-right: 1rem;

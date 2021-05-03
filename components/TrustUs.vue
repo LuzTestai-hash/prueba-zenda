@@ -60,23 +60,10 @@
 </template>
 
 <script>
-// import VueSlickCarousel from 'vue-slick-carousel'
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
-  name: 'TrustUs',
-  // components: { VueSlickCarousel },
+  name: 'MyComponent',
   data() {
     return {
-      settings: {
-        dots: false,
-        arrows: false,
-        infinite: false,
-        slidesToShow: 2,
-        speed: 400,
-      },
       images: {
         one: [
           { title: 'walmart-logo', width: '151px' },
@@ -108,7 +95,7 @@ export default {
       font-size: 1.2rem;
       color: rgba(10, 10, 11, 0.45);
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     .horizontal-scroll {
       overflow: auto;
@@ -126,6 +113,26 @@ export default {
     .trademarks {
       font-size: 1.5rem;
       font-weight: 900;
+    }
+    .carousel {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .trademarks {
+        margin: 0 1rem;
+      }
+    }
+    @media (min-width: 600px) {
+      .carousel {
+        display: none;
+      }
     }
     .container-trademarks-desktop {
       display: flex;

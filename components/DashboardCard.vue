@@ -76,7 +76,7 @@ export default {
     line-height: 1.3;
     letter-spacing: -0.04rem;
     font-weight: 300;
-    margin-bottom: 0;
+    margin-bottom: 3rem;
   }
   .video-player-box {
     margin-top: 2rem;
