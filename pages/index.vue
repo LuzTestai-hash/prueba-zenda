@@ -13,7 +13,7 @@
     <Clients v-view="viewHandler" />
     <ToolsAndMedia v-view="viewHandler" />
     <Dashboard v-view="viewHandler" />
-    <Contact />
+    <Contact v-view="viewHandler" />
     <FloatContactButton />
   </div>
 </template>

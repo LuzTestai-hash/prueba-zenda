@@ -98,7 +98,13 @@ export default {
 }
 @media (max-width: 600px) {
   .float-button {
-    display: none;
+    bottom: 0.9rem;
+    right: 0.7rem;
+    .buttonContact {
+      border-radius: 60px;
+      width: 6rem;
+      height: 3rem;
+    }
   }
 }
 </style>

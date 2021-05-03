@@ -26,10 +26,11 @@ export default async (context, locale) => {
   }
 
   const contact = {
-    name: 'WE STARTED.',
+    name: `LET'S START`,
     form: [
       'Tell us your name.',
       'Write us your Email.',
+      'Company.',
       'How can we help?',
       'Thank you for contacting us.',
     ],
@@ -40,6 +41,7 @@ export default async (context, locale) => {
   }
 
   const nav = {
+    aboutMobile: 'We are',
     about: 'We are Zenda',
     what: 'What do we do',
     how: 'How do we do it',

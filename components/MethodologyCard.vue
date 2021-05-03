@@ -72,6 +72,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .container-seccion {
+  margin-top: 1rem;
   .containerTitles {
     margin-right: 0.5rem;
   }

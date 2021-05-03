@@ -2,8 +2,8 @@
   <b-container id="dashboard-tools" class="toolsAndMedia-container">
     <p class="subtitle">{{ $t('howDidWeDoIt.name') }}</p>
     <div class="d-block d-md-none">
-      <VueSlickCarousel v-bind="settings" class="carrusel-container">
-        <div class="carrusel">
+      <div class="mobile-carrusel-container">
+        <div class="image-carrusel">
           <img
             src="../assets/icons/media.svg"
             width="60px"
@@ -26,9 +26,10 @@
             loading="lazy"
           />
         </div>
-      </VueSlickCarousel>
-      <VueSlickCarousel v-bind="settings" class="carrusel-container">
-        <div class="carrusel">
+      </div>
+
+      <div class="mobile-carrusel-container">
+        <div class="image-carrusel">
           <img
             src="../assets/icons/data.svg"
             width="60px"
@@ -50,9 +51,10 @@
             loading="lazy"
           />
         </div>
-      </VueSlickCarousel>
-      <VueSlickCarousel v-bind="settings" class="carrusel-container">
-        <div class="carrusel">
+      </div>
+
+      <div class="mobile-carrusel-container">
+        <div class="image-carrusel">
           <img
             src="../assets/icons/flow.svg"
             width="60px"
@@ -74,11 +76,11 @@
             loading="lazy"
           />
         </div>
-      </VueSlickCarousel>
+      </div>
     </div>
 
     <div class="d-none d-md-block">
-      <div v-bind="settings" class="container-icon">
+      <div class="container-icon">
         <div
           class="icon"
           :class="{ 'botton-selected': categorySelected === 'Medios' }"
@@ -91,7 +93,7 @@
             loading="lazy"
             alt="media"
           />
-          <p>Media</p>
+          <p>Medios</p>
         </div>
         <div
           class="icon"
@@ -122,11 +124,7 @@
           <p>Flow</p>
         </div>
       </div>
-      <div
-        v-if="categorySelected === 'Medios'"
-        v-bind="settings"
-        class="container-trademarks"
-      >
+      <div v-if="categorySelected === 'Medios'" class="container-trademarks">
         <div v-for="(item, index) in category.Medios" :key="index">
           <img
             :src="require(`../assets/icons/${item.title}.png`)"
@@ -137,11 +135,7 @@
           />
         </div>
       </div>
-      <div
-        v-if="categorySelected === 'Data'"
-        v-bind="settings"
-        class="container-trademarks"
-      >
+      <div v-if="categorySelected === 'Data'" class="container-trademarks">
         <div v-for="(item, index) in category.Data" :key="index">
           <img
             :src="require(`../assets/icons/${item.title}.png`)"
@@ -152,11 +146,7 @@
           />
         </div>
       </div>
-      <div
-        v-if="categorySelected === 'Flow'"
-        v-bind="settings"
-        class="container-trademarks"
-      >
+      <div v-if="categorySelected === 'Flow'" class="container-trademarks">
         <div v-for="(item, index) in category.Flow" :key="index">
           <img
             :src="require(`../assets/icons/${item.title}.png`)"
@@ -172,25 +162,11 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
   name: 'MyComponent',
-  components: { VueSlickCarousel },
 
   data() {
     return {
-      settings: {
-        dots: false,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true,
-        speed: 500,
-      },
       category: {
         Medios: [
           // { title: 'googleAds-logo', width: '60px', height: '60px' },
@@ -201,18 +177,18 @@ export default {
           { title: 'pinterest-logo', width: '100px' },
         ],
         Data: [
-          { title: 'google-suite-logo', width: '120px' },
-          { title: 'slack-logo', width: '100px' },
-          { title: 'notion-logo', width: '80px' },
-          { title: 'Trello-logo', width: '100px' },
-        ],
-        Flow: [
           { title: 'datastudio-logo', width: '100px' },
           { title: 'supermetrics-logo', width: '100px' },
           { title: 'google-analytics-logo', width: '90px' },
           { title: 'appsflyer-logo', width: '85px' },
           { title: 'amplitude-logo', width: '90px' },
           { title: 'segment-logo', width: '90px' },
+        ],
+        Flow: [
+          { title: 'google-suite-logo', width: '120px' },
+          { title: 'slack-logo', width: '100px' },
+          { title: 'notion-logo', width: '80px' },
+          { title: 'Trello-logo', width: '100px' },
         ],
       },
       categorySelected: 'Medios',
@@ -233,7 +209,7 @@ export default {
     color: $typography;
     letter-spacing: 0.02rem;
     margin-bottom: 3rem;
-    padding-right: 10rem;
+    //padding-right: 10rem;
   }
   @media (min-width: 1440px) {
     .subtitle {
@@ -242,7 +218,15 @@ export default {
     }
   }
   .carrusel-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
     margin-bottom: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .image-carrusel {
     margin-right: 1rem;
@@ -255,6 +239,18 @@ export default {
       margin-top: 1rem;
       margin-bottom: initial;
     }
+  }
+  .mobile-carrusel-container {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+  }
+
+  .mobile-carrusel-container::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
   }
 
   .container-trademarks {

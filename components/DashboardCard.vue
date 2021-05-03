@@ -7,7 +7,7 @@
           {{ description }}
         </p>
       </b-col>
-      <b-col md="5">
+      <b-col ref="video" md="5">
         <div
           v-video-player:myVideoPlayer="playerOptions"
           class="video-player-box"
@@ -44,6 +44,14 @@ export default {
       },
     }
   },
+  mounted() {
+    this.$refs.video.addEventListener('mouseenter', () => {
+      this.$nuxt.$emit('mouse', 'none')
+    })
+    this.$refs.video.addEventListener('mouseleave', () => {
+      this.$nuxt.$emit('mouse', 'carousel')
+    })
+  },
 }
 </script>
 
@@ -68,7 +76,10 @@ export default {
     line-height: 1.3;
     letter-spacing: -0.04rem;
     font-weight: 300;
-    margin-bottom: 0;
+    margin-bottom: 3rem;
+  }
+  .video-player-box {
+    margin-top: 2rem;
   }
   @media (min-width: 660px) {
     .text {
@@ -76,6 +87,9 @@ export default {
       //width: 60%;
       font-size: 2.6rem;
       line-height: 3rem;
+    }
+    .video-player-box {
+      margin-right: 2rem;
     }
     //.description {
     //width: 60%;

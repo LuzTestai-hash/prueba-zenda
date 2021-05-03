@@ -5,7 +5,7 @@
         id="nav-item-welcome"
         class="section"
         :class="{
-          active: seccionSelected === 'welcome',
+          active: selectedSection === 'welcome',
         }"
         @click="handleItem('welcome')"
       >
@@ -15,7 +15,7 @@
         id="nav-item-we-zenda"
         class="section"
         :class="{
-          active: seccionSelected === 'we-zenda',
+          active: selectedSection === 'we-zenda',
         }"
         @click="handleItem('we-zenda')"
       >
@@ -25,7 +25,7 @@
         id="nav-item-what-we-do"
         class="section"
         :class="{
-          active: seccionSelected === 'what-we-do',
+          active: selectedSection === 'what-we-do',
         }"
         @click="handleItem('what-we-do')"
       >
@@ -35,7 +35,7 @@
         id="nav-item-methodology"
         class="section"
         :class="{
-          active: seccionSelected === 'methodology',
+          active: selectedSection === 'methodology',
         }"
         @click="handleItem('methodology')"
       >
@@ -45,7 +45,7 @@
         id="nav-item-clients"
         class="section"
         :class="{
-          active: seccionSelected === 'clients',
+          active: selectedSection === 'clients',
         }"
         @click="handleItem('clients')"
       >
@@ -56,14 +56,18 @@
         class="section"
         :class="{
           active:
-            seccionSelected === 'dashboard-tools' ||
-            seccionSelected === 'dashboard',
+            selectedSection === 'dashboard-tools' ||
+            selectedSection === 'dashboard',
         }"
         @click="handleItem('dashboard-tools')"
       >
         {{ $t('nav.howDid') }}
       </div>
-      <div id="nav-menu-border" class="menu__border"></div>
+      <div
+        v-show="selectedSection !== 'contact'"
+        id="nav-menu-border"
+        class="menu__border"
+      ></div>
     </div>
   </div>
 </template>
@@ -71,39 +75,41 @@
 export default {
   data() {
     return {
-      seccionSelected: 'welcome',
+      selectedSection: 'welcome',
     }
   },
   mounted() {
     this.offsetMenuBorder()
 
     this.$nuxt.$on('changeNav', (data) => {
-      this.seccionSelected = data.id
+      this.selectedSection = data.id
       this.offsetMenuBorder()
     })
   },
   methods: {
     offsetMenuBorder() {
-      const menu = document.getElementById('nav-menu-container')
-      const menuBorder = document.getElementById('nav-menu-border')
-      const activeItem = document.getElementById(
-        `nav-item-${
-          this.seccionSelected === 'dashboard'
-            ? 'dashboard-tools'
-            : this.seccionSelected
-        }`
-      )
-      const offsetActiveItem = activeItem.getBoundingClientRect()
-      const left = Math.floor(offsetActiveItem.left - menu.offsetLeft) + 'px'
-      menuBorder.style.width = '0px'
-      menuBorder.style.transform = `translate3d(${left}, 0 , 0)`
-      menuBorder.style.width = offsetActiveItem.width + 'px'
+      if (this.selectedSection !== 'contact') {
+        const menu = document.getElementById('nav-menu-container')
+        const menuBorder = document.getElementById('nav-menu-border')
+        const activeItem = document.getElementById(
+          `nav-item-${
+            this.selectedSection === 'dashboard'
+              ? 'dashboard-tools'
+              : this.selectedSection
+          }`
+        )
+        const offsetActiveItem = activeItem.getBoundingClientRect()
+        const left = Math.floor(offsetActiveItem.left - menu.offsetLeft) + 'px'
+        menuBorder.style.width = '0px'
+        menuBorder.style.transform = `translate3d(${left}, 0 , 0)`
+        menuBorder.style.width = offsetActiveItem.width + 'px'
+      }
     },
 
     handleItem(name) {
-      if (name === this.seccionSelected) return
+      if (name === this.selectedSection) return
       this.$nuxt.$emit('viewHandler', false)
-      this.seccionSelected = name
+      this.selectedSection = name
       this.$scrollTo(`#${name}`, 2000, {
         container: 'body',
         easing: 'ease',
