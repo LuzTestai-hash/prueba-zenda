@@ -119,7 +119,8 @@ export default {
 }
 @media (max-width: 660px) {
   .switch-button {
-    display: none;
+    left: 7rem;
+    top: 3rem;
   }
 }
 </style>
