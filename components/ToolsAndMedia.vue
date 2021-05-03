@@ -209,7 +209,7 @@ export default {
     color: $typography;
     letter-spacing: 0.02rem;
     margin-bottom: 3rem;
-    padding-right: 10rem;
+    //padding-right: 10rem;
   }
   @media (min-width: 1440px) {
     .subtitle {
