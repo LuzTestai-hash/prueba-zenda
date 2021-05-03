@@ -4,8 +4,8 @@
       <p class="subtitle">{{ $t('clients.title') }}</p>
       <div class="d-flex d-md-none horizontal-scroll">
         <div
-          v-for="(item, index) in images.one"
-          :key="index"
+          v-for="item in images.one"
+          :key="item._id"
           style="margin-right: 1rem"
         >
           <img
@@ -17,8 +17,8 @@
           />
         </div>
         <div
-          v-for="(item, index) in images.two"
-          :key="index"
+          v-for="item in images.two"
+          :key="item._id"
           style="margin-right: 1rem"
         >
           <img
@@ -34,8 +34,8 @@
       <div class="d-none d-md-flex container-trademarks-desktop">
         <b-row class="row">
           <img
-            v-for="(item, index) in images.one"
-            :key="index"
+            v-for="item in images.one"
+            :key="item._id"
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"
@@ -45,8 +45,8 @@
         </b-row>
         <b-row class="row">
           <img
-            v-for="(item, index) in images.two"
-            :key="index"
+            v-for="item in images.two"
+            :key="item._id"
             :src="require(`../assets/icons/${item.title}.png`)"
             :alt="item.title"
             :width="item.width"

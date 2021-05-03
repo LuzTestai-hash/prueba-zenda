@@ -19,6 +19,9 @@
           class="logo"
           loading="lazy"
         />
+        <div v-if="width > 600">
+          <SwitchTranslate />
+        </div>
       </b-container>
 
       <nav id="menu">
@@ -142,6 +145,23 @@
 
 <script>
 export default {
+  name: 'Header',
+  data() {
+    return {
+      width: 0,
+    }
+  },
+  mounted() {
+    this.width = window.innerWidth
+    window.addEventListener('resize', (e) => {
+      this.width = e.target.innerWidth
+    })
+  },
+  destroyed() {
+    window.removeEventListener('resize', (e) => {
+      this.width = e.target.innerWidth
+    })
+  },
   methods: {
     showMenu() {
       const body = document.getElementsByTagName('body')[0]

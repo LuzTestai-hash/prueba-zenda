@@ -205,7 +205,7 @@ export default {
         description: '',
         company: '',
       },
-      show: 5,
+      show: 1,
     }
   },
   methods: {
@@ -218,7 +218,7 @@ export default {
         ++this.show
       }
       if (this.show === 5) {
-        // this.$axios.$post('/email/contact', this.form)
+        this.$axios.$post('/email/contact', this.form)
         setTimeout(() => {
           this.reset()
         }, 2000)
