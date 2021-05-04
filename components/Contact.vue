@@ -144,52 +144,25 @@
       </div>
 
       <p class="subtitle">{{ $t('ambassadors.name') }}</p>
-      <p class="title">Zenda en el mundo.</p>
+      <p class="title">{{ $t('ambassadors.title') }}</p>
       <b-row class="locations-container">
-        <b-col cols="6" md="3">
+        <b-col
+          v-for="ambassador in $t('ambassadors.ambassadors')"
+          :key="ambassador._id"
+          cols="6"
+          md="3"
+        >
           <div class="location">
-            <p class="location-title">Buenos Aires</p>
-            <p class="name">Matías De Caro</p>
+            <p class="location-title">{{ ambassador.city }}</p>
+            <p class="name">{{ ambassador.name }}</p>
             <b-button class="contact-button">
-              <a href="mailto:matias@zenda.com.ar" class="contact-text"
+              <a :href="`mailto:${ambassador.email}`" class="contact-text"
                 >Contactar</a
               >
               <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>
         </b-col>
-        <b-col cols="6" md="3">
-          <div class="location">
-            <p class="location-title">Barcelona</p>
-            <p class="name">Germán Aranda</p>
-            <b-button class="contact-button">
-              <a href="mailto:german@zenda.com.ar" class="contact-text"
-                >Contactar</a
-              >
-              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
-            </b-button>
-          </div>
-        </b-col>
-        <!-- <b-col cols="6" md="3">
-          <div class="location">
-            <p class="location-title">Uruguay</p>
-            <p class="name">First Name</p>
-            <b-button class="contact-button">
-              <p class="contact-text">Contactar</p>
-              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
-            </b-button>
-          </div>
-        </b-col>
-        <b-col cols="6" md="3">
-          <div class="location">
-            <p class="location-title">Brasil</p>
-            <p class="name">First Name</p>
-            <b-button class="contact-button">
-              <p class="contact-text">Contactar</p>
-              <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
-            </b-button>
-          </div>
-        </b-col> -->
       </b-row>
     </b-container>
   </div>
@@ -427,7 +400,7 @@ export default {
 
   @media (min-width: 660px) {
     .title {
-      display: none;
+      margin-bottom: 2rem;
     }
     .email {
       text-decoration-line: initial;
