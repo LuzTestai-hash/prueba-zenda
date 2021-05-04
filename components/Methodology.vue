@@ -221,7 +221,7 @@ export default {
       z-index: 1;
       top: 10rem;
       left: 25rem;
-      animation: icon-play-1 10s linear infinite;
+      animation: icon-play-1 6s linear infinite;
       @keyframes icon-play-1 {
         0% {
           transform: translate(0) rotate(0deg);
