@@ -471,7 +471,7 @@ export default {
       margin-top: 3rem;
       .location {
         .location-title {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
         .name {
           font-size: 1.2rem;

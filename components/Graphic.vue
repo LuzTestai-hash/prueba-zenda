@@ -1,16 +1,18 @@
 <template>
-  <div class="circle-container">
-    <div :class="`circle green ${graphic === 'first' ? 'first' : ''}`">
-      <p v-if="graphic === 'first'" class="porcent">45%</p>
-    </div>
-    <div :class="`circle pink ${graphic === 'third' ? 'third' : ''}`">
-      <p v-if="graphic === 'third'" class="porcent">20%</p>
-    </div>
-    <div :class="`circle blue ${graphic === 'second' ? 'second' : ''}`">
-      <p v-if="graphic === 'second'" class="porcent">35%</p>
-    </div>
-    <div class="middle">
-      <img src="../assets/icons/zenda.png" alt="zendaLogo" class="logo" />
+  <div v-rellax="rellax">
+    <div class="circle-container">
+      <div :class="`circle green ${graphic === 'first' ? 'first' : ''}`">
+        <p v-if="graphic === 'first'" class="porcent">45%</p>
+      </div>
+      <div :class="`circle pink ${graphic === 'third' ? 'third' : ''}`">
+        <p v-if="graphic === 'third'" class="porcent">20%</p>
+      </div>
+      <div :class="`circle blue ${graphic === 'second' ? 'second' : ''}`">
+        <p v-if="graphic === 'second'" class="porcent">35%</p>
+      </div>
+      <div class="middle">
+        <img src="../assets/icons/zenda.png" alt="zendaLogo" class="logo" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +22,18 @@ export default {
   name: 'Graphic',
   props: {
     graphic: { type: String, default: null },
+  },
+  data() {
+    return {
+      rellax: {
+        speed: -2.2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      },
+    }
   },
 }
 </script>

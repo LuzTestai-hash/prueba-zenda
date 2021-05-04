@@ -8,34 +8,36 @@
           {{ $t('hero.description') }}
         </p>
       </div>
-      <div class="container-cards">
-        <div class="tariffCards">
-          <div class="inovation">
-            <p>Inovación</p>
-            <img
-              src="../assets/icons/zenda-icon-pink.svg"
-              alt="iconPink"
-              class="icon"
-              loading="lazy"
-            />
-          </div>
-          <div class="data">
-            <p>Data</p>
-            <img
-              src="../assets/icons/zenda-icon-analysis.svg"
-              alt="iconanalysis"
-              class="icon"
-              loading="lazy"
-            />
-          </div>
-          <div class="performance">
-            <p>Performance</p>
-            <img
-              src="../assets/icons/zenda-icon-green.svg"
-              alt="icongreen"
-              class="icon"
-              loading="lazy"
-            />
+      <div v-rellax="rellax">
+        <div class="container-cards">
+          <div class="tariffCards">
+            <div class="inovation">
+              <p>Inovación</p>
+              <img
+                src="../assets/icons/zenda-icon-pink.svg"
+                alt="iconPink"
+                class="icon"
+                loading="lazy"
+              />
+            </div>
+            <div class="data">
+              <p>Data</p>
+              <img
+                src="../assets/icons/zenda-icon-analysis.svg"
+                alt="iconanalysis"
+                class="icon"
+                loading="lazy"
+              />
+            </div>
+            <div class="performance">
+              <p>Performance</p>
+              <img
+                src="../assets/icons/zenda-icon-green.svg"
+                alt="icongreen"
+                class="icon"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -47,6 +49,14 @@
 export default {
   data() {
     return {
+      rellax: {
+        speed: -2.2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      },
       title: 'Hacemos Performance & Growth en serio.',
       subtitle:
         'Somos un equipo de especialistas en performance y crecimiento con una simple creencia: Conectar a las marcas con sus clientes en los momentos que importan.',

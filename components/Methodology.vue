@@ -1,68 +1,70 @@
 <template>
   <div id="methodology" class="methodology-background">
     <b-container class="methodology-container">
-      <div class="title-container">
-        <p class="subtitle">{{ $t('how.name') }}</p>
-        <div class="hand-container">
-          <HandMoveIcon :color="'#000'" />
-        </div>
-      </div>
-      <p class="title-card">{{ $t('how.title') }}</p>
-      <VueSlickCarousel
-        class="d-block d-md-none"
-        :dots="false"
-        :arrows="false"
-        v-bind="settings"
-      >
-        <div v-for="(item, index) in $t('how.items')" :key="item._id">
-          <MethodologyCard
-            :number="`0${index + 1}`"
-            :title="item.title"
-            color="knowledge"
-            :icon="getIcon(index)"
-            :detail="item.description"
-            classdetail="detail"
-          />
-        </div>
-      </VueSlickCarousel>
-
-      <div class="d-none d-md-flex flex-column">
-        <p class="title-desktop">{{ $t('how.title') }}</p>
-        <div class="cards-container">
-          <div class="container-first-column">
-            <div
-              v-for="item in firstColumn"
-              :key="item._id"
-              class="card-method"
-            >
-              <p class="number">
-                {{ `0${$t('how.items').indexOf(item) + 1}` }}
-              </p>
-              <p class="knowledge primary">{{ item.title }}</p>
-              <p class="detail">
-                {{ item.description }}
-              </p>
-            </div>
+      <div v-rellax="rellax">
+        <div class="title-container">
+          <p class="subtitle">{{ $t('how.name') }}</p>
+          <div class="hand-container">
+            <HandMoveIcon :color="'#000'" />
           </div>
-          <img
-            src="../assets/icons/zenda-arrow.svg"
-            alt="iconPlay1"
-            class="icon-play"
-            loading="lazy"
-          />
-          <div class="container-second-column">
-            <div
-              v-for="item in secondColumn"
-              :key="item._id"
-              class="card-method"
-            >
-              <p class="number">
-                {{ `0${$t('how.items').indexOf(item) + 1}` }}
-              </p>
-              <p class="knowledge">{{ item.title }}</p>
-              <p class="detail">
-                {{ item.description }}
-              </p>
+        </div>
+        <p class="title-card">{{ $t('how.title') }}</p>
+        <VueSlickCarousel
+          class="d-block d-md-none"
+          :dots="false"
+          :arrows="false"
+          v-bind="settings"
+        >
+          <div v-for="(item, index) in $t('how.items')" :key="item._id">
+            <MethodologyCard
+              :number="`0${index + 1}`"
+              :title="item.title"
+              color="knowledge"
+              :icon="getIcon(index)"
+              :detail="item.description"
+              classdetail="detail"
+            />
+          </div>
+        </VueSlickCarousel>
+
+        <div class="d-none d-md-flex flex-column">
+          <p class="title-desktop">{{ $t('how.title') }}</p>
+          <div class="cards-container">
+            <div class="container-first-column">
+              <div
+                v-for="item in firstColumn"
+                :key="item._id"
+                class="card-method"
+              >
+                <p class="number">
+                  {{ `0${$t('how.items').indexOf(item) + 1}` }}
+                </p>
+                <p class="knowledge primary">{{ item.title }}</p>
+                <p class="detail">
+                  {{ item.description }}
+                </p>
+              </div>
+            </div>
+            <img
+              src="../assets/icons/zenda-arrow.svg"
+              alt="iconPlay1"
+              class="icon-play"
+              loading="lazy"
+            />
+            <div class="container-second-column">
+              <div
+                v-for="item in secondColumn"
+                :key="item._id"
+                class="card-method"
+              >
+                <p class="number">
+                  {{ `0${$t('how.items').indexOf(item) + 1}` }}
+                </p>
+                <p class="knowledge">{{ item.title }}</p>
+                <p class="detail">
+                  {{ item.description }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -96,6 +98,14 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
+      rellax: {
+        speed: -1.8,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      },
       settings: {
         dots: false,
         arrows: false,

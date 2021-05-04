@@ -44,11 +44,12 @@ export default {
 @import '../assets/stylesheets/components/colors';
 .clientcard-container {
   border-radius: 2rem;
-  background-color: #161617;
+  background-color: rgba(21, 21, 22, 0.6);
   padding: 2rem 2rem;
   display: flex;
   align-items: center;
   margin-right: 0.2rem;
+  min-height: 29rem;
   .trademarks {
     color: white;
   }
