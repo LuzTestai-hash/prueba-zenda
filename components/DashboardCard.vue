@@ -58,7 +58,9 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .dashboardCard-container {
+  min-height: 44rem;
   .dashboard-row {
+    padding: 0 1rem 0 2rem;
     align-items: center;
     justify-content: space-between;
   }
@@ -94,6 +96,14 @@ export default {
     //.description {
     //width: 60%;
     //}
+  }
+}
+@media (min-width: 660px) {
+  .dashboardCard-container {
+    min-height: 27rem;
+    .dashboard-row {
+      padding: 0 0 0 0;
+    }
   }
 }
 </style>

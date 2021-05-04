@@ -216,7 +216,7 @@ export default {
     }
     .icon-play {
       position: absolute;
-      width: 3rem;
+      width: 3.8rem;
       height: auto;
       z-index: 1;
       top: 10rem;
@@ -294,6 +294,7 @@ export default {
       font-size: 1.5rem;
       font-weight: 600;
       color: black;
+      margin-bottom: initial;
     }
     .detail {
       color: rgba(10, 10, 11, 0.64);

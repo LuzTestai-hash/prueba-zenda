@@ -95,7 +95,7 @@ export default {
   background: linear-gradient(274.38deg, #7cf3c1 -18.85%, #95d6ea 86%);
   .dashboard-container {
     min-height: 100vh;
-    padding: 4rem 1.6rem;
+    padding: 4rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;

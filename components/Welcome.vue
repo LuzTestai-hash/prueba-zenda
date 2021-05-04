@@ -64,7 +64,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 0 5rem;
   .welcome-container {
-    padding: 0.1rem !important;
+    //padding: 0 1.6rem 0 1.6rem;
     width: 100%;
     margin: 0 auto;
     min-height: 100vh;
@@ -73,11 +73,10 @@ export default {
     flex-direction: column-reverse;
     justify-content: space-around;
     .container-title {
-      padding: 0 1rem;
       .title {
         font-weight: bold;
         font-size: 2.2rem;
-        line-height: 1.8rem;
+        line-height: 1.99rem;
         text-align: flex-start;
         letter-spacing: -0.1rem;
         color: $typography;
@@ -213,6 +212,7 @@ export default {
           font-size: 3.5rem;
           line-height: 3.5rem;
           letter-spacing: -0.1rem;
+          padding-right: 27%;
         }
         .subtitle {
           padding-right: 30%;
