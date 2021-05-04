@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       rellax: {
-        speed: -2.2,
+        speed: -1.5,
         center: true,
         wrapper: null,
         round: true,

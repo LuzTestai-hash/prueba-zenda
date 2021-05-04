@@ -62,6 +62,23 @@ export default {
         'Somos un equipo de especialistas en performance y crecimiento con una simple creencia: Conectar a las marcas con sus clientes en los momentos que importan.',
     }
   },
+  mounted() {
+    window.addEventListener('resize', () => {
+      const w = window.innerWidth
+      if (w < 600) {
+        this.rellax = false
+      } else {
+        this.rellax = {
+          speed: -2.2,
+          center: true,
+          wrapper: null,
+          round: true,
+          vertical: true,
+          horizontal: false,
+        }
+      }
+    })
+  },
 }
 </script>
 
