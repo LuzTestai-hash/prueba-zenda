@@ -63,21 +63,19 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('resize', () => {
-      const w = window.innerWidth
-      if (w < 600) {
-        this.rellax = false
-      } else {
-        this.rellax = {
-          speed: -2.2,
-          center: true,
-          wrapper: null,
-          round: true,
-          vertical: true,
-          horizontal: false,
-        }
+    const w = window.innerWidth
+    if (w < 600) {
+      this.rellax = false
+    } else {
+      this.rellax = {
+        speed: -2.2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
       }
-    })
+    }
   },
 }
 </script>
