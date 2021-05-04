@@ -1,43 +1,48 @@
 <template>
   <div id="clients" class="client-background">
-    <div class="client-container">
-      <div class="d-none d-md-flex circle one"></div>
-      <div class="d-none d-md-flex circle two"></div>
-      <div class="d-none d-md-flex circle three"></div>
-      <b-container class="title-container">
-        <p class="subtitle">{{ $t('portfolio.name') }}</p>
-        <div class="hand-container">
-          <HandMoveIcon :color="'#fff'" />
-        </div>
-      </b-container>
+    <div v-rellax="rellax">
+      <div class="client-container">
+        <div class="d-none d-md-flex circle one"></div>
+        <div class="d-none d-md-flex circle two"></div>
+        <div class="d-none d-md-flex circle three"></div>
+        <b-container class="title-container">
+          <p class="subtitle">{{ $t('portfolio.name') }}</p>
+          <div class="hand-container">
+            <HandMoveIcon :color="'#fff'" />
+          </div>
+        </b-container>
 
-      <VueSlickCarousel
-        id="client-carousel"
-        ref="carousel"
-        v-bind="settings"
-        class="carusel-vue-slick"
-      >
-        <div v-for="(client, index) in $t('portfolio.items')" :key="client._id">
-          <ClientsCard :client="client" :color="getCardColor(index)" />
-        </div>
-      </VueSlickCarousel>
+        <VueSlickCarousel
+          id="client-carousel"
+          ref="carousel"
+          v-bind="settings"
+          class="carusel-vue-slick"
+        >
+          <div
+            v-for="(client, index) in $t('portfolio.items')"
+            :key="client._id"
+          >
+            <ClientsCard :client="client" :color="getCardColor(index)" />
+          </div>
+        </VueSlickCarousel>
 
-      <b-container class="arrows-container">
-        <kinesis-container>
-          <kinesis-element :strength="10">
-            <div class="arrow-button" @click="showPrev">
-              <b-icon icon="arrow-left" style="color: #fff" alt="icon" />
-            </div>
-          </kinesis-element>
-        </kinesis-container>
-        <kinesis-container>
-          <kinesis-element :strength="10">
-            <div class="arrow-button" @click="showNext">
-              <b-icon icon="arrow-right" style="color: #fff" alt="icon" />
-            </div>
-          </kinesis-element>
-        </kinesis-container>
-      </b-container>
+        <b-container class="arrows-container">
+          <kinesis-container>
+            <kinesis-element :strength="10">
+              <div class="arrow-button" @click="showPrev">
+                <b-icon icon="arrow-left" style="color: #fff" alt="icon" />
+              </div>
+            </kinesis-element>
+          </kinesis-container>
+          <kinesis-container>
+            <kinesis-element :strength="10">
+              <div class="arrow-button" @click="showNext">
+                <b-icon icon="arrow-right" style="color: #fff" alt="icon" />
+              </div>
+            </kinesis-element>
+          </kinesis-container>
+        </b-container>
+      </div>
     </div>
   </div>
 </template>
@@ -51,6 +56,14 @@ export default {
 
   data() {
     return {
+      rellax: {
+        speed: -1.2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      },
       clientdata: [
         {
           id: 0,

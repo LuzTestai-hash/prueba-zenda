@@ -1,46 +1,48 @@
 <template>
   <div id="we-zenda" class="weZenda-background">
-    <b-container class="weZenda-container">
-      <b-row>
-        <b-col md="12">
-          <p class="title">
-            {{ $t('about.name') }} <span class="special-title">ZENDA.</span>
-          </p>
-        </b-col>
+    <div v-rellax="rellax">
+      <b-container class="weZenda-container">
+        <b-row>
+          <b-col md="12">
+            <p class="title">
+              {{ $t('about.name') }} <span class="special-title">ZENDA.</span>
+            </p>
+          </b-col>
 
-        <b-col md="6">
-          <div data-v-fc305ef6="" class="detail">
-            <h2>
-              {{ $t('about.description') }}
-            </h2>
-            <!-- <span>
+          <b-col md="6">
+            <div data-v-fc305ef6="" class="detail">
+              <h2>
+                {{ $t('about.description') }}
+              </h2>
+              <!-- <span>
               {{ $t('hero.description') }}
             </span> -->
-          </div>
-        </b-col>
+            </div>
+          </b-col>
 
-        <b-col md="6">
-          <div v-for="(item, index) in $t('about.items')" :key="index">
-            <b-button
-              v-b-toggle="`accordion-${item._id}`"
-              :class="`button-colapse ${getColor(index)}`"
-            >
-              <p class="text">{{ item.title }}</p>
-              <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
-            </b-button>
-            <b-collapse
-              :id="`accordion-${item._id}`"
-              accordion="my-accordion"
-              role="tabpanel"
-            >
-              <b-card class="collapse-content">
-                {{ item.description }}
-              </b-card>
-            </b-collapse>
-          </div>
-        </b-col>
-      </b-row>
-    </b-container>
+          <b-col md="6">
+            <div v-for="(item, index) in $t('about.items')" :key="index">
+              <b-button
+                v-b-toggle="`accordion-${item._id}`"
+                :class="`button-colapse ${getColor(index)}`"
+              >
+                <p class="text">{{ item.title }}</p>
+                <b-icon icon="chevron-down" class="icon" alt="icon"></b-icon>
+              </b-button>
+              <b-collapse
+                :id="`accordion-${item._id}`"
+                accordion="my-accordion"
+                role="tabpanel"
+              >
+                <b-card class="collapse-content">
+                  {{ item.description }}
+                </b-card>
+              </b-collapse>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
   </div>
 </template>
 
@@ -48,6 +50,14 @@
 export default {
   data() {
     return {
+      rellax: {
+        speed: -1.2,
+        center: true,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      },
       h2: 'Implementamos eficazmente estrategias y procesos de transformación',
       detail:
         'para encontrar y conectar con tu audiencia en aquellos lugares donde se toman decisiones de compra. Logramos objetivos medibles, alcanzables para influir significativamente en decisiones para que tu marca gane.',
