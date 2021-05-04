@@ -37,7 +37,9 @@ export default async (context, locale) => {
   }
 
   const ambassadors = {
-    name: 'AMBASSADORS',
+    name: 'AMBASSADORS.',
+    title: 'Zenda in the world.',
+    ambassadors: rest.ambassadors,
   }
 
   const nav = {
