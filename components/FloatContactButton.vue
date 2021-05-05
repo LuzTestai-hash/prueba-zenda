@@ -104,6 +104,13 @@ export default {
       border-radius: 60px;
       width: 6rem;
       height: 3rem;
+      background-color: $primary;
+      p {
+        color: white;
+        span {
+          display: none;
+        }
+      }
     }
   }
 }
