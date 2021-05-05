@@ -117,7 +117,8 @@ export default {
     .container-cards {
       position: relative;
       .tariffCards {
-        margin-top: 2.5rem;
+        margin-top: 40%;
+        margin-bottom: 15%;
         user-select: none;
         transform: translate3d(0, 0, 0);
         transform-style: preserve-3d;
