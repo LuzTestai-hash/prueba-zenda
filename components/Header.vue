@@ -299,11 +299,9 @@ header {
     .logo-mobile {
       display: initial;
       width: 4rem;
-      -ms-transform: translate(1rem, 1.5rem);
-      -webkit-transform: translate(1rem, 1.5rem);
-      -moz-transform: translate(1rem, 1.5rem);
-      -o-transform: translate(1rem, 1.5rem);
-      transform: translate(1rem, 1.5rem);
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
     }
     .wrap {
       position: fixed;
