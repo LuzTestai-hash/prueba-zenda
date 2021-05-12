@@ -297,8 +297,8 @@ export default {
       border-radius: 10px;
       //box-shadow: 0.1px 4px 20px $color-box-shadow;
       transition: 0.4s;
-      box-shadow: 0.1px 4px 20px rgb(89 215 150 / 35%);
-      border: 1px solid rgb(89 215 150);
+      box-shadow: 0.1px 4px 20px rgb(89 215 150 / 35%) !important;
+      border: 1px solid rgb(89 215 150) !important;
     }
     .icon {
       display: flex;
@@ -311,6 +311,8 @@ export default {
       padding-bottom: 0.8rem;
       border-radius: 10px;
       box-shadow: 0.1px 4px 20px $color-box-shadow;
+      transition: 0.4s;
+      border: 1px solid #fff;
       p {
         margin-top: 1rem;
         margin-left: 1.5rem;
