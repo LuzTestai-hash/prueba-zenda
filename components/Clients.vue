@@ -239,7 +239,7 @@ export default {
         position: absolute;
         border-radius: 100%;
         &.one {
-          bottom: -3rem;
+          bottom: 0;
           height: 22rem;
           width: 22rem;
           border: 1px solid rgba(231, 28, 162, 0.4);
