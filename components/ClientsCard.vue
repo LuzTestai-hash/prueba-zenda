@@ -51,6 +51,8 @@ export default {
   min-height: 29rem;
   .trademarks {
     color: white;
+    max-width: 90%;
+    height: 45px;
   }
   .card-text {
     margin-top: 2rem;
