@@ -66,6 +66,7 @@ export default {
       margin-top: 2rem;
       margin-left: 1rem;
       color: white;
+      max-width: 14rem;
     }
     .card-text {
       min-height: 10rem;
@@ -78,6 +79,7 @@ export default {
       margin-top: 2rem;
       margin-left: 1rem;
       color: white;
+      max-width: 16rem;
     }
     .card-text {
       min-height: 10rem;
