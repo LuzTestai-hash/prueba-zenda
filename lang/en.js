@@ -51,6 +51,10 @@ export default async (context, locale) => {
     howDid: 'How did we do it',
   }
 
+  const contactButton = {
+    title: 'Contact',
+  }
+
   return {
     hero,
     about,
@@ -63,5 +67,6 @@ export default async (context, locale) => {
     contact,
     ambassadors,
     nav,
+    contactButton,
   }
 }

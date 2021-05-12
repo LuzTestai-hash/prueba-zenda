@@ -83,7 +83,7 @@
       <div class="container-icon">
         <div
           class="icon"
-          :class="{ 'botton-selected': categorySelected === 'Medios' }"
+          :class="{ 'button-selected': categorySelected === 'Medios' }"
           @click.prevent="getMembers('Medios')"
         >
           <img
@@ -97,7 +97,7 @@
         </div>
         <div
           class="icon"
-          :class="{ 'botton-selected': categorySelected === 'Data' }"
+          :class="{ 'button-selected': categorySelected === 'Data' }"
           @click.prevent="getMembers('Data')"
         >
           <img
@@ -111,7 +111,7 @@
         </div>
         <div
           class="icon"
-          :class="{ 'botton-selected': categorySelected === 'Flow' }"
+          :class="{ 'button-selected': categorySelected === 'Flow' }"
           @click.prevent="getMembers('Flow')"
         >
           <img
@@ -197,6 +197,28 @@ export default {
       },
     }
   },
+  mounted() {
+    this.intervalChange()
+  },
+  methods: {
+    changeCategory() {
+      if (this.categorySelected === 'Medios') {
+        return (this.categorySelected = 'Data')
+      }
+      if (this.categorySelected === 'Data') {
+        return (this.categorySelected = 'Flow')
+      }
+      if (this.categorySelected === 'Flow') {
+        return (this.categorySelected = 'Medios')
+      }
+    },
+    intervalChange() {
+      setTimeout(() => {
+        this.changeCategory()
+        this.intervalChange()
+      }, 4000)
+    },
+  },
 }
 </script>
 
@@ -269,26 +291,26 @@ export default {
   .container-icon {
     display: flex;
     justify-content: center;
-    .botton-selected {
+    cursor: pointer;
+    .button-selected {
       background-color: $background-botton;
       border-radius: 10px;
-      box-shadow: 0.1px 4px 20px $color-box-shadow;
+      //box-shadow: 0.1px 4px 20px $color-box-shadow;
+      transition: 0.4s;
+      box-shadow: 0.1px 4px 20px rgb(89 215 150 / 35%);
+      border: 1px solid rgb(89 215 150);
     }
     .icon {
       display: flex;
       align-items: center;
-      margin-right: 3rem;
-      margin-left: 3rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
       padding-left: 2rem;
       padding-right: 2rem;
       padding-top: 0.8rem;
       padding-bottom: 0.8rem;
-
-      &:hover {
-        background-color: $background-botton;
-        border-radius: 10px;
-        box-shadow: 0.1px 4px 20px $color-box-shadow;
-      }
+      border-radius: 10px;
+      box-shadow: 0.1px 4px 20px $color-box-shadow;
       p {
         margin-top: 1rem;
         margin-left: 1.5rem;
