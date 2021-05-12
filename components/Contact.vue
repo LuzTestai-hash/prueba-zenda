@@ -17,6 +17,7 @@
             type="text"
             required
             class="input"
+            @keyup.enter="showNext"
           />
           <b-icon
             v-if="form.name"
@@ -40,6 +41,7 @@
             type="email"
             required
             class="input"
+            @keyup.enter="showNext"
           />
           <div class="icon-container">
             <b-icon
@@ -71,6 +73,7 @@
             type="text"
             required
             class="input"
+            @keyup.enter="showNext"
           />
           <div class="icon-container">
             <b-icon
@@ -102,6 +105,7 @@
             type="text"
             required
             class="input"
+            @keyup.enter="showNext"
           />
           <div class="icon-container">
             <b-icon

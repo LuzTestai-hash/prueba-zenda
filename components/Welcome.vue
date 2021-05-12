@@ -12,7 +12,7 @@
         <div class="container-cards">
           <div class="tariffCards">
             <div class="inovation">
-              <p>Inovación</p>
+              <p>Innovación</p>
               <img
                 src="../assets/icons/zenda-icon-pink.svg"
                 alt="iconPink"

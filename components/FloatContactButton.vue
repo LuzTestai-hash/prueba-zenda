@@ -14,7 +14,7 @@
         :strength="10"
         class="buttonContact"
       >
-        <p>contacto</p>
+        <p>{{ $t('contactButton.title') }}</p>
         <span id="spanContacto" />
       </kinesis-element>
     </kinesis-container>
