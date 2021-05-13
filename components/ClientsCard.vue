@@ -6,7 +6,6 @@
           :src="client.image.url"
           alt="clue"
           class="trademarks"
-          height="54px"
           loading="lazy"
         />
       </b-col>
@@ -52,6 +51,8 @@ export default {
   min-height: 29rem;
   .trademarks {
     color: white;
+    max-width: 90%;
+    height: 45px;
   }
   .card-text {
     margin-top: 2rem;
@@ -66,6 +67,8 @@ export default {
       margin-top: 2rem;
       margin-left: 1rem;
       color: white;
+      max-width: 90%;
+      height: auto;
     }
     .card-text {
       min-height: 10rem;
@@ -78,6 +81,8 @@ export default {
       margin-top: 2rem;
       margin-left: 1rem;
       color: white;
+      max-width: 90%;
+      height: auto;
     }
     .card-text {
       min-height: 10rem;

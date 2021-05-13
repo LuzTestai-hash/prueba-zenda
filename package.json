@@ -29,14 +29,12 @@
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.26.0",
-    "videojs-youtube": "^2.6.1",
     "vue": "^2.6.12",
     "vue-check-view": "^0.3.0",
     "vue-kinesis": "^1.2.3",
     "vue-rellax": "^0.2.0",
     "vue-scrollto": "^2.20.0",
-    "vue-slick-carousel": "^1.0.6",
-    "vue-video-player": "^5.0.2"
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

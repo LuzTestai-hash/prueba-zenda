@@ -50,6 +50,9 @@ export default async (context, locale) => {
     portfolio: 'Qué logramos',
     howDid: 'Cómo lo logramos',
   }
+  const contactButton = {
+    title: 'Contacto',
+  }
 
   return {
     hero,
@@ -63,5 +66,6 @@ export default async (context, locale) => {
     contact,
     ambassadors,
     nav,
+    contactButton,
   }
 }

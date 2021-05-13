@@ -14,7 +14,7 @@
         :strength="10"
         class="buttonContact"
       >
-        <p>contacto</p>
+        <p>{{ $t('contactButton.title') }}</p>
         <span id="spanContacto" />
       </kinesis-element>
     </kinesis-container>
@@ -104,6 +104,13 @@ export default {
       border-radius: 60px;
       width: 6rem;
       height: 3rem;
+      background-color: $primary;
+      p {
+        color: white;
+        span {
+          display: none;
+        }
+      }
     }
   }
 }

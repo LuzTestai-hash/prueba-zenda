@@ -299,7 +299,9 @@ header {
     .logo-mobile {
       display: initial;
       width: 4rem;
-      transform: translate(1rem, 1.5rem);
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
     }
     .wrap {
       position: fixed;

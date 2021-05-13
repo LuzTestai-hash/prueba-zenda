@@ -17,6 +17,7 @@
             type="text"
             required
             class="input"
+            @keyup.enter="handleEnter(form.name)"
           />
           <b-icon
             v-if="form.name"
@@ -40,6 +41,7 @@
             type="email"
             required
             class="input"
+            @keyup.enter="handleEnter(form.email)"
           />
           <div class="icon-container">
             <b-icon
@@ -71,6 +73,7 @@
             type="text"
             required
             class="input"
+            @keyup.enter="handleEnter(form.company)"
           />
           <div class="icon-container">
             <b-icon
@@ -102,6 +105,7 @@
             type="text"
             required
             class="input"
+            @keyup.enter="handleEnter(form.description)"
           />
           <div class="icon-container">
             <b-icon
@@ -210,6 +214,11 @@ export default {
         company: '',
       }
       this.show = 1
+    },
+    handleEnter(value) {
+      if (value) {
+        this.showNext()
+      }
     },
   },
 }
