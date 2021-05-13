@@ -8,19 +8,32 @@
         </p>
       </b-col>
       <b-col ref="video" md="5">
-        <div
-          v-video-player:myVideoPlayer="playerOptions"
-          class="video-player-box"
-        ></div>
+        <iframe
+          width="100%"
+          height="315"
+          :src="videoSrc"
+          title="YouTube"
+          video
+          player
+          frameborder="0"
+          allow="accelerometer"
+          autoplay
+          clipboard-write
+          encrypted-media
+          gyroscope
+          picture-in-picture
+          allowfullscreen
+          class="videoFrame"
+        ></iframe>
       </b-col>
     </b-row>
   </div>
 </template>
 
 <script>
-import 'video.js/dist/video-js.css'
-import 'vue-video-player/src/custom-theme.css'
-require('videojs-youtube')
+// import 'video.js/dist/video-js.css'
+// import 'vue-video-player/src/custom-theme.css'
+// require('videojs-youtube')
 export default {
   name: 'DashboardCard',
   props: {
@@ -30,18 +43,7 @@ export default {
   },
   data() {
     return {
-      playsinline: true,
-      playerOptions: {
-        fluid: true,
-        techOrder: ['youtube'],
-        playsinline: true,
-        sources: [
-          {
-            type: 'video/youtube',
-            src: this.video,
-          },
-        ],
-      },
+      videoSrc: this.video,
     }
   },
   mounted() {
@@ -80,8 +82,9 @@ export default {
     font-weight: 300;
     margin-bottom: 3rem;
   }
-  .video-player-box {
-    margin-top: 2rem;
+  .videoFrame {
+    width: '100%';
+    height: 215px;
   }
   @media (min-width: 660px) {
     .text {
@@ -90,8 +93,9 @@ export default {
       font-size: 2.6rem;
       line-height: 3rem;
     }
-    .video-player-box {
-      margin-right: 2rem;
+    .videoFrame {
+      width: '100%';
+      height: 315px;
     }
     //.description {
     //width: 60%;
