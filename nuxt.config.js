@@ -31,7 +31,6 @@ export default {
     '~/plugins/vue-check-view.js',
     { src: '~/plugins/vue-kinesis.js', mode: 'client' },
     { src: '~~/node_modules/vue-rellax/lib/nuxt-plugin', ssr: false },
-    { src: '~plugins/video-player.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

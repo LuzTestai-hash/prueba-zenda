@@ -8,10 +8,22 @@
         </p>
       </b-col>
       <b-col ref="video" md="5">
-        <div
-          v-video-player:myVideoPlayer="playerOptions"
-          class="video-player-box"
-        ></div>
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/dGwEWxQ82qE"
+          title="YouTube"
+          video
+          player
+          frameborder="0"
+          allow="accelerometer"
+          autoplay
+          clipboard-write
+          encrypted-media
+          gyroscope
+          picture-in-picture
+          allowfullscreen
+        ></iframe>
       </b-col>
     </b-row>
   </div>
@@ -30,18 +42,7 @@ export default {
   },
   data() {
     return {
-      playsinline: true,
-      playerOptions: {
-        fluid: true,
-        techOrder: ['youtube'],
-        playsinline: true,
-        sources: [
-          {
-            type: 'video/youtube',
-            src: this.video,
-          },
-        ],
-      },
+      videoSrc: this.video,
     }
   },
   mounted() {
