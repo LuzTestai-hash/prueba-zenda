@@ -60,7 +60,7 @@ export default {
     baseURL:
       process.env.NODE_ENV === 'production'
         ? 'https://zenda-api.herokuapp.com'
-        : 'http://localhost:3000',
+        : 'https://zenda-api-dev.herokuapp.com',
   },
   i18n: {
     locales: [
