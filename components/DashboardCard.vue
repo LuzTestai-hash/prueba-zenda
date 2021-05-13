@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import 'video.js/dist/video-js.css'
-import 'vue-video-player/src/custom-theme.css'
-require('videojs-youtube')
+// import 'video.js/dist/video-js.css'
+// import 'vue-video-player/src/custom-theme.css'
+// require('videojs-youtube')
 export default {
   name: 'DashboardCard',
   props: {
