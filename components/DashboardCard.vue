@@ -11,7 +11,7 @@
         <iframe
           width="100%"
           height="315"
-          src="https://www.youtube.com/embed/dGwEWxQ82qE"
+          :src="videoSrc"
           title="YouTube"
           video
           player
@@ -23,6 +23,7 @@
           gyroscope
           picture-in-picture
           allowfullscreen
+          class="videoFrame"
         ></iframe>
       </b-col>
     </b-row>
@@ -81,8 +82,9 @@ export default {
     font-weight: 300;
     margin-bottom: 3rem;
   }
-  .video-player-box {
-    margin-top: 2rem;
+  .videoFrame {
+    width: '100%';
+    height: 215px;
   }
   @media (min-width: 660px) {
     .text {
@@ -91,8 +93,9 @@ export default {
       font-size: 2.6rem;
       line-height: 3rem;
     }
-    .video-player-box {
-      margin-right: 2rem;
+    .videoFrame {
+      width: '100%';
+      height: 315px;
     }
     //.description {
     //width: 60%;
