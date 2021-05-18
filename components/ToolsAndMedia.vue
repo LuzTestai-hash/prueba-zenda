@@ -1,5 +1,9 @@
 <template>
-  <b-container id="dashboard-tools" class="toolsAndMedia-container">
+  <b-container
+    v-if="media && dataTools && flow"
+    id="dashboard-tools"
+    class="toolsAndMedia-container"
+  >
     <p class="subtitle">{{ $t('howDidWeDoIt.name') }}</p>
     <div class="d-block d-md-none">
       <div class="mobile-carrusel-container">
@@ -12,15 +16,10 @@
             alt="media"
           />
         </div>
-        <div
-          v-for="(item, index) in category.Medios"
-          :key="index"
-          class="image-carrusel"
-        >
+        <div v-for="img in media.images" :key="img._id" class="image-carrusel">
           <img
-            :src="require(`../assets/icons/${item.title}.png`)"
-            :alt="item.title"
-            :width="item.width"
+            :src="img.url"
+            :alt="img.originalName"
             height="auto"
             class="image-carrusel"
             loading="lazy"
@@ -39,14 +38,13 @@
           />
         </div>
         <div
-          v-for="(item, index) in category.Data"
-          :key="index"
+          v-for="img in dataTools.images"
+          :key="img._id"
           class="image-carrusel"
         >
           <img
-            :src="require(`../assets/icons/${item.title}.png`)"
-            :alt="item.title"
-            :width="item.width"
+            :src="img.url"
+            :alt="img.originalName"
             height="auto"
             loading="lazy"
           />
@@ -63,15 +61,10 @@
             alt="flow"
           />
         </div>
-        <div
-          v-for="(item, index) in category.Flow"
-          :key="index"
-          class="image-carrusel"
-        >
+        <div v-for="img in flow.images" :key="img._id" class="image-carrusel">
           <img
-            :src="require(`../assets/icons/${item.title}.png`)"
-            :alt="item.title"
-            :width="item.width"
+            :src="img.url"
+            :alt="img.originalName"
             height="auto"
             loading="lazy"
           />
@@ -83,8 +76,8 @@
       <div class="container-icon">
         <div
           class="icon"
-          :class="{ 'button-selected': categorySelected === 'Medios' }"
-          @click.prevent="getMembers('Medios')"
+          :class="{ 'button-selected': selectedTool === 'media' }"
+          @click.prevent="handleSelectedTool('media')"
         >
           <img
             src="../assets/icons/media.svg"
@@ -97,8 +90,8 @@
         </div>
         <div
           class="icon"
-          :class="{ 'button-selected': categorySelected === 'Data' }"
-          @click.prevent="getMembers('Data')"
+          :class="{ 'button-selected': selectedTool === 'dataTool' }"
+          @click.prevent="handleSelectedTool('dataTool')"
         >
           <img
             src="../assets/icons/data.svg"
@@ -111,8 +104,8 @@
         </div>
         <div
           class="icon"
-          :class="{ 'button-selected': categorySelected === 'Flow' }"
-          @click.prevent="getMembers('Flow')"
+          :class="{ 'button-selected': selectedTool === 'flow' }"
+          @click.prevent="handleSelectedTool('flow')"
         >
           <img
             src="../assets/icons/flow.svg"
@@ -124,34 +117,31 @@
           <p>Flow</p>
         </div>
       </div>
-      <div v-if="categorySelected === 'Medios'" class="container-trademarks">
-        <div v-for="(item, index) in category.Medios" :key="index">
+      <div v-if="selectedTool === 'media'" class="container-trademarks">
+        <div v-for="img in media.images" :key="img._id">
           <img
-            :src="require(`../assets/icons/${item.title}.png`)"
-            :alt="item.title"
-            :width="item.width"
+            :src="img.url"
+            :alt="img.originalName"
             height="auto"
             loading="lazy"
           />
         </div>
       </div>
-      <div v-if="categorySelected === 'Data'" class="container-trademarks">
-        <div v-for="(item, index) in category.Data" :key="index">
+      <div v-if="selectedTool === 'dataTool'" class="container-trademarks">
+        <div v-for="img in dataTools.images" :key="img._id">
           <img
-            :src="require(`../assets/icons/${item.title}.png`)"
-            :alt="item.title"
-            :width="item.width"
+            :src="img.url"
+            :alt="img.originalName"
             height="auto"
             loading="lazy"
           />
         </div>
       </div>
-      <div v-if="categorySelected === 'Flow'" class="container-trademarks">
-        <div v-for="(item, index) in category.Flow" :key="index">
+      <div v-if="selectedTool === 'flow'" class="container-trademarks">
+        <div v-for="img in flow.images" :key="img._id">
           <img
-            :src="require(`../assets/icons/${item.title}.png`)"
-            :alt="item.title"
-            :width="item.width"
+            :src="img.url"
+            :alt="img.originalName"
             height="auto"
             loading="lazy"
           />
@@ -163,60 +153,56 @@
 
 <script>
 export default {
-  name: 'MyComponent',
-
+  name: 'ToolsAndMedia',
   data() {
     return {
-      category: {
-        Medios: [
-          // { title: 'googleAds-logo', width: '60px', height: '60px' },
-          { title: 'facebook-logo', width: '140px' },
-          { title: 'searchads-logo', width: '140px' },
-          { title: 'linkedin-logo', width: '140px' },
-          { title: 'amazon-logo', width: '60px', height: '60px' },
-          { title: 'pinterest-logo', width: '100px' },
-        ],
-        Data: [
-          { title: 'datastudio-logo', width: '100px' },
-          { title: 'supermetrics-logo', width: '100px' },
-          { title: 'google-analytics-logo', width: '90px' },
-          { title: 'appsflyer-logo', width: '85px' },
-          { title: 'amplitude-logo', width: '90px' },
-          { title: 'segment-logo', width: '90px' },
-        ],
-        Flow: [
-          { title: 'google-suite-logo', width: '120px' },
-          { title: 'slack-logo', width: '100px' },
-          { title: 'notion-logo', width: '80px' },
-          { title: 'Trello-logo', width: '100px' },
-        ],
-      },
-      categorySelected: 'Medios',
-      getMembers(info) {
-        this.categorySelected = info
-      },
+      tools: [],
+      selectedTool: 'media',
+      interval: null,
     }
   },
+  computed: {
+    media() {
+      return this.tools.find((t) => t.name === 'media')
+    },
+    flow() {
+      return this.tools.find((t) => t.name === 'flow')
+    },
+    dataTools() {
+      return this.tools.find((t) => t.name === 'data')
+    },
+  },
+  async created() {
+    const { tools } = await this.$axios.$get('/tools')
+    this.tools = tools
+  },
   mounted() {
-    this.intervalChange()
+    this.inverval = setInterval(() => {
+      this.changeSelectedTool()
+    }, 5000)
+    // this.intervalChange()
+  },
+  destroyed() {
+    clearInterval(this.interval)
   },
   methods: {
-    changeCategory() {
-      if (this.categorySelected === 'Medios') {
-        return (this.categorySelected = 'Data')
-      }
-      if (this.categorySelected === 'Data') {
-        return (this.categorySelected = 'Flow')
-      }
-      if (this.categorySelected === 'Flow') {
-        return (this.categorySelected = 'Medios')
-      }
+    handleSelectedTool(tool) {
+      this.selectedTool = tool
     },
-    intervalChange() {
-      setTimeout(() => {
-        this.changeCategory()
-        this.intervalChange()
-      }, 4000)
+    changeSelectedTool() {
+      switch (this.selectedTool) {
+        case 'media':
+          this.selectedTool = 'dataTool'
+          break
+        case 'dataTool':
+          this.selectedTool = 'flow'
+          break
+        case 'flow':
+          this.selectedTool = 'media'
+          break
+        default:
+          break
+      }
     },
   },
 }
@@ -224,6 +210,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
+
 .toolsAndMedia-container {
   padding: 4rem 1.4rem;
   .subtitle {
@@ -252,6 +239,9 @@ export default {
   }
   .image-carrusel {
     margin-right: 1rem;
+    img {
+      width: 7rem;
+    }
   }
   .carrusel {
     display: flex;
@@ -285,6 +275,9 @@ export default {
     p {
       margin: 2rem;
       font-size: 1.2rem;
+    }
+    img {
+      width: 7.5rem;
     }
   }
 
