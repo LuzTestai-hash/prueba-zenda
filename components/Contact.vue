@@ -160,9 +160,9 @@
             <p class="location-title">{{ ambassador.city }}</p>
             <p class="name">{{ ambassador.name }}</p>
             <b-button class="contact-button">
-              <a :href="`mailto:${ambassador.email}`" class="contact-text"
-                >Contactar</a
-              >
+              <a :href="`mailto:${ambassador.email}`" class="contact-text">{{
+                $t('contact.ambassadors')
+              }}</a>
               <b-icon icon="arrow-right" class="icon" alt="icon"></b-icon>
             </b-button>
           </div>

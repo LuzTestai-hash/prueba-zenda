@@ -12,7 +12,7 @@
         <div class="container-cards">
           <div class="tariffCards">
             <div class="inovation">
-              <p>Innovación</p>
+              <p>{{ $t('cardsHero.innovation') }}</p>
               <img
                 src="../assets/icons/zenda-icon-pink.svg"
                 alt="iconPink"
