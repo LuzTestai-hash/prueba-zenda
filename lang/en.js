@@ -34,6 +34,7 @@ export default async (context, locale) => {
       'How can we help?',
       'Thank you for contacting us.',
     ],
+    ambassadors: 'Contact',
   }
 
   const ambassadors = {
@@ -55,6 +56,10 @@ export default async (context, locale) => {
     title: 'Contact',
   }
 
+  const cardsHero = {
+    innovation: 'Innovation',
+  }
+
   return {
     hero,
     about,
@@ -68,5 +73,6 @@ export default async (context, locale) => {
     ambassadors,
     nav,
     contactButton,
+    cardsHero,
   }
 }
