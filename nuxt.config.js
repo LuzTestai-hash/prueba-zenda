@@ -17,6 +17,27 @@ export default {
         content:
           'Somos un equipo de especialistas en performance y crecimiento con una simple creencia: Conectar a las marcas con sus clientes en los momentos que importan.',
       },
+      { hid: 'og:title', property: 'og:title', content: 'Somos Zenza' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Hacemos Performance & Growth en serio.',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://image-URL',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://zenda.com.ar',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', alt: 'icon' },
