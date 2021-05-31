@@ -1,3 +1,4 @@
+import ogImage from '@/assets/Zenda-Performance-y-Growth.jpg'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
@@ -17,16 +18,21 @@ export default {
         content:
           'Somos un equipo de especialistas en performance y crecimiento con una simple creencia: Conectar a las marcas con sus clientes en los momentos que importan.',
       },
-      { hid: 'og:title', property: 'og:title', content: 'Somos Zenza' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Zenda | Hacemos Performance & Growth en serio',
+      },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Hacemos Performance & Growth en serio.',
+        content:
+          'Y en el description pongamos “Implementamos eficazmente estrategias y procesos de transformación para encontrar y conectar con tu audiencia en aquellos lugares donde se toman decisiones de compra. Logramos objetivos medibles, alcanzables para influir significativamente en decisiones para que tu marca gane.',
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://image-URL',
+        content: this.BASE_URL + ogImage,
       },
       {
         hid: 'og:url',
