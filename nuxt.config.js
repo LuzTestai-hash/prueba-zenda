@@ -26,7 +26,7 @@ export default {
         hid: 'og:description',
         property: 'og:description',
         content:
-          'Y en el description pongamos “Implementamos eficazmente estrategias y procesos de transformación para encontrar y conectar con tu audiencia en aquellos lugares donde se toman decisiones de compra. Logramos objetivos medibles, alcanzables para influir significativamente en decisiones para que tu marca gane.',
+          'Implementamos eficazmente estrategias y procesos de transformación para encontrar y conectar con tu audiencia en aquellos lugares donde se toman decisiones de compra. Logramos objetivos medibles, alcanzables para influir significativamente en decisiones para que tu marca gane.',
       },
       {
         hid: 'og:image',
