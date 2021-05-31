@@ -1,4 +1,3 @@
-import ogImage from './assets/Zenda-Performance-y-Growth.jpg'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
@@ -32,7 +31,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: this.BASE_URL + ogImage,
+        content: '/Zenda-Performance-y-Growth.jpg',
       },
       {
         hid: 'og:url',
