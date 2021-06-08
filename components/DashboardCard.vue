@@ -25,7 +25,6 @@
           picture-in-picture
           allowfullscreen
           class="videoFrame"
-          loading="lazy"
         ></iframe>
       </b-col>
     </b-row>
