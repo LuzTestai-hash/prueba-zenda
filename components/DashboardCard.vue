@@ -8,6 +8,24 @@
         </p>
       </b-col>
       <b-col ref="video" md="5">
+        <!-- <LazyYoutubeVideo
+          width="100%"
+          height="315"
+          :src="videoSrc"
+          title="YouTube"
+          video
+          player
+          frameborder="0"
+          allow="accelerometer"
+          autoplay
+          clipboard-write
+          encrypted-media
+          gyroscope
+          picture-in-picture
+          allowfullscreen
+          class="videoFrame"
+        /> -->
+
         <iframe
           width="100%"
           height="315"
@@ -24,6 +42,7 @@
           picture-in-picture
           allowfullscreen
           class="videoFrame"
+          loading="lazy"
         ></iframe>
       </b-col>
     </b-row>
@@ -34,6 +53,11 @@
 // import 'video.js/dist/video-js.css'
 // import 'vue-video-player/src/custom-theme.css'
 // require('videojs-youtube')
+import Vue from 'vue'
+import { Plugin } from 'vue-lazy-youtube-video'
+
+Vue.use(Plugin)
+
 export default {
   name: 'DashboardCard',
   props: {
