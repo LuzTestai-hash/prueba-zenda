@@ -8,23 +8,7 @@
         </p>
       </b-col>
       <b-col ref="video" md="5">
-        <LazyYoutubeVideo
-          width="100%"
-          height="315"
-          :src="videoSrc"
-          title="YouTube"
-          video
-          player
-          frameborder="0"
-          allow="accelerometer"
-          autoplay
-          clipboard-write
-          encrypted-media
-          gyroscope
-          picture-in-picture
-          allowfullscreen
-          class="videoFrame"
-        />
+        <LazyYoutubeVideo :src="videoSrc" autoplay />
         <!-- 
         <iframe
           width="100%"
@@ -81,6 +65,15 @@ export default {
 }
 </script>
 
+<style>
+div.slick-slide.slick-active.slick-current .col-md-5 > div > div > iframe {
+  width: 100%;
+  height: 20rem;
+}
+div.slick-slide.slick-active.slick-current .col-md-5 > div > div {
+  padding-bottom: 0 !important;
+}
+</style>
 <style lang="scss" scoped>
 @import '../assets/stylesheets/components/colors';
 .dashboardCard-container {
@@ -107,8 +100,8 @@ export default {
     margin-bottom: 3rem;
   }
   .videoFrame {
-    width: '100%';
-    height: 215px;
+    width: 100%;
+    height: 21rem;
   }
   @media (min-width: 660px) {
     .text {
