@@ -8,8 +8,8 @@
         </p>
       </b-col>
       <b-col ref="video" md="5">
-        <!-- <LazyYoutubeVideo :src="videoSrc" autoplay /> -->
-        <iframe
+        <LazyYoutubeVideo :src="videoSrc" autoplay />
+        <!-- <iframe
           width="100%"
           height="315"
           :src="videoSrc"
@@ -25,7 +25,7 @@
           picture-in-picture
           allowfullscreen
           class="videoFrame"
-        ></iframe>
+        ></iframe> -->
       </b-col>
     </b-row>
   </div>
