@@ -3,7 +3,7 @@
     <div id="cursor" class="cursor" />
     <b-container class="welcome-container">
       <div class="container-title">
-        <h1 class="title">{{ $t('hero.title') }}</h1>
+        <h1 class="title">pepe</h1>
         <p class="subtitle">
           {{ $t('hero.description') }}
         </p>
