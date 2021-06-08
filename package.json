@@ -32,7 +32,6 @@
     "vue": "^2.6.12",
     "vue-check-view": "^0.3.0",
     "vue-kinesis": "^1.2.3",
-    "vue-lazy-youtube-video": "^2.3.0",
     "vue-rellax": "^0.2.0",
     "vue-scrollto": "^2.20.0",
     "vue-slick-carousel": "^1.0.6"
